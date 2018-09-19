@@ -67,6 +67,45 @@ header>nav>div>img{
     width: 18px;
 }
 
+/* section */
+
+section{
+    background: url("../images/FE_key_visual.png");
+    background-repeat: no-repeat;
+    background-size: 100% 630px;
+    height: 580px;
+    width: 100%;
+    box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px;
+}
+
+section>div{
+    display: inline-block;
+    position: relative;
+    top:240px;
+    left: 150px;
+    color: white;
+    font-size: 2.75em;
+    line-height: 60px;
+}
+
+/* aside */
+
+aside{
+    opacity: 0.8;
+    position: fixed;
+    bottom: 20%;
+    right: 0;
+    width: 78px;
+    height: 69px;
+}
+
+aside>img{
+    width: 100%;
+    height: 100%;
+}
+
+/* top */
+
 .top{
     padding: 70px;
 }
@@ -81,6 +120,8 @@ header>nav>div>img{
     width: 36px;
     height: 46px;
 }
+
+/* footer */
 
 footer{
     opacity: 0.8;
@@ -118,3 +159,14 @@ footer>div>img.footer-img{
     width: 30px;
 }
 
+@keyframes myfirst {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    50% {
+        transform: translate(0px, -10px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
