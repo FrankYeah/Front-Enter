@@ -1,0 +1,89 @@
+section{
+    background: url("../images/FE_key_visual.png");
+    background-repeat: no-repeat;
+    background-size: 100% 630px;
+    height: 580px;
+    width: 100%;
+    box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px;
+}
+
+section>div{
+    display: inline-block;
+    position: relative;
+    top:240px;
+    left: 150px;
+    color: white;
+    font-size: 2.75em;
+    line-height: 60px;
+}
+
+aside{
+    opacity: 0.8;
+    position: fixed;
+    bottom: 20%;
+    right: 0;
+    width: 78px;
+    height: 69px;
+}
+
+aside>img{
+    width: 100%;
+    height: 100%;
+}
+
+main>div.out-service{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    width: auto;
+    height: auto;
+    padding:50px 0;
+}
+
+main>div>.service{
+    background: url("../images/FE_white.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 306px;
+    height: 405px;
+}
+
+main>div>.service>img{
+    margin-top:50px;
+    margin-left: 45%;
+    width: 41px;
+    height: 42.5px;
+}
+
+main>div>.service>p{
+    text-align: center;
+}
+
+main>div>div>.service-line{
+    margin-left: 41%;
+    border: 1px solid rgb(26, 216, 211);
+    width: 50px;
+}
+
+main>div>div>.service-button{
+    width: 28%;
+    padding: 7px 23px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 1px solid rgb(26, 216, 211);
+    text-align: center;
+    font-size: 18px;
+    background-color: rgb(240, 233, 233);
+}
+
+main>div>div>.service-color{
+    color:rgb(26, 216, 211);font-size: 30px
+}
+
+main>div.partner{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    width: auto;
+    height: auto;
+}
