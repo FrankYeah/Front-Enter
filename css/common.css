@@ -5,7 +5,7 @@ body {
 
 body {
 	font-size: 16px;
-	font-family: "華康黑體","Noto Sans TC", "微軟正黑體", "新細明體", arial, sans-serif;
+	font-family: "Noto Sans TC", "華康黑體","微軟正黑體", "新細明體", arial, sans-serif;
 	color: #3f3a3a;
 }
 
@@ -171,8 +171,7 @@ footer>div>img.footer-img{
 
 /* header animation */
 
-@keyframes headerBackgroundOut
-{
+@keyframes headerBackgroundOut{
   0% {  background-color: ""; opacity: 1;}
   25% {  background-color: rgb(250, 250, 250); opacity: 1;}
   50% {  background-color: ""; opacity: 0.9;}
@@ -198,8 +197,7 @@ footer>div>img.footer-img{
     100% { background-color: rgb(250, 250, 250); opacity: 0.8;}
 }
 
-@keyframes headerBackgroundIn
-{
+@keyframes headerBackgroundIn{
   0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
   50% {  background-color: ""; opacity: 0.9;}
   100% {  background-color: ""; opacity: 1;}
@@ -219,4 +217,24 @@ footer>div>img.footer-img{
     0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
     50% {  background-color: ""; opacity: 0.9;}
     100% {  background-color: ""; opacity: 1;}
+}
+
+
+
+@keyframes opacityOut{
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes opacityOut {
+    0%   { opacity: 0.5; }
+    100% { opacity: 1;  }
+}
+@-moz-keyframes opacityOut {
+    0%   { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+@-o-keyframes opacityOut {
+    0%   { opacity: 0.5; }
+    100% { opacity: 1; }
 }

@@ -13,11 +13,14 @@ function winScroll(){
     if(document.documentElement.scrollTop>0){
         webSearch.src = "images/FE_search_green.png";
         logo.src = "images/FE_logo-4.png";
+        logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
         headerP1.style.color="rgb(128,128,128)";headerP2.style.color="rgb(128,128,128)";headerP3.style.color="rgb(128,128,128)";
         header.style.animation = "headerBackgroundOut 5s ease 0s infinite alternate"
+
       }else if(document.documentElement.scrollTop<100){
         webSearch.src = "images/FE_search.png";
         logo.src = "images/FE_logo-1.png";
+        logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
         headerP1.style.color="white";headerP2.style.color="white";headerP3.style.color="white";
         header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"
       }
@@ -50,7 +53,24 @@ window.onload = function() {
             }
         },30);
     };  
-
-
 }
 
+// keyvisual 輪播
+// background: url("../images/FE_key_visual.png");
+const keyvisual = document.getElementById('keyvisual');
+const keyvisualLink = document.getElementById('keyvisualLink');
+let keyvisualImg = new Array("images/FE_key_visual.png","images/testPic1.jpg","images/testpic2.jpg",);
+let keyvisualImg_len = keyvisualImg.length;  // 圖檔數量
+let i=1;  
+setInterval("changeKevisual()",5000);
+
+function changeKevisual(){
+    // keyvisual.style.animation = "opacityOut 2.5s ease 0s infinite alternate";
+    keyvisual.style.background  =  "url('" + keyvisualImg[i] + "')";    
+    keyvisual.style.backgroundRepeat  =  "no-repeat";  
+    keyvisual.style.backgroundSize  =  "100% 630px";
+
+    i++;
+    if(i>=keyvisualImg_len) { i=0;}
+
+}
