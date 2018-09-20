@@ -28,12 +28,17 @@ img:hover{
 /* header */
 
 header{
+    z-index: 1;
     opacity: 0.9;
     width: 100%;
     position: fixed;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
+}
+
+header:hover{
+    animation: myAnimation 10s ease 0s 1 alternate;
 }
 
 header>div{
@@ -97,6 +102,12 @@ aside{
     right: 0;
     width: 78px;
     height: 69px;
+    -webkit-transition: bottom 4s; /* For Safari 3.1 to 6.0 */
+    transition: bottom 4s;
+}
+
+aside:hover{
+    bottom: 60%;
 }
 
 aside>img{
@@ -109,7 +120,6 @@ aside>img{
 .top{
     padding: 70px;
 }
-
 
 .top-icon{
     cursor: pointer;
@@ -159,14 +169,54 @@ footer>div>img.footer-img{
     width: 30px;
 }
 
-@keyframes myfirst {
-    0% {
-        transform: translate(0px, 0px);
-    }
-    50% {
-        transform: translate(0px, -10px);
-    }
-    100% {
-        transform: translate(0px, 0px);
-    }
+/* header animation */
+
+@keyframes headerBackgroundOut
+{
+  0% {  background-color: ""; opacity: 1;}
+  25% {  background-color: rgb(250, 250, 250); opacity: 1;}
+  50% {  background-color: ""; opacity: 0.9;}
+  100% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+}
+
+@-webkit-keyframes headerBackgroundOut {
+    0% {  background-color: ""; opacity: 1;}
+    25% {  background-color: rgb(250, 250, 250); opacity: 1;}
+    50% {  background-color: ""; opacity: 0.9;}
+    100% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+}
+@-moz-keyframes headerBackgroundOut {
+    0% {  background-color: ""; opacity: 1;}
+    25% {  background-color: rgb(250, 250, 250); opacity: 1;}
+    50% {  background-color: ""; opacity: 0.9;}
+    100% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+}
+@-o-keyframes headerBackgroundOut {
+    0% {  background-color: ""; opacity: 1;}
+    25% {  background-color: rgb(250, 250, 250); opacity: 1;}
+    50% {  background-color: ""; opacity: 0.9;}
+    100% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+}
+
+@keyframes headerBackgroundIn
+{
+  0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+  50% {  background-color: ""; opacity: 0.9;}
+  100% {  background-color: ""; opacity: 1;}
+}
+
+@-webkit-keyframes headerBackgroundIn {
+    0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+    50% {  background-color: ""; opacity: 0.9;}
+    100% {  background-color: ""; opacity: 1;}
+}
+@-moz-keyframes headerBackgroundIn {
+    0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+    50% {  background-color: ""; opacity: 0.9;}
+    100% {  background-color: ""; opacity: 1;}
+}
+@-o-keyframes headerBackgroundIn {
+    0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+    50% {  background-color: ""; opacity: 0.9;}
+    100% {  background-color: ""; opacity: 1;}
 }

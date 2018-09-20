@@ -1,24 +1,25 @@
 //判斷滾動，改變 header、logo 顏色
 
-const webSeach = document.getElementById('webSeach');
+const webSearch = document.getElementById('webSearch');
 const logo = document.getElementById('logo');
 const headerP1 = document.getElementById('headerP1');
 const headerP2 = document.getElementById('headerP2');
 const headerP3 = document.getElementById('headerP3');
 const header = document.getElementById('header');
 
+
 window.addEventListener('scroll',winScroll);
 function winScroll(){
-    if(document.documentElement.scrollTop>100){
-        webSeach.src = "";
+    if(document.documentElement.scrollTop>0){
+        webSearch.src = "images/FE_search_green.png";
         logo.src = "images/FE_logo-4.png";
-        headerP1.style.color="rgb(128,128,128)";headerP3.style.color="rgb(128,128,128)";headerP2.style.color="rgb(128,128,128)";
-        header.style.backgroundColor="white";
+        headerP1.style.color="rgb(128,128,128)";headerP2.style.color="rgb(128,128,128)";headerP3.style.color="rgb(128,128,128)";
+        header.style.animation = "headerBackgroundOut 5s ease 0s infinite alternate"
       }else if(document.documentElement.scrollTop<100){
-        webSeach.src = "images/FE_search.png";
+        webSearch.src = "images/FE_search.png";
         logo.src = "images/FE_logo-1.png";
-        headerP1.style.color="white";headerP3.style.color="white";headerP2.style.color="white";
-        header.style.backgroundColor="";
+        headerP1.style.color="white";headerP2.style.color="white";headerP3.style.color="white";
+        header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"
       }
 }
 
@@ -53,12 +54,3 @@ window.onload = function() {
 
 }
 
-// 遊戲上下跳動
-
-const testGo = document.getElementById('testGo');
-window.addEventListener('click',upAndDown)
-
-function upAndDown(){
-    console.log('hi')
-    header.style.animation = "myfirst 2s infinite";
-}
