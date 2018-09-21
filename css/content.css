@@ -1,3 +1,4 @@
+
 /* section */
 
 section{
@@ -12,51 +13,19 @@ section{
 section>div{
     display: inline-block;
     position: relative;
-    top:50%;left: 10%;
+    top:50%;
+    left: 10%;
     color: white;
     line-height: 60px;
 }
 
-section>div>a>span.keyvisualSpan{
+section>div>span.keyvisualSpan{
     font-size:38px;
 }
 
-section>div>a>span.keyvisualSpanTwo{
+section>div>span.keyvisualSpanTwo{
     font-size:44px;
 }
-
-main{
-    display: flex;flex-direction: row;flex-wrap: wrap;justify-content:center; 
-    width: auto;height: auto;
-    padding:50px 0;
-}
-
-main>article{
-    border: 1px solid rgb(26, 216, 211);
-    padding: 15px 15px;
-    margin: 10px;
-}
-
-main>article>a>div.article-div{
-    width:200px ; height: 200px;
-    margin: 0 auto;
-}
-
-main>article>a>div>img.article-img{
-    width:200px ; height: 200px;
-}
-
-main>article>a>p.article-head{
-    text-align: center;
-    font-size: 30px;
-    color: rgb(26, 216, 211);
-    cursor: pointer;
-}
-
-main>article>a>p:hover{
-    opacity: 0.7;
-}
-
 
 
 @media ( max-width:1300px ){
@@ -99,12 +68,12 @@ main>article>a>p:hover{
         background-size: auto 365px;
         height: 340px;
     }
-    section>div>a>span.keyvisualSpan{
-        font-size:20px;
+    section>div>span.keyvisualSpan{
+        font-size:24px;
     }
     
-    section>div>a>span.keyvisualSpanTwo{
-        font-size:20px;
+    section>div>span.keyvisualSpanTwo{
+        font-size:24px;
     }
 }
 
@@ -113,6 +82,9 @@ main>article>a>p:hover{
         background-size: auto 330px;
         height: 300px;
     }
+}
+
+@media ( max-width: 542px ){
 }
 
 @media ( max-width: 480px ){
