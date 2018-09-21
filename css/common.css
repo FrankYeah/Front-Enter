@@ -25,11 +25,15 @@ img:hover{
     cursor: pointer;
 }
 
+p{
+    letter-spacing: 3px;
+}
+
 /* header */
 
 header{
     z-index: 1;
-    opacity: 0.9;
+    opacity: 0.8;
     width: 100%;
     position: fixed;
     display: flex;
@@ -66,6 +70,7 @@ header>nav{
 header>nav>div{
     line-height: 97px;
     color:white;
+    letter-spacing: 3px;
 }
 
 header>nav>div>img{
@@ -187,7 +192,7 @@ footer>div>img.footer-img{
     }
 }
 
-@media ( max-width: 542px ){
+@media ( max-width: 722px ){
     footer{
         height: auto;
     }
@@ -198,6 +203,9 @@ footer>div>img.footer-img{
         width: 133px;
         height: 65px;
         margin-top:15px;
+    }
+    header>nav>div{
+        letter-spacing: 1px;
     }
 }
 

@@ -7,7 +7,6 @@ const headerP2 = document.getElementById('headerP2');
 const headerP3 = document.getElementById('headerP3');
 const header = document.getElementById('header');
 
-
 window.addEventListener('scroll',winScroll);
 function winScroll(){
     if(document.documentElement.scrollTop>0){
@@ -15,11 +14,12 @@ function winScroll(){
         logo.src = "images/FE_logo-4.png";
         logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
         headerP1.style.color="rgb(128,128,128)";headerP2.style.color="rgb(128,128,128)";headerP3.style.color="rgb(128,128,128)";
-        header.style.animation = "headerBackgroundOut 5s ease 0s infinite alternate"
+        header.style.animation = "headerBackgroundOut 5s ease 0s 1 alternate forwards";
 
       }else if(document.documentElement.scrollTop<100){
         webSearch.src = "images/FE_search.png";
         logo.src = "images/FE_logo-1.png";
+        header.style.backgroundColor = "";
         logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
         headerP1.style.color="white";headerP2.style.color="white";headerP3.style.color="white";
         header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"

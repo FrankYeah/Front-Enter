@@ -37,6 +37,15 @@ main>article{
     margin: 10px;
 }
 
+main>article>a>p{
+    line-height: 28px;
+}
+
+main>article>a>p.article-location{
+    font-size: 12px;
+    color: rgb(125, 125, 125);
+}
+
 main>article>a>div.article-div{
     width:200px ; height: 200px;
     margin: 0 auto;
