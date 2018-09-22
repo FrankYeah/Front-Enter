@@ -12,8 +12,8 @@ main>div>.service{
     background: url("../images/FE_white.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    width: 306px;
-    height: 405px;
+    width: 336px;
+    height: 445px;
 }
 
 main>div>.service>img{
@@ -25,6 +25,8 @@ main>div>.service>img{
 
 main>div>.service>p{
     text-align: center;
+    line-height: 30px;
+    letter-spacing: 0px;
 }
 
 main>div>div>.service-line{
@@ -38,10 +40,10 @@ main>div>div>.service-button{
     padding: 7px 23px;
     margin: 0 auto;
     border-radius: 20px;
-    border: 1px solid rgb(26, 216, 211);
     text-align: center;
     font-size: 18px;
-    background-color: rgb(240, 233, 233);
+    color: white;
+    background-color: rgb(26, 216, 211);
 }
 
 main>div>div>.service-color{
@@ -55,6 +57,11 @@ main>div.partner{
     justify-content:space-around;
     width: auto;
     height: auto;
+}
+
+main>div.partner>div>p{
+    line-height: 30px;
+    letter-spacing: 0px;
 }
 
 /* section */
@@ -74,11 +81,11 @@ section>div{
     top:50%;
     left: 10%;
     color: white;
-    line-height: 60px;
+    line-height: 40px;
 }
 
 section>div>span.keyvisualSpan{
-    font-size:38px;
+    font-size:34px;
 }
 
 section>div>span.keyvisualSpanTwo{
