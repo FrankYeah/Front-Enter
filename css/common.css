@@ -154,13 +154,14 @@ footer{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 footer>p{
     font-size: 13px;
     line-height: 60px;  
-    letter-spacing: 0px;
-    text-align: center;
+    /* letter-spacing: 0px;
+    text-align: center; */
 }
 
 footer>p.m::before{
@@ -171,11 +172,13 @@ footer>p.m::before{
 
 footer>p.e::before{
     content:"E";
+    word-spacing: 20px;
     color:rgb(26, 216, 211);
 }
 
 footer>p.a::before{
     content:"A";
+    word-spacing: 20px;
     color:rgb(26, 216, 211);
 }
 
@@ -199,15 +202,10 @@ footer>div>img.footer-img{
     }
 }
 
-@media ( max-width: 1203px ){
+@media ( max-width: 722px ){
     footer{
         height: auto;
-        flex-wrap: wrap;
     }
-    footer>p{
-        flex:0;
-    }
-
 }
 
 @media ( max-width: 480px ){

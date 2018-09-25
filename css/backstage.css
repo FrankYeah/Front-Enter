@@ -16,6 +16,7 @@ main{
 
 main>p{
     font-size: 24px;
+    padding: 10px;
 }
 
 main>input{
@@ -23,7 +24,7 @@ main>input{
     padding: 10px;
     line-height: 28px;
     letter-spacing: 3px;
-    /* width: 500px; */
+    width: 500px;
     margin: 10px;
 }
 
@@ -32,7 +33,8 @@ main>textarea{
     padding: 10px;
     line-height: 28px;
     letter-spacing: 3px;
-    /* width: 1130px; */
+    width: 1130px;
+    height: 400px;
 }
 
 main>p.main-button{

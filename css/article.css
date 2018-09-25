@@ -25,7 +25,7 @@ section>div{
     position: relative;
     top:50%;left: 10%;
     color: white;
-    line-height: 60px;
+    line-height: 40px;
 }
 
 section>div>a>span.keyvisualSpan{
@@ -39,7 +39,7 @@ section>div>a>span.keyvisualSpanTwo{
 main{
     display: flex;flex-direction: row;flex-wrap: wrap;justify-content:center; 
     width: auto;height: auto;
-    padding:50px 0;
+    padding:70px 60px;
 }
 
 main>article{
@@ -49,12 +49,21 @@ main>article{
 }
 
 main>article>a>p{
-    line-height: 28px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    padding: 0px 30px;
 }
 
 main>article>a>p.article-location{
     font-size: 12px;
+    text-align: center;
     color: rgb(125, 125, 125);
+    line-height: 10px;
+}
+
+
+main>article>div.tag-line{
+    border-top:1px solid rgb(125, 125, 125); width: 20px;height: 20px; margin:0 auto;
 }
 
 main>article>a>div.article-div{
@@ -69,6 +78,7 @@ main>article>a>div>img.article-img{
 main>article>a>p.article-head{
     text-align: center;
     font-size: 30px;
+    letter-spacing: 0px;
     color: rgb(26, 216, 211);
     cursor: pointer;
 }
@@ -76,8 +86,6 @@ main>article>a>p.article-head{
 main>article>a>p:hover{
     opacity: 0.7;
 }
-
-
 
 @media ( max-width:1300px ){
     section{
@@ -119,10 +127,12 @@ main>article>a>p:hover{
         background-size: auto 365px;
         height: 340px;
     }
+    section>div{
+        line-height: 20px;
+    }
     section>div>a>span.keyvisualSpan{
         font-size:20px;
     }
-    
     section>div>a>span.keyvisualSpanTwo{
         font-size:20px;
     }

@@ -133,10 +133,12 @@ section>div>span.keyvisualSpanTwo{
         background-size: auto 365px;
         height: 340px;
     }
+    section>div{
+        line-height: 25px;
+    }
     section>div>span.keyvisualSpan{
         font-size:24px;
     }
-    
     section>div>span.keyvisualSpanTwo{
         font-size:24px;
     }
@@ -170,5 +172,11 @@ section>div>span.keyvisualSpanTwo{
     section{
         background-size: auto 220px;
         height: 190px;
+    }
+    section>div>span.keyvisualSpan{
+        font-size:18px;
+    }
+    section>div>span.keyvisualSpanTwo{
+        font-size:18px;
     }
 }

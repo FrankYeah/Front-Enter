@@ -3,7 +3,7 @@
 
 const keyvisual = document.getElementById('keyvisual');
 const keyvisualLink = document.getElementById('keyvisualLink');
-let keyvisualImg = new Array("images/FE_key_visual.png","images/testPic1.jpg","images/testpic2.jpg",);
+let keyvisualImg = new Array("images/FE_key_visual.png","images/testPic5.jpg","images/testpic6.jpg",);
 let keyvisualImg_len = keyvisualImg.length;  // 圖檔數量
 let i=1;  
 setInterval("changeKevisual()",5000);
