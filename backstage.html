@@ -7,6 +7,9 @@
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/backstage.css">
     <title>Front-Enter</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script src='js/firebase.js'></script>
 </head>
 
 <body>
@@ -26,37 +29,43 @@
     <aside><img id="testGo" src="images/FE_test_go.png" /></aside>
 
     <main>
-        <p>標題</p>
-        <input type="text" placeholder="AppWorks School">
-        <p>地點</p>
-        <input type="text" placeholder="台北">
+        <p>名稱</p>
+        <input id="mainName" type="text" placeholder="AppWorks School">
+        <p>學習城市</p>
+        <input id="mainCity" type="text" placeholder="台北">
         <p>技能</p>
-        <input type="text" placeholder="技能">
+        <input id="mainSkill" type="text" placeholder="前端">
         <p>技術</p>
-        <input type="text" placeholder="HTML、CSS、javascript">
+        <input id="mainTechnology" type="text" placeholder="HTML、CSS、javaScript">
         <p>每月費用</p>
-        <input type="text" placeholder="3,000 ( 元 )">
+        <input id="mainFee" type="text" placeholder="3,000 ( 元 )">
         <p>課程天數</p>
-        <input type="text" placeholder="60 ( 天 )">
+        <input id="mainTotalDay" type="text" placeholder="60 ( 天 )">
         <p>每周時數</p>
-        <input type="text" placeholder="40 ( 小時 )">
+        <input id="mainWeekHour" type="text" placeholder="40 ( 小時 )">
         <p>創辦多久</p>
-        <input type="text" placeholder="3 ( 年 )">
+        <input id="mainFoundYear" type="text" placeholder="3 ( 年 )">
         <p>教學方式</p>
-        <input type="text" placeholder="放養制、手把手教制">
+        <input id="mainTeachWay" type="text" placeholder="放養制、手把手教制">
         <p>班制</p>
-        <input type="text" placeholder="小班制、大班制、一對一">
-        <p>師資</p>
-        <input type="text" placeholder="2 ( 位 )">
+        <input  id="mainClassType" type="text" placeholder="小班制、大班制、一對一">
+        <p>老師數量</p>
+        <input id="mainTeacherNum" type="text" placeholder="2 ( 位 )">
         <p>內文標題</p>
-        <input type="text" placeholder="內文標題">
+        <input id="mainTopic" type="text" placeholder="內文標題">
+        <p>前言</p>
+        <input id="mainPreface" type="text" placeholder="AppWorks School 已有五屆...">
         <p>內文</p>
-        <textarea name="內文" id="" cols="30" rows="10"></textarea>
+        <textarea id="mainContent" name="內文" id="" cols="30" rows="10"></textarea>
         <p>聯絡（電話、郵件）</p>
-        <input type="text" placeholder="0917-218-567">
-        <input type="text" placeholder="aaa24295234@gmail.com">
+        <input id="mainPhone" type="text" placeholder="0917-218-567">
+        <input id="mainMail" type="text" placeholder="aaa24295234@gmail.com">
+        <p>方形圖片上傳</p>
+        <input id="mainUploadPic" type="file">
+        <p>長方形圖片上傳</p>
+        <input id="RectanglePic" type="file">
         <br><br><br>
-        <p class="main-button">發佈貼文</p>
+        <p id="mainButton" class="main-button">發佈貼文</p>
     </main>
 
     <div class="top">
@@ -73,6 +82,7 @@
             <img class="footer-img" src="images/FE_line.png" alt="">
         </div>
     </footer>
+
 
     <script src='js/backstage.js'></script>
     <script src='js/common.js'></script>
