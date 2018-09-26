@@ -74,70 +74,72 @@ function clickButton(){
     pathReference.getDownloadURL().then(function(url) {
     console.log(url)
     squareUrl = url;
+    callRetangle()
     })
     });
 
 //長方形圖片
+    function callRetangle(){
+        
+        uploadTaskRec.on('state_changed', function(snapshot){
+            // 觀察狀態變化，例如：progress, pause, and resume
 
-    uploadTaskRec.on('state_changed', function(snapshot){
-        // 觀察狀態變化，例如：progress, pause, and resume
+            // 取得檔案上傳狀態，並用數字顯示
 
-        // 取得檔案上傳狀態，並用數字顯示
+            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            console.log('Upload is ' + progress + '% done');
+            switch (snapshot.state) {
+            case firebase.storage.TaskState.PAUSED: // or 'paused'
 
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
-        switch (snapshot.state) {
-          case firebase.storage.TaskState.PAUSED: // or 'paused'
+                console.log('Upload is paused');
+                break;
+            case firebase.storage.TaskState.RUNNING: // or 'running'
 
-            console.log('Upload is paused');
-            break;
-          case firebase.storage.TaskState.RUNNING: // or 'running'
+                console.log('Upload is running');
+                break;
+            }
+        }, function(error) {
+        // Handle unsuccessful uploads
 
-            console.log('Upload is running');
-            break;
-        }
-    }, function(error) {
-    // Handle unsuccessful uploads
+        }, function() {
+        // Handle successful uploads on complete
+        // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 
-    }, function() {
-    // Handle successful uploads on complete
-    // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+        var downloadURL = uploadTaskRec.snapshot.downloadURL;
+        console.log(downloadURL)
 
-    var downloadURL = uploadTaskRec.snapshot.downloadURL;
-    console.log(downloadURL)
+        var pathReference = storageRef.child('images/'+getRectangleFile.name);
+        pathReference.getDownloadURL().then(function(url) {
+        console.log(url)
+        rectangleUrl = url
 
-    var pathReference = storageRef.child('images/'+getRectangleFile.name);
-    pathReference.getDownloadURL().then(function(url) {
-    console.log(url)
-    rectangleUrl = url
+        //存入所有資料
+        let newPostKey = firebase.database().ref().child('article').push().key;
+        let name = mainName.value;
+        let city = mainCity.value;
+        let skill = mainSkill.value;
+        let technology = mainTechnology.value;
+        let fee = mainFee.value;
+        let totalDay = mainTotalDay.value;
+        let weekHour = mainWeekHour.value;
+        let foundYear = mainFoundYear.value;
+        let teachWay =  mainTeachWay.value;
+        let classType = mainClassType.value;
+        let teacherNum = mainTeacherNum.value;
+        let topic = mainTopic.value;
+        let preface = mainPreface.value;
+        let content = mainContent.value;
+        let phone = mainPhone.value;
+        let mail = mainMail.value;
+        let sUrl = squareUrl;
+        let rUrl = rectangleUrl;
+        writePost(newPostKey, name, city, skill, technology, fee, totalDay, weekHour,foundYear,
+                teachWay, classType, teacherNum, topic, preface, content, phone, mail, sUrl, rUrl);
 
-    //存入所有資料
-    let newPostKey = firebase.database().ref().child('article').push().key;
-    let name = mainName.value;
-    let city = mainCity.value;
-    let skill = mainSkill.value;
-    let technology = mainTechnology.value;
-    let fee = mainFee.value;
-    let totalDay = mainTotalDay.value;
-    let weekHour = mainWeekHour.value;
-    let foundYear = mainFoundYear.value;
-    let teachWay =  mainTeachWay.value;
-    let classType = mainClassType.value;
-    let teacherNum = mainTeacherNum.value;
-    let topic = mainTopic.value;
-    let preface = mainPreface.value;
-    let content = mainContent.value;
-    let phone = mainPhone.value;
-    let mail = mainMail.value;
-    let sUrl = squareUrl;
-    let rUrl = rectangleUrl;
-    writePost(newPostKey, name, city, skill, technology, fee, totalDay, weekHour,foundYear,
-              teachWay, classType, teacherNum, topic, preface, content, phone, mail, sUrl, rUrl);
+        })
+        });
 
-    })
-    });
-
-
+    }
 }
 
 function writePost(newPostKey, name, city, skill, technology, fee, totalDay, weekHour,foundYear,

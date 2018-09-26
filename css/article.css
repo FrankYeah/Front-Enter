@@ -52,6 +52,7 @@ main>article>a>p{
     line-height: 24px;
     letter-spacing: 0px;
     padding: 0px 30px;
+    text-align: center;
 }
 
 main>article>a>p.article-location{
@@ -60,7 +61,6 @@ main>article>a>p.article-location{
     color: rgb(125, 125, 125);
     line-height: 10px;
 }
-
 
 main>article>div.tag-line{
     border-top:1px solid rgb(125, 125, 125); width: 20px;height: 20px; margin:0 auto;
