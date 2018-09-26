@@ -1,23 +1,23 @@
 
 // keyvisual 輪播
-
+let storePhoto = [];
 const keyvisual = document.getElementById('keyvisual');
 const keyvisualLink = document.getElementById('keyvisualLink');
-let keyvisualImg = new Array("images/FE_key_visual.png","images/testPic5.jpg","images/testpic6.jpg",);
-let keyvisualImg_len = keyvisualImg.length;  // 圖檔數量
 let i=1;  
 setInterval("changeKevisual()",5000);
 
 function changeKevisual(){
+    
+    let keyvisualImg = new Array(storePhoto[0],storePhoto[1],storePhoto[2],);
+    let keyvisualImg_len = keyvisualImg.length;  // 圖檔數量
     // keyvisual.style.animation = "opacityOut 2.5s ease 0s infinite alternate";
     keyvisual.style.background  =  "url('" + keyvisualImg[i] + "')";    
     keyvisual.style.backgroundRepeat  =  "no-repeat";  
     keyvisual.style.backgroundSize  =  "100% 630px";
-
     i++;
     if(i>=keyvisualImg_len) { i=0;}
-
 }
+
 
 // 抓 firebase 資料庫 json 資料
 let x = 0;
@@ -27,6 +27,7 @@ getAllData.orderByChild("skill").on("child_added", function(snapshot) {
 console.log(snapshot.key);
 console.log(snapshot.val());
 data = snapshot.val();
+storePhoto.push(data.rectangleUrl)
 createLayout(data);
 });
 
@@ -71,7 +72,7 @@ function tagLineBorn(){
 function contentABorn(data){
     let newElement = document.createElement('a');
     newElement.id = 'contentA' + x;
-    newElement.setAttribute('href', "/content.html");
+    newElement.setAttribute('href', "/content.html?id=" + data.creatTime);
     document.getElementById('article' + x).appendChild(newElement);
 }
 
