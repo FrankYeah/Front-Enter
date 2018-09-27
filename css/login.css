@@ -46,7 +46,6 @@ div.login-div-white>div.login-input-div{
     margin: 0 auto;
     height: 16%;
     width: 73%;
-    margin-left: 80px;
 }
 
 div.login-div-white>div.login-input-div>input.login-input-mail{
@@ -54,7 +53,6 @@ div.login-div-white>div.login-input-div>input.login-input-mail{
     height: 50%;
     border: rgb(128, 128, 128) solid 0.5px;
     font-size: 24px;
-    padding: 10px;
 }
 
 div.login-div-white>div.login-input-div>input.login-input-code{
@@ -63,7 +61,6 @@ div.login-div-white>div.login-input-div>input.login-input-code{
     border: rgb(128, 128, 128) solid 0.5px;
     border-top:  black solid 0px;
     font-size: 24px;
-    padding: 10px;
 }
 
 div.login-div-white>p.login-forget-code{
@@ -92,6 +89,7 @@ div.login-div-white>div.register-login-div>p.register-button-p{
     text-align: center;
     line-height: 52px;
     font-size: 20px;
+    border-radius: 10px;
 }
 
 div.login-div-white>div.register-login-div>p.login-button-p{
@@ -102,6 +100,7 @@ div.login-div-white>div.register-login-div>p.login-button-p{
     text-align: center;
     line-height: 52px;
     font-size: 20px;
+    border-radius: 10px;
 }
 
 div.login-div-white>div.Login-stop-line{
@@ -125,4 +124,70 @@ div.login-div-white>div.Login-stop-line>div.stop-line-word{
     height: 100%;
     text-align: center;
     line-height: 50px;
+}
+
+div.login-div-white>p.gmail-login-button{
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    background-color: #d93025;
+    color: white;
+    text-align: center;
+    line-height: 44px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+div.login-div-white>p.fb-login-button{
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    background-color: #576b95;
+    color: white;
+    text-align: center;
+    line-height: 42px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+@media ( max-width: 1100px ){
+    div.login-div-white{
+        left: 20%;
+        width: 60%;
+
+    }
+}
+
+@media ( max-width: 630px ){
+    div.login-div-white{
+        left: 10%;
+        width: 80%;
+    }
+    div.login-div-white>div.login-div-logo{
+        background-size: 225px 105px;
+        width: 225px;
+        height: 105px;
+    }
+}
+
+@media ( max-width: 480px ){
+    div.login-div-white{
+        left: 2.5%;
+        width: 95%;
+    }
+    div.login-div-white>p.gmail-login-button{
+        font-size: 16px;
+    }
+    div.login-div-white>p.fb-login-button{
+        font-size: 16px;
+    }
+    div.login-div-white>div.register-login-div>p.register-button-p{
+        font-size: 16px;
+        line-height: 42px;
+    }
+    div.login-div-white>div.register-login-div>p.login-button-p{
+        font-size: 16px;
+        line-height: 42px;
+    }
 }

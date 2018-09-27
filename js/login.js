@@ -17,6 +17,8 @@ function createLoginLayout(){
         stopLineLeft();
         stopLineWord();
         stopLineLeft();
+        gmailLoginButton();
+        fbLoginButton();
 }
 
 function loginFullDiv(){
@@ -118,4 +120,20 @@ function stopLineWord(){
     newElement.textContent = 'or';
     newElement.className = 'stop-line-word';
     document.getElementById('LoginStopLine').appendChild(newElement);
+}
+
+function gmailLoginButton(){
+    let newElement = document.createElement('p');
+    newElement.id = 'gmailLoginButton'
+    newElement.className = 'gmail-login-button';
+    newElement.textContent = 'Log In With Gmail';
+    document.getElementById('loginDivWhite').appendChild(newElement);
+}
+
+function fbLoginButton(){
+    let newElement = document.createElement('p');
+    newElement.id = 'fbLoginButton'
+    newElement.className = 'fb-login-button';
+    newElement.textContent = 'Log In With Facebook';
+    document.getElementById('loginDivWhite').appendChild(newElement);
 }
