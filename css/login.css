@@ -1,0 +1,128 @@
+p{
+    letter-spacing: 3px;
+}
+
+input{
+    letter-spacing: 3px;
+}
+
+div.login-full-div{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    opacity: 0.1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+div.login-div-white{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    opacity: 1;
+    bottom: 3%;
+    left: 30%;
+    width: 40%;
+    height: 90%;
+    background-color: white;
+}
+
+div.login-div-white>div.login-div-logo{
+    margin: 0 auto;
+    margin-top: 50px;
+    background: url(../images/FE_logo-2.png);
+    background-repeat: no-repeat;
+    background-size: 325px 145px;
+    width: 325px;
+    height: 145px;
+}
+
+div.login-div-white>div.login-input-div{
+    margin: 0 auto;
+    height: 16%;
+    width: 73%;
+    margin-left: 80px;
+}
+
+div.login-div-white>div.login-input-div>input.login-input-mail{
+    width: 100%;
+    height: 50%;
+    border: rgb(128, 128, 128) solid 0.5px;
+    font-size: 24px;
+    padding: 10px;
+}
+
+div.login-div-white>div.login-input-div>input.login-input-code{
+    width: 100%;
+    height: 50%;
+    border: rgb(128, 128, 128) solid 0.5px;
+    border-top:  black solid 0px;
+    font-size: 24px;
+    padding: 10px;
+}
+
+div.login-div-white>p.login-forget-code{
+    color: rgb(128, 128, 128);
+    font-size: 16px;
+    text-align: right;
+    margin-top: 50px;
+    padding-right: 80px;
+}
+
+div.login-div-white>div.register-login-div{
+    margin: 0 auto;
+    height: 8%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: -20px;
+}
+
+div.login-div-white>div.register-login-div>p.register-button-p{
+    width: 45%;
+    background-color: rgb(26,216,211);
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 52px;
+    font-size: 20px;
+}
+
+div.login-div-white>div.register-login-div>p.login-button-p{
+    width: 45%;
+    background-color: rgb(26,216,211);
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 52px;
+    font-size: 20px;
+}
+
+div.login-div-white>div.Login-stop-line{
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+div.login-div-white>div.Login-stop-line>div.stop-line-left{
+    width: 40%;
+    height: 50%;
+    border-bottom: 0.5px solid rgb(128, 128, 128);
+}
+
+div.login-div-white>div.Login-stop-line>div.stop-line-word{
+    color: rgb(128, 128, 128);
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    line-height: 50px;
+}

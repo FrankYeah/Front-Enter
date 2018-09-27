@@ -25,8 +25,8 @@ function changeKevisual(){
 let x = 0;
 let getAllData = database.ref("article");
 let data;
-
 let articleId = (new URL(document.location)).searchParams.get("id");  //取得url的id
+
 if(articleId == null){
     console.log('no id')
     getAllData.orderByChild("skill").on("child_added", function(snapshot) {
@@ -40,14 +40,25 @@ if(articleId == null){
         ){
     console.log('have id')
     getAllData.orderByChild("skill").on("child_added", function(snapshot) {
-        data = snapshot.val();
-        storePhoto.push(data.rectangleUrl);
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         storeLink.push('content.html?id=' + data.creatTime);
         document.getElementById('mainId').innerHTML = '';
     });
     getAllData.orderByChild("name").equalTo('彭彭的課程教學').on("child_added", function(snapshot) {
-        data = snapshot.val();
-        createLayout(data);
+        data = snapshot.val();  createLayout(data);
+    });  
+}else if(articleId == 'a' || articleId == 'app' || articleId == 'appworks' 
+        || articleId == 'A' || articleId == 'App' || articleId == 'APP' 
+        || articleId == 'AppWorks School' || articleId == 'AppWorks'
+){
+    console.log('got a')
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("name").equalTo("AppWorks School").on("child_added", function(snapshot) {
+        data = snapshot.val();   createLayout(data);
     });  
 }
 
