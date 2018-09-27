@@ -55,3 +55,110 @@ window.onload = function() {
     };  
 }
 
+// 搜尋
+
+webSearch.addEventListener('click', startSearch);
+let countClick = 0;
+function startSearch(){
+    if(countClick==0){
+        fullSearchDiv();
+        fullSearchWhiteDiv();
+        whiteDivLeft();
+        whiteDivRight();
+        whiteDivLeftIcon();
+        whiteDivLeftText();
+        whiteDivLeftBox();
+        leftInput();
+        leftButton();
+        countClick++;
+    }else{
+        let child=document.getElementById("fullSearchDiv");
+        document.body.removeChild(child);
+        let anotherChild=document.getElementById("fullSearchWhiteDiv");
+        document.body.removeChild(anotherChild);
+        countClick--;
+    }
+}
+
+function fullSearchDiv(){
+    let newElement = document.createElement('div');
+    newElement.id = 'fullSearchDiv';
+    newElement.className = 'fullSearchDiv';
+    document.body.appendChild(newElement);
+    newElement.onclick = function(){
+        startSearch();
+    }
+}
+
+function fullSearchWhiteDiv(){
+    let newElement = document.createElement('div');
+    newElement.id = 'fullSearchWhiteDiv';
+    newElement.className = 'fullSearchWhiteDiv';
+    document.body.appendChild(newElement);
+}
+
+function whiteDivLeft(){
+    let newElement = document.createElement('div');
+    newElement.id = 'whiteDivLeft';
+    newElement.className = 'whiteDivLeft';
+    document.getElementById('fullSearchWhiteDiv').appendChild(newElement);
+}
+
+function whiteDivRight(){
+    let newElement = document.createElement('div');
+    newElement.id = 'whiteDivRight';
+    newElement.className = 'whiteDivRight';
+    newElement.textContent = 'X';
+    document.getElementById('fullSearchWhiteDiv').appendChild(newElement);
+    newElement.onclick = function(){
+        startSearch();
+    }
+}
+
+function whiteDivLeftIcon(){
+    let newElement = document.createElement('div');
+    newElement.className = 'whiteDivLeftIcon';
+    document.getElementById('whiteDivLeft').appendChild(newElement);
+}
+
+function whiteDivLeftText(){
+    let newElement = document.createElement('p');
+    newElement.className = 'whiteDivLeftText';
+    newElement.textContent = 'SEARCH';
+    document.getElementById('whiteDivLeft').appendChild(newElement);
+}
+
+function whiteDivLeftBox(){
+    let newElement = document.createElement('form');
+    newElement.id = 'whiteDivLeftBox';
+    newElement.className = 'whiteDivLeftBox';
+    newElement.onsubmit = 'return searchToArticle()';
+    document.getElementById('whiteDivLeft').appendChild(newElement);
+}
+
+function leftInput(){
+    let newElement = document.createElement('input');
+    newElement.className = 'leftInput';
+    newElement.id = 'leftInput';
+    newElement.type = 'text';
+    document.getElementById('whiteDivLeftBox').appendChild(newElement);
+    newElement.onkeypress = function(event){
+        if(event.keyCode == 13){
+            event.preventDefault();
+            window.location = 'article.html?id='+document.getElementById('leftInput').value ; 
+        }
+    }
+}
+
+function leftButton(){
+    let newElement = document.createElement('div');
+    newElement.className = 'leftButton';
+    document.getElementById('whiteDivLeftBox').appendChild(newElement);
+    newElement.onclick = function(){
+        window.location = 'article.html?id='+document.getElementById('leftInput').value ; 
+    }
+}
+
+function searchToArticle(){
+    window.location = 'article.html?id='+document.getElementById('leftInput').value ; 
+}
