@@ -168,7 +168,7 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     alert('貼文已發布')
 }
 
-// 登出
+// 登出功能
 
 document.getElementById('logoutTest').onclick = logMeOut;
 
@@ -181,10 +181,15 @@ function logMeOut(){
     })
 }
 
+//設定登入權限
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userLogin = user;
+    if(userLogin.email == "aaa24295234@gmail.com"){
+    }else{
+        window.location = 'profile.html';
+    }
   } else {
     userLogin = null;
     console.log("User is not logined yet.");

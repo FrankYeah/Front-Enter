@@ -1,3 +1,5 @@
+//登出功能
+
 document.getElementById('logoutTest').onclick = logoutMeOut;
 
 function logoutMeOut(){
@@ -9,12 +11,14 @@ function logoutMeOut(){
     })
 }
 
+//設定登入權限
+
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         userLogin = user;
         if(userLogin.email == "aaa24295234@gmail.com"){
-            window.location = 'backstage.html';
             }else{
+                // window.location = 'profile.html';
             }
     } else {
         userLogin = null;

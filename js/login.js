@@ -180,8 +180,9 @@ function loginHere(){
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage);
+        alert('郵件或密碼輸入錯誤哦!')
     })
-
+    
 }
 
 // 監聽使用者是否登入
@@ -194,6 +195,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("User is logined", user)
     }else{
         console.log('尚未驗證此郵件')
+        firebase.auth().signOut().then(function() {
+            console.log("User sign out!");
+        }, function(error) {
+        console.log("User sign out error!");
+        })
     }
   } else {
     userLogin = null;
@@ -216,8 +222,7 @@ function detectLogin(){
         } else {
           userLogin = null;
           console.log("User is not logined yet.");
-        }
-      
+        }      
       });
 }
 
