@@ -38,9 +38,9 @@ mainButton.addEventListener('click',clickButton);
 
 function clickButton(){
         
-    var storageRef = firebase.storage().ref();
-    var uploadTask = storageRef.child('images/'+getFile.name).put(getFile);
-    var uploadTaskRec = storageRef.child('images/'+getRectangleFile.name).put(getRectangleFile);
+    let storageRef = firebase.storage().ref();
+    let uploadTask = storageRef.child('images/'+getFile.name).put(getFile);
+    let uploadTaskRec = storageRef.child('images/'+getRectangleFile.name).put(getRectangleFile);
 
 //方形圖片
 
@@ -48,7 +48,7 @@ function clickButton(){
         // 觀察狀態變化，例如：progress, pause, and resume
         // 取得檔案上傳狀態，並用數字顯示
 
-        var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         console.log('Upload is ' + progress + '% done');
         switch (snapshot.state) {
           case firebase.storage.TaskState.PAUSED: // or 'paused'
@@ -67,10 +67,10 @@ function clickButton(){
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 
-    var downloadURL = uploadTask.snapshot.downloadURL;
+    let downloadURL = uploadTask.snapshot.downloadURL;
     console.log(downloadURL)
 
-    var pathReference = storageRef.child('images/'+getFile.name);
+    let pathReference = storageRef.child('images/'+getFile.name);
     pathReference.getDownloadURL().then(function(url) {
     console.log(url)
     squareUrl = url;
@@ -86,7 +86,7 @@ function clickButton(){
 
             // 取得檔案上傳狀態，並用數字顯示
 
-            var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+            let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             console.log('Upload is ' + progress + '% done');
             switch (snapshot.state) {
             case firebase.storage.TaskState.PAUSED: // or 'paused'
@@ -105,10 +105,10 @@ function clickButton(){
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 
-        var downloadURL = uploadTaskRec.snapshot.downloadURL;
+        let downloadURL = uploadTaskRec.snapshot.downloadURL;
         console.log(downloadURL)
 
-        var pathReference = storageRef.child('images/'+getRectangleFile.name);
+        let pathReference = storageRef.child('images/'+getRectangleFile.name);
         pathReference.getDownloadURL().then(function(url) {
         console.log(url)
         rectangleUrl = url
@@ -167,3 +167,28 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     });
     alert('貼文已發布')
 }
+
+// 登出
+
+document.getElementById('logoutTest').onclick = logMeOut;
+
+function logMeOut(){
+    firebase.auth().signOut().then(function() {
+        console.log("User sign out!");
+        window.location.reload();
+    }, function(error) {
+    console.log("User sign out error!");
+    })
+}
+
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    userLogin = user;
+  } else {
+    userLogin = null;
+    console.log("User is not logined yet.");
+    window.location = 'index.html' ; 
+  }
+});
+

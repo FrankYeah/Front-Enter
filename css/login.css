@@ -11,12 +11,12 @@ div.login-full-div{
     display: flex;
     flex-direction: column;
     z-index: 3;
-    opacity: 0.1;
+    opacity: 1;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: rgba(192, 192, 192, 0.3);
 }
 
 div.login-div-white{
@@ -25,7 +25,7 @@ div.login-div-white{
     flex-direction: column;
     z-index: 3;
     opacity: 1;
-    bottom: 3%;
+    bottom: 5%;
     left: 30%;
     width: 40%;
     height: 90%;
@@ -34,7 +34,7 @@ div.login-div-white{
 
 div.login-div-white>div.login-div-logo{
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 20px;
     background: url(../images/FE_logo-2.png);
     background-repeat: no-repeat;
     background-size: 325px 145px;
@@ -53,6 +53,7 @@ div.login-div-white>div.login-input-div>input.login-input-mail{
     height: 50%;
     border: rgb(128, 128, 128) solid 0.5px;
     font-size: 24px;
+    padding-left: 6px;
 }
 
 div.login-div-white>div.login-input-div>input.login-input-code{
@@ -61,6 +62,7 @@ div.login-div-white>div.login-input-div>input.login-input-code{
     border: rgb(128, 128, 128) solid 0.5px;
     border-top:  black solid 0px;
     font-size: 24px;
+    padding-left: 6px;
 }
 
 div.login-div-white>p.login-forget-code{
