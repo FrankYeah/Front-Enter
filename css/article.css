@@ -66,6 +66,7 @@ main>article>a>p{
     letter-spacing: 0px;
     padding: 0px 30px;
     text-align: center;
+    width: 240px;
 }
 
 main>article>a>p.article-location{
@@ -94,6 +95,7 @@ main>article>a>p.article-head{
     letter-spacing: 0px;
     color: rgb(26, 216, 211);
     cursor: pointer;
+    width: auto;
 }
 
 main>article>a>p:hover{

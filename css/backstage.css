@@ -43,6 +43,7 @@ main>p.main-button{
     width: 200px;
     text-align: center;
     padding: 30px;
+    cursor: pointer;
 }
 
 @media ( max-width:1300px ){

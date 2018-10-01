@@ -73,8 +73,8 @@ function startSearch(){
         fullSearchDiv();
         fullSearchWhiteDiv();
         whiteDivLeft();
-        whiteDivRight();
-        whiteDivLeftIcon();
+        // whiteDivRight();
+        // whiteDivLeftIcon();
         whiteDivLeftText();
         whiteDivLeftBox();
         leftInput();
@@ -170,4 +170,93 @@ function leftButton(){
 
 function searchToArticle(){
     window.location = 'article.html?id='+document.getElementById('leftInput').value ; 
+}
+
+// 測驗 GO
+
+const testGo = document.getElementById('testGo');
+testGo.addEventListener('click', createTestGo)
+
+function createTestGo(){
+    if(countClick==0){
+        let oneHeader = '測驗說明';
+        let oneList = '點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境。';
+        let oneButton = '開始測驗';
+        testGoBackDiv();
+        testGoWhiteDiv();
+        testOneHeader(oneHeader);
+        testOneList(oneList);
+        testOneButton(oneButton);
+        countClick++;
+    }else{
+        let child=document.getElementById("testGoBackDiv");
+        document.body.removeChild(child);
+        countClick--;
+    }
+}
+
+function testGoBackDiv(){
+    let newElement = document.createElement('div');
+    newElement.className = 'test-go-back-div';
+    newElement.id = 'testGoBackDiv';
+    document.body.appendChild(newElement);
+    newElement.onclick = createTestGo;
+}
+
+function testGoWhiteDiv(){
+    let newElement = document.createElement('div');
+    newElement.className = 'test-go-white-div';
+    newElement.id = 'testGoWhiteDiv';
+    document.getElementById('testGoBackDiv').appendChild(newElement);
+    newElement.onclick = function(event){
+        event.stopPropagation();
+    }
+}
+
+function testOneHeader(oneHeader){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-one-header';
+    newElement.id = 'testOneHeader';
+    newElement.textContent = oneHeader;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+}
+
+function testOneHeader(oneList){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-one-header';
+    newElement.id = 'testOneHeader';
+    newElement.textContent = oneList;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+}
+
+function testOneList(oneButton){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-one-list';
+    newElement.id = 'testOneList';
+    newElement.textContent = oneButton;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+}
+
+function testOneButton(){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-one-button';
+    newElement.id = 'testOneButton';
+    newElement.textContent = '開始測驗';
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    newElement.onclick = testTwoSart;
+}
+
+function testTwoQuestionCount(questionCount){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-two-question-count';
+    newElement.id = 'testTwoQuestionCount';
+    newElement.textContent = questionCount;
+}
+
+function testTwoSart(){
+    console.log('hihi')
+    document.getElementById('testGoWhiteDiv').innerHTML = '';
+    let oneButton = '選擇在哪座城市學習？'
+    testOneList(oneButton);
+    
 }

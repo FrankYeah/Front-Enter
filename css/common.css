@@ -191,6 +191,8 @@ footer>div>img.footer-img{
     vertical-align : middle;  
 }
 
+/* 搜尋 */
+
 div.fullSearchDiv{
     z-index: 3;
     opacity: 0.7;
@@ -222,7 +224,7 @@ div.fullSearchWhiteDiv{
 }
 
 div.fullSearchWhiteDiv>div.whiteDivLeft{
-    width: 90%;
+    width: 100%;
     height: 86%;
     background-color: rgb(243, 243, 243);
     padding: 30px 0px;
@@ -248,6 +250,7 @@ div.fullSearchWhiteDiv>div.whiteDivLeft>div.whiteDivLeftIcon{
     width: 54px;
     height: 58px;
     margin-bottom: -24px;
+
 }
 
 div.fullSearchWhiteDiv>div.whiteDivLeft>p.whiteDivLeftText{
@@ -284,12 +287,71 @@ div.fullSearchWhiteDiv>div.whiteDivLeft>form.whiteDivLeftBox>div.leftButton{
     height: 58px;
     margin: 0 auto;
     margin-top: 16px;
+    cursor: pointer;
 }
 
 mark>div:hover{
     cursor: pointer;
     opacity: 0.8;
 }
+
+/* 測驗 Go */ 
+
+div.test-go-back-div{
+    z-index: 1;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(192, 192, 192, 0.3);
+}
+
+div.test-go-back-div>div.test-go-white-div{
+    z-index: 2;
+    position: fixed;
+    width: 500px;
+    height: 550px;
+    border-radius: 4px;
+    background: rgb(26, 216, 211);
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-one-header{
+    color: white;
+    font-size: 38px;
+    text-align: center;
+    font-weight:bold;    
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-one-list{
+    color: white;
+    font-size: 20px;
+    padding: 0px 50px;
+    text-align: center;
+    font-weight:bold;
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-one-button{
+    color: rgb(26, 216, 211);
+    font-size: 24px;
+    background-color: white;
+    text-align: center;
+    padding: 30px;
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    border-radius: 10px;
+    line-height: 45px;
+    margin-top: 45%;
+    font-weight:bold;
+    cursor: pointer;
+}
+
+/* media */
 
 @media ( max-width: 660px ){
     header>div{
