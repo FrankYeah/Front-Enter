@@ -221,29 +221,24 @@ function testOneHeader(oneHeader){
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function testOneHeader(oneList){
+
+function testOneList(oneList){
     let newElement = document.createElement('p');
-    newElement.className = 'test-one-header';
-    newElement.id = 'testOneHeader';
+    newElement.className = 'test-one-list';
+    newElement.id = 'testOneList';
     newElement.textContent = oneList;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function testOneList(oneButton){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-one-list';
-    newElement.id = 'testOneList';
-    newElement.textContent = oneButton;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-}
+// 第一個「測驗開始」按鈕
 
-function testOneButton(){
+function testOneButton(oneButton){
     let newElement = document.createElement('p');
     newElement.className = 'test-one-button';
     newElement.id = 'testOneButton';
-    newElement.textContent = '開始測驗';
+    newElement.textContent = oneButton;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = testTwoSart;
+    newElement.onclick = testTwoStart;
 }
 
 function testTwoQuestionCount(questionCount){
@@ -251,12 +246,152 @@ function testTwoQuestionCount(questionCount){
     newElement.className = 'test-two-question-count';
     newElement.id = 'testTwoQuestionCount';
     newElement.textContent = questionCount;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function testTwoSart(){
-    console.log('hihi')
+function testTwoSelect(twoSelect){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-two-select';
+    newElement.id = 'testTwoSelect';
+    newElement.textContent = twoSelect;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    newElement.onclick = testThreeStart;
+}
+
+function testTwoStart(){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     let oneButton = '選擇在哪座城市學習？'
     testOneList(oneButton);
-    
+    let questionCount = '1/5';
+    testTwoQuestionCount(questionCount);
+    let TwoSelectTaipei = '台北';
+    testTwoSelect(TwoSelectTaipei);
+    let TwoSelectTaichung = '台中';
+    testTwoSelect(TwoSelectTaichung);
+    let TwoSelectKau = '高雄';
+    testTwoSelect(TwoSelectKau);
+    let TwoSelectEveryPlace = '各地';
+    testTwoSelect(TwoSelectEveryPlace);
+    let TwoSelectNotImportant = '不重要';
+    testTwoSelect(TwoSelectNotImportant);
+}
+
+// 點擊城市
+
+function testThreeStart(){
+    document.getElementById('testGoWhiteDiv').innerHTML = '';
+    let oneButton = '每月能撥出多少費用學習？'
+    testOneList(oneButton);
+    let questionCount = '2/5';
+    testTwoQuestionCount(questionCount);
+    let threeSelectThree = '3000元以下';
+    testThreeSelect(threeSelectThree);
+    let threeSelectSix = '3000-6000元';
+    testThreeSelect(threeSelectSix);
+    let threeSelectTen = '6000-10,000元';
+    testThreeSelect(threeSelectTen);
+    let threeSelectTenUp = '10,000元以上';
+    testThreeSelect(threeSelectTenUp);
+    let threeSelectNotImportant = '不重要';
+    testThreeSelect(threeSelectNotImportant);
+}
+
+function testThreeSelect(threeSelect){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-three-select';
+    newElement.id = 'testThreeSelect';
+    newElement.textContent = threeSelect;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    newElement.onclick = testFourStart;
+}
+
+function testFourStart(){
+    document.getElementById('testGoWhiteDiv').innerHTML = '';
+    let oneButton = '每周能撥出多少時間學習？'
+    testOneList(oneButton);
+    let questionCount = '3/5';
+    testTwoQuestionCount(questionCount);
+    let fourSelectfifty = '1-15小時';
+    testFourSelect(fourSelectfifty);
+    let fourSelectThirty = '15-30小時';
+    testFourSelect(fourSelectThirty);
+    let fourSelectFortyFive = '30-45小時';
+    testFourSelect(fourSelectFortyFive);
+    let fourSelectFortyFiveUp = '45小時以上';
+    testFourSelect(fourSelectFortyFiveUp);
+    let fourSelectNotImportant = '不重要';
+    testFourSelect(fourSelectNotImportant);
+}
+
+function testFourSelect(fourSelect){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-four-select';
+    newElement.id = 'testFourSelect';
+    newElement.textContent = fourSelect;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    newElement.onclick = testFiveStart;
+}
+
+function testFiveStart(){
+    document.getElementById('testGoWhiteDiv').innerHTML = '';
+    let oneButton = '對班制的需求是？';
+    testOneList(oneButton);
+    let questionCount = '4/5';
+    testTwoQuestionCount(questionCount);
+    let fiveSelectBigClass = '大班制';
+    testFiveSelect(fiveSelectBigClass);
+    let fiveSelectsmallClass = '小班制';
+    testFiveSelect(fiveSelectsmallClass);
+    let fiveSelectNotImportant = '不重要';
+    testFiveSelect(fiveSelectNotImportant);
+}
+
+function testFiveSelect(fiveSelect){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-five-select';
+    newElement.id = 'testFiveSelect';
+    newElement.textContent = fiveSelect;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    newElement.onclick = testSixStart;
+}
+
+function testSixStart(){
+    document.getElementById('testGoWhiteDiv').innerHTML = '';
+    let oneButton = '喜歡什麼樣的教學方式？';
+    testOneList(oneButton);
+    let questionCount = '5/5';
+    testTwoQuestionCount(questionCount);
+    let sixSelectLetGo = '放養制';
+    testSixSelect(sixSelectLetGo);
+    let sixSelectOneByOne = '手把手教制';
+    testSixSelect(sixSelectOneByOne);
+    let sixSelectNotImportant = '不重要';
+    testSixSelect(sixSelectNotImportant);
+}
+
+function testSixSelect(sixSelect){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-six-select';
+    newElement.id = 'testSixSelect';
+    newElement.textContent = sixSelect;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    newElement.onclick = testEndStart;
+}
+
+function testEndStart(){
+    document.getElementById('testGoWhiteDiv').innerHTML = '';
+    let oneHeader = '結果';
+    testOneHeader(oneHeader);
+    let oneButton = '80%';
+    testOneList(oneButton);
+    let endOne = '六角學院';
+    testEndSelect(endOne);
+}
+
+function testEndSelect(endSelect){
+    let newElement = document.createElement('p');
+    newElement.className = 'test-end-select';
+    newElement.id = 'testEndSelect';
+    newElement.textContent = endSelect;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }

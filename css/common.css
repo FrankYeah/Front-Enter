@@ -335,6 +335,13 @@ div.test-go-back-div>div.test-go-white-div>p.test-one-list{
     font-weight:bold;
 }
 
+div.test-go-back-div>div.test-go-white-div>p.test-two-question-count{
+    color: rgb(128, 128, 128);
+    text-align: center;
+    padding: 10px;
+    padding-bottom: 25px;
+}
+
 div.test-go-back-div>div.test-go-white-div>p.test-one-button{
     color: rgb(26, 216, 211);
     font-size: 24px;
@@ -349,6 +356,102 @@ div.test-go-back-div>div.test-go-white-div>p.test-one-button{
     margin-top: 45%;
     font-weight:bold;
     cursor: pointer;
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-two-select{
+    color: rgb(26, 216, 211);
+    font-size: 24px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    border-radius: 10px;
+    line-height: 45px;
+    font-weight:bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-three-select{
+    color: rgb(26, 216, 211);
+    font-size: 24px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    border-radius: 10px;
+    line-height: 45px;
+    font-weight:bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-four-select{
+    color: rgb(26, 216, 211);
+    font-size: 24px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    border-radius: 10px;
+    line-height: 45px;
+    font-weight:bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-five-select{
+    color: rgb(26, 216, 211);
+    font-size: 24px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    border-radius: 10px;
+    line-height: 45px;
+    font-weight:bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-six-select{
+    color: rgb(26, 216, 211);
+    font-size: 24px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    border-radius: 10px;
+    line-height: 45px;
+    font-weight:bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+div.test-go-back-div>div.test-go-white-div>p.test-end-select{
+    color: rgb(26, 216, 211);
+    font-size: 24px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 0 auto;
+    height: 8%;
+    width: 75%;
+    border-radius: 10px;
+    line-height: 45px;
+    font-weight:bold;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
 /* media */
