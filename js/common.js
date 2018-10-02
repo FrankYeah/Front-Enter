@@ -180,7 +180,7 @@ testGo.addEventListener('click', createTestGo)
 function createTestGo(){
     if(countClick==0){
         let oneHeader = '測驗說明';
-        let oneList = '點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境。';
+        let oneList = '點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。';
         let oneButton = '開始測驗';
         testGoBackDiv();
         testGoWhiteDiv();
@@ -256,6 +256,7 @@ function testTwoSelect(twoSelect){
     newElement.textContent = twoSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
     newElement.onclick = testThreeStart;
+
 }
 
 function testTwoStart(){
@@ -274,11 +275,14 @@ function testTwoStart(){
     testTwoSelect(TwoSelectEveryPlace);
     let TwoSelectNotImportant = '不重要';
     testTwoSelect(TwoSelectNotImportant);
+
 }
 
-// 點擊城市
+// 顯示選項
 
-function testThreeStart(){
+let getAllSelect = [];
+
+function testThreeStart(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     let oneButton = '每月能撥出多少費用學習？'
     testOneList(oneButton);
@@ -294,18 +298,19 @@ function testThreeStart(){
     testThreeSelect(threeSelectTenUp);
     let threeSelectNotImportant = '不重要';
     testThreeSelect(threeSelectNotImportant);
+    getAllSelect.push(event.target.textContent);
 }
 
 function testThreeSelect(threeSelect){
     let newElement = document.createElement('p');
-    newElement.className = 'test-three-select';
+    newElement.className = 'test-two-select';
     newElement.id = 'testThreeSelect';
     newElement.textContent = threeSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
     newElement.onclick = testFourStart;
 }
 
-function testFourStart(){
+function testFourStart(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     let oneButton = '每周能撥出多少時間學習？'
     testOneList(oneButton);
@@ -321,18 +326,19 @@ function testFourStart(){
     testFourSelect(fourSelectFortyFiveUp);
     let fourSelectNotImportant = '不重要';
     testFourSelect(fourSelectNotImportant);
+    getAllSelect.push(event.target.textContent);
 }
 
 function testFourSelect(fourSelect){
     let newElement = document.createElement('p');
-    newElement.className = 'test-four-select';
+    newElement.className = 'test-two-select';
     newElement.id = 'testFourSelect';
     newElement.textContent = fourSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
     newElement.onclick = testFiveStart;
 }
 
-function testFiveStart(){
+function testFiveStart(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     let oneButton = '對班制的需求是？';
     testOneList(oneButton);
@@ -344,18 +350,19 @@ function testFiveStart(){
     testFiveSelect(fiveSelectsmallClass);
     let fiveSelectNotImportant = '不重要';
     testFiveSelect(fiveSelectNotImportant);
+    getAllSelect.push(event.target.textContent);
 }
 
 function testFiveSelect(fiveSelect){
     let newElement = document.createElement('p');
-    newElement.className = 'test-five-select';
+    newElement.className = 'test-two-select';
     newElement.id = 'testFiveSelect';
     newElement.textContent = fiveSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
     newElement.onclick = testSixStart;
 }
 
-function testSixStart(){
+function testSixStart(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     let oneButton = '喜歡什麼樣的教學方式？';
     testOneList(oneButton);
@@ -367,31 +374,74 @@ function testSixStart(){
     testSixSelect(sixSelectOneByOne);
     let sixSelectNotImportant = '不重要';
     testSixSelect(sixSelectNotImportant);
+    getAllSelect.push(event.target.textContent);
 }
 
 function testSixSelect(sixSelect){
     let newElement = document.createElement('p');
-    newElement.className = 'test-six-select';
+    newElement.className = 'test-two-select';
     newElement.id = 'testSixSelect';
     newElement.textContent = sixSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
     newElement.onclick = testEndStart;
 }
 
-function testEndStart(){
+// 顯示結果 & 圓形動畫製作
+
+function testEndStart(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     let oneHeader = '結果';
-    testOneHeader(oneHeader);
-    let oneButton = '80%';
-    testOneList(oneButton);
-    let endOne = '六角學院';
-    testEndSelect(endOne);
+    testOneList(oneHeader);
+    endPieChart();
+    whiteInPieChart();
+    resultA();
+    let endResult = '六角學院';
+    forEndResult(endResult);
+    getAllSelect.push(event.target.textContent);
+    getAllSelectLogic();
 }
 
 function testEndSelect(endSelect){
     let newElement = document.createElement('p');
-    newElement.className = 'test-end-select';
+    newElement.className = 'test-two-select';
     newElement.id = 'testEndSelect';
     newElement.textContent = endSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
+}
+
+function endPieChart(){
+    let newElement = document.createElement('div');
+    newElement.className = 'end-pie-chart';
+    newElement.id = 'endPieChart';
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+}
+
+function whiteInPieChart(){
+    let newElement = document.createElement('div');
+    newElement.className = 'white-in-pie-chart';
+    newElement.id = 'whiteInPieChart';
+    newElement.textContent = '100%';
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+}
+
+function resultA(){
+    let newElement = document.createElement('a');
+    newElement.id = 'resultA';
+    newElement.className = 'result-a';
+    newElement.href = 'content.html';
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+}
+
+function forEndResult(endResult){
+    let newElement = document.createElement('p');
+    newElement.className = 'for-end-result';
+    newElement.id = 'forEndResult';
+    newElement.textContent = endResult;
+    document.getElementById('resultA').appendChild(newElement);
+}
+
+// 遊戲邏輯
+
+function getAllSelectLogic(){
+    getAllSelect
 }
