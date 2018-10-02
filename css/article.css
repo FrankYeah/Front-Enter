@@ -4,7 +4,7 @@ section{
     position: relative;
     /* background: url("../images/FE_key_visual.png"); */
     background-repeat: no-repeat;
-    background-size: 100% 630px;
+    background-size: cover;
     height: 580px;
     /* width: 100%; */
     box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px;
@@ -20,10 +20,13 @@ section>div.section-grey{
 }
 
 section>a>div{
+    max-width: 1940px;
+    width: 100%;
     display: inline-block;
     position: relative;
     top:0;left: 0;
-    height: 100%; width: 100%;
+    background-size: cover;
+    height: 580px;
     color: white;
     line-height: 40px;
 }
@@ -45,19 +48,28 @@ mark.mark-tag{
     justify-content: space-around;
     font-size: 16px;
     cursor: pointer;
-    /* text-decoration: underline; */
+    margin-top: 70px;
+    text-decoration: underline;
 }
 
-mark.mark-tag>div{
-    border: 1px solid rgb(128,128,128);
+mark.mark-tag:hover{
+    text-decoration: none;
+}
+
+mark.mark-tag>div:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: rgb(26, 216, 211);
+    color: white;
     padding: 5px;
+    border: 1px solid rgb(26, 216, 211);
     border-radius: 5px;
 }
 
 main{
     display: flex;flex-direction: row;flex-wrap: wrap;justify-content:center; 
     width: auto;height: auto;
-    padding:70px 60px;
+    padding:0px 60px 70px 60px;
 }
 
 main>article{
@@ -91,7 +103,7 @@ main>article>a>div.article-div{
 }
 
 main>article>a>div>img.article-img{
-    width:200px ; height: 200px;
+    width:200px ; height: auto;
 }
 
 main>article>a>p.article-head{
@@ -108,45 +120,45 @@ main>article>a>p:hover{
 }
 
 @media ( max-width:1300px ){
-    section{
+    /* section{
         background-size: 100% 570px;
         height: 480px;
-    }
+    } */
 }
 
 @media ( max-width:1150px ){
-    section{
+    /* section{
         background-size: auto 650px;
         height: 580px;
-    }
+    } */
 }
 
 @media ( max-width:1000px ){
-    section{
+    /* section{
         background-size: auto 550px;
         height: 520px;
-    }
+    } */
 }
 
 @media ( max-width:900px ){
-    section{
+    /* section{
         background-size: auto 500px;
         height: 440px;
-    }
+    } */
 }
 
 @media ( max-width: 800px ){
-    section{
+    /* section{
         background-size: auto 440px;
         height: 410px;
-    }
+    } */
 }
 
 @media ( max-width: 660px ){
-    section{
+    /* section{
         background-size: auto 365px;
         height: 340px;
-    }
+    } */
     section>div{
         line-height: 20px;
     }
@@ -159,17 +171,17 @@ main>article>a>p:hover{
 }
 
 @media ( max-width: 550px ){
-    section{
+    /* section{
         background-size: auto 330px;
         height: 300px;
-    }
+    } */
 }
 
 @media ( max-width: 480px ){
-    section{
+    /* section{
         background-size: auto 260px;
         height: 240px;
-    }
+    } */
     section>div>span.keyvisualSpan{
         font-size:18px;
     }
@@ -180,8 +192,8 @@ main>article>a>p:hover{
 }
 
 @media ( max-width: 387px ){
-    section{
+    /* section{
         background-size: auto 220px;
         height: 190px;
-    }
+    } */
 }

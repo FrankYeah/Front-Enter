@@ -4,7 +4,7 @@
 section{
     /* background: url("../images/FE_key_visual.png"); */
     background-repeat: no-repeat;
-    background-size: 100% 630px;
+    background-size: cover;
     height: 580px;
     /* width: 100%; */
     box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px;
@@ -128,48 +128,54 @@ div.main-contact>div>p.contact-mail::before{
     color: rgb(128,128,128);
 }
 
+@media ( max-width:1123px ){
+    div.main-contact{
+        height: 500px;
+    }
+}
+
 @media ( max-width:1300px ){
-    section{
+    /* section{
         background-size: 100% 570px;
         height: 480px;
-    }
+    } */
 }
 
 @media ( max-width:1150px ){
-    section{
+    /* section{
         background-size: auto 650px;
         height: 580px;
-    }
+    } */
 }
 
 @media ( max-width:1112px ){
-    div.main-contact{
+    /* div.main-contact{
         height: 480px;
-    }
+    } */
 }
 
 @media ( max-width:1000px ){
-    section{
+    /* section{
         background-size: auto 550px;
         height: 520px;
-    }
+    } */
     main{
         margin:30px 20px;
     }
 }
 
 @media ( max-width:900px ){
-    section{
+    /* section{
         background-size: auto 500px;
         height: 440px;
-    }
+    } */
 }
 
 @media ( max-width: 800px ){
-    section{
+    /* section{
         background-size: auto 440px;
         height: 410px;
-    }
+    } */
     main{
         flex-direction: column;
     }
@@ -186,10 +192,10 @@ div.main-contact>div>p.contact-mail::before{
 }
 
 @media ( max-width: 660px ){
-    section{
+    /* section{
         background-size: auto 365px;
         height: 340px;
-    }
+    } */
     main>div.main-chart{
         width: 80%;
         padding-left: 20px;
@@ -197,17 +203,17 @@ div.main-contact>div>p.contact-mail::before{
 }
 
 @media ( max-width: 550px ){
-    section{
+    /* section{
         background-size: auto 330px;
         height: 300px;
-    }
+    } */
 }
 
 @media ( max-width: 480px ){
-    section{
+    /* section{
         background-size: auto 260px;
         height: 240px;
-    }
+    } */
     main>div.main-content{
         margin:80px 10px;
     }
@@ -228,8 +234,8 @@ div.main-contact>div>p.contact-mail::before{
 }
 
 @media ( max-width: 387px ){
-    section{
+    /* section{
         background-size: auto 220px;
         height: 190px;
-    }
+    } */
 }

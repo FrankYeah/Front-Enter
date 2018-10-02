@@ -448,9 +448,15 @@ let clientTotal = [];
 function getAllSelectLogic(){
     
     // 城市
-    getFirebaseData.orderByChild("city").equalTo(getAllSelect[0]).on("child_added", function(snapshot) {
-        clientTotal.push(snapshot.val().name)
-    });  
+    if(getAllSelect[0] != '不重要'){
+        getFirebaseData.orderByChild("city").equalTo(getAllSelect[0]).on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(getAllSelect[0] == '不重要'){
+        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }
     // 費用
     if(parseInt(getAllSelect[1])<=3000){
         getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
@@ -501,6 +507,10 @@ function getAllSelectLogic(){
         getFirebaseData.orderByChild("fee").equalTo('5000').on("child_added", function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
+    }else if(getAllSelect[1] == '不重要'){
+        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
     }
     // 每周時數
     if(parseInt(getAllSelect[2])<=16){
@@ -535,6 +545,10 @@ function getAllSelectLogic(){
         });  
     }else if(parseInt(getAllSelect[2])>45){
         
+    }else if(getAllSelect[2] == '不重要'){
+        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
     }
     // 班制
     getFirebaseData.orderByChild("classType").equalTo(getAllSelect[3]).on("child_added", function(snapshot) {
@@ -547,31 +561,53 @@ function getAllSelectLogic(){
 
     
     // 取得重複最高的值
-    // var modeMap = {};
-    // var maxEl = clientTotal[0], maxCount = 1;
-
-    // for(var i = 0; i < clientTotal.length; i++)
-    // {
-    //     var el = clientTotal[i];
-    //     if(modeMap[el] == null)
-    //         modeMap[el] = 1;
-    //     else
-    //         modeMap[el]++;  
-    //     if(modeMap[el] > maxCount)
-    //     {
-    //         maxEl = el;
-    //         maxCount = modeMap[el];
-    //     }
-    // }
-    // console.log(maxEl)
-    // console.log(maxCount)
-
-    
-    // 清空
-    console.log(clientTotal);
-    // getAllSelect = [];
-    // clientTotal = [];
+    setTimeout(maxValue, 3000); 
 
     // console.log(snapshot.val().name);
+
+}
+
+function maxValue(){
+    let modeMap = {};
+    let maxEl = clientTotal[0];
+    let maxCount = 1;
+
+    for(let i = 0; i < clientTotal.length; i++)
+    {
+        let el = clientTotal[i];
+        console.log(el)
+        if(modeMap[el] == null)
+            modeMap[el] = 1;
+        else
+            modeMap[el]++;  
+        if(modeMap[el] > maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
+    }
+
+    if(maxCount == 5){
+        maxCount = '100%';
+    }else if(maxCount == 4){
+        maxCount = '80%';
+    }else if(maxCount == 3){
+        maxCount = '60%';
+    }else if(maxCount == 2){
+        maxCount = '40%'
+    }else if(maxCount == 1){
+        maxCount = '20%'
+    }else if(maxCount == 0){
+        maxCount = '0%'
+    }
+
+    console.log(maxEl)
+    console.log(maxCount)
+    document.getElementById('forEndResult').textContent = maxEl;
+    document.getElementById('whiteInPieChart').textContent = maxCount;
+
+    // 清空
+    getAllSelect = [];
+    clientTotal = [];
 
 }

@@ -45,7 +45,7 @@ function createLayout(data){
 function keyvisualBorn(data){
     document.getElementById('section').style.background  =  "url('" + data.rectangleUrl + "')"; 
     document.getElementById('section').style.backgroundRepeat  =  "no-repeat";  
-    document.getElementById('section').style.backgroundSize  =  "100% 630px";
+    document.getElementById('section').style.backgroundSize  =  "cover";
 }
 
 function mainChartBorn(){

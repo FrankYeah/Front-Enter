@@ -15,7 +15,7 @@ function changeKevisual(){
     keyvisualLink.href = keyvisualLinkArray[i];
     keyvisual.style.background  =  "url('" + keyvisualImg[i] + "')";    
     keyvisual.style.backgroundRepeat  =  "no-repeat";  
-    keyvisual.style.backgroundSize  =  "100% 630px";
+    keyvisual.style.backgroundSize  =  "cover";
     i++;
     if(i>=keyvisualImg_len) { i=0;}
 }

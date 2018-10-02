@@ -80,6 +80,7 @@ function loginInputCode(){
     newElement.id = 'loginInputCode';
     newElement.className = 'login-input-code';
     newElement.placeholder = '******';
+    newElement.type = 'password';
     document.getElementById('loginInputDiv').appendChild(newElement);
 }
 

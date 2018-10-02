@@ -294,10 +294,7 @@ div.fullSearchWhiteDiv>div.whiteDivLeft>form.whiteDivLeftBox>div.leftButton{
     cursor: pointer;
 }
 
-mark>div:hover{
-    cursor: pointer;
-    opacity: 0.8;
-}
+
 
 /* 測驗 Go */ 
 
