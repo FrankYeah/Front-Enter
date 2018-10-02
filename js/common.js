@@ -275,7 +275,6 @@ function testTwoStart(){
     testTwoSelect(TwoSelectEveryPlace);
     let TwoSelectNotImportant = '不重要';
     testTwoSelect(TwoSelectNotImportant);
-
 }
 
 // 顯示選項
@@ -290,11 +289,11 @@ function testThreeStart(event){
     testTwoQuestionCount(questionCount);
     let threeSelectThree = '3000元以下';
     testThreeSelect(threeSelectThree);
-    let threeSelectSix = '3000-6000元';
+    let threeSelectSix = '6000元內';
     testThreeSelect(threeSelectSix);
-    let threeSelectTen = '6000-10,000元';
+    let threeSelectTen = '10000元內';
     testThreeSelect(threeSelectTen);
-    let threeSelectTenUp = '10,000元以上';
+    let threeSelectTenUp = '10001元以上';
     testThreeSelect(threeSelectTenUp);
     let threeSelectNotImportant = '不重要';
     testThreeSelect(threeSelectNotImportant);
@@ -316,13 +315,13 @@ function testFourStart(event){
     testOneList(oneButton);
     let questionCount = '3/5';
     testTwoQuestionCount(questionCount);
-    let fourSelectfifty = '1-15小時';
+    let fourSelectfifty = '16小時以下';
     testFourSelect(fourSelectfifty);
-    let fourSelectThirty = '15-30小時';
+    let fourSelectThirty = '30小時內';
     testFourSelect(fourSelectThirty);
-    let fourSelectFortyFive = '30-45小時';
+    let fourSelectFortyFive = '45小時內';
     testFourSelect(fourSelectFortyFive);
-    let fourSelectFortyFiveUp = '45小時以上';
+    let fourSelectFortyFiveUp = '46小時以上';
     testFourSelect(fourSelectFortyFiveUp);
     let fourSelectNotImportant = '不重要';
     testFourSelect(fourSelectNotImportant);
@@ -348,6 +347,8 @@ function testFiveStart(event){
     testFiveSelect(fiveSelectBigClass);
     let fiveSelectsmallClass = '小班制';
     testFiveSelect(fiveSelectsmallClass);
+    let fiveSelectOneWithOne = '一對一';
+    testFiveSelect(fiveSelectOneWithOne);
     let fiveSelectNotImportant = '不重要';
     testFiveSelect(fiveSelectNotImportant);
     getAllSelect.push(event.target.textContent);
@@ -441,7 +442,136 @@ function forEndResult(endResult){
 }
 
 // 遊戲邏輯
-
+let getFirebaseData = database.ref("article");
+let clientTotal = [];
+// getAllSelect
 function getAllSelectLogic(){
-    getAllSelect
+    
+    // 城市
+    getFirebaseData.orderByChild("city").equalTo(getAllSelect[0]).on("child_added", function(snapshot) {
+        clientTotal.push(snapshot.val().name)
+    });  
+    // 費用
+    if(parseInt(getAllSelect[1])<=3000){
+        getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('1800').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('3000').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(parseInt(getAllSelect[1])<=6000){
+        getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('1800').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('3000').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('5000').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(parseInt(getAllSelect[1])<=10000){
+        getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('1800').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('3000').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('5000').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(parseInt(getAllSelect[1])>10000){
+        getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('1800').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('3000').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("fee").equalTo('5000').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }
+    // 每周時數
+    if(parseInt(getAllSelect[2])<=16){
+        getFirebaseData.orderByChild("weekHour").equalTo('16').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(parseInt(getAllSelect[2])<=30){
+        getFirebaseData.orderByChild("weekHour").equalTo('16').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("weekHour").equalTo('18').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("weekHour").equalTo('20').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(parseInt(getAllSelect[2])<=45){
+        getFirebaseData.orderByChild("weekHour").equalTo('16').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("weekHour").equalTo('18').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("weekHour").equalTo('20').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("weekHour").equalTo('32').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+        getFirebaseData.orderByChild("weekHour").equalTo('40').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(parseInt(getAllSelect[2])>45){
+        
+    }
+    // 班制
+    getFirebaseData.orderByChild("classType").equalTo(getAllSelect[3]).on("child_added", function(snapshot) {
+        clientTotal.push(snapshot.val().name)
+    });  
+    // 教學制度
+    getFirebaseData.orderByChild("teachWay").equalTo(getAllSelect[4]).on("child_added", function(snapshot) {
+        clientTotal.push(snapshot.val().name)
+    });  
+
+    
+    // 取得重複最高的值
+    // var modeMap = {};
+    // var maxEl = clientTotal[0], maxCount = 1;
+
+    // for(var i = 0; i < clientTotal.length; i++)
+    // {
+    //     var el = clientTotal[i];
+    //     if(modeMap[el] == null)
+    //         modeMap[el] = 1;
+    //     else
+    //         modeMap[el]++;  
+    //     if(modeMap[el] > maxCount)
+    //     {
+    //         maxEl = el;
+    //         maxCount = modeMap[el];
+    //     }
+    // }
+    // console.log(maxEl)
+    // console.log(maxCount)
+
+    
+    // 清空
+    console.log(clientTotal);
+    // getAllSelect = [];
+    // clientTotal = [];
+
+    // console.log(snapshot.val().name);
+
 }
