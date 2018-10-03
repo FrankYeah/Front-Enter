@@ -2,22 +2,70 @@
 // keyvisual 輪播
 let storePhoto = [];
 let storeLink = [];
-const keyvisual = document.getElementById('keyvisual');
-const keyvisualLink = document.getElementById('keyvisualLink');
-let i=1;  
+// const keyvisual = document.getElementById('keyvisual');
+// const keyvisualLink = document.getElementById('keyvisualLink');
+let icount=1;  
+let keyvisualImg;
+let keyvisualImg_len;
+let keyvisualLinkArray;
+const keyvisualLink0 = document.getElementById('keyvisualLink0');
+const keyvisualLink1 = document.getElementById('keyvisualLink1');
+const keyvisualLink2 = document.getElementById('keyvisualLink2');
+const keyvisual0 = document.getElementById('keyvisual0');
+const keyvisual1 = document.getElementById('keyvisual1');
+const keyvisual2 = document.getElementById('keyvisual2');
 setInterval("changeKevisual()",5000);
 
 function changeKevisual(){
-    let keyvisualImg = new Array(storePhoto[0],storePhoto[1],storePhoto[2],);
-    let keyvisualImg_len = keyvisualImg.length;  // 圖檔數量
-    let keyvisualLinkArray = new Array(storeLink[0], storeLink[1], storeLink[2])
-    // keyvisual.style.animation = "opacityOut 2.5s ease 0s infinite alternate";
-    keyvisualLink.href = keyvisualLinkArray[i];
-    keyvisual.style.background  =  "url('" + keyvisualImg[i] + "')";    
-    keyvisual.style.backgroundRepeat  =  "no-repeat";  
-    keyvisual.style.backgroundSize  =  "cover";
-    i++;
-    if(i>=keyvisualImg_len) { i=0;}
+    keyvisualImg = [storePhoto[0],storePhoto[1],storePhoto[2]];
+    keyvisualImg_len = keyvisualImg.length;  // 圖檔數量
+    keyvisualLinkArray = [storeLink[0], storeLink[1], storeLink[2]]
+
+    // keyvisualLink.href = keyvisualLinkArray[icount];
+    keyvisual0.style.background  =  "url('" + keyvisualImg[0] + "')";    
+    keyvisual0.style.backgroundRepeat  =  "no-repeat";  
+    keyvisual0.style.backgroundSize  =  "cover";
+    keyvisualLink0.href = keyvisualLinkArray[0];
+
+    keyvisual1.style.background  =  "url('" + keyvisualImg[1] + "')";    
+    keyvisual1.style.backgroundRepeat  =  "no-repeat";  
+    keyvisual1.style.backgroundSize  =  "cover";
+    keyvisualLink0.href = keyvisualLinkArray[1];
+
+    keyvisual2.style.background  =  "url('" + keyvisualImg[2] + "')";    
+    keyvisual2.style.backgroundRepeat  =  "no-repeat";  
+    keyvisual2.style.backgroundSize  =  "cover";
+    keyvisualLink0.href = keyvisualLinkArray[2];
+
+    if(icount == 0){
+        keyvisual0.style.display  =  "block";
+        keyvisual1.style.display  =  "none";
+        keyvisual2.style.display  =  "none";
+        keyvisualLink0.href = keyvisualLinkArray[0];
+        keyvisual0.style.animation = "opacityOut 2s ease 0s 1 alternate";
+        keyvisual0.style.backgroundPositionX = 'left';
+        keyvisual0.style.backgroundAttachment = 'fixed';
+    }else if(icount == 1){
+        keyvisual0.style.display  =  "none";
+        keyvisual1.style.display  =  "block";
+        keyvisual2.style.display  =  "none";
+        keyvisualLink1.href = keyvisualLinkArray[1];
+        keyvisual1.style.animation = "opacityOut 2s ease 0s 1 alternate";
+        keyvisual1.style.backgroundPositionX = 'center';
+        keyvisual1.style.backgroundAttachment = 'fixed';
+    }else if(icount == 2){
+        keyvisual1.style.display  =  "none";
+        keyvisual0.style.display  =  "none";
+        keyvisual2.style.display  =  "block";
+        keyvisualLink2.href = keyvisualLinkArray[2];
+        keyvisual2.style.animation = "opacityOut 2s ease 0s 1 alternate";
+        keyvisual2.style.backgroundPositionX = 'right';
+        keyvisual2.style.backgroundAttachment = 'fixed';
+    }
+
+    icount++;
+    if(icount>=keyvisualImg_len) { icount=0;}
+
 }
 
 // 抓 firebase 資料庫 json 資料  // 搜尋處理

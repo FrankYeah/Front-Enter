@@ -7,16 +7,8 @@ section{
     background-size: cover;
     height: 580px;
     /* width: 100%; */
-    /* box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px; */
-}
-
-section>div.section-grey{
-    position: absolute;
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    background-position-x: center;
+    background-attachment: fixed;
 }
 
 section>a>div{
@@ -29,6 +21,23 @@ section>a>div{
     height: 580px;
     color: white;
     line-height: 40px;
+}
+
+section.keyvisual0{
+    display: none;
+}
+
+section.keyvisual2{
+    display: none;
+}
+
+section>div.section-grey{
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 section>div>a>span.keyvisualSpan{

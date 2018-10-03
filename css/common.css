@@ -541,22 +541,22 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
 }
 
 @-webkit-keyframes headerBackgroundOut {
-    0% {  background-color: ""; opacity: 1;}
+    0% {  background-color: ""; background: linear-gradient(white,white); opacity: 1;}
     25% {  background-color: rgb(250, 250, 250); opacity: 1;}
-    50% {  background-color: ""; opacity: 0.9;}
-    100% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+    50% {  background-color: "";  opacity: 0.9;}
+    100% { background-color: rgb(250, 250, 250); background: linear-gradient(white,white); opacity: 0.8;}
 }
 @-moz-keyframes headerBackgroundOut {
-    0% {  background-color: ""; opacity: 1;}
+    0% {  background-color: ""; background: linear-gradient(white,white); opacity: 1;}
     25% {  background-color: rgb(250, 250, 250); opacity: 1;}
-    50% {  background-color: ""; opacity: 0.9;}
-    100% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+    50% {  background-color: "";  opacity: 0.9;}
+    100% { background-color: rgb(250, 250, 250); background: linear-gradient(white,white); opacity: 0.8;}
 }
 @-o-keyframes headerBackgroundOut {
-    0% {  background-color: ""; opacity: 1;}
+    0% {  background-color: ""; background: linear-gradient(white,white); opacity: 1;}
     25% {  background-color: rgb(250, 250, 250); opacity: 1;}
-    50% {  background-color: ""; opacity: 0.9;}
-    100% { background-color: rgb(250, 250, 250); opacity: 0.8;}
+    50% {  background-color: "";  opacity: 0.9;}
+    100% { background-color: rgb(250, 250, 250); background: linear-gradient(white,white); opacity: 0.8;}
 }
 
 @keyframes headerBackgroundIn{
@@ -568,17 +568,17 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
 @-webkit-keyframes headerBackgroundIn {
     0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
     50% {  background-color: ""; opacity: 0.9;}
-    100% {  background-color: ""; opacity: 1;}
+    100% {  background: linear-gradient(rgba(0,0,0,.3),rgba(255, 255, 255, 0)); opacity: 1;}
 }
 @-moz-keyframes headerBackgroundIn {
     0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
     50% {  background-color: ""; opacity: 0.9;}
-    100% {  background-color: ""; opacity: 1;}
+    100% {  background: linear-gradient(rgba(0,0,0,.3),rgba(255, 255, 255, 0)); opacity: 1;}
 }
 @-o-keyframes headerBackgroundIn {
     0% { background-color: rgb(250, 250, 250); opacity: 0.8;}
     50% {  background-color: ""; opacity: 0.9;}
-    100% {  background-color: ""; opacity: 1;}
+    100% {  background: linear-gradient(rgba(0,0,0,.3),rgba(255, 255, 255, 0)); opacity: 1;}
 }
 
 /* 透明度動畫 */
@@ -589,15 +589,15 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
 }
 
 @-webkit-keyframes opacityOut {
-    0%   { opacity: 0.5; }
+    0%   { opacity: 0; }
     100% { opacity: 1;  }
 }
 @-moz-keyframes opacityOut {
-    0%   { opacity: 0.5; }
+    0%   { opacity: 0; }
     100% { opacity: 1; }
 }
 @-o-keyframes opacityOut {
-    0%   { opacity: 0.5; }
+    0%   { opacity: 0; }
     100% { opacity: 1; }
 }
 
@@ -656,19 +656,73 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
 }
 
 @-webkit-keyframes numberAni {
-    0%   { content : '80%'; }
-    50% { content : '60%'; }
-    100% { content : ''; }
+    0%   { content : '84%'; }
+    5%   { content : '34%'; }
+    10%   { content : '20%'; }
+    15%   { content : '32%'; }
+    20%   { content : '26%'; }
+    25% { content : '70%'; }
+    30%   { content : '50%'; }
+    35% { content : '70%'; }
+    40%   { content : '50%'; }
+    45%   { content : '11%'; }
+    50%   { content : '90%'; }
+    55%   { content : '15%'; }
+    60%   { content : '90%'; }
+    65%   { content : '46%'; }
+    70% { content : '30%'; }
+    75%   { content : '49%'; }
+    80% { content : '30%'; }
+    85%   { content : '84%'; }
+    90% { content : '30%'; }
+    95%   { content : '82%'; }
+    100% { content : '50%'; }
 }
 @-moz-keyframes numberAni {
-    0%   { content : '80%'; }
-    50% { content : '60%'; }
-    100% { content : ''; }
+    0%   { content : '84%'; }
+    5%   { content : '34%'; }
+    10%   { content : '20%'; }
+    15%   { content : '32%'; }
+    20%   { content : '26%'; }
+    25% { content : '70%'; }
+    30%   { content : '50%'; }
+    35% { content : '70%'; }
+    40%   { content : '50%'; }
+    45%   { content : '11%'; }
+    50%   { content : '90%'; }
+    55%   { content : '15%'; }
+    60%   { content : '90%'; }
+    65%   { content : '46%'; }
+    70% { content : '30%'; }
+    75%   { content : '49%'; }
+    80% { content : '30%'; }
+    85%   { content : '84%'; }
+    90% { content : '30%'; }
+    95%   { content : '82%'; }
+    100% { content : '50%'; }
 }
 @-o-keyframes numberAni {
-    0%   { content : '80%'; }
-    50% { content : '60%'; }
-    100% { content : ''; }
+    0%   { content : '84%'; }
+    5%   { content : '34%'; }
+    10%   { content : '20%'; }
+    15%   { content : '32%'; }
+    20%   { content : '26%'; }
+    25% { content : '70%'; }
+    30%   { content : '50%'; }
+    35% { content : '70%'; }
+    40%   { content : '50%'; }
+    45%   { content : '11%'; }
+    50%   { content : '90%'; }
+    55%   { content : '15%'; }
+    60%   { content : '90%'; }
+    65%   { content : '46%'; }
+    70% { content : '30%'; }
+    75%   { content : '49%'; }
+    80% { content : '30%'; }
+    85%   { content : '84%'; }
+    90% { content : '30%'; }
+    95%   { content : '82%'; }
+    100% { content : '50%'; }
 }
 
 /* 文字改變動畫 */
@@ -697,18 +751,72 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
     100% { content : '六角學院'; }
 }
 
-@-webkit-keyframes numberAni {
-    0%   { content : '80%'; }
-    50% { content : '60%'; }
-    100% { content : ''; }
+@-webkit-keyframes nameAni {
+    0%   { content : '六角學院'; }
+    5%   { content : '五倍紅寶石'; }
+    10%  { content : 'AppWorks School'; }
+    15%  { content : '六角學院'; }
+    20%  { content : 'Udemy'; }
+    25%  { content : '五倍紅寶石'; }
+    30%  { content : '六角學院'; }
+    35%  { content : 'Udemy'; }
+    40%  { content : '五倍紅寶石'; }
+    45%  { content : '彭彭的課程教學'; }
+    50%  { content : 'AppWorks School'; }
+    55%  { content : 'Udemy'; }
+    60%  { content : '六角學院'; }
+    65%  { content : 'Udemy'; }
+    70%  { content : '五倍紅寶石'; }
+    75%  { content : 'AppWorks School'; }
+    80%  { content : '彭彭的課程教學'; }
+    85%  { content : 'AppWorks School'; }
+    90%  { content : 'Udemy'; }
+    95%  { content : '五倍紅寶石'; }
+    100% { content : '六角學院'; }
 }
-@-moz-keyframes numberAni {
-    0%   { content : '80%'; }
-    50% { content : '60%'; }
-    100% { content : ''; }
+@-moz-keyframes nameAni {
+    0%   { content : '六角學院'; }
+    5%   { content : '五倍紅寶石'; }
+    10%  { content : 'AppWorks School'; }
+    15%  { content : '六角學院'; }
+    20%  { content : 'Udemy'; }
+    25%  { content : '五倍紅寶石'; }
+    30%  { content : '六角學院'; }
+    35%  { content : 'Udemy'; }
+    40%  { content : '五倍紅寶石'; }
+    45%  { content : '彭彭的課程教學'; }
+    50%  { content : 'AppWorks School'; }
+    55%  { content : 'Udemy'; }
+    60%  { content : '六角學院'; }
+    65%  { content : 'Udemy'; }
+    70%  { content : '五倍紅寶石'; }
+    75%  { content : 'AppWorks School'; }
+    80%  { content : '彭彭的課程教學'; }
+    85%  { content : 'AppWorks School'; }
+    90%  { content : 'Udemy'; }
+    95%  { content : '五倍紅寶石'; }
+    100% { content : '六角學院'; }
 }
-@-o-keyframes numberAni {
-    0%   { content : '80%'; }
-    50% { content : '60%'; }
-    100% { content : ''; }
+@-o-keyframes nameAni {
+    0%   { content : '六角學院'; }
+    5%   { content : '五倍紅寶石'; }
+    10%  { content : 'AppWorks School'; }
+    15%  { content : '六角學院'; }
+    20%  { content : 'Udemy'; }
+    25%  { content : '五倍紅寶石'; }
+    30%  { content : '六角學院'; }
+    35%  { content : 'Udemy'; }
+    40%  { content : '五倍紅寶石'; }
+    45%  { content : '彭彭的課程教學'; }
+    50%  { content : 'AppWorks School'; }
+    55%  { content : 'Udemy'; }
+    60%  { content : '六角學院'; }
+    65%  { content : 'Udemy'; }
+    70%  { content : '五倍紅寶石'; }
+    75%  { content : 'AppWorks School'; }
+    80%  { content : '彭彭的課程教學'; }
+    85%  { content : 'AppWorks School'; }
+    90%  { content : 'Udemy'; }
+    95%  { content : '五倍紅寶石'; }
+    100% { content : '六角學院'; }
 }
