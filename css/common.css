@@ -87,7 +87,7 @@ header>nav>div>img{
             background-size: 100% 630px;
             height: 580px;
             /* width: 100%; */
-            box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px;
+            /* box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px; */
         }
 
         section>div{
@@ -337,10 +337,11 @@ div.test-go-back-div>div.test-go-white-div>p.test-one-list{
 }
 
 div.test-go-back-div>div.test-go-white-div>p.test-two-question-count{
-    color: rgb(128, 128, 128);
+    color: rgba(255, 255, 255,.7);
     text-align: center;
     padding: 10px;
     padding-bottom: 25px;
+    
 }
 
 div.test-go-back-div>div.test-go-white-div>p.test-one-button{
@@ -361,6 +362,9 @@ div.test-go-back-div>div.test-go-white-div>p.test-one-button{
 
 div.test-go-back-div>div.test-go-white-div>p.test-one-button:hover{
     opacity: 0.8;
+    padding: 31px;
+    /* color: white;
+    background-color: rgb(128, 128, 128); */
 }
 
 div.test-go-back-div>div.test-go-white-div>p.test-two-select{
@@ -381,6 +385,9 @@ div.test-go-back-div>div.test-go-white-div>p.test-two-select{
 
 div.test-go-back-div>div.test-go-white-div>p.test-two-select:hover{
     opacity: 0.8;
+    padding: 31px;
+    /* color: white;
+    background-color: rgb(128, 128, 128); */
 }
 
 /* 圓餅圖 */
@@ -444,6 +451,12 @@ div.white-in-pie-chart{
     line-height: 140px;
     font-size: 24px;   
     color: #1cb5e0;
+    /* animation: rotateCircle 3s linear; */
+}
+
+div.white-in-pie-chart::after{
+    content: '';
+    animation: numberAni 3s linear;
 }
 
 div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result{
@@ -460,8 +473,18 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result{
     margin-top: 350px;
     font-weight:bold;
     cursor: pointer;
+    animation: numberAni 3s linear;
 }
 
+div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result::after{
+    content: '';
+    animation: nameAni 3s linear;
+}
+
+div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
+    opacity: 0.8;
+    padding: 31px;
+}
 
 /* media */
 
@@ -604,4 +627,88 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result{
     50% { transform: rotate(360deg); }
     0%   { transform: rotate(0deg); }
     100% { transform: rotate(108deg); }
+}
+
+/* 數字改變動畫 */
+
+@keyframes numberAni{
+    0%   { content : '84%'; }
+    5%   { content : '34%'; }
+    10%   { content : '20%'; }
+    15%   { content : '32%'; }
+    20%   { content : '26%'; }
+    25% { content : '70%'; }
+    30%   { content : '50%'; }
+    35% { content : '70%'; }
+    40%   { content : '50%'; }
+    45%   { content : '11%'; }
+    50%   { content : '90%'; }
+    55%   { content : '15%'; }
+    60%   { content : '90%'; }
+    65%   { content : '46%'; }
+    70% { content : '30%'; }
+    75%   { content : '49%'; }
+    80% { content : '30%'; }
+    85%   { content : '84%'; }
+    90% { content : '30%'; }
+    95%   { content : '82%'; }
+    100% { content : '50%'; }
+}
+
+@-webkit-keyframes numberAni {
+    0%   { content : '80%'; }
+    50% { content : '60%'; }
+    100% { content : ''; }
+}
+@-moz-keyframes numberAni {
+    0%   { content : '80%'; }
+    50% { content : '60%'; }
+    100% { content : ''; }
+}
+@-o-keyframes numberAni {
+    0%   { content : '80%'; }
+    50% { content : '60%'; }
+    100% { content : ''; }
+}
+
+/* 文字改變動畫 */
+
+@keyframes nameAni{
+    0%   { content : '六角學院'; }
+    5%   { content : '五倍紅寶石'; }
+    10%  { content : 'AppWorks School'; }
+    15%  { content : '六角學院'; }
+    20%  { content : 'Udemy'; }
+    25%  { content : '五倍紅寶石'; }
+    30%  { content : '六角學院'; }
+    35%  { content : 'Udemy'; }
+    40%  { content : '五倍紅寶石'; }
+    45%  { content : '彭彭的課程教學'; }
+    50%  { content : 'AppWorks School'; }
+    55%  { content : 'Udemy'; }
+    60%  { content : '六角學院'; }
+    65%  { content : 'Udemy'; }
+    70%  { content : '五倍紅寶石'; }
+    75%  { content : 'AppWorks School'; }
+    80%  { content : '彭彭的課程教學'; }
+    85%  { content : 'AppWorks School'; }
+    90%  { content : 'Udemy'; }
+    95%  { content : '五倍紅寶石'; }
+    100% { content : '六角學院'; }
+}
+
+@-webkit-keyframes numberAni {
+    0%   { content : '80%'; }
+    50% { content : '60%'; }
+    100% { content : ''; }
+}
+@-moz-keyframes numberAni {
+    0%   { content : '80%'; }
+    50% { content : '60%'; }
+    100% { content : ''; }
+}
+@-o-keyframes numberAni {
+    0%   { content : '80%'; }
+    50% { content : '60%'; }
+    100% { content : ''; }
 }

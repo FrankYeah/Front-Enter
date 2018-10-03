@@ -192,6 +192,12 @@ function createTestGo(){
         let child=document.getElementById("testGoBackDiv");
         document.body.removeChild(child);
         countClick--;
+        // 清空
+        getAllSelect = [];
+        clientTotal = [];
+        styleElem.innerHTML = "#endPieChart:before {transform: rotate(180deg);}";
+        styleElemOne.innerHTML = "#endPieChart:after {transform: rotate(0deg);}";
+        styleElemTwo.innerHTML = "#endPieChart:after {border-color: #1cb5e0;}";
     }
 }
 
@@ -391,7 +397,7 @@ function testSixSelect(sixSelect){
 
 function testEndStart(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
-    let oneHeader = '結果';
+    let oneHeader = '你有多適合下列學校呢？';
     testOneList(oneHeader);
     endPieChart();
     whiteInPieChart();
@@ -421,7 +427,7 @@ function whiteInPieChart(){
     let newElement = document.createElement('div');
     newElement.className = 'white-in-pie-chart';
     newElement.id = 'whiteInPieChart';
-    newElement.textContent = '100%';
+    // newElement.textContent = '100%';
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
@@ -437,7 +443,7 @@ function forEndResult(endResult){
     let newElement = document.createElement('p');
     newElement.className = 'for-end-result';
     newElement.id = 'forEndResult';
-    newElement.textContent = endResult;
+    // newElement.textContent = endResult;
     document.getElementById('resultA').appendChild(newElement);
 }
 
@@ -495,18 +501,7 @@ function getAllSelectLogic(){
             clientTotal.push(snapshot.val().name)
         });  
     }else if(parseInt(getAllSelect[1])>10000){
-        getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
-        });  
-        getFirebaseData.orderByChild("fee").equalTo('1800').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
-        });  
-        getFirebaseData.orderByChild("fee").equalTo('3000').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
-        });  
-        getFirebaseData.orderByChild("fee").equalTo('5000').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
-        });  
+      
     }else if(getAllSelect[1] == '不重要'){
         getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
             clientTotal.push(snapshot.val().name)
@@ -551,14 +546,25 @@ function getAllSelectLogic(){
         });  
     }
     // 班制
-    getFirebaseData.orderByChild("classType").equalTo(getAllSelect[3]).on("child_added", function(snapshot) {
-        clientTotal.push(snapshot.val().name)
-    });  
+    if(getAllSelect[3] != '不重要'){
+        getFirebaseData.orderByChild("classType").equalTo(getAllSelect[3]).on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(getAllSelect[3] == '不重要'){
+        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }
     // 教學制度
-    getFirebaseData.orderByChild("teachWay").equalTo(getAllSelect[4]).on("child_added", function(snapshot) {
-        clientTotal.push(snapshot.val().name)
-    });  
-
+    if(getAllSelect[4] != '不重要'){
+        getFirebaseData.orderByChild("teachWay").equalTo(getAllSelect[4]).on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }else if(getAllSelect[4] == '不重要'){
+        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+            clientTotal.push(snapshot.val().name)
+        });  
+    }
     
     // 取得重複最高的值
     setTimeout(maxValue, 3000); 
@@ -567,11 +573,15 @@ function getAllSelectLogic(){
 
 }
 
+const pseudoPieChart = document.getElementById('endPieChart');
+let styleElem = document.head.appendChild(document.createElement("style"));
+let styleElemOne = document.head.appendChild(document.createElement("style"));
+let styleElemTwo = document.head.appendChild(document.createElement("style"));
+
 function maxValue(){
     let modeMap = {};
     let maxEl = clientTotal[0];
     let maxCount = 1;
-
     for(let i = 0; i < clientTotal.length; i++)
     {
         let el = clientTotal[i];
@@ -589,14 +599,23 @@ function maxValue(){
 
     if(maxCount == 5){
         maxCount = '100%';
+        
     }else if(maxCount == 4){
         maxCount = '80%';
+        styleElem.innerHTML = "#endPieChart:before {transform: rotate(108deg);}";
     }else if(maxCount == 3){
         maxCount = '60%';
+        styleElem.innerHTML = "#endPieChart:before {transform: rotate(36deg);}";
     }else if(maxCount == 2){
         maxCount = '40%'
+        styleElem.innerHTML = "#endPieChart:before {transform: rotate(0deg);}";
+        styleElemOne.innerHTML = "#endPieChart:after {transform: rotate(144deg);}";
+        styleElemTwo.innerHTML = "#endPieChart:after {border-color: rgb(26,216,211);}";
     }else if(maxCount == 1){
         maxCount = '20%'
+        styleElem.innerHTML = "#endPieChart:before {transform: rotate(0deg);}";
+        styleElemOne.innerHTML = "#endPieChart:after {transform: rotate(72deg);}";
+        styleElemTwo.innerHTML = "#endPieChart:after {border-color: rgb(26,216,211);}";
     }else if(maxCount == 0){
         maxCount = '0%'
     }
@@ -605,6 +624,10 @@ function maxValue(){
     console.log(maxCount)
     document.getElementById('forEndResult').textContent = maxEl;
     document.getElementById('whiteInPieChart').textContent = maxCount;
+
+    getFirebaseData.orderByChild("name").equalTo(maxEl).on("child_added", function(snapshot) {
+        document.getElementById('resultA').setAttribute('href', "/content.html?id=" + snapshot.val().creatTime);
+    });  
 
     // 清空
     getAllSelect = [];

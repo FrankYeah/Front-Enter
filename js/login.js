@@ -28,7 +28,7 @@ function createLoginLayout(){
         stopLineWord();
         stopLineLeft();
         gmailLoginButton();
-        fbLoginButton();
+        // fbLoginButton();
 }
 
 function loginFullDiv(){
@@ -152,7 +152,7 @@ function fbLoginButton(){
     let newElement = document.createElement('p');
     newElement.id = 'fbLoginButton'
     newElement.className = 'fb-login-button';
-    newElement.textContent = '假登出用';
+    newElement.textContent = '登出';
     document.getElementById('loginDivWhite').appendChild(newElement);
     // 假登出
     newElement.onclick = logoutHere;

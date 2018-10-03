@@ -7,7 +7,7 @@ section{
     background-size: cover;
     height: 580px;
     /* width: 100%; */
-    box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px;
+    /* box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px; */
 }
 
 main{

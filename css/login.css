@@ -149,7 +149,8 @@ div.login-div-white>p.fb-login-button{
     margin: 0 auto;
     height: 8%;
     width: 75%;
-    background-color: #576b95;
+    /* background-color: #576b95; */
+    background-color: rgb(26,216,211);
     color: white;
     text-align: center;
     line-height: 42px;

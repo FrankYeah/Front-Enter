@@ -72,7 +72,8 @@ section{
     background-size: cover;
     height: 580px;
     /* width: 100%; */
-    box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px;
+    /* box-shadow:3px 3px 12px rgb(26, 216, 211); */
+    padding:10px;
 }
 
 section>div{
@@ -137,10 +138,10 @@ section>div>span.keyvisualSpanTwo{
         line-height: 25px;
     }
     section>div>span.keyvisualSpan{
-        font-size:24px;
+        font-size:28px;
     }
     section>div>span.keyvisualSpanTwo{
-        font-size:24px;
+        font-size: 34px;
     }
 }
 
@@ -159,13 +160,13 @@ section>div>span.keyvisualSpanTwo{
         background-size: auto 260px;
         height: 240px;
     } */
-    section>div>span.keyvisualSpan{
+    /* section>div>span.keyvisualSpan{
         font-size:18px;
     }
     
     section>div>span.keyvisualSpanTwo{
         font-size:18px;
-    }
+    } */
 }
 
 @media ( max-width: 387px ){
@@ -173,10 +174,4 @@ section>div>span.keyvisualSpanTwo{
         background-size: auto 220px;
         height: 190px;
     } */
-    section>div>span.keyvisualSpan{
-        font-size:18px;
-    }
-    section>div>span.keyvisualSpanTwo{
-        font-size:18px;
-    }
 }
