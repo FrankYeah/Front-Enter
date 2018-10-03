@@ -23,10 +23,10 @@ function createLoginLayout(){
         registerLoginDiv();
         registerButtonP();
         loginButtonP();
-        LoginStopLine();
-        stopLineLeft();
-        stopLineWord();
-        stopLineLeft();
+        // LoginStopLine();
+        // stopLineLeft();
+        // stopLineWord();
+        // stopLineLeft();
         gmailLoginButton();
         // fbLoginButton();
 }
@@ -183,7 +183,11 @@ function loginHere(){
         console.log(errorMessage);
         alert('郵件或密碼輸入錯誤哦!')
     })
-    
+    setTimeout(reloadLogin,5000)
+}
+
+function reloadLogin(){
+    window.location.reload();
 }
 
 // 監聽使用者是否登入
@@ -270,6 +274,7 @@ function letGmailLogin(){
         // The signed-in user info.
         var user = result.user;
         // ...
+        setTimeout(reloadLogin,1000)
     }).catch(function(error) {
         // Handle Errors here.
         var errorCode = error.code;

@@ -219,7 +219,7 @@ function mainContentBorn(){
 function mainContentHeaderBorn(){
     let newElement = document.createElement('p');
     newElement.className = 'main-content-header';
-    newElement.textContent = '關於';
+    newElement.textContent = '';
     document.getElementById('mainContent').appendChild(newElement);
 }
 

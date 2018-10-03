@@ -70,19 +70,19 @@ div.login-div-white>p.login-forget-code{
     color: rgb(128, 128, 128);
     font-size: 16px;
     text-align: right;
-    margin-top: 50px;
+    margin-top: 20px;
     padding-right: 80px;
     cursor: pointer;
 }
 
 div.login-div-white>div.register-login-div{
     margin: 0 auto;
-    height: 8%;
+    /* height: 8%; */
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: -20px;
+    /* margin-top: -20px; */
 }
 
 div.login-div-white>div.register-login-div>p.register-button-p{
@@ -111,11 +111,12 @@ div.login-div-white>div.register-login-div>p.login-button-p{
 
 div.login-div-white>div.Login-stop-line{
     margin: 0 auto;
-    height: 8%;
+    /* height: 8%; */
     width: 75%;
     display: flex;
     flex-direction: row;
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    align-items: center;
 }
 
 div.login-div-white>div.Login-stop-line>div.stop-line-left{
@@ -134,7 +135,7 @@ div.login-div-white>div.Login-stop-line>div.stop-line-word{
 
 div.login-div-white>p.gmail-login-button{
     margin: 0 auto;
-    height: 8%;
+    /* height: 8%; */
     width: 75%;
     background-color: #d93025;
     color: white;

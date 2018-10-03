@@ -44,7 +44,7 @@ function changeKevisual(){
         keyvisualLink0.href = keyvisualLinkArray[0];
         keyvisual0.style.animation = "opacityOut 2s ease 0s 1 alternate";
         keyvisual0.style.backgroundPositionX = 'left';
-        keyvisual0.style.backgroundAttachment = 'fixed';
+
     }else if(icount == 1){
         keyvisual0.style.display  =  "none";
         keyvisual1.style.display  =  "block";
@@ -52,7 +52,7 @@ function changeKevisual(){
         keyvisualLink1.href = keyvisualLinkArray[1];
         keyvisual1.style.animation = "opacityOut 2s ease 0s 1 alternate";
         keyvisual1.style.backgroundPositionX = 'center';
-        keyvisual1.style.backgroundAttachment = 'fixed';
+
     }else if(icount == 2){
         keyvisual1.style.display  =  "none";
         keyvisual0.style.display  =  "none";
@@ -60,7 +60,7 @@ function changeKevisual(){
         keyvisualLink2.href = keyvisualLinkArray[2];
         keyvisual2.style.animation = "opacityOut 2s ease 0s 1 alternate";
         keyvisual2.style.backgroundPositionX = 'right';
-        keyvisual2.style.backgroundAttachment = 'fixed';
+
     }
 
     icount++;
@@ -114,9 +114,11 @@ if(articleId == null){
 
 function createLayout(data){
     articleBorn();
+    locationDivBorn();
+    locationImgBorn();
     aLocationBorn();
     pLocationBorn(data);
-    tagLineBorn();
+    // tagLineBorn();
     contentABorn(data);
     imgDivBorn();
     imgBorn(data);
@@ -131,10 +133,23 @@ function articleBorn(){
     document.getElementById('mainId').appendChild(newElement);
 }
 
+function locationDivBorn(){
+    let newElement = document.createElement('div');
+    newElement.id = 'locationDiv' + x;
+    document.getElementById('article' + x).appendChild(newElement);
+}
+
+function locationImgBorn(){
+    let newElement = document.createElement('img');
+    newElement.id = 'locationImgBorn' + x;
+    newElement.src = "../images/location_icon_one.png";
+    document.getElementById('locationDiv' + x).appendChild(newElement);
+}
+
 function aLocationBorn(data){
     let newElement = document.createElement('a');
     newElement.id = 'aLocation' + x;
-    document.getElementById('article' + x).appendChild(newElement);
+    document.getElementById('locationDiv' + x).appendChild(newElement);
 }
 
 function pLocationBorn(data){
@@ -206,10 +221,7 @@ function pPrefaceBorn(data){
 const getAllArticle = document.getElementById('getAllArticle');
 getAllArticle.onclick = function(){
     document.getElementById('mainId').innerHTML = '';
-    console.log('hi')
     getAllData.orderByChild("skill").on("child_added", function(snapshot) {
-        console.log(snapshot.key);
-        console.log(snapshot.val());
         data = snapshot.val();
         storePhoto.push(data.rectangleUrl);
         storeLink.push('content.html?id=' + data.creatTime);
@@ -220,9 +232,7 @@ getAllArticle.onclick = function(){
 const smallClass = document.getElementById('smallClass');
 smallClass.onclick = function(){
     document.getElementById('mainId').innerHTML = '';
-    console.log('hi')
     getAllData.orderByChild("classType").equalTo('小班制').on("child_added", function(snapshot) {
-        console.log(snapshot.val());
         data = snapshot.val();
         createLayout(data);
     });   
@@ -231,9 +241,7 @@ smallClass.onclick = function(){
 const letItGo = document.getElementById('letItGo');
 letItGo.onclick = function(){
     document.getElementById('mainId').innerHTML = '';
-    console.log('hi')
     getAllData.orderByChild("teachWay").equalTo('放養制').on("child_added", function(snapshot) {
-        console.log(snapshot.val());
         data = snapshot.val();
         createLayout(data);
     });   
@@ -242,12 +250,40 @@ letItGo.onclick = function(){
 const oneByOne = document.getElementById('oneByOne');
 oneByOne.onclick = function(){
     document.getElementById('mainId').innerHTML = '';
-    console.log('hi')
     getAllData.orderByChild("classType").equalTo('一對一').on("child_added", function(snapshot) {
-        console.log(snapshot.val());
         data = snapshot.val();
         createLayout(data);
     });   
+}
+
+const mySelect = document.getElementById('mySelect');
+mySelect.onchange = function(event){
+    console.log(event.target.value)
+    
+    document.getElementById('mainId').innerHTML = '';
+
+    //全部
+    if(event.target.value == '全部'){
+        getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+            data = snapshot.val();
+            storePhoto.push(data.rectangleUrl);
+            storeLink.push('content.html?id=' + data.creatTime);
+            createLayout(data);
+        });
+    }else{
+        //小班制
+        //放養制
+        getAllData.orderByChild("teachWay").equalTo(event.target.value).on("child_added", function(snapshot) {
+            data = snapshot.val();
+            createLayout(data);
+        });   
+
+        //一對一
+        getAllData.orderByChild("classType").equalTo(event.target.value).on("child_added", function(snapshot) {
+            data = snapshot.val();
+            createLayout(data);
+        });   
+    }
 }
 
 

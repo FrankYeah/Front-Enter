@@ -8,7 +8,6 @@ section{
     height: 580px;
     /* width: 100%; */
     background-position-x: center;
-    background-attachment: fixed;
 }
 
 section>a>div{
@@ -52,11 +51,10 @@ mark.mark-tag{
     display: flex;
     flex-direction: row;
     background-color: white;    
-    margin: 20px 100px;
+    padding:0px 60px 0px 60px;
     color: rgb(128,128,128);
-    justify-content: space-around;
+    justify-content: flex-end;
     font-size: 16px;
-    cursor: pointer;
     margin-top: 70px;
     text-decoration: underline;
 }
@@ -65,7 +63,33 @@ mark.mark-tag:hover{
     text-decoration: none;
 }
 
-mark.mark-tag>div:hover{
+mark.mark-tag>form{
+    padding: 15px 15px;
+    margin: 10px;
+    height: 40px;
+    width: 100px;
+}
+
+mark.mark-tag>form>select{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 15px;
+    border: 1px solid rgba(0,0,0,.3);
+    color:rgba(0,0,0,.7);
+}
+
+mark.mark-tag>form>select:focus{
+    outline: white;
+    border: 1px solid rgba(0,0,0,.7);
+}
+
+mark.mark-tag>form>select>option{
+    cursor: pointer;
+}
+
+/* mark.mark-tag>div:hover{
     cursor: pointer;
     opacity: 0.8;
     background-color: rgb(26, 216, 211);
@@ -73,7 +97,7 @@ mark.mark-tag>div:hover{
     padding: 5px;
     border: 1px solid rgb(26, 216, 211);
     border-radius: 5px;
-}
+} */
 
 main{
     display: flex;flex-direction: row;flex-wrap: wrap;justify-content:center; 
@@ -95,16 +119,34 @@ main>article>a>p{
     width: 240px;
 }
 
-main>article>a>p.article-location{
+main>article>div>a>p{
+    line-height: 24px;
+    letter-spacing: 0px;
+    padding: 0px 5px;
+}
+
+main>article>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 70px 0px 5px 0px;
+}
+
+main>article>div>img{
+    width: 17.14px;
+    height: 23.7px;
+}
+
+main>article>div>a>p.article-location{
     font-size: 16px;
     text-align: center;
     color: rgb(125, 125, 125);
     line-height: 10px;
 }
 
-main>article>div.tag-line{
+/* main>article>div.tag-line{
     border-top:1px solid rgb(125, 125, 125); width: 20px;height: 20px; margin:0 auto;
-}
+} */
 
 main>article>a>div.article-div{
     width:200px ; height: 200px;

@@ -17,14 +17,15 @@ main{
 }
 
 main>div.main-chart{
-    width: 50%;
+    width: 30%;
 }
 
 main>div.main-chart>p.main-header{
-    font-size: 18px;
-    color: rgb(128,128,128);
+    font-size: 38px;
+    color: rgb(26, 216, 211);
     padding-top: 30px;
     font-weight: bold;
+    line-height: 48px;
 }
 
 main>div.main-chart>div.main-underline{
@@ -35,11 +36,12 @@ main>div.main-chart>div.main-underline{
 }
 
 main>div.main-chart>p.main-pre{
-    color: rgb(26, 216, 211);
+    color: rgba(73, 72, 72, 0.9);
 }
 
 main>div.main-chart>p.main-tag{
     padding-bottom: 30px;
+    color: rgb(148, 148, 148);
 }
 
 main>div.main-chart>p{
@@ -49,13 +51,14 @@ main>div.main-chart>p{
 
 main>div.main-content{
     margin:20px 0px;
-    width: 50%;
+    width: 70%;
 }
 
 main>div.main-content>p.main-content-header{
     font-size: 18px;
     color: rgb(128,128,128);
     font-weight: bold;
+    padding-top: 30px;
 }
 
 main>div.main-content>p.main-content-title{
@@ -65,7 +68,7 @@ main>div.main-content>p.main-content-title{
 }
 
 main>div.main-content>p{
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(128,128,128);
     line-height: 28px;
 }

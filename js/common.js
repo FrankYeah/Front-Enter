@@ -39,6 +39,13 @@ function winScroll(){
 
 window.onload = function() {
 
+    // 檢測登入狀態改變文字
+    if(userLogin && userLogin.emailVerified == true){
+        headerP3.style.color = 'rgb(26, 216, 211)';
+        headerP3.textContent = '個人頁';
+        headerP3.style.cursor = 'pointer';
+    }
+
     let top = document.getElementById('tops');
     let timer = null;
     let isTop = true;
