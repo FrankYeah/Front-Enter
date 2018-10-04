@@ -38,12 +38,14 @@ main>textarea{
 }
 
 main>p.main-button{
-    font-size: 24px;
+    font-size: 18px;
     background-color: rgb(26, 216, 211);
-    width: 200px;
+    width: 100px;
     text-align: center;
-    padding: 30px;
+    padding: 15px;
     cursor: pointer;
+    border-radius: 5px;
+    color: white;
 }
 
 @media ( max-width:1300px ){

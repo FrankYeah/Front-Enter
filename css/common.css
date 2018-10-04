@@ -29,6 +29,54 @@ p{
     letter-spacing: 3px;
 }
 
+/* alert design */
+
+.alert-big-box{
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 10;
+
+}
+
+.alert-box{
+    position: fixed;
+    width: 300px;
+    height: 180px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.alert-header{
+    font-size: 24px;
+    text-align: center;
+    color: rgb(128, 128, 128);
+}
+
+.alert-word{
+    font-size: 15px;
+    text-align: center;
+    color: rgb(128, 128, 128);
+}
+
+.alert-button{
+    font-size: 16px;
+    text-align: center;
+    width: 30%;
+    margin: 0 auto;
+    background-color: rgb(26, 216, 211);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 /* header */
 
 header{

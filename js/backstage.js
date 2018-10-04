@@ -165,7 +165,7 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     squareUrl : sUrl,
     creatTime: new Date().getTime()
     });
-    alert('貼文已發布')
+    postAlreadyOut();
 }
 
 // 登出功能
@@ -197,3 +197,18 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
+//alert
+
+function postAlreadyOut(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '貼文已發布';
+}
+
+const alertBigBox = document.getElementById('alertBigBox');
+const alertButton = document.getElementById('alertButton');
+const alertWord = document.getElementById('alertWord');
+alertBigBox.style.display = 'none';
+
+alertButton.addEventListener('click', ()=>{
+    alertBigBox.style.display = 'none';
+});

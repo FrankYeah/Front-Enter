@@ -50,10 +50,11 @@ main>div>div.question-list>input{
     width: 80%;
     border-radius: 6px;
     height: 20px;
-    font-size: 15px;
+    font-size: 16px;
     padding: 10px 10px;
     margin: 10px 0px;
     border: 1.5px solid rgb(207, 206, 206);
+    color: rgb(128,128,128);
 }
 
 main>div>div.question-list>input:focus{
@@ -65,11 +66,12 @@ main>div>div.question-list>textarea{
     width: 80%;
     border-radius: 10px;
     height: 200px;
-    font-size: 15px;
+    font-size: 16px;
     padding: 10px 10px;
     margin: 10px 0px;
     border: 1.5px solid rgb(207, 206, 206);
     letter-spacing: 3px;
+    color: rgb(128,128,128);
 }
 
 main>div>div.question-list>textarea:focus{
@@ -85,12 +87,13 @@ main>div>div.question-list>p.send{
     width: 100px;
     color: white;
     background-color: rgb(26, 216, 211);
+    cursor: pointer;
 }
 
 main>div>div.company-data>div{
     width: auto;
-    height: 220px;
-    background-color: rgba(230, 230, 230, .8);
+    height: 224px;
+    background-color: rgba(230, 230, 230, .3);
     border-radius: 5px;
 }
 
@@ -99,7 +102,7 @@ main>div>div.company-data>div.data-word{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 83px;
 }
 
 
@@ -134,4 +137,25 @@ main>div>div.company-data>div.data-map{
     section>div>span.keyvisualSpanTwo{
         font-size: 34px;
     }
+}
+
+
+/* 透明度動畫 */
+
+@keyframes inputUp {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@-webkit-keyframes inputUp {
+    0%   { opacity: 0; }
+    100% { opacity: 1;  }
+}
+@-moz-keyframes inputUp {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes inputUp {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
 }

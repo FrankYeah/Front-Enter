@@ -181,7 +181,7 @@ function loginHere(){
         var errorCode = error.code;
         var errorMessage = error.message;
         console.log(errorMessage);
-        alert('郵件或密碼輸入錯誤哦!')
+        wrongPassword();
     })
     setTimeout(reloadLogin,5000)
 }
@@ -220,7 +220,7 @@ function detectLogin(){
           userLogin = user;
           console.log("User is logined", user)
           user.sendEmailVerification().then(function() {
-            alert("驗證信寄出");
+            veriefyMailSend();
           }, function(error) {
             console.error("驗證信錯誤");
           });
@@ -247,12 +247,12 @@ function logoutHere(){
 function judgeForgetCode(){
     let userLoginMail = document.getElementById('loginInputMail').value;
     if(userLoginMail == ''){
-        alert('請輸入電子郵件後，再次點選「忘記密碼」')
+        inputMailForgetPassword();
     }else{
         firebase.auth().sendPasswordResetEmail(userLoginMail).then(function() {
             // Email sent.
         
-            alert("更改密碼 Email 已發送");
+            changePasswordAndMailSend();
             userLoginMail = "";
           }, function(error) {
             // An error happened.
@@ -287,3 +287,24 @@ function letGmailLogin(){
     });
 }
 
+// alert
+
+function wrongPassword(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '郵件或密碼輸入錯誤';
+}
+
+function veriefyMailSend(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '驗證信已寄出';
+}
+
+function inputMailForgetPassword(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '請輸入電子郵件後，再次點選「忘記密碼」';
+}
+
+function changePasswordAndMailSend(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = "更改密碼 Email 已發送";
+}

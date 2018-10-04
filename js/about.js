@@ -18,17 +18,35 @@ function sendToMail(){
         });
         getFeedback();
     }else{
-        alert('請確實填寫內容')
+        pleaseWriteRight('請確實填寫內容')
     }
 }
 
 function getFeedback(){
-    alert('成功送出，我們會盡快回覆您！')
+    successOut();
     aboutName.value = '';
     aboutMail.value = '';
     aboutTitle.value = '';
     aboutContent.value = '';
-    
 }
 
+// alert 
 
+function successOut(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '成功送出，我們會盡快回覆您！';
+}
+
+function pleaseWriteRight(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '請確實輸入資料';
+}
+
+const alertBigBox = document.getElementById('alertBigBox');
+const alertButton = document.getElementById('alertButton');
+const alertWord = document.getElementById('alertWord');
+alertBigBox.style.display = 'none';
+
+alertButton.addEventListener('click', ()=>{
+    alertBigBox.style.display = 'none';
+});
