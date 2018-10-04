@@ -1,0 +1,137 @@
+/* section */
+
+section{
+    background: url("../images/FE_key_visual.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 580px;
+    padding:10px;
+    background-position-x: center;
+}
+
+section>div{
+    display: inline-block;
+    position: relative;
+    top:50%;
+    left: 10%;
+    color: white;
+    line-height: 40px;
+}
+
+section>div>span.keyvisualSpan{
+    font-size:34px;
+}
+
+section>div>span.keyvisualSpanTwo{
+    font-size:44px;
+}
+
+/* main */
+
+main{
+    padding: 50px 40px;
+}
+
+main>div{
+    display: flex;
+    max-width: 1940px;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+main>div>div{
+    width: 700px;
+}
+
+main>div>div.question-list>input{
+    width: 80%;
+    border-radius: 6px;
+    height: 20px;
+    font-size: 15px;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    border: 1.5px solid rgb(207, 206, 206);
+}
+
+main>div>div.question-list>input:focus{
+    border: 1.5px solid rgb(207, 206, 206);
+    outline: 0px solid rgb(207, 206, 206);
+}
+
+main>div>div.question-list>textarea{
+    width: 80%;
+    border-radius: 10px;
+    height: 200px;
+    font-size: 15px;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    border: 1.5px solid rgb(207, 206, 206);
+    letter-spacing: 3px;
+}
+
+main>div>div.question-list>textarea:focus{
+    border: 1.5px solid rgb(207, 206, 206);
+    outline: 0px solid rgb(207, 206, 206);
+}
+
+main>div>div.question-list>p.send{
+    text-align: center;
+    border-radius: 5px;
+    height: 40px;
+    line-height: 40px;
+    width: 100px;
+    color: white;
+    background-color: rgb(26, 216, 211);
+}
+
+main>div>div.company-data>div{
+    width: auto;
+    height: 220px;
+    background-color: rgba(230, 230, 230, .8);
+    border-radius: 5px;
+}
+
+main>div>div.company-data>div.data-word{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+
+main>div>div.company-data>div.data-word>img{
+    background: cover;
+    width: 34.28px;
+    height: 47.4px;
+    cursor: text;
+}
+
+main>div>div.company-data>div.data-word>p{
+    font-size:15px; color: rgb(128,128,128);
+}
+
+main>div>div.company-data>div.data-map{
+    margin-top: 30px;
+}
+
+@media ( max-width: 1480px ){
+    main>div>div{
+        width: 500px;
+    }
+}
+
+@media ( max-width: 660px ){
+    section>div{
+        line-height: 25px;
+    }
+    section>div>span.keyvisualSpan{
+        font-size:28px;
+    }
+    section>div>span.keyvisualSpanTwo{
+        font-size: 34px;
+    }
+}

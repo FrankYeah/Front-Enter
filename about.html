@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <link rel="stylesheet" type="text/css" href="css/about.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
-    <title>Front-Enter</title>
+    <title>聯絡我們</title>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script src='js/firebase.js'></script>
@@ -34,7 +34,25 @@
     <aside><img id="testGo" src="images/FE_test_go.png" /></aside>
 
     <main>
+        <div>
+            <div class="question-list">
+                <p style="font-size:24px; font-weight: bold; color: rgb(128,128,128)">聯絡我們</p>
+                <p style="padding-bottom:20px; color: rgb(128,128,128)">想進一步了解我們？歡迎來信與我們聯絡。</p>
+                <input id="aboutName" type="text" placeholder="姓名">
+                <input id="aboutMail" type="text" placeholder="信箱">
+                <input id="aboutTitle" type="text" placeholder="信件主旨">
+                <textarea id="aboutContent" name="信件內容" cols="30" rows="10" placeholder="信件內容"></textarea>
+                <p id="aboutSend" class="send">送出</p>
+            </div>
 
+            <div class="company-data">
+                <div class="data-word">
+                    <img src="images/location_icon_one.png" alt="address">
+                    <p>基隆市安樂區樂一路30號</p>
+                </div>
+                <div class="data-map"><div style="height:100%;width:100%" id="map"></div></div>
+            </div>
+        </div>
     </main>
 
     <div class="top">
@@ -45,14 +63,24 @@
         <p><u><a>FAQ</a></u></p>
         <p class="m">&nbsp;&nbsp; 0917-218-567</p>
         <p class="e">&nbsp;&nbsp; aaa24295234@gmail.com</p>
-        <p class="a">&nbsp;&nbsp; 基隆市安樂區樂一路30號</p>
         <div>
             <img class="footer-img" src="images/FE_facebook.png" alt="">
             <img class="footer-img" src="images/FE_line.png" alt="">
         </div>
     </footer>
 
-    <script src='js/home.js'></script>
+    <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: 25.131572, lng: 121.734178},
+                zoom: 16
+                });
+            }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCIuttiWf2vGnNeUgfFRwRfM9k4id_taE&callback=initMap"
+            async defer></script>
+    <script src='js/about.js'></script>
     <script src='js/common.js'></script>
     <script src='js/login.js'></script>
 </body>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="css/common.css">
     <link rel="stylesheet" type="text/css" href="css/backstage.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
-    <title>Front-Enter</title>
+    <title>發文後台</title>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script src='js/firebase.js'></script>
@@ -17,7 +17,7 @@
     <header id="header">
         <div class="logo"><a href="./index.html"><img id="logo" src="images/FE_logo-1.png" /></a></div>
 		<nav>
-			<div id="headerP1"><a href="">關於</a></div>
+			<div id="headerP1"><a href="about.html">關於</a></div>
             <div id="headerP2"><a href="./article.html">文章</a></div>
             <div style="margin-top:3px"><img id="webSearch" src="images/FE_search.png" /></div>
 			<div id="headerP3"><a>登入</a></div>
@@ -31,36 +31,36 @@
     <p id="logoutTest" style="text-align: center; cursor: pointer; font-style:italic;">登出</p>
     <main>
         <p>名稱</p>
-        <input id="mainName" type="text" placeholder="AppWorks School">
+        <input value="AppWorks School" id="mainName" type="text" placeholder="AppWorks School">
         <p>學習城市</p>
-        <input id="mainCity" type="text" placeholder="台北">
+        <input value="台北" id="mainCity" type="text" placeholder="台北">
         <p>技能</p>
-        <input id="mainSkill" type="text" placeholder="前端">
+        <input value="前端" id="mainSkill" type="text" placeholder="前端">
         <p>技術</p>
-        <input id="mainTechnology" type="text" placeholder="HTML、CSS、javaScript">
+        <input value="HTML、CSS、javaScript" id="mainTechnology" type="text" placeholder="HTML、CSS、javaScript">
         <p>每月費用</p>
-        <input id="mainFee" type="text" placeholder="3,000 ( 元 )">
+        <input value="3000" id="mainFee" type="text" placeholder="3000 ( 元 )">
         <p>課程天數</p>
-        <input id="mainTotalDay" type="text" placeholder="60 ( 天 )">
+        <input value="60" id="mainTotalDay" type="text" placeholder="60 ( 天 )">
         <p>每周時數</p>
-        <input id="mainWeekHour" type="text" placeholder="40 ( 小時 )">
+        <input value="40" id="mainWeekHour" type="text" placeholder="40 ( 小時 )">
         <p>創辦多久</p>
-        <input id="mainFoundYear" type="text" placeholder="3 ( 年 )">
+        <input value="3" id="mainFoundYear" type="text" placeholder="3 ( 年 )">
         <p>教學方式</p>
-        <input id="mainTeachWay" type="text" placeholder="放養制、手把手教制">
+        <input value="放養制" id="mainTeachWay" type="text" placeholder="放養制、手把手教制">
         <p>班制</p>
-        <input  id="mainClassType" type="text" placeholder="小班制、大班制、一對一">
+        <input value="小班制" id="mainClassType" type="text" placeholder="小班制、大班制、一對一">
         <p>老師數量</p>
-        <input id="mainTeacherNum" type="text" placeholder="2 ( 位 )">
+        <input value="2" id="mainTeacherNum" type="text" placeholder="2 ( 位 )">
         <p>內文標題</p>
-        <input id="mainTopic" type="text" placeholder="內文標題">
+        <input value="內文標題" id="mainTopic" type="text" placeholder="內文標題">
         <p>前言</p>
-        <input id="mainPreface" type="text" placeholder="AppWorks School 已有五屆...">
+        <input value="AppWorks School 已有五屆..." id="mainPreface" type="text" placeholder="AppWorks School 已有五屆...">
         <p>內文</p>
-        <textarea id="mainContent" name="內文" id="" cols="30" rows="10"></textarea>
+        <textarea  id="mainContent" name="內文" id="" cols="30" rows="10"></textarea>
         <p>聯絡（電話、郵件）</p>
-        <input id="mainPhone" type="text" placeholder="0917-218-567">
-        <input id="mainMail" type="text" placeholder="aaa24295234@gmail.com">
+        <input value="0917-218-567" id="mainPhone" type="text" placeholder="0917-218-567">
+        <input value="aaa24295234@gmail.com" id="mainMail" type="text" placeholder="aaa24295234@gmail.com">
         <p>方形圖片上傳</p>
         <input id="mainUploadPic" type="file">
         <p>長方形圖片上傳</p>
@@ -77,7 +77,6 @@
         <p><u><a>FAQ</a></u></p>
         <p class="m">&nbsp;&nbsp; 0917-218-567</p>
         <p class="e">&nbsp;&nbsp; aaa24295234@gmail.com</p>
-        <p class="a">&nbsp;&nbsp; 基隆市安樂區樂一路30號</p>
         <div style="line-height: 130px;">
             <img class="footer-img" src="images/FE_facebook.png" alt="">
             <img class="footer-img" src="images/FE_line.png" alt="">
