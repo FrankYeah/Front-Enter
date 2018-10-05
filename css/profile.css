@@ -1,0 +1,40 @@
+/* section */
+
+section{
+    background: url("../images/FE_key_visual.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 580px;
+    padding:10px;
+    background-position-x: center;
+    background-position-y: bottom;
+}
+
+section>div{
+    display: inline-block;
+    position: relative;
+    top:50%;
+    left: 10%;
+    color: white;
+    line-height: 40px;
+}
+
+section>div>span.keyvisualSpan{
+    font-size:34px;
+}
+
+section>div>span.keyvisualSpanTwo{
+    font-size:44px;
+}
+
+@media ( max-width: 660px ){
+    section>div{
+        line-height: 25px;
+    }
+    section>div>span.keyvisualSpan{
+        font-size:28px;
+    }
+    section>div>span.keyvisualSpanTwo{
+        font-size: 34px;
+    }
+}

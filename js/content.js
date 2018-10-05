@@ -46,6 +46,7 @@ function keyvisualBorn(data){
     document.getElementById('section').style.background  =  "url('" + data.rectangleUrl + "')"; 
     document.getElementById('section').style.backgroundRepeat  =  "no-repeat";  
     document.getElementById('section').style.backgroundSize  =  "cover";
+    document.getElementById('section').style.backgroundPositionY  =  "bottom";
 }
 
 function mainChartBorn(){

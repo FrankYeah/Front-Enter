@@ -1,3 +1,8 @@
+//
+
+
+
+
 //登出功能
 
 document.getElementById('logoutTest').onclick = logoutMeOut;

@@ -8,6 +8,7 @@ section{
     height: 580px;
     /* width: 100%; */
     background-position-x: center;
+    background-position-y: bottom;
 }
 
 section>a>div{

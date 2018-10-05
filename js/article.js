@@ -25,16 +25,19 @@ function changeKevisual(){
     keyvisual0.style.background  =  "url('" + keyvisualImg[0] + "')";    
     keyvisual0.style.backgroundRepeat  =  "no-repeat";  
     keyvisual0.style.backgroundSize  =  "cover";
+    keyvisual0.style.backgroundPositionY = 'bottom';
     keyvisualLink0.href = keyvisualLinkArray[0];
 
     keyvisual1.style.background  =  "url('" + keyvisualImg[1] + "')";    
     keyvisual1.style.backgroundRepeat  =  "no-repeat";  
     keyvisual1.style.backgroundSize  =  "cover";
+    keyvisual1.style.backgroundPositionY = 'bottom';
     keyvisualLink0.href = keyvisualLinkArray[1];
 
     keyvisual2.style.background  =  "url('" + keyvisualImg[2] + "')";    
     keyvisual2.style.backgroundRepeat  =  "no-repeat";  
     keyvisual2.style.backgroundSize  =  "cover";
+    keyvisual2.style.backgroundPositionY = 'bottom';
     keyvisualLink0.href = keyvisualLinkArray[2];
 
     if(icount == 0){
