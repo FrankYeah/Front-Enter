@@ -145,7 +145,7 @@ function locationDivBorn(){
 function locationImgBorn(){
     let newElement = document.createElement('img');
     newElement.id = 'locationImgBorn' + x;
-    newElement.src = "../images/location_icon_one.png";
+    newElement.src = "../Front-Enter/images/location_icon_one.png";
     document.getElementById('locationDiv' + x).appendChild(newElement);
 }
 
