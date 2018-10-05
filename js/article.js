@@ -188,7 +188,7 @@ function tagLineBorn(){
 function contentABorn(data){
     let newElement = document.createElement('a');
     newElement.id = 'contentA' + x;
-    newElement.setAttribute('href', "/content.html?id=" + data.creatTime);
+    newElement.setAttribute('href', "/Front-Enter/content.html?id=" + data.creatTime);
     document.getElementById('article' + x).appendChild(newElement);
 }
 
