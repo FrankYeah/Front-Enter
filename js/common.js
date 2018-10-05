@@ -17,7 +17,7 @@ function winScroll(){
         header.style.animation = "headerBackgroundOut 5s ease 0s 1 alternate forwards";
         if(userLogin && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(26, 216, 211)';
-            headerP3.textContent = '個人頁';
+            headerP3.textContent = '會員';
             headerP3.style.cursor = 'pointer';
         }
       }else if(document.documentElement.scrollTop<100){
@@ -29,7 +29,7 @@ function winScroll(){
         header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"
         if(userLogin && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(26, 216, 211)';
-            headerP3.textContent = '個人頁';
+            headerP3.textContent = '會員';
             headerP3.style.cursor = 'pointer';
         }
       }
@@ -42,7 +42,7 @@ window.onload = function() {
     // 檢測登入狀態改變文字
     if(userLogin && userLogin.emailVerified == true){
         headerP3.style.color = 'rgb(26, 216, 211)';
-        headerP3.textContent = '個人頁';
+        headerP3.textContent = '會員';
         headerP3.style.cursor = 'pointer';
     }
 

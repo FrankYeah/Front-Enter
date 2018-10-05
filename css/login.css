@@ -27,12 +27,10 @@ div.login-div-white{
     flex-direction: column;
     z-index: 3;
     opacity: 1;
-    bottom: 5%;
-    left: 30%;
-    width: 40%;
-    height: 90%;
+    width: 350px;
+    height: 440px;
     background-color: white;
-    border-radius: 4px;
+    border-radius: 5px;
     border: 1px solid #979797;
 }
 
@@ -41,9 +39,9 @@ div.login-div-white>div.login-div-logo{
     margin-top: 20px;
     background: url(../images/FE_logo-2.png);
     background-repeat: no-repeat;
-    background-size: 325px 145px;
-    width: 325px;
-    height: 145px;
+    background-size: 225px 105px;
+    width: 225px;
+    height: 105px;
 }
 
 div.login-div-white>div.login-input-div{
@@ -166,16 +164,12 @@ div.login-div-white>p.fb-login-button{
 
 @media ( max-width: 1100px ){
     div.login-div-white{
-        left: 20%;
-        width: 60%;
-
     }
 }
 
 @media ( max-width: 630px ){
     div.login-div-white{
-        left: 10%;
-        width: 80%;
+
     }
     div.login-div-white>div.login-div-logo{
         background-size: 225px 105px;
@@ -186,8 +180,7 @@ div.login-div-white>p.fb-login-button{
 
 @media ( max-width: 480px ){
     div.login-div-white{
-        left: 2.5%;
-        width: 95%;
+
     }
     div.login-div-white>p.gmail-login-button{
         font-size: 16px;
