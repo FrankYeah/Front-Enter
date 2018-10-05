@@ -197,7 +197,9 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userLogin = user;
     if(userLogin.emailVerified == true){
-    console.log("User is logined", user)
+    console.log("User is logined", user);
+    //資料輸入
+    storeDataToFirebase();
     }else{
         console.log('尚未驗證此郵件')
         firebase.auth().signOut().then(function() {
@@ -211,6 +213,16 @@ firebase.auth().onAuthStateChanged(function(user) {
     console.log("User is not logined yet.");
   }
 });
+
+// 檢測登入後，將資料寫入資料庫
+
+function storeDataToFirebase(){
+    // 先判斷 user data 有無此人
+    // 有資料的話，直接略過此事
+    console.log('ready to send data');
+    //沒資料的話，就在 firebase 中新增一筆
+    
+}
 
 // 創建帳號後，檢測登入並寄送驗證信
 

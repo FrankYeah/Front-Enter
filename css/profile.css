@@ -44,7 +44,7 @@ main>div{
 }
 
 main>div>div{
-
+    border-radius: 5px;
 }
 
 main>div>div.select-button{
@@ -54,6 +54,7 @@ main>div>div.select-button{
     flex-direction: column;
     justify-content: center; 
     align-items: center;
+    height: 400px;
 }
 
 main>div>div.select-button>p{
@@ -71,40 +72,55 @@ main>div>div.select-button>p:hover{
     cursor: pointer;
 }
 
+main>div>div.select-button>p.manage-post{
+    display: none;
+}
+
 main>div>div.display-result{
     display: flex;
     flex-direction: column;
     background-color:rgba(230, 230, 230, .8);
     width: 600px;
     position: relative;
+    align-items: center;
 }
 
 main>div>div.display-result>div.photo{
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     background-color: aqua;
     border-radius: 50%;
     position: absolute;
-    background: url('../images/test_profile.jpg');
+    background: url('');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    left: 244px;
     top: -50px;
 }
 
-main>div>div.display-result>input{
+main>div>div.display-result>input.input-name{
     background-color: rgba(230, 230, 230, 0);
     color: rgb(128, 128, 128);
     font-size: 16px;
     border: 0px solid white;
     text-align: center;
-    padding: 3px;
     margin-top: 70px;
+    width: 320px;
+    padding: 10px;
+    border-radius: 5px;
 }
 
-main>div>div.display-result>div{
-    padding: 30px;
+main>div>div.display-result>div.split-line{
+    height: 1px;
+    width: 500px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+    margin: 30px 0px 5px 0px;
+}
+
+main>div>div.display-result>div.form{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 main>div>div.display-result>div>input{
@@ -112,29 +128,57 @@ main>div>div.display-result>div>input{
     color: rgb(128, 128, 128);
     font-size: 16px;
     border: 0px solid white;
-    padding: 3px;
+    width: 320px;
+    text-align: center;
+    border-radius: 5px;
 }
 
 main>div>div.display-result>div>p{
-    color: rgb(128, 128, 128);
+    color: rgb(158, 158, 158);
     font-size: 16px;
-    padding: 3px;
     width: 80px;
+    text-align: center;
+}
+
+main>div>div.display-result>div.fix-data{
+    width: 80px;
+    background-color: rgb(26, 216, 211);
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid rgb(26, 216, 211);
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+main>div>div.display-result>div.confirm-cancel{
+    font-size: 16px;
+    padding: 10px;
+    margin-top: 10px;
+    display: none;
+
+}
+
+main>div>div.display-result>div.confirm-cancel>div{
+    width: 80px;
+    background-color: rgb(26, 216, 211);
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid rgb(26, 216, 211);
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px;
 }
 
 @media ( max-width: 880px ){
     main>div>div.display-result>div.photo{
         height: 0px;
         width: 0px;
-        background-color: aqua;
-        border-radius: 50%;
-        position: absolute;
         background: url('');
-        background-position: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        left: 244px;
-        top: -50px;
     }
 }
 

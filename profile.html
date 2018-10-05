@@ -36,17 +36,24 @@
         <div>
             <div class="select-button">
                 <p>個人資料</p>
-                <p style="background-color:gray; border:0px">未開放</p>
+                <p style="background-color:gray; border:0px">即將開放</p>
+                <p id="managePost" class="manage-post">貼文管理</p>
                 <p id="logoutTest">登出</p>
             </div>
-            <div class="display-result">
-                <div class="photo"></div>
-                <input type="text" value="葉奕緯">
-                <div>
-                    <p>信箱</p><input type="text" value="111@gmail.com" placeholder="aaa24295234@gmail.com">
+            <div id="displayResult" class="display-result">
+                <div id="inputPhoto" class="photo"></div>
+                <input id="inputName" class="input-name" disabled type="text" value="">
+                <div class="split-line"></div>
+                <div class="form">
+                    <p>信箱</p><input id="inputMail" disabled type="text" value="">
                 </div>
-                <div>
-                    <p>手機</p><input type="text" value="0917-218-567" placeholder="0917-218-567">
+                <div class="form">
+                    <p>手機</p><input id="inputPhone" disabled type="text" value="" placeholder="">
+                </div>
+                <div id="fixData" class="fix-data">修改資料</div>
+                <div id="confirmCancel" class="confirm-cancel">
+                    <div id="makeConfirm" class="fix-data">確認</div>
+                    <div id="makeCancel" class="fix-data">取消</div>
                 </div>
             </div>
         </div>
