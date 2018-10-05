@@ -633,7 +633,7 @@ function maxValue(){
     document.getElementById('whiteInPieChart').textContent = maxCount;
 
     getFirebaseData.orderByChild("name").equalTo(maxEl).on("child_added", function(snapshot) {
-        document.getElementById('resultA').setAttribute('href', "/content.html?id=" + snapshot.val().creatTime);
+        document.getElementById('resultA').setAttribute('href', "/Front-Enter/content.html?id=" + snapshot.val().creatTime);
     });  
 
     // 清空
