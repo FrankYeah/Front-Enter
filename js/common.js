@@ -51,19 +51,19 @@ window.onload = function() {
     let isTop = true;
 
     top.onclick = function(){
-        //设置定时器
+        //設置定時器
         timer = setInterval(function(){
-            //获取滚动条距离顶部的高度
+            //獲取滾動條到頂部的高度
             let osTop = document.documentElement.scrollTop || document.body.scrollTop ;  //同时兼容了ie和Chrome浏览器
                 
-            //减小的速度
+            //减少的速度
             let isSpeed = Math.floor(-osTop / 6);
             document.documentElement.scrollTop = document.body.scrollTop = osTop + isSpeed;
             //console.log( osTop + isSpeed);
 
             isTop = true;
 
-            //判断，然后清除定时器
+            //判斷，然後清除定時器
             if (osTop == 0) {
                 clearInterval(timer);
             }

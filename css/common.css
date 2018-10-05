@@ -243,6 +243,10 @@ footer>div>img.footer-img{
     vertical-align : middle;  
 }
 
+u{
+    text-decoration: none;
+}
+
 /* 搜尋 */
 
 div.fullSearchDiv{
@@ -410,7 +414,7 @@ div.test-go-back-div>div.test-go-white-div>p.test-one-button{
 
 div.test-go-back-div>div.test-go-white-div>p.test-one-button:hover{
     opacity: 0.8;
-    padding: 31px;
+    padding: 30.5px;
     /* color: white;
     background-color: rgb(128, 128, 128); */
 }
@@ -433,7 +437,7 @@ div.test-go-back-div>div.test-go-white-div>p.test-two-select{
 
 div.test-go-back-div>div.test-go-white-div>p.test-two-select:hover{
     opacity: 0.8;
-    padding: 31px;
+    padding: 20px;
     /* color: white;
     background-color: rgb(128, 128, 128); */
 }
