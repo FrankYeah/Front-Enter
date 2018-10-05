@@ -122,6 +122,22 @@ main>div>div.display-result>div>p{
     width: 80px;
 }
 
+@media ( max-width: 880px ){
+    main>div>div.display-result>div.photo{
+        height: 0px;
+        width: 0px;
+        background-color: aqua;
+        border-radius: 50%;
+        position: absolute;
+        background: url('');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        left: 244px;
+        top: -50px;
+    }
+}
+
 @media ( max-width: 660px ){
     section>div{
         line-height: 25px;
