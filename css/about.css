@@ -92,6 +92,10 @@ main>div>div.question-list>p.send{
     cursor: pointer;
 }
 
+main>div>div.question-list>p.send{
+    opacity: 0.8;
+}
+
 main>div>div.company-data>div{
     width: auto;
     height: 224px;

@@ -15,6 +15,9 @@ window.onload = function(){
     inputName.value = userLogin.displayName;
     inputMail.value = userLogin.email;
     inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
+    inputPhoto.style.backgroundPosition= 'center';
+    inputPhoto.style.backgroundSize= 'cover';
+    inputPhoto.style.backgroundRepeat= 'no-repeat';
     if(userLogin.email == 'aaa24295234@gmail.com'){
         managePost.style.display = 'block';
     }

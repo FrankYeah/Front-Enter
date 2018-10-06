@@ -11,24 +11,23 @@ function createLoginLayout(){
             }
         }else{
             console.log('這個人還沒登入過欸')
+            loginFullDiv();
+            loginDivWhite();
+            loginDivLogo();
+            loginInputDiv();
+            loginInputMail();
+            loginInputCode();
+            loginForgetCode();
+            registerLoginDiv();
+            registerButtonP();
+            loginButtonP();
+            // LoginStopLine();
+            // stopLineLeft();
+            // stopLineWord();
+            // stopLineLeft();
+            gmailLoginButton();
+            // fbLoginButton();
         }
-
-        loginFullDiv();
-        loginDivWhite();
-        loginDivLogo();
-        loginInputDiv();
-        loginInputMail();
-        loginInputCode();
-        loginForgetCode();
-        registerLoginDiv();
-        registerButtonP();
-        loginButtonP();
-        // LoginStopLine();
-        // stopLineLeft();
-        // stopLineWord();
-        // stopLineLeft();
-        gmailLoginButton();
-        // fbLoginButton();
 }
 
 function loginFullDiv(){
@@ -187,6 +186,7 @@ function loginHere(){
 }
 
 function reloadLogin(){
+    itReadyToLogout();
     window.location.reload();
 }
 
@@ -210,6 +210,16 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   } else {
     userLogin = null;
+    headerP3.textContent ='登入';
+    headerP3.style.cursor = 'pointer';
+    headerP3.addEventListener('mouseenter', changeColor);
+    headerP3.addEventListener('mouseleave', changeColorAgain)
+    function changeColor(){
+        headerP3.style.color = 'rgb(26, 216, 211)';
+    }
+    function changeColorAgain(){
+        headerP3.style.color = 'rgb(128, 128, 128)';
+    }
     console.log("User is not logined yet.");
   }
 });
@@ -217,6 +227,14 @@ firebase.auth().onAuthStateChanged(function(user) {
 // 檢測登入後，將資料寫入資料庫
 
 function storeDataToFirebase(){
+    // 更換頭像
+    headerP3.style.background = "url('" + userLogin.photoURL + "')"; 
+    headerP3.style.backgroundPosition= 'center';
+    headerP3.style.backgroundSize= 'cover';
+    headerP3.style.backgroundRepeat= 'no-repeat';
+    headerP3.style.borderRadius= '50%';
+    headerP3.style.height= '40px';
+    headerP3.style.width= '40px';
     // 先判斷 user data 有無此人
     // 有資料的話，直接略過此事
     console.log('ready to send data');
@@ -300,6 +318,11 @@ function letGmailLogin(){
 }
 
 // alert
+
+function itReadyToLogout(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '重新載入';
+}
 
 function wrongPassword(){
     alertBigBox.style.display = 'flex';
