@@ -189,11 +189,16 @@ main>article>a>div.article-div{
 
 main>article>a>div>img.article-img{
     width:200px ; height: auto;
+    transition: all 0.6s;
+}
+
+main>article>a>div>img.article-img:hover{
+    transform: scale(1.2);
 }
 
 main>article>a>p.article-head{
     text-align: center;
-    font-size: 30px;
+    font-size: 26px;
     letter-spacing: 0px;
     color: rgb(26, 216, 211);
     cursor: pointer;
@@ -211,12 +216,20 @@ div.read-more-out{
     justify-content: center;
     align-items: center;
     width: 240px;
+    margin: 5px 0px 70px 0px;
 }
 
 div.read-more-word{
     color: rgb(26, 216, 211);
     width: 120px;
     text-align: right;
+    -webkit-transition: margin-right 1s; 
+    transition: margin-right 1s;
+}
+
+div.read-more-word:hover{
+    margin-right: 25px;
+    opacity: 0.5;
 }
 
 div.read-more-div{
@@ -226,9 +239,10 @@ div.read-more-div{
     background: url(../images/arrow-right-one.png);
     background-size: cover;
     margin-left: 5px;
-    margin-top: 4px;
-    animation: letArrowMove 1s ease 0s infinite alternate;
+    margin-top: 4.5px;
+    /* animation: letArrowMove 1s ease 0s infinite alternate; */
 }
+
 
 @media ( max-width:1300px ){
     /* section{
