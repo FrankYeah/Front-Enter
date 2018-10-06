@@ -141,29 +141,27 @@ header>nav>div>img{
         /* section */
 
         section{
-            background: url("../images/FE_key_visual.png");
+            /* background: url("../images/FE_key_visual.png");
             background-repeat: no-repeat;
             background-size: 100% 630px;
-            height: 580px;
-            /* width: 100%; */
-            /* box-shadow:3px 3px 12px rgb(26, 216, 211);padding:10px; */
+            height: 580px; */
         }
 
         section>div{
-            display: inline-block;
+            /* display: inline-block;
             position: relative;
             top:50%;
             left: 10%;
             color: white;
-            line-height: 60px;
+            line-height: 60px; */
         }
 
         section>div>span.keyvisualSpan{
-            font-size:38px;
+            /* font-size:38px; */
         }
 
         section>div>span.keyvisualSpanTwo{
-            font-size:44px;
+            /* font-size:44px; */
         }
 
 /* aside */
@@ -879,4 +877,23 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
     90%  { content : 'Udemy'; }
     95%  { content : '五倍紅寶石'; }
     100% { content : '六角學院'; }
+}
+
+@keyframes letArrowMove{
+    0%   { margin-left: 5px; }
+    50%   { margin-left: 15px; }
+    100% { margin-left: 5px; }
+}
+
+@-webkit-keyframes letArrowMove {
+    0%   { margin-left: '5px'; }
+    100% { margin-left: '10px'; }
+}
+@-moz-keyframes letArrowMove {
+    0%   { margin-left: '5px'; }
+    100% { margin-left: '10px'; }
+}
+@-o-keyframes letArrowMove {
+    0%   { margin-left: '5px'; }
+    100% { margin-left: '10px'; }
 }

@@ -22,6 +22,9 @@ section>a>div{
     height: 380px;
     color: white;
     line-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 section.keyvisual0{
@@ -41,13 +44,17 @@ section>div.section-grey{
     height: 100%;
 }
 
-section>div>a>span.keyvisualSpan{
-    font-size:38px;
+section>a>div>span.keyvisualSpan{
+    font-size: 30px;
+    color: rgb(26,216,211);
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 20px;
+    text-align: center;
+    padding-left: 23px;
 }
 
-section>div>a>span.keyvisualSpanTwo{
-    font-size:44px;
-}
 /* 標籤條 */
 
 div.tag-box{
@@ -55,7 +62,7 @@ div.tag-box{
     height: 70px;
     background-color: rgba(255,255,255,0.6);
     box-shadow: 0 0 15px rgba(199, 199, 199, 0.8);
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -68,7 +75,7 @@ div.tag-box>div{
 }
 
 div.tag-box>div:hover{
-    opacity: 0.8;
+    opacity: 0.5;
 }
 
 mark.mark-tag{
@@ -190,11 +197,37 @@ main>article>a>p.article-head{
     letter-spacing: 0px;
     color: rgb(26, 216, 211);
     cursor: pointer;
-    width: auto;
+    width: 240px;
+    line-height: 38px;
 }
 
 main>article>a>p:hover{
     opacity: 0.7;
+}
+
+div.read-more-out{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+}
+
+div.read-more-word{
+    color: rgb(26, 216, 211);
+    width: 120px;
+    text-align: right;
+}
+
+div.read-more-div{
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    background: url(../images/arrow-right-one.png);
+    background-size: cover;
+    margin-left: 5px;
+    margin-top: 4px;
+    animation: letArrowMove 1s ease 0s infinite alternate;
 }
 
 @media ( max-width:1300px ){

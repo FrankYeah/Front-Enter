@@ -83,7 +83,7 @@ if(articleId == null){
     getAllData.orderByChild("skill").on("child_added", function(snapshot) {
         data = snapshot.val();
         storePhoto.push(data.rectangleUrl);
-        storeLink.push('content.html?id=' + data.creatTime);
+        // storeLink.push('content.html?id=' + data.creatTime);
         createLayout(data);
     });
 }else if(articleId == '彭彭' || articleId == 'pengpeng' || articleId == 'peng'
@@ -92,7 +92,7 @@ if(articleId == null){
     console.log('have id')
     getAllData.orderByChild("skill").on("child_added", function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
-        storeLink.push('content.html?id=' + data.creatTime);
+        // storeLink.push('content.html?id=' + data.creatTime);
         document.getElementById('mainId').innerHTML = '';
     });
     getAllData.orderByChild("name").equalTo('彭彭的課程教學').on("child_added", function(snapshot) {
@@ -105,7 +105,7 @@ if(articleId == null){
     console.log('got a')
     getAllData.orderByChild("skill").on("child_added", function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
-        storeLink.push('content.html?id=' + data.creatTime);
+        // storeLink.push('content.html?id=' + data.creatTime);
         document.getElementById('mainId').innerHTML = '';
     });
     getAllData.orderByChild("name").equalTo("AppWorks School").on("child_added", function(snapshot) {
@@ -127,6 +127,9 @@ function createLayout(data){
     imgBorn(data);
     pNameBorn(data);
     pPrefaceBorn(data);
+    readMoreOut();
+    readMoreWord();
+    readMoreDiv();
     x ++;
 }
 
@@ -219,6 +222,28 @@ function pPrefaceBorn(data){
     document.getElementById('contentA' + x).appendChild(newElement);
 }
 
+function readMoreOut(){
+    let newElement = document.createElement('div');
+    newElement.id = 'readMoreOut' + x;
+    newElement.className = 'read-more-out';
+    document.getElementById('contentA' + x).appendChild(newElement);
+}
+
+function readMoreWord(){
+    let newElement = document.createElement('div');
+    newElement.textContent = 'read more';
+    newElement.id = 'readMoreWord';
+    newElement.className = 'read-more-word';
+    document.getElementById('readMoreOut' + x).appendChild(newElement);
+}
+
+function readMoreDiv(){
+    let newElement = document.createElement('div');
+    newElement.className = 'read-more-div';
+    newElement.id = 'readMoreDiv';
+    document.getElementById('readMoreOut' + x).appendChild(newElement);
+}
+
 // 各種標籤
 
 const getAllArticle = document.getElementById('getAllArticle');
@@ -227,7 +252,7 @@ getAllArticle.onclick = function(){
     getAllData.orderByChild("skill").on("child_added", function(snapshot) {
         data = snapshot.val();
         storePhoto.push(data.rectangleUrl);
-        storeLink.push('content.html?id=' + data.creatTime);
+        // storeLink.push('content.html?id=' + data.creatTime);
         createLayout(data);
         });
 }

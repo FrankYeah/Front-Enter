@@ -92,7 +92,7 @@ main>div>div.display-result>div.photo{
     background-color: aqua;
     border-radius: 50%;
     position: absolute;
-    background: url('');
+    background: url('../images/__user_login_icon_307830.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

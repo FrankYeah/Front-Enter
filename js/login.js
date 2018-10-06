@@ -228,13 +228,17 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function storeDataToFirebase(){
     // 更換頭像
-    headerP3.style.background = "url('" + userLogin.photoURL + "')"; 
-    headerP3.style.backgroundPosition= 'center';
-    headerP3.style.backgroundSize= 'cover';
-    headerP3.style.backgroundRepeat= 'no-repeat';
-    headerP3.style.borderRadius= '50%';
-    headerP3.style.height= '40px';
-    headerP3.style.width= '40px';
+    if(userLogin.photoURL){
+        headerP3.style.background = "url('" + userLogin.photoURL + "')"; 
+        headerP3.style.backgroundPosition= 'center';
+        headerP3.style.backgroundSize= 'cover';
+        headerP3.style.backgroundRepeat= 'no-repeat';
+        headerP3.style.borderRadius= '50%';
+        headerP3.style.height= '40px';
+        headerP3.style.width= '40px';
+    }else{
+        headerP3.textContent = '會員';
+    }
     // 先判斷 user data 有無此人
     // 有資料的話，直接略過此事
     console.log('ready to send data');

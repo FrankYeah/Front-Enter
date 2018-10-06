@@ -14,7 +14,9 @@ const managePost = document.getElementById('managePost');
 window.onload = function(){
     inputName.value = userLogin.displayName;
     inputMail.value = userLogin.email;
-    inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
+    if(userLogin.photoURL){
+        inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
+    }
     inputPhoto.style.backgroundPosition= 'center';
     inputPhoto.style.backgroundSize= 'cover';
     inputPhoto.style.backgroundRepeat= 'no-repeat';
