@@ -12,23 +12,23 @@ function winScroll(){
     if(document.documentElement.scrollTop>0){
         webSearch.src = "images/FE_search_green.png";
         logo.src = "images/FE_logo-4.png";
-        logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
+        // logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
         headerP1.style.color="rgb(128,128,128)";headerP2.style.color="rgb(128,128,128)";headerP3.style.color="rgb(128,128,128)";
         header.style.animation = "headerBackgroundOut 5s ease 0s 1 alternate forwards";
         if(userLogin && userLogin.emailVerified == true){
-            headerP3.style.color = 'rgb(26, 216, 211)';
+            headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '會員';
             headerP3.style.cursor = 'pointer';
         }
       }else if(document.documentElement.scrollTop<100){
-        webSearch.src = "images/FE_search.png";
-        logo.src = "images/FE_logo-1.png";
+        webSearch.src = "images/FE_search_green.png";
+        logo.src = "images/FE_logo-4.png";
         header.style.backgroundColor = "";
-        logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
-        headerP1.style.color="white";headerP2.style.color="white";headerP3.style.color="white";
+        // logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
+        headerP1.style.color="rgb(128, 128, 128)";headerP2.style.color="rgb(128, 128, 128)";headerP3.style.color="rgb(128, 128, 128)";
         header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"
         if(userLogin && userLogin.emailVerified == true){
-            headerP3.style.color = 'rgb(26, 216, 211)';
+            headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '會員';
             headerP3.style.cursor = 'pointer';
         }
@@ -41,9 +41,17 @@ window.onload = function() {
 
     // 檢測登入狀態改變文字
     if(userLogin && userLogin.emailVerified == true){
-        headerP3.style.color = 'rgb(26, 216, 211)';
+        headerP3.style.color = 'rgb(128, 128, 128)';
         headerP3.textContent = '會員';
         headerP3.style.cursor = 'pointer';
+        headerP3.addEventListener('mouseenter', changeColor);
+        headerP3.addEventListener('mouseleave', changeColorAgain)
+        function changeColor(){
+            headerP3.style.color = 'rgb(26, 216, 211)';
+        }
+        function changeColorAgain(){
+            headerP3.style.color = 'rgb(128, 128, 128)';
+        }
     }
 
     let top = document.getElementById('tops');

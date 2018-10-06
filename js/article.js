@@ -31,13 +31,13 @@ function changeKevisual(){
     keyvisual1.style.background  =  "url('" + keyvisualImg[1] + "')";    
     keyvisual1.style.backgroundRepeat  =  "no-repeat";  
     keyvisual1.style.backgroundSize  =  "cover";
-    keyvisual1.style.backgroundPositionY = 'bottom';
+    keyvisual1.style.backgroundPositionY = 'center';
     keyvisualLink0.href = keyvisualLinkArray[1];
 
     keyvisual2.style.background  =  "url('" + keyvisualImg[2] + "')";    
     keyvisual2.style.backgroundRepeat  =  "no-repeat";  
     keyvisual2.style.backgroundSize  =  "cover";
-    keyvisual2.style.backgroundPositionY = 'bottom';
+    keyvisual2.style.backgroundPositionY = 'center';
     keyvisualLink0.href = keyvisualLinkArray[2];
 
     if(icount == 0){
@@ -45,7 +45,7 @@ function changeKevisual(){
         keyvisual1.style.display  =  "none";
         keyvisual2.style.display  =  "none";
         keyvisualLink0.href = keyvisualLinkArray[0];
-        keyvisual0.style.animation = "opacityOut 2s ease 0s 1 alternate";
+        keyvisual0.style.animation = "opacityOut 1s ease 0s 1 alternate";
         keyvisual0.style.backgroundPositionX = 'left';
 
     }else if(icount == 1){
@@ -53,7 +53,7 @@ function changeKevisual(){
         keyvisual1.style.display  =  "block";
         keyvisual2.style.display  =  "none";
         keyvisualLink1.href = keyvisualLinkArray[1];
-        keyvisual1.style.animation = "opacityOut 2s ease 0s 1 alternate";
+        keyvisual1.style.animation = "opacityOut 1s ease 0s 1 alternate";
         keyvisual1.style.backgroundPositionX = 'center';
 
     }else if(icount == 2){
@@ -259,35 +259,35 @@ oneByOne.onclick = function(){
     });   
 }
 
-const mySelect = document.getElementById('mySelect');
-mySelect.onchange = function(event){
-    console.log(event.target.value)
+// const mySelect = document.getElementById('mySelect');
+// mySelect.onchange = function(event){
+//     console.log(event.target.value)
     
-    document.getElementById('mainId').innerHTML = '';
+//     document.getElementById('mainId').innerHTML = '';
 
-    //全部
-    if(event.target.value == '全部'){
-        getAllData.orderByChild("skill").on("child_added", function(snapshot) {
-            data = snapshot.val();
-            storePhoto.push(data.rectangleUrl);
-            storeLink.push('content.html?id=' + data.creatTime);
-            createLayout(data);
-        });
-    }else{
-        //小班制
-        //放養制
-        getAllData.orderByChild("teachWay").equalTo(event.target.value).on("child_added", function(snapshot) {
-            data = snapshot.val();
-            createLayout(data);
-        });   
+//     //全部
+//     if(event.target.value == '全部'){
+//         getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+//             data = snapshot.val();
+//             storePhoto.push(data.rectangleUrl);
+//             storeLink.push('content.html?id=' + data.creatTime);
+//             createLayout(data);
+//         });
+//     }else{
+//         //小班制
+//         //放養制
+//         getAllData.orderByChild("teachWay").equalTo(event.target.value).on("child_added", function(snapshot) {
+//             data = snapshot.val();
+//             createLayout(data);
+//         });   
 
-        //一對一
-        getAllData.orderByChild("classType").equalTo(event.target.value).on("child_added", function(snapshot) {
-            data = snapshot.val();
-            createLayout(data);
-        });   
-    }
-}
+//         //一對一
+//         getAllData.orderByChild("classType").equalTo(event.target.value).on("child_added", function(snapshot) {
+//             data = snapshot.val();
+//             createLayout(data);
+//         });   
+//     }
+// }
 
 // alert 
 

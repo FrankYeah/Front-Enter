@@ -4,10 +4,11 @@ section{
     background: url("../images/FE_key_visual.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 580px;
+    height: 380px;
     padding:10px;
     background-position-x: center;
-    background-position-y: bottom;
+    background-position-y: center;
+    margin-top: 105px;
 }
 
 section>div{
