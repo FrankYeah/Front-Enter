@@ -9,23 +9,20 @@ section{
     background-position-x: center;
     background-position-y: center;
     margin-top: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-section>div{
-    display: inline-block;
-    position: relative;
-    top:50%;
-    left: 10%;
-    color: white;
-    line-height: 40px;
-}
-
-section>div>span.keyvisualSpan{
-    font-size:34px;
-}
-
-section>div>span.keyvisualSpanTwo{
-    font-size:44px;
+section>div.keyvisualSpan{
+    font-size: 30px;
+    color: rgb(26,216,211);
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    letter-spacing: 20px;
+    text-align: center;
+    padding-left: 23px;
 }
 
 /* 主頁 */
@@ -184,13 +181,9 @@ main>div>div.display-result>div.confirm-cancel>div{
 }
 
 @media ( max-width: 660px ){
-    section>div{
-        line-height: 25px;
-    }
-    section>div>span.keyvisualSpan{
-        font-size:28px;
-    }
-    section>div>span.keyvisualSpanTwo{
-        font-size: 34px;
+    section>div.keyvisualSpan{
+        font-size: 20px;
+        padding: 5px;
+        padding-left: 23px;
     }
 }

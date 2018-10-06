@@ -44,7 +44,7 @@ function changeKevisual(){
         keyvisual0.style.display  =  "block";
         keyvisual1.style.display  =  "none";
         keyvisual2.style.display  =  "none";
-        keyvisualLink0.href = keyvisualLinkArray[0];
+        // keyvisualLink0.href = keyvisualLinkArray[0];
         keyvisual0.style.animation = "opacityOut 1s ease 0s 1 alternate";
         keyvisual0.style.backgroundPositionX = 'left';
 
@@ -52,7 +52,7 @@ function changeKevisual(){
         keyvisual0.style.display  =  "none";
         keyvisual1.style.display  =  "block";
         keyvisual2.style.display  =  "none";
-        keyvisualLink1.href = keyvisualLinkArray[1];
+        // keyvisualLink1.href = keyvisualLinkArray[1];
         keyvisual1.style.animation = "opacityOut 1s ease 0s 1 alternate";
         keyvisual1.style.backgroundPositionX = 'center';
 
@@ -60,7 +60,7 @@ function changeKevisual(){
         keyvisual1.style.display  =  "none";
         keyvisual0.style.display  =  "none";
         keyvisual2.style.display  =  "block";
-        keyvisualLink2.href = keyvisualLinkArray[2];
+        // keyvisualLink2.href = keyvisualLinkArray[2];
         keyvisual2.style.animation = "opacityOut 2s ease 0s 1 alternate";
         keyvisual2.style.backgroundPositionX = 'right';
 

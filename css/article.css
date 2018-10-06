@@ -10,6 +10,7 @@ section{
     background-position-x: center;
     background-position-y: center;
     margin-top: 105px;
+    cursor: text;
 }
 
 section>a>div{
@@ -25,6 +26,7 @@ section>a>div{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: auto;
 }
 
 section.keyvisual0{
@@ -243,87 +245,18 @@ div.read-more-div{
     /* animation: letArrowMove 1s ease 0s infinite alternate; */
 }
 
-
-@media ( max-width:1300px ){
-    /* section{
-        background-size: 100% 570px;
-        height: 480px;
-    } */
-}
-
-@media ( max-width:1150px ){
-    /* section{
-        background-size: auto 650px;
-        height: 580px;
-    } */
-}
-
-@media ( max-width:1000px ){
-    /* section{
-        background-size: auto 550px;
-        height: 520px;
-    } */
-}
-
-@media ( max-width:900px ){
-    /* section{
-        background-size: auto 500px;
-        height: 440px;
-    } */
-}
-
-@media ( max-width: 800px ){
-    /* section{
-        background-size: auto 440px;
-        height: 410px;
-    } */
-}
-
 @media ( max-width: 660px ){
-    /* section{
-        background-size: auto 365px;
-        height: 340px;
-    } */
-    section>div{
-        line-height: 20px;
-    }
-    section>div>a>span.keyvisualSpan{
-        font-size:20px;
-    }
-    section>div>a>span.keyvisualSpanTwo{
-        font-size:20px;
+    section>a>div>span.keyvisualSpan{
+        font-size: 20px;
+        padding: 5px;
+        padding-left: 23px;
     }
 }
 
 @media ( max-width: 550px ){
-    /* section{
-        background-size: auto 330px;
-        height: 300px;
-    } */
-    mark.mark-tag{
+    /* mark.mark-tag{
         font-size: 14px;
         margin: 20px 30px;
         margin-top: 60px;
-    }
-}
-
-@media ( max-width: 480px ){
-    /* section{
-        background-size: auto 260px;
-        height: 240px;
-    } */
-    section>div>span.keyvisualSpan{
-        font-size:18px;
-    }
-    
-    section>div>span.keyvisualSpanTwo{
-        font-size:18px;
-    }
-}
-
-@media ( max-width: 387px ){
-    /* section{
-        background-size: auto 220px;
-        height: 190px;
     } */
 }

@@ -117,6 +117,11 @@ header>div.logo{
 header>.logo>a>img{
     width: 100%;
     height: 100%;
+    transition: all 0.6s;
+}
+
+header>.logo>a>img:hover{
+    transform: scale(1.2);
 }
 
 header>nav{
@@ -136,33 +141,12 @@ header>nav>div{
 
 header>nav>div>img{
     width: 18px;
+    transition: all 0.6s;
 }
 
-        /* section */
-
-        section{
-            /* background: url("../images/FE_key_visual.png");
-            background-repeat: no-repeat;
-            background-size: 100% 630px;
-            height: 580px; */
-        }
-
-        section>div{
-            /* display: inline-block;
-            position: relative;
-            top:50%;
-            left: 10%;
-            color: white;
-            line-height: 60px; */
-        }
-
-        section>div>span.keyvisualSpan{
-            /* font-size:38px; */
-        }
-
-        section>div>span.keyvisualSpanTwo{
-            /* font-size:44px; */
-        }
+header>nav>div>img:hover{
+    transform: scale(1.4);
+}
 
 /* aside */
 
@@ -201,6 +185,12 @@ aside>img{
     background-size: 36px 46px;
     width: 36px;
     height: 46px;
+    transition: all 0.6s;
+}
+
+
+.top-icon:hover{
+    transform: scale(1.3);
 }
 
 /* footer */
@@ -315,7 +305,6 @@ div.fullSearchWhiteDiv>div.whiteDivLeft>div.whiteDivLeftIcon{
     width: 54px;
     height: 58px;
     margin-bottom: -24px;
-
 }
 
 div.fullSearchWhiteDiv>div.whiteDivLeft>p.whiteDivLeftText{
