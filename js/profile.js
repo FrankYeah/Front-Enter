@@ -12,7 +12,11 @@ const managePost = document.getElementById('managePost');
 
 
 window.onload = function(){
+    this.setTimeout(loadAllLoginStuff, 2000);
+}
 
+function loadAllLoginStuff(){
+    console.log('login ok')
     if(userLogin.photoURL){
         inputName.value = userLogin.displayName;
         inputMail.value = userLogin.email;
