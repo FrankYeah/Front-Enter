@@ -42,7 +42,7 @@ main>div.main-chart>div.image-left{
     justify-content: center;
     align-items: center;
     margin: 20px;
-    border-radius: 5px;
+    border-radius: 5px;    
 }
 
 main>div.main-chart>div.image-left-one{
@@ -186,54 +186,32 @@ div.main-contact>div>p.contact-mail::before{
     }
 }
 
-@media ( max-width:1000px ){
-
-}
-
-@media ( max-width: 800px ){
+@media ( max-width:1200px ){
     main{
         flex-direction: column;
     }
     main>div.main-chart{
         width: 80%;
-        padding-left: 70px;
+        margin: auto;
+        padding-left: 0px;
     }
     main>div.main-content{
-        width: 100%;
+        width: 88%;
+        margin: auto;
     }
-    div.main-contact>div>p{
-        padding: 0 20px;
+    main>div.main-chart>div.image-left{
+        margin: 20px auto;
     }
 }
 
-@media ( max-width: 660px ){
-    main>div.main-chart{
-        width: 80%;
-        padding-left: 20px;
+@media ( max-width:650px ){
+    main>div.main-chart>div.image-left{
+        height: 160px;
+        width: 240px;
     }
-    /* section>div.keyvisualSpan{
-        font-size: 20px;
-        padding: 5px;
-        padding-left: 23px;
-    } */
+    main>div.main-content>p.main-content-title{
+        line-height: 28px;
+    }
 }
 
-@media ( max-width: 480px ){
-    main>div.main-content{
-        margin:80px 10px;
-    }
-    main>div.main-chart{
-        margin:30px 10px;
-    }
-    main>div.main-chart>p{
-        font-size: 14px;
-    }
-    div.main-contact>div>p{
-        padding: 0px;
-        font-size: 18px;
-    }
-    div.main-contact>p.main-contact-quick{
-        font-size: 24px;
-        color: rgb(128,128,128);
-    }
-}
+

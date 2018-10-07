@@ -47,8 +47,8 @@ function createLayout(data){
     boxTitle(data);
     mainUnderlineBorn();
 
-    contactPhoneBorn(data);
-    contactMailBorn(data);
+    // contactPhoneBorn(data);
+    // contactMailBorn(data);
 }
 
 function keyvisualBorn(data){
