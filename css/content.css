@@ -26,27 +26,43 @@ section>div.keyvisualSpan{
 main{
     display: flex;
     flex-direction: row;
-    margin:30px 100px;
+    margin:80px 30px;
 }
 
 main>div.main-chart{
-    width: 45%;
+    width: 40%;
     padding-left: 30px;
 }
 
-main>div.main-chart>p.main-header{
-    font-size: 38px;
-    color: rgb(26, 216, 211);
-    padding-top: 30px;
-    font-weight: bold;
-    line-height: 48px;
+main>div.main-chart>div.image-left{
+    /* background: url('../images/2.jpg') 50% / cover no-repeat; */
+    height: 266px;
+    width: 400px;
+    background-position-x: center;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-radius: 5px;
 }
 
-main>div.main-chart>div.main-underline{
+main>div.main-chart>div.image-left-one{
+    background: url('../images/2.jpg') 50% / cover no-repeat;
+}
+
+main>div.main-chart>div.image-left-two{
+    background: url('../images/13.jpg') 50% / cover no-repeat;
+}
+
+main>div.main-chart>div.image-left-three{
+    background: url('../images/15.jpg') 50% / cover no-repeat;
+}
+
+main>div.main-content>div.main-underline{
     border-bottom: 1px solid rgb(26, 216, 211);
-    width: 50px;
+    width: 20px;
     margin-bottom: 80px;
     margin-top: 30px;
+    margin: auto;
 }
 
 main>div.main-chart>p.main-pre{
@@ -64,9 +80,18 @@ main>div.main-chart>p{
 }
 
 main>div.main-content{
-    margin:20px 0px;
-    width: 45%;
+    margin:0px 0px;
+    width: 50%;
     padding-right: 30px;
+}
+
+main>div.main-content>p.main-header{
+    font-size: 24px;
+    color: rgb(26, 216, 211);
+    padding-top: 0px;
+    font-weight: bold;
+    line-height: 10px;
+    margin-bottom: 80px;
 }
 
 main>div.main-content>p.main-content-header{
@@ -77,16 +102,24 @@ main>div.main-content>p.main-content-header{
 }
 
 main>div.main-content>p.main-content-title{
-    font-size: 38px;
+    font-size: 18px;
     color: rgb(26, 216, 211);
-    text-align: center;
-    line-height: 48px;
+    text-align: left;
+    line-height: 8px;
 }
 
 main>div.main-content>p{
     font-size: 16px;
     color: rgb(128,128,128);
     line-height: 28px;
+}
+
+main>div.main-content>p.box-title{
+    font-size: 18px;
+    color: rgb(26, 216, 211);
+    text-align: center;
+    line-height: 8px;
+    padding-top: 100px;
 }
 
 /* 聯絡我們 */

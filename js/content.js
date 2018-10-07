@@ -12,32 +12,41 @@ getAllData.orderByChild("creatTime").equalTo(Number(articleId)).on("child_added"
 function createLayout(data){
     keyvisualBorn(data);
     mainChartBorn();
-    mainHeaderBorn(data);
-    mainUnderlineBorn();
-    preCityBorn();
-    tagCityBorn(data);
+
+    imageLeftOne();
+    imageLeftTwo();
+    imageLeftThree();
+
+    // mainUnderlineBorn();
+    // preCityBorn();
+    // tagCityBorn(data);
     // preSkillBorn();
     // tagSkillBorn(data);
-    preTechnologyBorn();
-    tagTechnologyBorn(data);
+    // preTechnologyBorn();
+    // tagTechnologyBorn(data);
     // preFeeBorn();
     // tagFeeBorn(data);
-    preTotalDayBorn();
-    tagTotalDayBorn(data);
-    preWeekHourBorn();
-    tagWeekHourBorn(data);
-    preFoundYearBorn();
-    tagFoundYearBorn(data);
-    preTeachWayBorn();
-    tagTeachWayBorn(data);
-    preClassTypeBorn();
-    tagClassTypeBorn(data);
+    // preTotalDayBorn();
+    // tagTotalDayBorn(data);
+    // preWeekHourBorn();
+    // tagWeekHourBorn(data);
+    // preFoundYearBorn();
+    // tagFoundYearBorn(data);
+    // preTeachWayBorn();
+    // tagTeachWayBorn(data);
+    // preClassTypeBorn();
+    // tagClassTypeBorn(data);
     // preTeacherNumBorn();
     // tagTeacherNumBorn(data);
+
     mainContentBorn();
-    mainContentHeaderBorn();
+    mainHeaderBorn(data);
+    // mainContentHeaderBorn();
     mainContentTitleBorn(data);
     coreContentBorn(data);
+    boxTitle(data);
+    mainUnderlineBorn();
+
     contactPhoneBorn(data);
     contactMailBorn(data);
 }
@@ -56,17 +65,28 @@ function mainChartBorn(){
     document.getElementById('mainId').appendChild(newElement);
 }
 
-function mainHeaderBorn(data){
-    let newElement = document.createElement('p');
-    newElement.className = 'main-header';
-    newElement.textContent = data.name;
+function imageLeftOne(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'image-left image-left-one';
+    document.getElementById('mainChart').appendChild(newElement);
+}
+
+function imageLeftTwo(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'image-left image-left-two';
+    document.getElementById('mainChart').appendChild(newElement);
+}
+
+function imageLeftThree(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'image-left image-left-three';
     document.getElementById('mainChart').appendChild(newElement);
 }
 
 function mainUnderlineBorn(){
     let newElement = document.createElement('div');
     newElement.className = 'main-underline';
-    document.getElementById('mainChart').appendChild(newElement);
+    document.getElementById('mainContent').appendChild(newElement);
 }
 
 function preCityBorn(){
@@ -217,6 +237,13 @@ function mainContentBorn(){
     document.getElementById('mainId').appendChild(newElement);
 }
 
+function mainHeaderBorn(data){
+    let newElement = document.createElement('p');
+    newElement.className = 'main-header';
+    newElement.textContent = data.name;
+    document.getElementById('mainContent').appendChild(newElement);
+}
+
 function mainContentHeaderBorn(){
     let newElement = document.createElement('p');
     newElement.className = 'main-content-header';
@@ -234,6 +261,13 @@ function mainContentTitleBorn(data){
 function coreContentBorn(data){
     let newElement = document.createElement('p');
     newElement.innerHTML = data.content;
+    document.getElementById('mainContent').appendChild(newElement);
+}
+
+function boxTitle(data){
+    let newElement = document.createElement('p');
+    newElement.innerHTML = '表格';
+    newElement.className = 'box-title';
     document.getElementById('mainContent').appendChild(newElement);
 }
 
