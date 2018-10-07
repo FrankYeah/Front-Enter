@@ -572,6 +572,9 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
 }
 
 @media ( max-width: 520px ){
+    header>nav{
+        width: 60%;
+    }
     div.test-go-back-div>div.test-go-white-div{
         width: 300px;
         height: 550px;
@@ -593,7 +596,7 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
     header>div.logo{
         width: 133px;
         height: 65px;
-        margin-top:15px;
+        margin-top:0px;
     }
     header>nav>div{
         letter-spacing: 1px;
@@ -603,6 +606,16 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
         margin-left: 2%;
     }
 }
+
+/* 暫放首頁 */
+
+@media ( max-width: 420px ){
+    main>div.partner{
+        width: 80%;
+    }
+}
+
+/* 暫放首頁 */
 
 @media ( max-width: 390px ){
     footer>p{

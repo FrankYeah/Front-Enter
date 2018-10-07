@@ -218,3 +218,15 @@ section>div.keyvisualSpan{
         padding-left: 23px;
     }
 }
+
+/* 暫放全部的 section */
+
+@media ( max-width: 420px ){
+    section>div.keyvisualSpan {
+        letter-spacing: 7px;
+    }
+    section>a>div>span.keyvisualSpan{
+        letter-spacing: 7px;
+    }
+}
+
