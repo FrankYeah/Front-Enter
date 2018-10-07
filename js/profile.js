@@ -12,9 +12,10 @@ const managePost = document.getElementById('managePost');
 
 
 window.onload = function(){
-    inputName.value = userLogin.displayName;
-    inputMail.value = userLogin.email;
+
     if(userLogin.photoURL){
+        inputName.value = userLogin.displayName;
+        inputMail.value = userLogin.email;
         inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
     }
     inputPhoto.style.backgroundPosition= 'center';
