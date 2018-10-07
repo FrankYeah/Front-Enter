@@ -200,7 +200,7 @@ function createTestGo(){
         testGoBackDiv();
         testGoWhiteDiv();
         testOneHeader(oneHeader);
-        testOneList(oneList);
+        firstPreface(oneList);
         testOneButton(oneButton);
         countClick++;
     }else{
@@ -247,6 +247,14 @@ function testOneList(oneList){
     let newElement = document.createElement('p');
     newElement.className = 'test-one-list';
     newElement.id = 'testOneList';
+    newElement.textContent = oneList;
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+}
+
+function firstPreface(oneList){
+    let newElement = document.createElement('p');
+    newElement.className = 'first-preface';
+    newElement.id = 'firstPreface';
     newElement.textContent = oneList;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
