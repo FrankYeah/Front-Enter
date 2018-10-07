@@ -197,3 +197,24 @@ div.login-div-white>p.fb-login-button{
         line-height: 42px;
     }
 }
+
+/* 暫放首頁 key visual */
+
+section>div.keyvisualSpan{
+    font-size: 25px;
+    color: rgb(26,216,211);
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
+    letter-spacing: 20px;
+    text-align: center;
+    padding-left: 23px;
+};
+
+@media ( max-width: 660px ){
+    section>div.keyvisualSpan{
+        font-size: 20px;
+        padding: 5px;
+        padding-left: 23px;
+    }
+}

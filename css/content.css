@@ -13,10 +13,10 @@ section{
 }
 
 section>div.keyvisualSpan{
-    font-size: 30px;
+    font-size: 25px;
     color: rgb(26,216,211);
     background-color: white;
-    padding: 10px;
+    padding: 6px;
     border-radius: 5px;
     letter-spacing: 20px;
     text-align: center;
@@ -178,11 +178,11 @@ div.main-contact>div>p.contact-mail::before{
         width: 80%;
         padding-left: 20px;
     }
-    section>div.keyvisualSpan{
+    /* section>div.keyvisualSpan{
         font-size: 20px;
         padding: 5px;
         padding-left: 23px;
-    }
+    } */
 }
 
 @media ( max-width: 480px ){

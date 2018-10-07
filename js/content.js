@@ -16,12 +16,12 @@ function createLayout(data){
     mainUnderlineBorn();
     preCityBorn();
     tagCityBorn(data);
-    preSkillBorn();
-    tagSkillBorn(data);
+    // preSkillBorn();
+    // tagSkillBorn(data);
     preTechnologyBorn();
     tagTechnologyBorn(data);
-    preFeeBorn();
-    tagFeeBorn(data);
+    // preFeeBorn();
+    // tagFeeBorn(data);
     preTotalDayBorn();
     tagTotalDayBorn(data);
     preWeekHourBorn();
@@ -32,8 +32,8 @@ function createLayout(data){
     tagTeachWayBorn(data);
     preClassTypeBorn();
     tagClassTypeBorn(data);
-    preTeacherNumBorn();
-    tagTeacherNumBorn(data);
+    // preTeacherNumBorn();
+    // tagTeacherNumBorn(data);
     mainContentBorn();
     mainContentHeaderBorn();
     mainContentTitleBorn(data);

@@ -11,6 +11,20 @@ section{
     background-position-y: center;
     background-position-x: center;
     margin-top: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section>div.keyvisualSpan{
+    font-size: 25px;
+    color: rgb(26,216,211);
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
+    letter-spacing: 20px;
+    text-align: center;
+    padding-left: 23px;
 }
 
 main{

@@ -36,7 +36,7 @@ function startFix(){
     inputName.style.backgroundColor = 'white';
     // inputMail.style.backgroundColor = 'white';
     inputPhone.style.backgroundColor = 'white';
-    inputPhone.style.borderTop = '1px solid rgba(230, 230, 230, 0.8)';
+    // inputPhone.style.borderTop = '1px solid rgba(230, 230, 230, 0.8)';
     console.log('abled')
     fixData.style.display = 'none';
     confirmCancel.style.display = 'flex';

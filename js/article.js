@@ -121,7 +121,6 @@ function createLayout(data){
     locationImgBorn();
     aLocationBorn();
     pLocationBorn(data);
-    // tagLineBorn();
     contentABorn(data);
     imgDivBorn();
     imgBorn(data);
@@ -130,6 +129,7 @@ function createLayout(data){
     readMoreOut();
     readMoreWord();
     readMoreDiv();
+    tagLineBorn();
     x ++;
 }
 
