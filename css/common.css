@@ -418,7 +418,8 @@ div.test-go-back-div>div.test-go-white-div>p.test-one-button{
 }
 
 div.test-go-back-div>div.test-go-white-div>p.test-one-button:hover{
-    opacity: 0.7;
+    color: white;
+    background-color: rgba(255,255,255,.5)
     /* color: white;
     background-color: rgb(128, 128, 128); */
 }
@@ -438,7 +439,8 @@ div.test-go-back-div>div.test-go-white-div>p.test-two-select{
 }
 
 div.test-go-back-div>div.test-go-white-div>p.test-two-select:hover{
-    opacity: 0.7;
+    color: white;
+    background-color: rgba(255,255,255,.5)
     /* color: white;
     background-color: rgb(128, 128, 128); */
 }
@@ -533,8 +535,8 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result::after{
 }
 
 div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
-    opacity: 0.8;
-    padding: 31px;
+    color: white;
+    background-color: rgba(255,255,255,.5);
 }
 
 /* media */
@@ -578,7 +580,6 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
     header>nav{
         width: 60%;
     }
-
 }
 
 @media ( max-width: 480px ){
