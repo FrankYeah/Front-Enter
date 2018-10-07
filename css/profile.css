@@ -129,7 +129,7 @@ main>div>div.display-result>div>input{
     background-color: rgba(230, 230, 230, 0);
     color: rgb(128, 128, 128);
     font-size: 16px;
-    border: 1px solid rgba(230, 230, 230, 0.7);;
+    border: 0px solid rgba(230, 230, 230, 0.7);
     width: 320px;
     text-align: left;
     border-radius: 5px;

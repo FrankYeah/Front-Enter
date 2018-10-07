@@ -553,6 +553,24 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
     }
 }
 
+@media ( max-width: 750px ){
+    footer {
+        flex-direction: column;
+        padding-bottom: 50px;
+    }
+    footer>div {
+        text-align: right;
+        line-height: 10px;
+        height: 0px;
+    }
+    footer>div>img{
+        margin-top: -10px;
+    }
+    footer>p{
+        height: 10px;
+    }
+}
+
 @media ( max-width: 520px ){
     div.test-go-back-div>div.test-go-white-div{
         width: 300px;
@@ -583,6 +601,17 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
     div.fullSearchWhiteDiv>div.whiteDivLeft>form.whiteDivLeftBox{
         width: 90%;
         margin-left: 2%;
+    }
+}
+
+@media ( max-width: 390px ){
+    footer>p{
+        font-size: 10.5px;
+    }
+    footer>div>img.footer-img {
+        height: 20px;
+        width: 20px;
+        margin-top: 0px;
     }
 }
 

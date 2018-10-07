@@ -41,7 +41,8 @@ function startFix(){
     inputName.style.backgroundColor = 'white';
     // inputMail.style.backgroundColor = 'white';
     inputPhone.style.backgroundColor = 'white';
-    // inputPhone.style.borderTop = '1px solid rgba(230, 230, 230, 0.8)';
+    inputPhone.style.border = '1px solid rgba(230, 230, 230, 0.7)';
+    inputName.style.border = '1px solid rgba(230, 230, 230, 0.7)';
     console.log('abled')
     fixData.style.display = 'none';
     confirmCancel.style.display = 'flex';
@@ -55,7 +56,8 @@ function startConfirm(){
     inputName.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     // inputMail.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     inputPhone.style.backgroundColor = 'rgba(230, 230, 230, 0)';
-    inputPhone.style.borderTop = '0px solid rgba(230, 230, 230, 0.8)';
+    inputPhone.style.border = '0px solid rgba(230, 230, 230, 0.7)';
+    inputName.style.border = '0px solid rgba(230, 230, 230, 0.7)';
     // 顯示修改資料 
     fixData.style.display = 'block';
     confirmCancel.style.display = 'none';
@@ -70,7 +72,8 @@ function startCancel(){
     inputName.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     // inputMail.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     inputPhone.style.backgroundColor = 'rgba(230, 230, 230, 0)';
-    inputPhone.style.borderTop = '0px solid rgba(230, 230, 230, 0.8)';
+    inputPhone.style.border = '0px solid rgba(230, 230, 230, 0.7)';
+    inputName.style.border = '0px solid rgba(230, 230, 230, 0.7)';
     // 顯示修改資料 
     fixData.style.display = 'block';
     confirmCancel.style.display = 'none';
