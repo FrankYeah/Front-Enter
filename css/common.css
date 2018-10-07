@@ -677,6 +677,20 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
         width: 20px;
         margin-top: 0px;
     }
+    div.test-go-back-div>div.test-go-white-div{
+        width: 100%;
+        height: 100%;
+    }
+    
+    div.test-go-back-div>div.blue-green{
+        width: 100%;
+        height: 100%;
+    }
+    
+    div.test-go-back-div>div.photo-with-gray{
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /* header animation */
