@@ -364,12 +364,38 @@ div.test-go-back-div{
 
 div.test-go-back-div>div.test-go-white-div{
     position: relative;
+    z-index: 4;
+    position: fixed;
+    width: 350px;
+    height: 450px;
+    border-radius: 4px;
+    /* background: rgb(26, 216, 211); */
+}
+
+div.test-go-back-div>div.blue-green{
+    position: relative;
     z-index: 2;
     position: fixed;
     width: 350px;
     height: 450px;
     border-radius: 4px;
     background: rgb(26, 216, 211);
+}
+
+div.test-go-back-div>div.photo-with-gray{
+    position: relative;
+    z-index: 3;
+    position: fixed;
+    width: 350px;
+    height: 450px;
+    border-radius: 4px;
+    background: url(../images/Staff-Selection-.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    filter: grayscale(100%);
+    opacity: 0.1;
 }
 
 div.test-go-back-div>div.test-go-white-div::before {

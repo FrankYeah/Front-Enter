@@ -198,8 +198,10 @@ function createTestGo(){
         let oneList = '點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。';
         let oneButton = '開始測驗';
         testGoBackDiv();
+        blueGreen();
+        photoWithGray();
         testGoWhiteDiv();
-        filterDiv();
+        // filterDiv();
         testOneHeader(oneHeader);
         firstPreface(oneList);
         testOneButton(oneButton);
@@ -224,6 +226,26 @@ function testGoBackDiv(){
     newElement.id = 'testGoBackDiv';
     document.body.appendChild(newElement);
     newElement.onclick = createTestGo;
+}
+
+function blueGreen(){
+    let newElement = document.createElement('div');
+    newElement.className = 'blue-green';
+    newElement.id = 'blueGreen';
+    document.getElementById('testGoBackDiv').appendChild(newElement);
+    newElement.onclick = function(event){
+        event.stopPropagation();
+    }
+}
+
+function photoWithGray(){
+    let newElement = document.createElement('div');
+    newElement.className = 'photo-with-gray';
+    newElement.id = 'photoWithGray';
+    document.getElementById('testGoBackDiv').appendChild(newElement);
+    newElement.onclick = function(event){
+        event.stopPropagation();
+    }
 }
 
 function testGoWhiteDiv(){

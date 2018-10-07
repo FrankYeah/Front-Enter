@@ -30,7 +30,8 @@ main{
 }
 
 main>div.main-chart{
-    width: 30%;
+    width: 45%;
+    padding-left: 30px;
 }
 
 main>div.main-chart>p.main-header{
@@ -64,7 +65,8 @@ main>div.main-chart>p{
 
 main>div.main-content{
     margin:20px 0px;
-    width: 70%;
+    width: 45%;
+    padding-right: 30px;
 }
 
 main>div.main-content>p.main-content-header{
@@ -152,9 +154,7 @@ div.main-contact>div>p.contact-mail::before{
 }
 
 @media ( max-width:1000px ){
-    main{
-        margin:30px 20px;
-    }
+
 }
 
 @media ( max-width: 800px ){
