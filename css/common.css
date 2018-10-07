@@ -363,6 +363,7 @@ div.test-go-back-div{
 }
 
 div.test-go-back-div>div.test-go-white-div{
+    position: relative;
     z-index: 2;
     position: fixed;
     width: 350px;
@@ -371,12 +372,39 @@ div.test-go-back-div>div.test-go-white-div{
     background: rgb(26, 216, 211);
 }
 
+div.test-go-back-div>div.test-go-white-div::before {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0,0,0,.8);
+}
+
+div.test-go-back-div>div.test-go-white-div>div.filter-div{
+    position: absolute;
+    background: url(../images/Staff-Selection-.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    filter: grayscale(100%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.1;
+}
+
 div.test-go-back-div>div.test-go-white-div>p.test-one-header{
     color: white;
     font-size: 24px;
     text-align: center;
     font-weight:bold;    
     padding-top: 50px;
+    position: absolute;
+    left: 115px;
+    z-index: 2;
 }
 
 p.first-preface{
@@ -386,6 +414,9 @@ p.first-preface{
     text-align: left;
     letter-spacing: 1px;
     line-height: 30px;
+    position: absolute;
+    top: 100px;
+    z-index: 2;
 }
 
 div.test-go-back-div>div.test-go-white-div>p.test-one-list{
@@ -415,6 +446,10 @@ div.test-go-back-div>div.test-go-white-div>p.test-one-button{
     border-radius: 5px;
     line-height: 40px;
     cursor: pointer;
+    z-index: 2;
+    position: absolute;
+    left: 95px;
+    top: 260px;
 }
 
 div.test-go-back-div>div.test-go-white-div>p.test-one-button:hover{

@@ -199,9 +199,11 @@ function createTestGo(){
         let oneButton = '開始測驗';
         testGoBackDiv();
         testGoWhiteDiv();
+        filterDiv();
         testOneHeader(oneHeader);
         firstPreface(oneList);
         testOneButton(oneButton);
+
         countClick++;
     }else{
         let child=document.getElementById("testGoBackDiv");
@@ -232,6 +234,12 @@ function testGoWhiteDiv(){
     newElement.onclick = function(event){
         event.stopPropagation();
     }
+}
+
+function filterDiv(){
+    let newElement = document.createElement('div');
+    newElement.className = 'filter-div';
+    document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
 function testOneHeader(oneHeader){
@@ -290,6 +298,7 @@ function testTwoSelect(twoSelect){
 
 function testTwoStart(){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
+
     let oneButton = '選擇在哪座城市學習？'
     testOneList(oneButton);
     let questionCount = '1/5';
@@ -304,6 +313,7 @@ function testTwoStart(){
     testTwoSelect(TwoSelectEveryPlace);
     let TwoSelectNotImportant = '不重要';
     testTwoSelect(TwoSelectNotImportant);
+    // filterDiv();
 }
 
 // 顯示選項
