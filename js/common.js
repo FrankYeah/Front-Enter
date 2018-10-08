@@ -7,6 +7,13 @@ const headerP2 = document.getElementById('headerP2');
 const headerP3 = document.getElementById('headerP3');
 const header = document.getElementById('header');
 
+headerP3.addEventListener("mouseover", function(){
+    headerP3.style.color='rgb(26, 216, 211)';
+});
+headerP3.addEventListener("mouseout", function(){
+    headerP3.style.color='rgb(128, 128, 128)';
+})
+
 window.addEventListener('scroll',winScroll);
 function winScroll(){
     if(document.documentElement.scrollTop>0){
@@ -15,7 +22,7 @@ function winScroll(){
         // logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
         headerP1.style.color="rgb(128,128,128)";headerP2.style.color="rgb(128,128,128)";headerP3.style.color="rgb(128,128,128)";
         header.style.animation = "headerBackgroundOut 5s ease 0s 1 alternate forwards";
-        if(userLogin && userLogin.emailVerified == true){
+        if(userLogin.photoURL && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '';
             headerP3.style.cursor = 'pointer';
@@ -27,7 +34,7 @@ function winScroll(){
         // logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
         headerP1.style.color="rgb(128, 128, 128)";headerP2.style.color="rgb(128, 128, 128)";headerP3.style.color="rgb(128, 128, 128)";
         header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"
-        if(userLogin && userLogin.emailVerified == true){
+        if(userLogin.photoURL && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '';
             headerP3.style.cursor = 'pointer';

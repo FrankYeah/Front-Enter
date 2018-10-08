@@ -167,6 +167,7 @@ function createAccount(){
         var errorCode = error.code;
         var errorMsg = error.message;
         console.log(errorMsg);
+        accountAlreadyBeRegister();
       });      
 }
 
@@ -352,6 +353,11 @@ function letGmailLogin(){
 }
 
 // alert
+
+function accountAlreadyBeRegister(){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '電子郵件已被註冊';
+}
 
 function itReadyToLogout(){
     alertBigBox.style.display = 'flex';

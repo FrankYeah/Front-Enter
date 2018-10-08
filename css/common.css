@@ -104,6 +104,7 @@ header>nav>div:hover{
 
 header>nav>div>a:hover{
     color: rgb(26, 216, 211);
+    cursor: pointer;
 }
 
 header>div{
@@ -138,6 +139,7 @@ header>nav>div{
     line-height: 97px;
     color: rgb(128, 128, 128);
     letter-spacing: 3px;
+    cursor: pointer;
 }
 
 header>nav>div>img{
