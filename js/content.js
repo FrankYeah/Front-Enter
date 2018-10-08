@@ -164,7 +164,8 @@ function startLeft(){
         rotateRotate = 1;
     }
     const rotateCenterImg = document.getElementById('rotateCenterImg');
-    let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg'];
+    let rImg = ['../Front-Enter/images/2.jpg', '../Front-Enter/images/13.jpg', '../Front-Enter/images/15.jpg'];
+    // let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg'];
     rotateCenterImg.style.background = "url('" + rImg[rotateRotate] + "')"; 
     rotateCenterImg.style.backgroundRepeat  =  "no-repeat";  
     rotateCenterImg.style.backgroundSize  =  "cover";
@@ -180,7 +181,8 @@ function startRight(){
     }else if(rotateRotate==2){
         rotateRotate = 0;
     }
-    let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg'];
+    let rImg = ['../Front-Enter/images/2.jpg', '../Front-Enter/images/13.jpg', '../Front-Enter/images/15.jpg'];
+    // let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg'];
     const rotateCenterImg = document.getElementById('rotateCenterImg');
     rotateCenterImg.style.background = "url('" + rImg[rotateRotate] + "')";  
 
