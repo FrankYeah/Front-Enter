@@ -87,16 +87,16 @@ main>div>div.display-result{
 }
 
 main>div>div.display-result>div.photo{
-    height: 80px;
-    width: 80px;
+    height: 120px;
+    width: 120px;
     background-color: aqua;
     border-radius: 50%;
     position: absolute;
-    background: url('../images/profile-login-img.png');
+    background: url('../images/profile-user-img.svg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    top: 30px;
+    top: 0px;
 }
 
 main>div>div.display-result>input.input-name{
@@ -206,10 +206,10 @@ main>div>div.display-result>div.confirm-cancel>div{
     main>div>div.select-button>p{
         margin-left: 5px;
         margin-right: 5px;
-        width: 80px;
-        height: 16px;
-        line-height: 16px;
-        font-size: 16px;
+        width: 90px;
+        height: 15px;
+        line-height: 15px;
+        font-size: 15px;
         text-align: center;
     }
 }

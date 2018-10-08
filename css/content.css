@@ -31,7 +31,9 @@ main{
 
 main>div.main-chart{
     width: 40%;
-    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* 點擊圖片 full */
@@ -123,11 +125,13 @@ main>div.main-content>div.box-table>div.box-table-one{
     width: 400px;
     height: 40px;
     /* background-color: rgba(87, 87, 87, 0.8); */
-    margin: 30px auto auto auto ;
+    margin: 20px auto auto auto ;
     display: flex;
     flex-direction: row;
+    align-items: center;
     /* justify-content: space-around; */
     border-bottom: 1px solid rgba(197, 197, 197, 0.8);
+    padding-bottom: 12px;
 }
 
 main>div.main-content>div.box-table>div.box-table-one>div.table-one-left{
@@ -186,10 +190,12 @@ main>div.main-content>p.main-content-header{
 }
 
 main>div.main-content>p.main-content-title{
-    font-size: 18px;
+    font-size: 20px;
     color: rgb(26, 216, 211);
     text-align: left;
     line-height: 8px;
+    font-weight: bold;
+    padding-top: 5px;
 }
 
 main>div.main-content>p{

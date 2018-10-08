@@ -40,7 +40,7 @@ function createLayout(data){
     // tagTeacherNumBorn(data);
 
     mainContentBorn();
-    mainHeaderBorn(data);
+    // mainHeaderBorn(data);
     // mainContentHeaderBorn();
     mainContentTitleBorn(data);
     coreContentBorn(data);
@@ -75,6 +75,7 @@ function keyvisualBorn(data){
     document.getElementById('section').style.backgroundRepeat  =  "no-repeat";  
     document.getElementById('section').style.backgroundSize  =  "cover";
     document.getElementById('section').style.backgroundPositionY  =  "center";
+    document.getElementById('keyvisualSpan').textContent = data.name;
 }
 
 function mainChartBorn(){

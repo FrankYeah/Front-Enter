@@ -29,15 +29,28 @@ function loadAllLoginStuff(){
         if(userLogin.photoURL){
             inputName.value = userLogin.displayName;
             inputMail.value = userLogin.email;
+            if(userLogin.phoneNumber == undefined){
+                inputPhone.value = 'phone';
+            }
+            if(userLogin.displayName == undefined){
+                inputName.value = 'name';
+            }
             inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
             console.log('data from google')
         }
     }else{
         // firebase 有資料 用裡面的
-        inputName.value = dataExist.name;
+        if(dataExist.name){
+            inputName.value = dataExist.name;
+        }
         inputMail.value = dataExist.mail;
-        inputPhone.value = dataExist.phone;
-        inputPhoto.style.background = "url('" + dataExist.photoUrl + "')";
+
+        if(dataExist.phone){
+            inputPhone.value = dataExist.phone;
+        }
+        if(dataExist.photoUrl){
+            inputPhoto.style.background = "url('" + dataExist.photoUrl + "')";
+        }
         console.log('data from firebase')
     }
     
@@ -144,7 +157,7 @@ function startCancel(){
             // firebase 沒有資料 用google的
             if(userLogin.photoURL){
                 inputName.value = userLogin.name;
-                inputPhone.value = userLogin.phone;
+
             }
         }else{
             // firebase 有資料 用裡面的

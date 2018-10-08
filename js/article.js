@@ -111,6 +111,11 @@ if(articleId == null){
     getAllData.orderByChild("name").equalTo("AppWorks School").on("child_added", function(snapshot) {
         data = snapshot.val();   createLayout(data);
     });  
+}else{
+    let newElement = document.createElement('div');
+    newElement.textContent = 'no result';
+    newElement.style.color = 'rgb(26, 216, 211)';
+    document.getElementById('mainId').appendChild(newElement);
 }
 
 // 抓 firebase 資料庫 json 資料  // 搜尋處理
@@ -253,6 +258,12 @@ function readMoreDiv(){
 
 const getAllArticle = document.getElementById('getAllArticle');
 getAllArticle.onclick = function(){
+    console.log('get all article')
+    getAllArticle.style.color = 'rgb(128, 128, 128)';
+    smallClass.style.color = 'rgb(26, 216, 211)';
+    letItGo.style.color = 'rgb(26, 216, 211)';
+    oneByOne.style.color = 'rgb(26, 216, 211)';
+
     document.getElementById('mainId').innerHTML = '';
     getAllData.orderByChild("skill").on("child_added", function(snapshot) {
         data = snapshot.val();
@@ -264,6 +275,10 @@ getAllArticle.onclick = function(){
 
 const smallClass = document.getElementById('smallClass');
 smallClass.onclick = function(){
+    getAllArticle.style.color = 'rgb(26, 216, 211)';
+    smallClass.style.color = 'rgb(128, 128, 128)';
+    letItGo.style.color = 'rgb(26, 216, 211)';
+    oneByOne.style.color = 'rgb(26, 216, 211)';
     document.getElementById('mainId').innerHTML = '';
     getAllData.orderByChild("classType").equalTo('小班制').on("child_added", function(snapshot) {
         data = snapshot.val();
@@ -273,6 +288,10 @@ smallClass.onclick = function(){
 
 const letItGo = document.getElementById('letItGo');
 letItGo.onclick = function(){
+    getAllArticle.style.color = 'rgb(26, 216, 211)';
+    smallClass.style.color = 'rgb(26, 216, 211)';
+    letItGo.style.color = 'rgb(128, 128, 128)';
+    oneByOne.style.color = 'rgb(26, 216, 211)';
     document.getElementById('mainId').innerHTML = '';
     getAllData.orderByChild("teachWay").equalTo('放養制').on("child_added", function(snapshot) {
         data = snapshot.val();
@@ -282,6 +301,10 @@ letItGo.onclick = function(){
 
 const oneByOne = document.getElementById('oneByOne');
 oneByOne.onclick = function(){
+    getAllArticle.style.color = 'rgb(26, 216, 211)';
+    smallClass.style.color = 'rgb(26, 216, 211)';
+    letItGo.style.color = 'rgb(26, 216, 211)';
+    oneByOne.style.color = 'rgb(128, 128, 128)';
     document.getElementById('mainId').innerHTML = '';
     getAllData.orderByChild("classType").equalTo('一對一').on("child_added", function(snapshot) {
         data = snapshot.val();

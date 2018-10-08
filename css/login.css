@@ -174,7 +174,7 @@ div.login-div-white>p.fb-login-button{
 /* 暫放首頁 key visual */
 
 section>div.keyvisualSpan{
-    font-size: 25px;
+    font-size: 24px;
     color: rgb(26,216,211);
     background-color: white;
     padding: 6px;
@@ -197,9 +197,11 @@ section>div.keyvisualSpan{
 @media ( max-width: 420px ){
     section>div.keyvisualSpan {
         letter-spacing: 7px;
+        font-size: 20px;
     }
     section>a>div>span.keyvisualSpan{
         letter-spacing: 7px;
+        font-size: 20px;
     }
 }
 
