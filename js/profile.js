@@ -79,6 +79,10 @@ function startCancel(){
     confirmCancel.style.display = 'none';
 }
 
+//點擊貼文管理後，清空，顯示發布貼文、編輯貼文、刪除貼文
+
+
+
 //登出功能
 
 document.getElementById('logoutTest').onclick = logoutMeOut;

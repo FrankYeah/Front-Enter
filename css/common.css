@@ -32,6 +32,7 @@ p{
 /* alert design */
 
 .alert-big-box{
+    display: none;
     position: fixed;
     justify-content: center;
     align-items: center;

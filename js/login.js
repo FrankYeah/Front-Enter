@@ -5,7 +5,7 @@ function createLoginLayout(){
         //判斷是否登入
         if(userLogin){
             if(userLogin.email == "aaa24295234@gmail.com"){
-                window.location = 'backstage.html';
+                window.location = 'profile.html';
             }else{
                 window.location = 'profile.html';
             }
