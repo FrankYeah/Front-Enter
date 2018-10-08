@@ -71,7 +71,8 @@ function imageLeftOne(data){
     document.getElementById('mainChart').appendChild(newElement);
     newElement.onclick = function(){
         rotateRotate = 0;
-        let oneUrl = '../images/2.jpg';
+        // let oneUrl = '../images/2.jpg';
+        let oneUrl = '../Front-Enter/images/2.jpg';
         rotateImg(oneUrl);
     }
 }
@@ -82,7 +83,8 @@ function imageLeftTwo(data){
     document.getElementById('mainChart').appendChild(newElement);
     newElement.onclick = function(){
         rotateRotate = 1;
-        let twoUrl = '../images/13.jpg';
+        // let twoUrl = '../images/13.jpg';
+        let twoUrl = '../Front-Enter/images/13.jpg';
         rotateImg(twoUrl);
     }
 }
@@ -93,7 +95,8 @@ function imageLeftThree(data){
     document.getElementById('mainChart').appendChild(newElement);
     newElement.onclick = function(){
         rotateRotate = 2; 
-        let threeUrl = '../images/15.jpg';
+        // let threeUrl = '../images/15.jpg';
+        let threeUrl = '../Front-Enter/images/15.jpg';
         rotateImg(threeUrl);
     }
 }
