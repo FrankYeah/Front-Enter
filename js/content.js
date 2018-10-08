@@ -494,7 +494,7 @@ function boxtableFour(){
 function tableFourLeft(){
     let newElement = document.createElement('div');
     newElement.className = 'table-one-left';
-    newElement.textContent = '上課天數';
+    newElement.textContent = '天數';
     newElement.id = 'tableFourLeft';
     document.getElementById('boxtableFour').appendChild(newElement);
 }
