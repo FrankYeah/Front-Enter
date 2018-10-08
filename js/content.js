@@ -69,24 +69,127 @@ function imageLeftOne(data){
     let newElement = document.createElement('div');
     newElement.className = 'image-left image-left-one';
     document.getElementById('mainChart').appendChild(newElement);
+    newElement.onclick = function(){
+        rotateRotate = 0;
+        let oneUrl = '../images/2.jpg';
+        rotateImg(oneUrl);
+    }
 }
 
 function imageLeftTwo(data){
     let newElement = document.createElement('div');
     newElement.className = 'image-left image-left-two';
     document.getElementById('mainChart').appendChild(newElement);
+    newElement.onclick = function(){
+        rotateRotate = 1;
+        let twoUrl = '../images/13.jpg';
+        rotateImg(twoUrl);
+    }
 }
 
 function imageLeftThree(data){
     let newElement = document.createElement('div');
     newElement.className = 'image-left image-left-three';
     document.getElementById('mainChart').appendChild(newElement);
+    newElement.onclick = function(){
+        rotateRotate = 2; 
+        let threeUrl = '../images/15.jpg';
+        rotateImg(threeUrl);
+    }
 }
 
-function mainUnderlineBorn(){
+function rotateImg(url){
+    rotateBackFull();
+    rotateLeftArrow();
+    rotateCenterImg(url)
+    rotateRightArrow();
+}
+
+function rotateBackFull(){
     let newElement = document.createElement('div');
-    newElement.className = 'main-underline';
-    document.getElementById('mainContent').appendChild(newElement);
+    newElement.className = 'rotate-back-full';
+    newElement.id = 'rotateBackFull';
+    document.body.appendChild(newElement);
+    newElement.onclick = deleteRotateFull;
+}
+
+function rotateCenterImg(url){
+    console.log(url);
+    let newElement = document.createElement('div');
+    newElement.className = 'rotate-center-img';
+    newElement.id = 'rotateCenterImg';
+    newElement.style.background = "url('" + url + "')";
+    newElement.style.backgroundRepeat  =  "no-repeat";  
+    newElement.style.backgroundSize  =  "cover";
+    newElement.style.backgroundPositionX = 'center';
+    document.getElementById('rotateBackFull').appendChild(newElement);
+    newElement.onclick = function(event){
+        event.stopPropagation();
+    }
+}
+
+function rotateRightArrow(){
+    let newElement = document.createElement('div');
+    newElement.className = 'rotate-right-arrow';
+    newElement.id = 'rotateRightArrow';
+    document.getElementById('rotateBackFull').appendChild(newElement);
+    newElement.onclick = function(event){
+        event.stopPropagation();
+        startRight();
+    }
+}
+
+function rotateLeftArrow(){
+    let newElement = document.createElement('div');
+    newElement.className = 'rotate-left-arrow';
+    newElement.id = 'rotateLeftArrow';
+    document.getElementById('rotateBackFull').appendChild(newElement);
+    newElement.onclick = function(event){
+        event.stopPropagation();
+        startLeft();
+    }
+}
+
+let rotateRotate = 0 ;
+
+function startLeft(){
+    if(rotateRotate==0){
+        rotateRotate = 2;
+    }else if(rotateRotate==1){
+        rotateRotate = 0;
+    }else if(rotateRotate==2){
+        rotateRotate = 1;
+    }
+    const rotateCenterImg = document.getElementById('rotateCenterImg');
+    let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg'];
+    rotateCenterImg.style.background = "url('" + rImg[rotateRotate] + "')"; 
+    rotateCenterImg.style.backgroundRepeat  =  "no-repeat";  
+    rotateCenterImg.style.backgroundSize  =  "cover";
+    rotateCenterImg.style.backgroundPositionX = 'center';
+
+}
+
+function startRight(){
+    if(rotateRotate==0){
+        rotateRotate = 1;
+    }else if(rotateRotate==1){
+        rotateRotate = 2;
+    }else if(rotateRotate==2){
+        rotateRotate = 0;
+    }
+    let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg'];
+    const rotateCenterImg = document.getElementById('rotateCenterImg');
+    rotateCenterImg.style.background = "url('" + rImg[rotateRotate] + "')";  
+
+    rotateCenterImg.style.backgroundRepeat  =  "no-repeat";  
+    rotateCenterImg.style.backgroundSize  =  "cover";
+    rotateCenterImg.style.backgroundPositionX = 'center';
+    
+}
+
+function deleteRotateFull(){
+    let anotherChild=document.getElementById("rotateBackFull");
+    document.body.removeChild(anotherChild);
 }
 
 function preCityBorn(){
@@ -266,8 +369,14 @@ function coreContentBorn(data){
 
 function boxTitle(data){
     let newElement = document.createElement('p');
-    newElement.innerHTML = '表格';
+    newElement.innerHTML = '整理';
     newElement.className = 'box-title';
+    document.getElementById('mainContent').appendChild(newElement);
+}
+
+function mainUnderlineBorn(){
+    let newElement = document.createElement('div');
+    newElement.className = 'main-underline';
     document.getElementById('mainContent').appendChild(newElement);
 }
 
