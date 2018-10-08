@@ -270,7 +270,7 @@ div.fullSearchWhiteDiv{
     position: fixed;
     display: flex;
     flex-direction: row;
-    top: 11%;
+    top: 100px;
     left: 0;
     width: 100%;
     height: 50%;
@@ -311,13 +311,13 @@ div.fullSearchWhiteDiv>div.whiteDivLeft>div.whiteDivLeftIcon{
 div.fullSearchWhiteDiv>div.whiteDivLeft>p.whiteDivLeftText{
     text-align: center;
     color: rgb(26, 216, 211);
-    font-size: 20px;
+    font-size: 18px;
 }
 
 div.fullSearchWhiteDiv>div.whiteDivLeft>form.whiteDivLeftBox{
     display: flex;
     width: 60%;
-    height: 80px;
+    height: 35px;
     background-color: white;
     margin-left: 18%;
     padding: 10px;
@@ -328,7 +328,7 @@ div.fullSearchWhiteDiv>div.whiteDivLeft>form.whiteDivLeftBox>input.leftInput{
     width: 80%;
     line-height: 2;
     background-color: white;
-    font-size: 28px;
+    font-size: 16px;
     padding: 10px;
     line-height: 2;
     border: 0px solid white;
@@ -337,15 +337,13 @@ div.fullSearchWhiteDiv>div.whiteDivLeft>form.whiteDivLeftBox>input.leftInput{
 div.fullSearchWhiteDiv>div.whiteDivLeft>form.whiteDivLeftBox>div.leftButton{
     background: url(../images/FE_search_green.png);
     background-repeat: no-repeat;
-    background-size: 45px 45px;
-    width: 54px;
-    height: 58px;
+    background-size: 25px 25px;
+    width: 25px;
+    height: 28px;
     margin: 0 auto;
-    margin-top: 16px;
+    margin-top: 5px;
     cursor: pointer;
 }
-
-
 
 /* 測驗 Go */ 
 
