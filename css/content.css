@@ -34,6 +34,8 @@ main>div.main-chart{
     padding-left: 30px;
 }
 
+/* 點擊圖片 full */
+
 div.rotate-back-full{
     position: fixed;
     top: 0;
@@ -99,6 +101,8 @@ main>div.main-chart>div.image-left-three{
     background: url('../images/15.jpg') 50% / cover no-repeat;
 }
 
+/* 新增右邊 box */
+
 main>div.main-content>div.main-underline{
     border-bottom: 1px solid rgb(26, 216, 211);
     width: 20px;
@@ -106,6 +110,44 @@ main>div.main-content>div.main-underline{
     margin-top: 30px;
     margin: auto;
 }
+
+main>div.main-content>div.box-table{
+    width: 600px;
+    margin: 30px auto auto auto ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main>div.main-content>div.box-table>div.box-table-one{
+    width: 400px;
+    height: 40px;
+    /* background-color: rgba(87, 87, 87, 0.8); */
+    margin: 30px auto auto auto ;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    border-bottom: 1px solid rgba(197, 197, 197, 0.8);
+}
+
+main>div.main-content>div.box-table>div.box-table-one>div.table-one-left{
+    font-size: 16px;
+    color: rgb(26, 216, 211);
+    line-height: 35px;
+    font-weight: bold;
+    width: 100px;
+    letter-spacing: 3px;
+}
+
+main>div.main-content>div.box-table>div.box-table-one>div.table-one-right{
+    font-size: 16px;
+    color: rgb(128,128,128);
+    line-height: 35px;
+    letter-spacing: 3px;
+}
+
+
+/* 之前 */
 
 main>div.main-chart>p.main-pre{
     color: rgba(73, 72, 72, 0.9);
@@ -253,6 +295,22 @@ div.main-contact>div>p.contact-mail::before{
     }
 }
 
+@media ( max-width:700px ){
+    main>div.main-content>div.box-table{
+        width: auto;
+    }
+    main>div.main-content>div.box-table>div.box-table-one {
+        width: 90%;
+    }
+    main>div.main-content>div.box-table>div.box-table-one>div.table-one-left{
+        font-size: 14px;
+        width: 100px;
+    }
+    main>div.main-content>div.box-table>div.box-table-one>div.table-one-right{
+        font-size: 14px;
+    }
+}
+
 @media ( max-width:650px ){
     main>div.main-chart>div.image-left{
         height: 160px;
@@ -273,11 +331,37 @@ div.main-contact>div>p.contact-mail::before{
     }
 }
 
+@media ( max-width:470px ){
+    main>div.main-content>div.box-table>div.box-table-one {
+        width: 100%;
+    }
+    main>div.main-content>div.box-table>div.box-table-one>div.table-one-left{
+        font-size: 12px;
+        width: 80px;
+    }
+    main>div.main-content>div.box-table>div.box-table-one>div.table-one-right{
+        font-size: 12px;
+    }
+}
+
 @media ( max-width:410px ){
     div.rotate-center-img{
         width: 300px;
         height: 300px;
         width: 220px;
         height: 340px;
+    }
+}
+
+@media ( max-width:380px ){
+    main>div.main-content>div.box-table>div.box-table-one {
+        width: 100%;
+    }
+    main>div.main-content>div.box-table>div.box-table-one>div.table-one-left{
+        font-size: 10px;
+        width: 60px;
+    }
+    main>div.main-content>div.box-table>div.box-table-one>div.table-one-right{
+        font-size: 10px;
     }
 }

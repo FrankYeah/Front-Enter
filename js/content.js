@@ -44,9 +44,28 @@ function createLayout(data){
     // mainContentHeaderBorn();
     mainContentTitleBorn(data);
     coreContentBorn(data);
+
     boxTitle(data);
     mainUnderlineBorn();
-
+    boxTable();
+    boxtableOne();
+    tableOneLeft();
+    tableOneRight(data);
+    boxtableTwo();
+    tableTwoLeft();
+    tableTwoRight(data);
+    boxtableThree();
+    tableThreeLeft();
+    tableThreeRight(data);
+    boxtableFour();
+    tableFourLeft();
+    tableFourRight(data);
+    boxtableFive();
+    tableFiveLeft();
+    tableFiveRight(data);
+    boxtableSix();
+    tableSixLeft();
+    tableSixRight(data);
     // contactPhoneBorn(data);
     // contactMailBorn(data);
 }
@@ -197,6 +216,8 @@ function deleteRotateFull(){
     document.body.removeChild(anotherChild);
 }
 
+// 左邊
+
 function preCityBorn(){
     let newElement = document.createElement('p');
     newElement.className = 'main-pre';
@@ -338,6 +359,8 @@ function tagTeacherNumBorn(data){
     document.getElementById('mainChart').appendChild(newElement);
 }
 
+// 右邊
+
 function mainContentBorn(){
     let newElement = document.createElement('div');
     newElement.id = 'mainContent';
@@ -384,6 +407,153 @@ function mainUnderlineBorn(){
     newElement.className = 'main-underline';
     document.getElementById('mainContent').appendChild(newElement);
 }
+
+function boxTable(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table';
+    newElement.id = 'boxTable';
+    document.getElementById('mainContent').appendChild(newElement);
+}
+
+function boxtableOne(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table-one';
+    newElement.id = 'boxtableOne';
+    document.getElementById('boxTable').appendChild(newElement);
+}
+
+function tableOneLeft(){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-left';
+    newElement.textContent = '城市';
+    newElement.id = 'tableOneLeft';
+    document.getElementById('boxtableOne').appendChild(newElement);
+}
+
+function tableOneRight(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-right';
+    newElement.textContent = data.city;
+    newElement.id = 'tableOneRight';
+    document.getElementById('boxtableOne').appendChild(newElement);
+}
+
+function boxtableTwo(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table-one';
+    newElement.id = 'boxtableTwo';
+    document.getElementById('boxTable').appendChild(newElement);
+}
+
+function tableTwoLeft(){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-left';
+    newElement.textContent = '班制';
+    newElement.id = 'tableTwoLeft';
+    document.getElementById('boxtableTwo').appendChild(newElement);
+}
+
+function tableTwoRight(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-right';
+    newElement.textContent = data.classType;
+    newElement.id = 'tableTwoRight';
+    document.getElementById('boxtableTwo').appendChild(newElement);
+}
+
+function boxtableThree(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table-one';
+    newElement.id = 'boxtableThree';
+    document.getElementById('boxTable').appendChild(newElement);
+}
+
+function tableThreeLeft(){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-left';
+    newElement.textContent = '教法';
+    newElement.id = 'tableThreeLeft';
+    document.getElementById('boxtableThree').appendChild(newElement);
+}
+
+function tableThreeRight(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-right';
+    newElement.textContent = data.teachWay;
+    newElement.id = 'tableThreeRight';
+    document.getElementById('boxtableThree').appendChild(newElement);
+}
+
+function boxtableFour(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table-one';
+    newElement.id = 'boxtableFour';
+    document.getElementById('boxTable').appendChild(newElement);
+}
+
+function tableFourLeft(){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-left';
+    newElement.textContent = '上課天數';
+    newElement.id = 'tableFourLeft';
+    document.getElementById('boxtableFour').appendChild(newElement);
+}
+
+function tableFourRight(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-right';
+    newElement.textContent = data.totalDay + '天';
+    newElement.id = 'tableFourRight';
+    document.getElementById('boxtableFour').appendChild(newElement);
+}
+
+function boxtableFive(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table-one';
+    newElement.id = 'boxtableFive';
+    document.getElementById('boxTable').appendChild(newElement);
+}
+
+function tableFiveLeft(){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-left';
+    newElement.textContent = '週時';
+    newElement.id = 'tableFiveLeft';
+    document.getElementById('boxtableFive').appendChild(newElement);
+}
+
+function tableFiveRight(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-right';
+    newElement.textContent = data.weekHour + '小時';
+    newElement.id = 'tableFiveRight';
+    document.getElementById('boxtableFive').appendChild(newElement);
+}
+
+function boxtableSix(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table-one';
+    newElement.id = 'boxtableSix';
+    document.getElementById('boxTable').appendChild(newElement);
+}
+
+function tableSixLeft(){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-left';
+    newElement.textContent = '技術';
+    newElement.id = 'tableSixLeft';
+    document.getElementById('boxtableSix').appendChild(newElement);
+}
+
+function tableSixRight(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-right';
+    newElement.textContent = data.technology;
+    newElement.id = 'tableSixRight';
+    document.getElementById('boxtableSix').appendChild(newElement);
+}
+
+// 聯絡我們
 
 function contactPhoneBorn(data){
     let newElement = document.createElement('p');
