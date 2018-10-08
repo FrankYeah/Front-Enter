@@ -26,6 +26,7 @@ function winScroll(){
             headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '';
             headerP3.style.cursor = 'pointer';
+            console.log('photoURL & verified is true larger 100')
         }
       }else if(document.documentElement.scrollTop<100){
         webSearch.src = "images/FE_search_green.png";
@@ -38,6 +39,7 @@ function winScroll(){
             headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '';
             headerP3.style.cursor = 'pointer';
+            console.log('photoURL & verified is true smaller 100')
         }
       }
 }
@@ -49,7 +51,7 @@ window.onload = function() {
     // 檢測登入狀態改變文字
     if(userLogin && userLogin.emailVerified == true){
         headerP3.style.color = 'rgb(128, 128, 128)';
-        headerP3.textContent = '';
+        // headerP3.textContent = '';
         headerP3.style.cursor = 'pointer';
         headerP3.addEventListener('mouseenter', changeColor);
         headerP3.addEventListener('mouseleave', changeColorAgain)
