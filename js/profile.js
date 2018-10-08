@@ -4,6 +4,7 @@ const displayResult = document.getElementById('displayResult');
 const inputName = document.getElementById('inputName');
 const inputMail = document.getElementById('inputMail');
 const inputPhoto = document.getElementById('inputPhoto');
+const inputPhone = document.getElementById('inputPhone');
 const fixData = document.getElementById('fixData');
 const confirmCancel = document.getElementById('confirmCancel');
 const makeConfirm = document.getElementById('makeConfirm');
@@ -17,11 +18,29 @@ window.onload = function(){
 
 function loadAllLoginStuff(){
     console.log('login ok')
-    if(userLogin.photoURL){
-        inputName.value = userLogin.displayName;
-        inputMail.value = userLogin.email;
-        inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
+    let getAllMemberData = database.ref("member");
+    let dataExist;
+    getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
+        dataExist = snapshot.val();
+    });  
+    // 如果 firebase 有資料
+    if(dataExist == undefined){
+        // firebase 沒有資料 用google的
+        if(userLogin.photoURL){
+            inputName.value = userLogin.displayName;
+            inputMail.value = userLogin.email;
+            inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
+            console.log('data from google')
+        }
+    }else{
+        // firebase 有資料 用裡面的
+        inputName.value = dataExist.name;
+        inputMail.value = dataExist.mail;
+        inputPhone.value = dataExist.phone;
+        inputPhoto.style.background = "url('" + dataExist.photoUrl + "')";
+        console.log('data from firebase')
     }
+    
     inputPhoto.style.backgroundPosition= 'center';
     inputPhoto.style.backgroundSize= 'cover';
     inputPhoto.style.backgroundRepeat= 'no-repeat';
@@ -61,6 +80,39 @@ function startConfirm(){
     // 顯示修改資料 
     fixData.style.display = 'block';
     confirmCancel.style.display = 'none';
+    // 將資料存上 firebase
+    let getAllMemberData = database.ref("member");
+    let dataExist;
+    getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
+        dataExist = snapshot.val();
+    });  
+    // 如果 firebase 有資料
+    if(dataExist == undefined){
+        // firebase 沒有資料 用google的
+        if(userLogin.photoURL){
+            firebase.database().ref('member/'+newPostKey).set({
+                name: inputName.value,
+                mail : userLogin.email,
+                phone : inputPhone.value,
+                photoUrl : userLogin.photoURL,
+                creatTime: new Date().getTime(),
+                uid : newPostKey
+            });
+        }
+    }else{
+        // firebase 有資料 用裡面的
+            firebase.database().ref('member/'+ dataExist.uid).set({
+                name: inputName.value,
+                mail : userLogin.email,
+                phone : inputPhone.value,
+                photoUrl : userLogin.photoURL,
+                creatTime: new Date().getTime(),
+                uid : dataExist.uid
+            });
+    }
+
+
+
     confirmAllDataChange();
 }
 
@@ -77,7 +129,29 @@ function startCancel(){
     // 顯示修改資料 
     fixData.style.display = 'block';
     confirmCancel.style.display = 'none';
+    // 取消修改邏輯
+    cancelToFixData();
 }
+
+    function cancelToFixData(){
+        let getAllMemberData = database.ref("member");
+        let dataExist;
+        getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
+            dataExist = snapshot.val();
+        });  
+        // 如果 firebase 有資料
+        if(dataExist == undefined){
+            // firebase 沒有資料 用google的
+            if(userLogin.photoURL){
+                inputName.value = userLogin.name;
+                inputPhone.value = userLogin.phone;
+            }
+        }else{
+            // firebase 有資料 用裡面的
+            inputName.value =  dataExist.name;
+            inputPhone.value = dataExist.phone;
+        }
+    }
 
 //點擊貼文管理後，清空，顯示發布貼文、編輯貼文、刪除貼文
 

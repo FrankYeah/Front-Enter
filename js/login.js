@@ -239,11 +239,41 @@ function storeDataToFirebase(){
     }else{
         headerP3.textContent = '會員';
     }
+
     // 先判斷 user data 有無此人
+
+    let getAllMemberData = database.ref("member");
+    let dataExist;
+    getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
+        dataExist = snapshot.val();
+        console.log(dataExist);
+    });  
+
+    setTimeout(testDataExist ,3000);
+
+    function testDataExist(){
+        if(dataExist == undefined){
+            console.log('undefined')
+            let newPostKey = firebase.database().ref().child('member').push().key;
+            firebase.database().ref('member/'+newPostKey).set({
+                name: userLogin.displayName,
+                mail : userLogin.email,
+                phone : userLogin.phoneNumber,
+                photoUrl : userLogin.photoURL,
+                creatTime: new Date().getTime(),
+                uid : newPostKey
+            });
+        }else{
+            console.log('have data')
+        }
+    }
+
+
+
     // 有資料的話，直接略過此事
-    console.log('ready to send data');
+
     //沒資料的話，就在 firebase 中新增一筆
-    
+
 }
 
 // 創建帳號後，檢測登入並寄送驗證信
