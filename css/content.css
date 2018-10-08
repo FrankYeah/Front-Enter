@@ -78,6 +78,13 @@ main>div.main-chart>div.image-left{
     margin: 20px;
     border-radius: 5px;    
     cursor: pointer;
+    transition: all 0.6s;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+main>div.main-chart>div.image-left:hover{
+    transform: scale(1.05);
 }
 
 main>div.main-chart>div.image-left-one{
