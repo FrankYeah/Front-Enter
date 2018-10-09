@@ -86,6 +86,71 @@ main>div>div.display-result{
     align-items: center;
 }
 
+main>div>div.create-right-div{
+    display: none;
+    flex-direction: column;
+    /* background-color:rgba(230, 230, 230, .8); */
+    width: 600px;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+main>div>div.create-right-div>div.post-edit-delete{
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main>div>div.create-right-div>div.post-edit-delete>p.post-button{
+    width: 80px;
+    background-color: rgb(26, 216, 211);
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 1px solid rgb(26, 216, 211);
+    text-align: center;
+    padding: 10px;
+    height: 16px;
+    line-height: 16px;
+}
+
+main>div>div.create-right-div>div.post-edit-delete>p.post-button:hover{
+    cursor: pointer;
+}
+
+main>div>div.create-right-div>div.for-delete-post{
+    display: none;
+    flex-direction: row;
+    width: 600px;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+main>div>div.create-right-div>div.for-delete-post>p.create-delete-button {
+    width: 200px;
+    background-color: rgb(216, 86, 26);
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    border: 0px solid rgb(26, 216, 211);
+    text-align: center;
+    padding: 10px;
+    height: 16px;
+    line-height: 16px;
+    margin: 10px;
+}
+
+main>div>div.create-right-div>div.for-delete-post>p.create-delete-button:hover {
+    cursor: pointer;
+}
+
 main>div>div.display-result>div.photo{
     height: 120px;
     width: 120px;

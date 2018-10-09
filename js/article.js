@@ -116,6 +116,12 @@ if(articleId == null){
     newElement.textContent = 'no result';
     newElement.style.color = 'rgb(26, 216, 211)';
     document.getElementById('mainId').appendChild(newElement);
+
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
 }
 
 // 抓 firebase 資料庫 json 資料  // 搜尋處理

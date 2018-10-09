@@ -10,11 +10,18 @@ const confirmCancel = document.getElementById('confirmCancel');
 const makeConfirm = document.getElementById('makeConfirm');
 const makeCancel = document.getElementById('makeCancel');
 const managePost = document.getElementById('managePost');
+const personalData = document.getElementById('personalData');
+const createRightDiv = document.getElementById('createRightDiv');
+const createPostPost = document.getElementById('createPostPost');
+const createPostEdit = document.getElementById('createPostEdit');
+const createPostDelete = document.getElementById('createPostDelete');
+const forDeletePost = document.getElementById('forDeletePost');
 
+// window.onload = function(){
+//     this.setTimeout(loadAllLoginStuff, 2000);
+// }
 
-window.onload = function(){
-    this.setTimeout(loadAllLoginStuff, 2000);
-}
+setTimeout(loadAllLoginStuff, 4000);
 
 function loadAllLoginStuff(){
     console.log('login ok')
@@ -199,7 +206,102 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 
+// 管理貼文 managePost
+
+managePost.addEventListener('click', createPostLayout);
+
+function createPostLayout(){
+    displayResult.style.display = 'none';
+    createRightDiv.style.display = 'flex';
+}
+
+// 重現個人資料
+
+personalData.addEventListener('click', letPersonalAppear);
+
+function letPersonalAppear(){
+    displayResult.style.display = 'flex';
+    createRightDiv.style.display = 'none';
+    forDeletePost.style.display = 'none';
+}
+
+// 發佈貼文
+
+createPostPost.addEventListener('click', function(){
+    window.location = 'backstage.html';
+})
+
+// 編輯貼文
+
+createPostEdit.addEventListener('click', readyToEditPost);
+
+function readyToEditPost(){
+    console.log('go edit');
+    let getAllEditData = database.ref("article");
+    let editData;
+    getAllEditData.orderByChild("skill").on("child_added", function(snapshot) {
+        editData = snapshot.val();
+        console.log(editData);
+
+    });
+}
+
+// 刪除貼文
+
+createPostDelete.addEventListener('click', readyToDeletePost)
+
+function readyToDeletePost(){
+    forDeletePost.innerHTML = '';
+    console.log('go delete');
+    let getAllDeleteData = database.ref("article");
+    let deleteData;
+    getAllDeleteData.orderByChild("skill").on("child_added", function(snapshot) {
+        deleteData = snapshot.val();
+        console.log(deleteData);
+        createDeleteLayout(deleteData);
+    });
+}
+
+// 建立 刪除 layout 
+
+function createDeleteLayout(deleteData){
+    forDeletePost.style.display = 'flex';
+    createDeleteButton(deleteData);
+}
+
+function createDeleteButton(deleteData){
+    let newElement = document.createElement('p');
+    newElement.textContent = deleteData.name;
+    newElement.className = 'create-delete-button';
+    newElement.id = deleteData.creatTime;
+    document.getElementById('forDeletePost').appendChild(newElement);
+    newElement.onclick = function(){
+        console.log(this.textContent);
+        // 對比到此人，再去刪除
+        let getAllDeleteData = database.ref("article");
+        getAllDeleteData.orderByChild("name").equalTo(this.textContent).on("child_added", function(snapshot) {
+            // 刪除資料
+            firebase.database().ref('/article/' + snapshot.val().uid).remove().then(function(){
+            youDeleteAnArticle(snapshot.val().name);
+            setTimeout(function(){window.location.reload()} , 2000)
+
+            });
+
+        });  
+
+
+
+    }
+
+}
+
+
 // alert 
+
+function youDeleteAnArticle(x){
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = x + '已刪除，準備重新載入';
+}
 
 function confirmAllDataChange(){
     alertBigBox.style.display = 'flex';

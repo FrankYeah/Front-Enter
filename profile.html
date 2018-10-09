@@ -32,9 +32,9 @@
     <aside><img id="testGo" src="images/FE_test_go.png" /></aside>
 
     <main>
-        <div>
+        <div id="mainDownDiv">
             <div class="select-button">
-                <p>個人資料</p>
+                <p id="personalData">個人資料</p>
                 <p style="background-color:gray; border:0px">即將開放</p>
                 <p id="managePost" class="manage-post">貼文管理</p>
                 <p id="logoutTest">登出</p>
@@ -45,10 +45,10 @@
                 <div class="split-line"></div>
 
                 <div class="form">
-                    <p>姓名</p><input id="inputName" disabled type="text" value="name" placeholder="">
+                    <p>姓名</p><input maxlength="10" id="inputName" disabled type="text" value="name" placeholder="">
                 </div>
                 <div class="form">
-                    <p>手機</p><input id="inputPhone" disabled type="text" value="phone" placeholder="">
+                    <p>手機</p><input maxlength="20" id="inputPhone" disabled type="text" value="phone" placeholder="">
                 </div>
                 <div class="form">
                     <p>信箱</p><input id="inputMail" disabled type="text" value="mail">
@@ -59,12 +59,18 @@
                     <div id="makeCancel" class="fix-data">取消</div>
                 </div>
             </div>
+            <div id="createRightDiv" class="create-right-div">
+                <div id="forDeletePost" class="for-delete-post">
+
+            </div>
+            <div id="postEditDelete" class="post-edit-delete">
+                <p id="createPostPost" class="post-button create-post-post">發佈貼文</p>
+                <p id="createPostEdit" class=" create-post-edit" style="background-color:gray; border: 0px"></p>
+                <p id="createPostDelete" class="post-button create-post-delete">刪除貼文</p>
+            </div>        
+            </div>
         </div>
     </main>
-
-    <div class="top">
-        <div id="tops" class="top-icon"></div>
-    </div>
 
     <!-- 彈跳 alert 框 -->
     <div id="alertBigBox" class="alert-big-box">
@@ -73,6 +79,10 @@
             <p id="alertWord" class="alert-word">123</p>
             <div id="alertButton" class="alert-button">OK</div>
         </div>
+    </div>
+
+    <div class="top">
+        <div id="tops" class="top-icon"></div>
     </div>
 
     <footer>

@@ -10,6 +10,7 @@ function sendToMail(){
     if(aboutName.value && aboutMail.value && aboutTitle.value && aboutContent.value){
         let newPostKey = firebase.database().ref().child('feedback').push().key;
         firebase.database().ref('feedback/'+newPostKey).set({
+            uid: newPostKey,
             name: aboutName.value,
             mail : aboutMail.value,
             title : aboutTitle.value,

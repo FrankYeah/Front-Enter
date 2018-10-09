@@ -163,7 +163,8 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     mail: mail,
     rectangleUrl: rUrl,
     squareUrl : sUrl,
-    creatTime: new Date().getTime()
+    creatTime: new Date().getTime(),
+    uid: newPostKey
     });
     postAlreadyOut();
 }
