@@ -138,6 +138,8 @@ main>div>div.create-right-div>div.for-delete-post{
     flex-wrap: wrap;
 }
 
+
+
 div.big-post-div {
     width: 200px;
     background-color: rgb(128, 128, 128);
@@ -162,15 +164,13 @@ div.big-post-div>div.imgEdit{
     background: url(../images/pencil-edit-button.svg);
     background-size: cover;
     cursor: pointer;
+    transition: all 1s linear;
 }
 
-.test-img-edit{
-    display: block;
-    width: 16px;
-    height: 16px;
-    background: url(../images/pencil-edit-button.svg);
-    background-size: cover;
-    cursor: pointer;
+div.big-post-div>div.imgEdit:hover{
+    opacity: 0.8;
+    width: 20px;
+    height: 20px;
 }
 
 div.big-post-div>div.imgDelete{
@@ -179,6 +179,14 @@ div.big-post-div>div.imgDelete{
     height: 16px;
     background: url(../images/rubbish-bin.svg);
     background-size: cover;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+div.big-post-div>div.imgDelete:hover{
+    opacity: 0.8;
+    width: 25px;
+    height: 25px;
 }
 
 main>div>div.create-right-div>div.for-delete-post>p.create-delete-button:hover {
@@ -354,5 +362,16 @@ main>div>div.display-result>div.confirm-cancel>div{
         font-size: 14px;
         height: 14px;
         line-height: 14px;
+    }
+    main>div>div.create-right-div{
+        width: 300px;
+    }
+    main>div>div.create-right-div>div.for-delete-post{
+        width: 300px;
+        flex-direction: column;
+        align-items: center;
+    }
+    main>div>div.create-right-div>div.post-edit-delete{
+        width: 300px;
     }
 }

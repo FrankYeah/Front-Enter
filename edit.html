@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/backstage.css">
+    <link rel="stylesheet" type="text/css" href="css/edit.css">
     <link rel="stylesheet" type="text/css" href="css/login.css">
-    <title>發文後台</title>
+    <title>編輯貼文</title>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
     <script src='js/firebase.js'></script>
@@ -25,8 +25,8 @@
     </header>  
 
     <section>
-        <div class="keyvisualSpan">
-           後台
+        <div id="MykeyvisualSpan" class="keyvisualSpan">
+           
         </div>
     </section>
 
@@ -34,42 +34,42 @@
     <p id="logoutTest" style="text-align: center; cursor: pointer; font-style:italic;">登出</p>
     <main>
         <p>名稱</p>
-        <input value="AppWorks School" id="mainName" type="text" placeholder="AppWorks School">
+        <input id="mainName" type="text" placeholder="AppWorks School">
         <p>學習城市</p>
-        <input value="台北" id="mainCity" type="text" placeholder="台北">
+        <input id="mainCity" type="text" placeholder="台北">
         <p>技能</p>
-        <input value="前端" id="mainSkill" type="text" placeholder="前端">
+        <input id="mainSkill" type="text" placeholder="前端">
         <p>技術</p>
-        <input value="HTML、CSS、javaScript" id="mainTechnology" type="text" placeholder="HTML、CSS、javaScript">
+        <input  id="mainTechnology" type="text" placeholder="HTML、CSS、javaScript">
         <p>每月費用</p>
-        <input value="3000" id="mainFee" type="text" placeholder="3000 ( 元 )">
+        <input id="mainFee" type="text" placeholder="3000 ( 元 )">
         <p>課程天數</p>
-        <input value="60" id="mainTotalDay" type="text" placeholder="60 ( 天 )">
+        <input id="mainTotalDay" type="text" placeholder="60 ( 天 )">
         <p>每周時數</p>
-        <input value="40" id="mainWeekHour" type="text" placeholder="40 ( 小時 )">
+        <input id="mainWeekHour" type="text" placeholder="40 ( 小時 )">
         <p>創辦多久</p>
-        <input value="3" id="mainFoundYear" type="text" placeholder="3 ( 年 )">
+        <input id="mainFoundYear" type="text" placeholder="3 ( 年 )">
         <p>教學方式</p>
-        <input value="放養制" id="mainTeachWay" type="text" placeholder="放養制、手把手教制">
+        <input id="mainTeachWay" type="text" placeholder="放養制、手把手教制">
         <p>班制</p>
-        <input value="小班制" id="mainClassType" type="text" placeholder="小班制、大班制、一對一">
+        <input id="mainClassType" type="text" placeholder="小班制、大班制、一對一">
         <p>老師數量</p>
-        <input value="2" id="mainTeacherNum" type="text" placeholder="2 ( 位 )">
+        <input id="mainTeacherNum" type="text" placeholder="2 ( 位 )">
         <p>內文標題</p>
-        <input value="內文標題" id="mainTopic" type="text" placeholder="內文標題">
+        <input id="mainTopic" type="text" placeholder="內文標題">
         <p>前言</p>
-        <input value="AppWorks School 已有五屆..." id="mainPreface" type="text" placeholder="AppWorks School 已有五屆...">
+        <input id="mainPreface" type="text" placeholder="AppWorks School 已有五屆...">
         <p>內文</p>
-        <textarea  id="mainContent" name="內文" id="" cols="30" rows="10"></textarea>
+        <textarea name="內文" id="mainContent" cols="30" rows="10"></textarea>
         <p>聯絡（電話、郵件）</p>
-        <input value="0917-218-567" id="mainPhone" type="text" placeholder="0917-218-567">
-        <input value="aaa24295234@gmail.com" id="mainMail" type="text" placeholder="aaa24295234@gmail.com">
+        <input id="mainPhone" type="text" placeholder="0917-218-567">
+        <input id="mainMail" type="text" placeholder="aaa24295234@gmail.com">
         <p>方形圖片上傳</p>
         <input id="mainUploadPic" type="file">
         <p>長方形圖片上傳</p>
         <input id="RectanglePic" type="file">
         <br><br><br>
-        <p id="mainButton" class="main-button">發佈貼文</p>
+        <p id="mainButton" class="main-button">更新此貼文</p>
     </main>
 
     <!-- 彈跳 alert 框 -->
@@ -99,7 +99,7 @@
 
     <script src='js/common.js'></script>
     <script src='js/login.js'></script>
-    <script src='js/backstage.js'></script>
+    <script src='js/edit.js'></script>
 
 </body>
 </html>

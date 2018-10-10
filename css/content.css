@@ -349,8 +349,8 @@ div.main-contact>div>p.contact-mail::before{
 
 @media ( max-width:650px ){
     main>div.main-chart>div.image-left{
-        height: 160px;
-        width: 240px;
+        height: 240px;
+        width: 340px;
     }
     main>div.main-content>p.main-content-title{
         line-height: 28px;

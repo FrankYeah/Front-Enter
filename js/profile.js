@@ -268,12 +268,30 @@ function editImg(myAllData){
     let newElement = document.createElement('div');
     newElement.className = 'imgEdit';
     document.getElementById(myAllData.creatTime).appendChild(newElement);
+    console.log(newElement.parentNode.id);
+    newElement.onclick = function(){
+        window.location = 'edit.html?id=' + myAllData.creatTime;
+    }
 }
 
 function deleteImg(myAllData){
     let newElement = document.createElement('div');
     newElement.className = 'imgDelete';
     document.getElementById(myAllData.creatTime).appendChild(newElement);
+    console.log(newElement.parentNode.id);
+    newElement.onclick = function(){
+        if (confirm("確定要刪除此貼文？")) {
+            let getAllDeleteData = database.ref("article");
+            getAllDeleteData.orderByChild("creatTime").equalTo(myAllData.creatTime).on("child_added", function(snapshot) {
+                // 刪除資料
+                firebase.database().ref('/article/' + snapshot.val().uid).remove().then(function(){
+                youDeleteAnArticle(myAllData.name);
+                setTimeout(function(){window.location.reload()} , 1000)
+                });
+            });  
+        } else {
+        }
+    }
 }
 
 // 點擊 編輯貼文
@@ -282,9 +300,6 @@ createPostEdit.addEventListener('click', displayMyImg);
 
 function displayMyImg(){
 
-    // document.querySelectorAll(".imgDelete").className = 'test-img-edit';
-    // document.getElementsByClassName("imgDelete").style.display = 'block';
-    // document.getElementsByClassName("imgDelete").style.display = 'block';
     const xx = document.querySelectorAll("div.imgDelete");
     for(let i=0; i<xx.length; i++){
         xx[i].style.display="block";
@@ -302,35 +317,6 @@ function displayMyImg(){
         zz[i].style.border='1px solid rgb(26, 216, 211)';
     }
 }
-
-
-// 建立 刪除 layout 
-
-function createDeleteLayout(deleteData){
-    forDeletePost.style.display = 'flex';
-    createDeleteButton(deleteData);
-}
-
-function createDeleteButton(deleteData){
-    let newElement = document.createElement('p');
-    newElement.textContent = deleteData.name;
-    newElement.className = 'create-delete-button';
-    newElement.id = deleteData.creatTime;
-    document.getElementById('forDeletePost').appendChild(newElement);
-    newElement.onclick = function(){
-        console.log(this.textContent);
-        // 對比到此人，再去刪除
-        let getAllDeleteData = database.ref("article");
-        getAllDeleteData.orderByChild("name").equalTo(this.textContent).on("child_added", function(snapshot) {
-            // 刪除資料
-            firebase.database().ref('/article/' + snapshot.val().uid).remove().then(function(){
-            youDeleteAnArticle(snapshot.val().name);
-            setTimeout(function(){window.location.reload()} , 2000)
-            });
-        });  
-    }
-}
-
 
 // alert 
 
