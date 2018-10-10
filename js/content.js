@@ -93,8 +93,8 @@ function imageLeftOne(data){
     document.getElementById('mainChart').appendChild(newElement);
     newElement.onclick = function(){
         rotateRotate = 0;
-        let oneUrl = '../images/2.jpg';
-        // let oneUrl = '../Front-Enter/images/2.jpg';
+        // let oneUrl = '../images/2.jpg';
+        let oneUrl = '../Front-Enter/images/2.jpg';
         rotateImg(oneUrl);
     }
 }
@@ -105,8 +105,8 @@ function imageLeftTwo(data){
     document.getElementById('mainChart').appendChild(newElement);
     newElement.onclick = function(){
         rotateRotate = 1;
-        let twoUrl = '../images/13.jpg';
-        // let twoUrl = '../Front-Enter/images/13.jpg';
+        // let twoUrl = '../images/13.jpg';
+        let twoUrl = '../Front-Enter/images/13.jpg';
         rotateImg(twoUrl);
     }
 }
@@ -117,8 +117,8 @@ function imageLeftThree(data){
     document.getElementById('mainChart').appendChild(newElement);
     newElement.onclick = function(){
         rotateRotate = 2; 
-        let threeUrl = '../images/15.jpg';
-        // let threeUrl = '../Front-Enter/images/15.jpg';
+        // let threeUrl = '../images/15.jpg';
+        let threeUrl = '../Front-Enter/images/15.jpg';
         rotateImg(threeUrl);
     }
 }
@@ -129,8 +129,8 @@ function imageLeftFour(data){
     document.getElementById('mainChart').appendChild(newElement);
     newElement.onclick = function(){
         rotateRotate = 3; 
-        let fourUrl = '../images/7.jpg';
-        // let fourUrl = '../Front-Enter/images/7.jpg';
+        // let fourUrl = '../images/7.jpg';
+        let fourUrl = '../Front-Enter/images/7.jpg';
         rotateImg(fourUrl);
     }
 }
@@ -141,8 +141,8 @@ function imageLeftFive(data){
     document.getElementById('mainChart').appendChild(newElement);
     newElement.onclick = function(){
         rotateRotate = 4; 
-        let fiveUrl = '../images/AppWorksShool-rectangle.jpg';
-        // let fiveUrl = '../Front-Enter/images/AppWorksShool-rectangle.jpg';
+        // let fiveUrl = '../images/AppWorksShool-rectangle.jpg';
+        let fiveUrl = '../Front-Enter/images/AppWorksShool-rectangle.jpg';
         rotateImg(fiveUrl);
     }
 }
@@ -214,10 +214,10 @@ function startLeft(){
         rotateRotate = 0;
     }
     const rotateCenterImg = document.getElementById('rotateCenterImg');
-//     let rImg = ['../Front-Enter/images/2.jpg', '../Front-Enter/images/13.jpg', '../Front-Enter/images/15.jpg'
-//     , '../Front-Enter/images/7.jpg', '../Front-Enter/images/AppWorksShool-rectangle.jpg'
-// ];
-    let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg', '../images/7.jpg', '../images/AppWorksShool-rectangle.jpg'];
+    let rImg = ['../Front-Enter/images/2.jpg', '../Front-Enter/images/13.jpg', '../Front-Enter/images/15.jpg'
+    , '../Front-Enter/images/7.jpg', '../Front-Enter/images/AppWorksShool-rectangle.jpg'
+];
+    // let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg', '../images/7.jpg', '../images/AppWorksShool-rectangle.jpg'];
     rotateCenterImg.style.background = "url('" + rImg[rotateRotate] + "')"; 
     rotateCenterImg.style.backgroundRepeat  =  "no-repeat";  
     rotateCenterImg.style.backgroundSize  =  "cover";
@@ -237,9 +237,9 @@ function startRight(){
     }else if(rotateRotate==4){
         rotateRotate = 0;
     }
-    // let rImg = ['../Front-Enter/images/2.jpg', '../Front-Enter/images/13.jpg'
-    // , '../Front-Enter/images/15.jpg', '../Front-Enter/images/7.jpg', '../Front-Enter/images/AppWorksShool-rectangle.jpg'];
-    let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg', '../images/7.jpg', '../images/AppWorksShool-rectangle.jpg'];
+    let rImg = ['../Front-Enter/images/2.jpg', '../Front-Enter/images/13.jpg'
+    , '../Front-Enter/images/15.jpg', '../Front-Enter/images/7.jpg', '../Front-Enter/images/AppWorksShool-rectangle.jpg'];
+    // let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg', '../images/7.jpg', '../images/AppWorksShool-rectangle.jpg'];
     const rotateCenterImg = document.getElementById('rotateCenterImg');
     rotateCenterImg.style.background = "url('" + rImg[rotateRotate] + "')";  
 
