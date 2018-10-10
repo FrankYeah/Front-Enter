@@ -204,8 +204,9 @@ const testGo = document.getElementById('testGo');
 testGo.addEventListener('click', createTestGo)
 // 首頁按鈕
 const homeTestGo = document.getElementById('homeTestGo');
-homeTestGo.addEventListener('click', createTestGo)
-
+if(homeTestGo){
+    homeTestGo.addEventListener('click', createTestGo)
+}
 function createTestGo(){
     if(countClick==0){
         let oneHeader = '測驗說明';

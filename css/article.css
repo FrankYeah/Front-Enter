@@ -165,9 +165,20 @@ main>article>div{
     margin: 30px 0px 15px 0px;
 }
 
-main>article>div>img{
+main>article>div.collection-school{
+    display: block;
+    margin: 0px 0px 0px 90%;
+    width: 20px;
+    height: 20px;
+    background: url('../images/star-border.svg');
+    background-size: cover;
+}
+
+main>article>div>div.location-img-born{
     width: 17.14px;
     height: 23.7px;
+    background: url('../images/location_icon_one.png');
+    background-size: cover;
 }
 
 main>article>div>a>p.article-location{
@@ -201,6 +212,7 @@ main>article>a>div>img.article-img{
     transition: all 0.6s;
     max-width: 100%;
     max-height: 100%;
+    border-radius: 5px;
 }
 
 main>article>a>div>img.article-img:hover{

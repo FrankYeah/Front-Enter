@@ -14,7 +14,6 @@ const personalData = document.getElementById('personalData');
 const createRightDiv = document.getElementById('createRightDiv');
 const createPostPost = document.getElementById('createPostPost');
 const createPostEdit = document.getElementById('createPostEdit');
-const createPostDelete = document.getElementById('createPostDelete');
 const forDeletePost = document.getElementById('forDeletePost');
 
 // window.onload = function(){
@@ -206,15 +205,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 
-// 管理貼文 managePost
-
-managePost.addEventListener('click', createPostLayout);
-
-function createPostLayout(){
-    displayResult.style.display = 'none';
-    createRightDiv.style.display = 'flex';
-}
-
 // 重現個人資料
 
 personalData.addEventListener('click', letPersonalAppear);
@@ -223,6 +213,7 @@ function letPersonalAppear(){
     displayResult.style.display = 'flex';
     createRightDiv.style.display = 'none';
     forDeletePost.style.display = 'none';
+    forDeletePost.innerHTML = '';
 }
 
 // 發佈貼文
@@ -231,36 +222,87 @@ createPostPost.addEventListener('click', function(){
     window.location = 'backstage.html';
 })
 
-// 編輯貼文
+// 管理貼文 managePost
 
-createPostEdit.addEventListener('click', readyToEditPost);
+managePost.addEventListener('click', createPostLayout);
 
-function readyToEditPost(){
-    console.log('go edit');
-    let getAllEditData = database.ref("article");
-    let editData;
-    getAllEditData.orderByChild("skill").on("child_added", function(snapshot) {
-        editData = snapshot.val();
-        console.log(editData);
-
-    });
+function createPostLayout(){
+    // 將個人資料隱藏
+    displayResult.style.display = 'none';
+    // 發布貼文 編輯貼文顯現
+    createRightDiv.style.display = 'flex';
+    forDeletePost.style.display = 'flex';
+    // 將目前貼文建立
+        createUpPost();
 }
 
-// 刪除貼文
+// 貼文建立
 
-createPostDelete.addEventListener('click', readyToDeletePost)
-
-function readyToDeletePost(){
-    forDeletePost.innerHTML = '';
-    console.log('go delete');
+function createUpPost(){
     let getAllDeleteData = database.ref("article");
-    let deleteData;
     getAllDeleteData.orderByChild("skill").on("child_added", function(snapshot) {
-        deleteData = snapshot.val();
-        console.log(deleteData);
-        createDeleteLayout(deleteData);
+        let myAllData = snapshot.val();
+        console.log(myAllData)
+        bigPostDiv(myAllData);
+        postButton(myAllData);
+        editImg(myAllData);
+        deleteImg(myAllData);
     });
 }
+
+function bigPostDiv(myAllData){
+    let newElement = document.createElement('div');
+    newElement.className = 'big-post-div';
+    newElement.id = myAllData.creatTime;
+    document.getElementById('forDeletePost').appendChild(newElement);
+}
+
+function postButton(myAllData){
+    let newElement = document.createElement('div');
+    newElement.className = 'post-button';
+    newElement.textContent = myAllData.name;
+    document.getElementById(myAllData.creatTime).appendChild(newElement);
+}
+
+function editImg(myAllData){
+    let newElement = document.createElement('div');
+    newElement.className = 'imgEdit';
+    document.getElementById(myAllData.creatTime).appendChild(newElement);
+}
+
+function deleteImg(myAllData){
+    let newElement = document.createElement('div');
+    newElement.className = 'imgDelete';
+    document.getElementById(myAllData.creatTime).appendChild(newElement);
+}
+
+// 點擊 編輯貼文
+
+createPostEdit.addEventListener('click', displayMyImg);
+
+function displayMyImg(){
+
+    // document.querySelectorAll(".imgDelete").className = 'test-img-edit';
+    // document.getElementsByClassName("imgDelete").style.display = 'block';
+    // document.getElementsByClassName("imgDelete").style.display = 'block';
+    const xx = document.querySelectorAll("div.imgDelete");
+    for(let i=0; i<xx.length; i++){
+        xx[i].style.display="block";
+    }
+
+    const yy = document.querySelectorAll("div.imgEdit");
+    for(let i=0; i<yy.length; i++){
+        yy[i].style.display="block";
+    }
+
+    const zz = document.querySelectorAll("div.big-post-div");
+    for(let i=0; i<zz.length; i++){
+        zz[i].style.color='rgb(26, 216, 211)';
+        zz[i].style.backgroundColor='white';
+        zz[i].style.border='1px solid rgb(26, 216, 211)';
+    }
+}
+
 
 // 建立 刪除 layout 
 
@@ -284,15 +326,9 @@ function createDeleteButton(deleteData){
             firebase.database().ref('/article/' + snapshot.val().uid).remove().then(function(){
             youDeleteAnArticle(snapshot.val().name);
             setTimeout(function(){window.location.reload()} , 2000)
-
             });
-
         });  
-
-
-
     }
-
 }
 
 

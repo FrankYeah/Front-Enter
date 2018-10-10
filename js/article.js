@@ -128,6 +128,9 @@ if(articleId == null){
 
 function createLayout(data){
     articleBorn();
+    if(userLogin){
+        // collectionSchool(data);
+    }
     locationDivBorn();
     locationImgBorn();
     aLocationBorn();
@@ -150,6 +153,62 @@ function articleBorn(){
     document.getElementById('mainId').appendChild(newElement);
 }
 
+let collection = [];
+
+function collectionSchool(data){
+    let newElement = document.createElement('div');
+    newElement.id = 'collectionSchool' + data.creatTime;
+    newElement.className = 'collection-school';
+    document.getElementById('article' + x).appendChild(newElement);
+    newElement.onclick = function(){
+
+        // 點擊收藏後，先透過 createtime 抓到名稱 & 圖片
+        getAllData.orderByChild("creatTime").equalTo(Number(newElement.id.replace(/[^0-9]+/g, ''))).on("child_added", function(snapshot) {
+
+            // 如果 localstorage 為空，則創造一個，再把值丟進去
+
+            if(!window.localStorage.getItem(`collection`)){
+                console.log(window.localStorage.getItem(`collection`))
+                let collectionData = {name:snapshot.val().name
+                                        // photo:snapshot.val().squareUrl
+                                    };
+                localStorage.setItem(`collection`, JSON.stringify(collectionData)); 
+            }{
+            // 如果 localstorage有資料，先將原本資料抓出來，再塞新的進去
+            console.log(window.localStorage.getItem(`collection`))
+            let myStorageCollect = [{name:snapshot.val().name
+                                        // photo:snapshot.val().squareUrl
+                                    }];
+            
+                //  myStorageCollect.push(JSON.parse(JSON.stringify(window.localStorage.getItem(`collection`))))
+                let getLocal;
+                getLocal = window.localStorage.getItem(`collection`);
+                myStorageCollect.push(JSON.parse(getLocal));
+
+                console.log(JSON.parse(getLocal));
+                console.log(getLocal);
+                console.log(myStorageCollect);
+                localStorage.setItem(`collection`, JSON.stringify(getLocal)); 
+
+
+
+            }
+
+
+            let collectionData = {name:snapshot.val().name,
+                                  name:snapshot.val().squareUrl
+                                 }
+            window.localStorage.getItem(`collection`)
+            collection.push(collectionData);
+        });    
+        // 將名稱 & 圖片存入 localstorage
+        // 在外面判斷是否有 localstorage資料，有的話，顏色要變，沒有就原樣
+        // profile 則將資料拉出來檢視，加上刪除功能
+        
+
+    }
+}
+
 function locationDivBorn(){
     let newElement = document.createElement('div');
     newElement.id = 'locationDiv' + x;
@@ -157,9 +216,9 @@ function locationDivBorn(){
 }
 
 function locationImgBorn(){
-    let newElement = document.createElement('img');
+    let newElement = document.createElement('div');
     newElement.id = 'locationImgBorn' + x;
-    newElement.src = "../Front-Enter/images/location_icon_one.png";
+    newElement.className = 'location-img-born';
     document.getElementById('locationDiv' + x).appendChild(newElement);
 }
 

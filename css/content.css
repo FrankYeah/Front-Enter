@@ -82,13 +82,14 @@ main>div.main-chart>div.image-left{
     margin: 20px;
     border-radius: 5px;    
     cursor: pointer;
-    transition: all 0.6s;
     max-width: 100%;
     max-height: 100%;
+    transition: width 0.6s, height 0.6s;
 }
 
 main>div.main-chart>div.image-left:hover{
-    transform: scale(1.05);
+    height: 286px;
+    width: 420px;
 }
 
 main>div.main-chart>div.image-left-one{
@@ -101,6 +102,14 @@ main>div.main-chart>div.image-left-two{
 
 main>div.main-chart>div.image-left-three{
     background: url('../images/15.jpg') 50% / cover no-repeat;
+}
+
+main>div.main-chart>div.image-left-four{
+    background: url('../images/7.jpg') 50% / cover no-repeat;
+}
+
+main>div.main-chart>div.image-left-five{
+    background: url('../images/AppWorksShool-rectangle.jpg') 50% / cover no-repeat;
 }
 
 /* 新增右邊 box */
@@ -268,6 +277,27 @@ div.main-contact>div>p.contact-mail::before{
     content:"郵件"; 
     word-spacing: 20px;
     color: rgb(128,128,128);
+}
+
+@media ( max-width:1200px ){
+    main>div.main-chart>div.image-left-one{
+        filter: brightness(100%);
+    }
+    main>div.main-chart>div.image-left-two{
+        display: none;
+    }
+    
+    main>div.main-chart>div.image-left-three{
+        display: none;
+       }
+    
+    main>div.main-chart>div.image-left-four{
+        display: none;
+    }
+    
+    main>div.main-chart>div.image-left-five{
+        display: none;
+    }
 }
 
 @media ( max-width:1123px ){
