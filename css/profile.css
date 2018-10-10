@@ -142,11 +142,11 @@ main>div>div.create-right-div>div.for-delete-post{
 
 div.big-post-div {
     width: 200px;
-    background-color: rgb(128, 128, 128);
-    color: white;
+    background-color: white;
+    color: rgb(128, 128, 128);
     border-radius: 5px;
     font-size: 16px;
-    border: 0px solid rgb(26, 216, 211);
+    border: 1px solid rgb(128, 128, 128);
     text-align: center;
     padding: 10px;
     height: 16px;
