@@ -77,6 +77,7 @@ p.gray-border-word{
     width: 100px;
     height: 30px;
     line-height: 30px;
+    transition: all 1s linear;
 }
 
 /* 藍框藍字 */
@@ -89,6 +90,7 @@ p.blue-border-word{
     width: 100px;
     height: 30px;
     line-height: 30px;
+    transition: all 1s linear;
 }
 
 /* 藍框藍底白字 */
@@ -102,6 +104,7 @@ p.blue-border-back{
     width: 100px;
     height: 30px;
     line-height: 30px;
+    transition: all 1s linear;
 }
 
 /* 寬度樣式 */
@@ -122,6 +125,7 @@ div.box-left{
     flex-direction: row;
     justify-content: left;
     align-items: center;
+    transition: all 2s linear;
 }
 
 /* 斜線樣式 */
@@ -132,6 +136,7 @@ div.left-slash{
     background-repeat: no-repeat;
     width: 30px;
     height: 30px;
+    transition: all 2s linear;
 }
 
 div.right-slash{
@@ -141,6 +146,7 @@ div.right-slash{
     width: 30px;
     height: 30px;
     transform: rotate(270deg);
+    transition: all 2s linear;
 }
 
 div.center-slash{
@@ -149,6 +155,7 @@ div.center-slash{
     background-repeat: no-repeat;
     width: 30px;
     height: 30px;
+    transition: all 2s linear;
 }
 
 div.straight-slash{
@@ -158,7 +165,10 @@ div.straight-slash{
     width: 30px;
     height: 30px;
     transform: rotate(90deg);
+    transition: all 2s linear;
 }
+
+/* 位置工具 */
 
 div.empty{
     background: url('');
@@ -171,3 +181,83 @@ div.more-left{
 div.more-right{
     margin-left: 80px;
 }
+
+/* 問題 */
+
+div.question-div{
+    z-index: 1;
+    position: fixed;
+    display: none;   flex-direction: row;   justify-content: center;  align-items: center;
+    bottom: 0;     left: 0;
+    width: 100%;   height: 100%;
+    background: rgba(192, 192, 192, 0.3);
+}
+
+div>div.q-blue{
+    z-index: 2;
+    position: fixed;
+    width: 350px;
+    height: 450px;
+    border-radius: 4px;
+    background: rgb(26, 216, 211);
+}
+
+div>div.q-img{
+    z-index: 3;
+    position: fixed;
+    width: 350px;
+    height: 450px;
+    border-radius: 4px;
+    background: url(../images/Staff-Selection-.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    opacity: 0.1;
+}
+
+div>div.question-box{
+    z-index: 4;
+    position: fixed;
+    width: 350px;
+    height: 450px;
+    border-radius: 4px;
+}
+
+div>div>p.question-head{
+    color: white;
+    font-size: 18px;
+    padding: 20px 50px 40px 50px;
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 30px;
+}
+
+div>div>p.question-content{
+    color: rgb(26, 216, 211);
+    font-size: 18px;
+    background-color: white;
+    text-align: center;
+    padding: 0px 23px 0px 23px;
+    margin: 0 auto;
+    width: 135px;
+    border-radius: 5px;
+    line-height: 30px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* mousemove */
+
+div.float-box{
+    right: 25%;
+    top: 50%;
+    z-index: 1;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    background: rgb(230,230,230);
+}
+
+/* mouseout */
