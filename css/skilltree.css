@@ -1,0 +1,173 @@
+/* section */
+
+section{
+    background: url("../images/FE_key_visual.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 380px;
+    padding:10px;
+    background-position-x: center;
+    background-position-y: center;
+    margin-top: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section>div.keyvisualSpan{
+    font-size: 25px;
+    color: rgb(26,216,211);
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
+    letter-spacing: 20px;
+    text-align: center;
+    padding-left: 23px;
+}
+
+/* description */
+
+div.skill-description{
+    height: 380px;
+    width: 100%;
+    background-color: rgb(26,216,211);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: center;
+}
+
+div.skill-description>p.description-head{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+div.skill-description>p.description-word{
+    width: 300px;
+    text-align: center;
+}
+
+/* main */
+
+main{
+    width: 100%;
+    height: 2000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main>div.three-hundred-box{
+    height: 100%;
+    width: 310px;
+    padding-top: 50px;
+}
+
+/* 按鈕樣式 */
+
+/* 灰框灰字 */
+
+p.gray-border-word{
+    border: 1px solid rgb(128, 128, 128);
+    color: rgb(128, 128, 128);
+    text-align: center;
+    padding: 2px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* 藍框藍字 */
+
+p.blue-border-word{
+    border: 1px solid rgb(26,216,211);
+    color: rgb(26,216,211);
+    text-align: center;
+    padding: 2px;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* 藍框藍底白字 */
+
+p.blue-border-back{
+    border: 1px solid rgb(26,216,211);
+    background-color: rgb(26,216,211);
+    text-align: center;
+    padding: 2px;
+    color: white;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+
+/* 寬度樣式 */
+
+/* 盒子均分 */
+
+div.box-evenly{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* 盒子靠左 */
+
+div.box-left{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+/* 斜線樣式 */
+
+div.left-slash{
+    background: url('../images/diagonal-line-gray.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+div.right-slash{
+    background: url('../images/diagonal-line-gray.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    transform: rotate(270deg);
+}
+
+div.center-slash{
+    background: url('../images/minus-symbol-gray.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+div.straight-slash{
+    background: url('../images/minus-symbol-gray.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    transform: rotate(90deg);
+}
+
+div.empty{
+    background: url('');
+}
+
+div.more-left{
+    margin-left: 100px;
+}
+
+div.more-right{
+    margin-left: 80px;
+}
