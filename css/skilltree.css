@@ -296,4 +296,13 @@ div.float-box{
     background: rgb(230,230,230);
 }
 
-/* mouseout */
+
+@media ( max-width: 630px ){
+    /* 不顯示左右側效果 */
+    div.show-div-right{
+        display: none;
+    }
+    div.show-div-left{
+        display: none;
+    }
+}
