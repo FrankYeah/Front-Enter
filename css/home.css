@@ -9,7 +9,8 @@ main>div.out-service{
 }
 
 main>div.home-my-test{
-    background: url('../images/7.jpg') ;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/7.jpg');
+    /* background: url('../images/7.jpg') ; */
     background-color: rgba(128, 128, 128, 0.4);
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,11 +30,12 @@ main>div.home-my-test{
 }
 
 main>div.home-my-test:hover{
-    filter: brightness(120%);
+    filter: brightness(110%);
     height: 450px;
 }
 
 main>div.home-my-test>p{
+    font-size: 18px;
     color: white;
     text-align: center;
 }
@@ -55,7 +57,8 @@ main>div.home-my-test>p.home-test-go:hover{
 }
 
 main>div.home-special-article{
-    background: url('../images/AppWorksShool-rectangle.jpg') ;
+    /* background: url('../images/AppWorksShool-rectangle.jpg') ; */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/AppWorksShool-rectangle.jpg');
     background-color: rgb(26, 216, 211);
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,6 +72,7 @@ main>div.home-special-article{
     filter: brightness(100%);
     transition: height 0.6s linear;
     margin-bottom: 10px;
+
 }
 
 main>div.home-special-article:hover{
@@ -77,6 +81,7 @@ main>div.home-special-article:hover{
 }
 
 main>div.home-special-article>p{
+    font-size: 20px;
     color: white;
 }
 
@@ -85,7 +90,8 @@ main>div.home-special-article>p.home-class-button{
     padding: 7px 23px;
     line-height: 18px;
     font-size: 18px;
-    background-color: rgb(26, 216, 211);
+    border:1px solid rgb(26, 216, 211);
+    color: rgb(26, 216, 211);
     text-align: center;
     border-radius: 5px;
     letter-spacing: 0px;
@@ -195,7 +201,7 @@ main>div.partner>div{
 }
 
 main>div.partner>div.partner-left{
-    padding: 15px;
+    padding: 15px 20px 15px 20px;
     width: 280px;
     color: rgb(128, 128, 128);
 }

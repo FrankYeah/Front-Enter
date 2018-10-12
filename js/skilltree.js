@@ -145,6 +145,7 @@ function okFinal(){
     finalPass.style.paddingTop = '0%';
     finalPass.style.lineHeight = '0px';
     finalPass.style.backgroundColor = 'white';
+    finalPass.style.transform = 'rotate(360deg)';
     setTimeout( noneFinal, 3000);
 }
 
