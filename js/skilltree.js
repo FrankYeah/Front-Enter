@@ -33,10 +33,20 @@ const tddB = document.getElementById('tddB');
 const showDivRight =document.getElementById('showDivRight');
 const showDivLeft =document.getElementById('showDivLeft');
 const questionBox =document.getElementById('questionBox');
+const userIcon =document.getElementById('userIcon');
+
 
 // 點擊空白關閉視窗
 
-questionBox.addEventListener('click', function(event){event.stopPropagation();})
+questionBox.addEventListener('click', function(event){
+    event.stopPropagation();
+    questionDiv.style.display = 'none';
+    htmlAnswerTwo.style.animation = "";
+    htmlAnswerThree.style.animation = "";
+    htmlAnswerOne.style.background= '';
+    htmlAnswerTwo.style.background= '';
+    htmlAnswerThree.style.background= '';
+})
 
 questionDiv.addEventListener('click', closeMyQ);
 let QClick = 0;
@@ -52,6 +62,17 @@ function closeMyQ(){
     }
 }
 
+// 更換遊戲頭貼
+setTimeout(replaceIcon,3000 );
+
+function replaceIcon(){
+    if(userLogin.photoURL){
+        userIcon.style.background = "url('" + userLogin.photoURL + "')"; 
+        userIcon.style.backgroundPosition= 'center';
+        userIcon.style.backgroundSize= 'cover';
+        userIcon.style.backgroundRepeat= 'no-repeat';
+    }
+}
 // html
 
 htmlB.addEventListener('click', htmlPass);
@@ -99,6 +120,8 @@ function htmlGuestRight(event){
     htmlLayout();
     htmlAnswerTwo.style.animation = "";
     htmlAnswerThree.style.animation = "";
+    userIcon.style.top = '10.2%';
+    userIcon.style.left = '40%';
 }
 
 function htmlLayout(){
@@ -133,6 +156,8 @@ function cssGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     cssLayout();
+    userIcon.style.top = '10.2%';
+    userIcon.style.left = '55%';
 }
 
 function cssLayout(){
@@ -167,6 +192,8 @@ function jsGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     jsLayout();
+    userIcon.style.top = '20.2%';
+    userIcon.style.left = '53%';
 }
 
 function jsLayout(){
@@ -205,6 +232,8 @@ function jQueryGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     jQueryLayout();
+    userIcon.style.top = '20.2%';
+    userIcon.style.left = '42%';
 }
 
 function jQueryLayout(){
@@ -235,6 +264,8 @@ function domGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     domLayout();
+    userIcon.style.top = '31.2%';
+    userIcon.style.left = '48.5%';
 }
 
 function domLayout(){
@@ -269,6 +300,8 @@ function ajaxGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     ajaxLayout();
+    userIcon.style.top = '42.2%';
+    userIcon.style.left = '48.5%';
 }
 
 function ajaxLayout(){
@@ -307,6 +340,8 @@ function es6GuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     es6Layout();
+    userIcon.style.top = '42.8%';
+    userIcon.style.left = '40.9%';
 }
 
 function es6Layout(){
@@ -341,6 +376,8 @@ function jsonGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     jsonLayout();
+    userIcon.style.top = '42.8%';
+    userIcon.style.left = '55.9%';
 }
 
 function jsonLayout(){
@@ -375,6 +412,8 @@ function spaGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     spaLayout();
+    userIcon.style.top = '52.8%';
+    userIcon.style.left = '39.4%';
 }
 
 function spaLayout(){
@@ -405,6 +444,8 @@ function apisGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     apisLayout();
+    userIcon.style.top = '52.8%';
+    userIcon.style.left = '57.3%';
 }
 
 function apisLayout(){
@@ -439,6 +480,8 @@ function tddGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     tddLayout();
+    userIcon.style.top = '63.8%';
+    userIcon.style.left = '49%';
 }
 
 function tddLayout(){
