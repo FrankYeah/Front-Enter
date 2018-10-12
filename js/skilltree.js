@@ -30,11 +30,11 @@ const apisB = document.getElementById('apisB');
 const spaOne = document.getElementById('spaOne');
 const apisOne = document.getElementById('apisOne');
 const tddB = document.getElementById('tddB');
-const showDivRight =document.getElementById('showDivRight');
-const showDivLeft =document.getElementById('showDivLeft');
-const questionBox =document.getElementById('questionBox');
-const userIcon =document.getElementById('userIcon');
-
+const showDivRight = document.getElementById('showDivRight');
+const showDivLeft = document.getElementById('showDivLeft');
+const questionBox = document.getElementById('questionBox');
+const userIcon = document.getElementById('userIcon');
+const finalPass = document.getElementById('finalPass');
 
 // 點擊空白關閉視窗
 
@@ -122,6 +122,34 @@ function htmlGuestRight(event){
     htmlAnswerThree.style.animation = "";
     userIcon.style.top = '10.2%';
     userIcon.style.left = '40%';
+
+    // 測試
+    finalPass.style.width = '100%';
+    finalPass.style.height = '100%';
+    finalPass.style.fontSize = '120px';
+    finalPass.style.paddingTop = '15%';
+    finalPass.style.color = 'rgb(26,216,211)';
+    finalPass.style.backgroundColor = 'rgba(128,128,128,.9)';
+    finalPass.textContent = '恭喜通關';
+    setTimeout( oneFinal, 1000);
+}
+
+function oneFinal(){
+    setTimeout( okFinal, 3000);
+}
+
+function okFinal(){
+    finalPass.style.fontSize = '0px';
+    finalPass.style.width = '0%';
+    finalPass.style.height = '0%';
+    finalPass.style.paddingTop = '0%';
+    finalPass.style.lineHeight = '0px';
+    finalPass.style.backgroundColor = 'white';
+    setTimeout( noneFinal, 3000);
+}
+
+function noneFinal(){
+    finalPass.style.display = 'none';
 }
 
 function htmlLayout(){
@@ -264,7 +292,7 @@ function domGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     domLayout();
-    userIcon.style.top = '31.2%';
+    userIcon.style.top = '31.7%';
     userIcon.style.left = '48.5%';
 }
 
@@ -300,7 +328,7 @@ function ajaxGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     ajaxLayout();
-    userIcon.style.top = '42.2%';
+    userIcon.style.top = '42.6%';
     userIcon.style.left = '48.5%';
 }
 
@@ -340,7 +368,7 @@ function es6GuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     es6Layout();
-    userIcon.style.top = '42.8%';
+    userIcon.style.top = '42.6%';
     userIcon.style.left = '40.9%';
 }
 
@@ -376,7 +404,7 @@ function jsonGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     jsonLayout();
-    userIcon.style.top = '42.8%';
+    userIcon.style.top = '42.6%';
     userIcon.style.left = '55.9%';
 }
 
@@ -412,7 +440,7 @@ function spaGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     spaLayout();
-    userIcon.style.top = '52.8%';
+    userIcon.style.top = '53.1%';
     userIcon.style.left = '39.4%';
 }
 
@@ -444,7 +472,7 @@ function apisGuestRight(){
     // answerIsRight();
     // questionDiv.style.display = 'none';
     apisLayout();
-    userIcon.style.top = '52.8%';
+    userIcon.style.top = '53.1%';
     userIcon.style.left = '57.3%';
 }
 

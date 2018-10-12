@@ -36,6 +36,8 @@ div.skill-description{
     flex-direction: column;
     align-items: center;    
     justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 div.skill-description>p.description-head{
@@ -307,9 +309,24 @@ div.user-icon{
     border-radius: 50%;
     top: 0;
     left: 48.5%;
-    transition: all 4s linear;
+    transition: all 2.5s linear;
 }
 
+div.user-icon:hover{
+    transform: rotate(1800deg);
+}
+
+/* 總通關動畫 */
+
+div.final-pass{
+    position: fixed;
+    transition: all 2.5s linear;
+    left: 0;
+    top: 0;
+    line-height: 120px;
+    text-align: center;
+    z-index: 4;
+}
 
 @keyframes wobbleHorizontal{
     0%   { margin-right: 53px; }
