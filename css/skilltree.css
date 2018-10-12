@@ -277,7 +277,7 @@ div>div>p.question-content{
     margin: 0 auto;
     width: 200px;
     border-radius: 5px;
-    line-height: 30px;
+    line-height: 20px;
     cursor: pointer;
     margin-top: 10px;
     letter-spacing: 1px;
@@ -296,6 +296,76 @@ div.float-box{
     background: rgb(230,230,230);
 }
 
+@keyframes wobbleHorizontal{
+    0%   { margin-right: 53px; }
+    5%   { margin-right: 63px; }
+    10%  { margin-right: 53px; }
+    15%  { margin-right: 43px; }
+    20%  { margin-right: 53px; }
+    25%  { margin-right: 63px; }
+    30%  { margin-right: 53px; }
+    35%  { margin-right: 43px; }
+    40%  { margin-right: 53px; }
+    45%  { margin-right: 63px; }
+    50%  { margin-right: 53px; }
+    55%  { margin-right: 43px; }
+    60%  { margin-right: 53px; }
+    65%  { margin-right: 63px; }
+    70%  { margin-right: 53px; }
+}
+
+
+@-webkit-keyframes wobbleHorizontal {
+    0%   { margin-right: 53px; }
+    5%   { margin-right: 63px; }
+    10%  { margin-right: 53px; }
+    15%  { margin-right: 43px; }
+    20%  { margin-right: 53px; }
+    25%  { margin-right: 63px; }
+    30%  { margin-right: 53px; }
+    35%  { margin-right: 43px; }
+    40%  { margin-right: 53px; }
+    45%  { margin-right: 63px; }
+    50%  { margin-right: 53px; }
+    55%  { margin-right: 43px; }
+    60%  { margin-right: 53px; }
+    65%  { margin-right: 63px; }
+    70%  { margin-right: 53px; }
+}
+@-moz-keyframes wobbleHorizontal {
+    0%   { margin-right: 53px; }
+    5%   { margin-right: 63px; }
+    10%  { margin-right: 53px; }
+    15%  { margin-right: 43px; }
+    20%  { margin-right: 53px; }
+    25%  { margin-right: 63px; }
+    30%  { margin-right: 53px; }
+    35%  { margin-right: 43px; }
+    40%  { margin-right: 53px; }
+    45%  { margin-right: 63px; }
+    50%  { margin-right: 53px; }
+    55%  { margin-right: 43px; }
+    60%  { margin-right: 53px; }
+    65%  { margin-right: 63px; }
+    70%  { margin-right: 53px; }
+}
+@-o-keyframes wobbleHorizontal {
+    0%   { margin-right: 53px; }
+    5%   { margin-right: 63px; }
+    10%  { margin-right: 53px; }
+    15%  { margin-right: 43px; }
+    20%  { margin-right: 53px; }
+    25%  { margin-right: 63px; }
+    30%  { margin-right: 53px; }
+    35%  { margin-right: 43px; }
+    40%  { margin-right: 53px; }
+    45%  { margin-right: 63px; }
+    50%  { margin-right: 53px; }
+    55%  { margin-right: 43px; }
+    60%  { margin-right: 53px; }
+    65%  { margin-right: 63px; }
+    70%  { margin-right: 53px; }
+}
 
 @media ( max-width: 630px ){
     /* 不顯示左右側效果 */

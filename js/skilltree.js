@@ -32,14 +32,22 @@ const apisOne = document.getElementById('apisOne');
 const tddB = document.getElementById('tddB');
 const showDivRight =document.getElementById('showDivRight');
 const showDivLeft =document.getElementById('showDivLeft');
+const questionBox =document.getElementById('questionBox');
 
 // 點擊空白關閉視窗
+
+questionBox.addEventListener('click', function(event){event.stopPropagation();})
 
 questionDiv.addEventListener('click', closeMyQ);
 let QClick = 0;
 function closeMyQ(){
     if(QClick==0){
         questionDiv.style.display = 'none';
+        htmlAnswerTwo.style.animation = "";
+        htmlAnswerThree.style.animation = "";
+        htmlAnswerOne.style.background= '';
+        htmlAnswerTwo.style.background= '';
+        htmlAnswerThree.style.background= '';
     }else{
     }
 }
@@ -55,19 +63,42 @@ function htmlPass(){
     htmlAnswerTwo.textContent = '資料庫工具';
     htmlAnswerThree.textContent = '瀏覽器規範';
     htmlAnswerOne.addEventListener('click', htmlGuestRight);
-    htmlAnswerTwo.addEventListener('click', htmlGuestWrong);
-    htmlAnswerThree.addEventListener('click', htmlGuestWrong);
+    htmlAnswerTwo.addEventListener('click', htmlGuestWrongTwo);
+    htmlAnswerThree.addEventListener('click', htmlGuestWrongThree);
 }
 
-function htmlGuestWrong(){
-    answerIsWrong();
-    questionDiv.style.display = 'none';
+function htmlGuestWrongTwo(event){
+    event.stopPropagation();
+    htmlAnswerTwo.style.animation = "wobbleHorizontal 0.4s ease 0s 1 alternate";
+    htmlAnswerTwo.style.background= 'url(../images/cancel-FC4803.svg)';
+    htmlAnswerTwo.style.backgroundSize= 'contain';
+    htmlAnswerTwo.style.backgroundColor= 'white';
+    htmlAnswerTwo.style.backgroundRepeat= 'no-repeat';
+    htmlAnswerTwo.style.backgroundOrigin = 'content-box';
+    // answerIsWrong();
 }
 
-function htmlGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+function htmlGuestWrongThree(event){
+    event.stopPropagation();
+    htmlAnswerThree.style.animation = "wobbleHorizontal 0.4s ease 0s 1 alternate";
+    htmlAnswerThree.style.background= 'url(../images/cancel-FC4803.svg)';
+    htmlAnswerThree.style.backgroundSize= 'contain';
+    htmlAnswerThree.style.backgroundColor= 'white';
+    htmlAnswerThree.style. backgroundRepeat= 'no-repeat';
+    htmlAnswerThree.style.backgroundOrigin = 'content-box';
+    // answerIsWrong();
+}
+
+function htmlGuestRight(event){
+    event.stopPropagation();
+    htmlAnswerOne.style.background= 'url(../images/checked-FFD800.svg)';
+    htmlAnswerOne.style.backgroundSize= 'contain';
+    htmlAnswerOne.style.backgroundColor= 'white';
+    htmlAnswerOne.style. backgroundRepeat= 'no-repeat';
+    htmlAnswerOne.style.backgroundOrigin = 'content-box';
     htmlLayout();
+    htmlAnswerTwo.style.animation = "";
+    htmlAnswerThree.style.animation = "";
 }
 
 function htmlLayout(){
@@ -92,15 +123,15 @@ cssB.addEventListener('click', function(){
 function cssPass(){
     questionDiv.style.display = 'flex';
     questionHead.textContent = ' SCSS 跟 CSS 差別？';
-    htmlAnswerOne.textContent = 'SCSS 可用變數控制';
-    htmlAnswerTwo.textContent = 'SCSS 不能寫在 CSS 檔';
+    htmlAnswerOne.textContent = 'SCSS 用變數控制';
+    htmlAnswerTwo.textContent = 'SCSS 非縮排語法';
     htmlAnswerThree.textContent = '不同程式語言';
     htmlAnswerOne.addEventListener('click', cssGuestRight);
 }
 
 function cssGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     cssLayout();
 }
 
@@ -125,7 +156,7 @@ jsB.addEventListener('click', function(){
 
 function jsPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '何者不是 JavaScript 定義變數的方式？';
+    questionHead.textContent = '何者非 JS 定義變數的方式？';
     htmlAnswerOne.textContent = 'function';
     htmlAnswerTwo.textContent = 'var';
     htmlAnswerThree.textContent = 'let';
@@ -133,8 +164,8 @@ function jsPass(){
 }
 
 function jsGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     jsLayout();
 }
 
@@ -163,16 +194,16 @@ jQueryB.addEventListener('click', function(){
 
 function jQueryPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = 'jQuery 與 JS 的比較何者正確？';
-    htmlAnswerOne.textContent = '寫法不同';
-    htmlAnswerTwo.textContent = 'jQuery 是框架的一種';
-    htmlAnswerThree.textContent = 'JS 相對屬於封裝好的語言';
+    questionHead.textContent = 'jQuery 與 JS 之比較何者正確？';
+    htmlAnswerOne.textContent = 'jQuery 含錢字符號';
+    htmlAnswerTwo.textContent = 'JS 是一種框架';
+    htmlAnswerThree.textContent = 'jQuery 並未開源';
     htmlAnswerOne.addEventListener('click', jQueryGuestRight);
 }
 
 function jQueryGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     jQueryLayout();
 }
 
@@ -195,14 +226,14 @@ function domPass(){
     questionDiv.style.display = 'flex';
     questionHead.textContent = 'DOM 屬於？';
     htmlAnswerOne.textContent = '瀏覽器上的元素';
-    htmlAnswerTwo.textContent = '操作連覽器的語言';
+    htmlAnswerTwo.textContent = '操作瀏覽器的語言';
     htmlAnswerThree.textContent = '簡化版的 HTML';
     htmlAnswerOne.addEventListener('click', domGuestRight);
 }
 
 function domGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     domLayout();
 }
 
@@ -229,14 +260,14 @@ function ajaxPass(){
     questionDiv.style.display = 'flex';
     questionHead.textContent = 'AJAX 能做什麼？';
     htmlAnswerOne.textContent = '動態載入 DOM';
-    htmlAnswerTwo.textContent = '加速與伺服器的連線';
-    htmlAnswerThree.textContent = '一種安全加密的方式';
+    htmlAnswerTwo.textContent = '加速伺服器連線';
+    htmlAnswerThree.textContent = '安全加密的方式';
     htmlAnswerOne.addEventListener('click', ajaxGuestRight);
 }
 
 function ajaxGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     ajaxLayout();
 }
 
@@ -273,8 +304,8 @@ function es6Pass(){
 }
 
 function es6GuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     es6Layout();
 }
 
@@ -302,13 +333,13 @@ function jsonPass(){
     questionHead.textContent = 'JSON 是什麼？';
     htmlAnswerOne.textContent = '資料庫常用的結構';
     htmlAnswerTwo.textContent = '操作事件的工具';
-    htmlAnswerThree.textContent = '正規表達式的一種';
+    htmlAnswerThree.textContent = '正規表達式';
     htmlAnswerOne.addEventListener('click', jsonGuestRight);
 }
 
 function jsonGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     jsonLayout();
 }
 
@@ -341,8 +372,8 @@ function spaPass(){
 }
 
 function spaGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     spaLayout();
 }
 
@@ -371,8 +402,8 @@ function apisPass(){
 }
 
 function apisGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     apisLayout();
 }
 
@@ -398,15 +429,15 @@ tddB.addEventListener('click', function(){
 function tddPass(){
     questionDiv.style.display = 'flex';
     questionHead.textContent = '為什麼要做 TDD？';
-    htmlAnswerOne.textContent = '確保程式運作邏輯正確';
-    htmlAnswerTwo.textContent = '為了讓 scrum 運作順利';
+    htmlAnswerOne.textContent = '確保程式邏輯正確';
+    htmlAnswerTwo.textContent = '讓 scrum 運作順利';
     htmlAnswerThree.textContent = '資料安全性';
     htmlAnswerOne.addEventListener('click', tddGuestRight);
 }
 
 function tddGuestRight(){
-    answerIsRight();
-    questionDiv.style.display = 'none';
+    // answerIsRight();
+    // questionDiv.style.display = 'none';
     tddLayout();
 }
 
@@ -425,8 +456,8 @@ htmlB.addEventListener('mouseleave', noneBoxRight);
 function showBoxRight(){
     htmlB.style.width = '105px';
     htmlB.style.height = '32px';
-    htmlB.style.lineHeight = '35px';
-    htmlB.style.fontSize = '18px';
+    htmlB.style.lineHeight = '32px';
+    htmlB.style.fontSize = '17px';
     showDivRight.style.top = '40px';
     showDivRight.style.left = '20px';
     showDivRight.style.width = '200px';
