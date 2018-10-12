@@ -52,9 +52,9 @@ div.skill-description>p.description-word{
 
 main{
     width: 100%;
-    height: 2000px;
+    height: 900px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
@@ -63,6 +63,41 @@ main>div.three-hundred-box{
     height: 100%;
     width: 310px;
     padding-top: 50px;
+}
+
+/* 滑鼠移入後顯示 */
+
+main>div.three-width{
+    position: relative;
+    width: 310px;
+    height: 100%;
+    /* background-color: rgba(26, 216, 211, 0.1); */
+}
+
+div.show-div-left{
+    /* display: block; */
+    position: absolute;
+    /* width: 200px;
+    height: auto; */
+    background-color: rgb(230,230,230);
+    transition: all 0.6s linear;
+    color: rgb(128, 128, 128);
+    text-align: center;
+    border-radius: 5px;
+    /* padding: 15px 10px 0px 10px; */
+}
+
+div.show-div-right{
+    /* display: block; */
+    position: absolute;
+    width: 200px;
+    height: auto;
+    background-color: rgb(230,230,230);
+    transition: all 0.6s linear;
+    color: rgb(128, 128, 128);
+    text-align: center;
+    border-radius: 5px;
+    /* padding: 15px 10px 0px 10px; */
 }
 
 /* 按鈕樣式 */
@@ -77,7 +112,7 @@ p.gray-border-word{
     width: 100px;
     height: 30px;
     line-height: 30px;
-    transition: all 1s linear;
+    transition: all 0.3s linear;
 }
 
 /* 藍框藍字 */
@@ -90,7 +125,7 @@ p.blue-border-word{
     width: 100px;
     height: 30px;
     line-height: 30px;
-    transition: all 1s linear;
+    transition: all 0.3s linear;
 }
 
 /* 藍框藍底白字 */
@@ -104,7 +139,7 @@ p.blue-border-back{
     width: 100px;
     height: 30px;
     line-height: 30px;
-    transition: all 1s linear;
+    transition: all 0.3s linear;
 }
 
 /* 寬度樣式 */

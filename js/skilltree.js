@@ -36,7 +36,9 @@ const spaOne = document.getElementById('spaOne');
 const apisOne = document.getElementById('apisOne');
 const tddB = document.getElementById('tddB');
 
-const floatBox = document.getElementById('floatBox');
+const showDivRight =document.getElementById('showDivRight');
+const showDivLeft =document.getElementById('showDivLeft');
+
 // html
 
 htmlB.addEventListener('click', htmlPass);
@@ -83,8 +85,8 @@ cssB.addEventListener('click', function(){
 function cssPass(){
     questionDiv.style.display = 'flex';
     questionHead.textContent = ' SCSS 跟 CSS 差別？';
-    htmlAnswerOne.textContent = 'SCSS可用變數控制';
-    htmlAnswerTwo.textContent = 'SCSS不能寫在CSS檔案中';
+    htmlAnswerOne.textContent = 'SCSS 可用變數控制';
+    htmlAnswerTwo.textContent = 'SCSS 不能寫在 CSS 檔案中';
     htmlAnswerThree.textContent = '不同程式語言';
     htmlAnswerOne.addEventListener('click', cssGuestRight);
 }
@@ -156,8 +158,8 @@ function jQueryPass(){
     questionDiv.style.display = 'flex';
     questionHead.textContent = 'jQuery 與 JS 的比較何者正確？';
     htmlAnswerOne.textContent = '寫法不同';
-    htmlAnswerTwo.textContent = 'jQuery是框架的一種';
-    htmlAnswerThree.textContent = 'JS相對屬於封裝好的語言';
+    htmlAnswerTwo.textContent = 'jQuery 是框架的一種';
+    htmlAnswerThree.textContent = 'JS 相對屬於封裝好的語言';
     htmlAnswerOne.addEventListener('click', jQueryGuestRight);
 }
 
@@ -184,7 +186,7 @@ domB.addEventListener('click', function(){
 
 function domPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = 'DOM屬於？';
+    questionHead.textContent = 'DOM 屬於？';
     htmlAnswerOne.textContent = '瀏覽器上的元素';
     htmlAnswerTwo.textContent = '操作連覽器的語言';
     htmlAnswerThree.textContent = '簡化版的 HTML';
@@ -218,8 +220,8 @@ ajaxB.addEventListener('click', function(){
 
 function ajaxPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = 'ajax能做什麼？';
-    htmlAnswerOne.textContent = '動態載入DOM';
+    questionHead.textContent = 'AJAX 能做什麼？';
+    htmlAnswerOne.textContent = '動態載入 DOM';
     htmlAnswerTwo.textContent = '加速與伺服器的連線';
     htmlAnswerThree.textContent = '一種安全加密的方式';
     htmlAnswerOne.addEventListener('click', ajaxGuestRight);
@@ -256,8 +258,8 @@ es6B.addEventListener('click', function(){
 
 function es6Pass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '哪個不是ES6的新功能？';
-    htmlAnswerOne.textContent = 'await異步處理';
+    questionHead.textContent = '哪個不是 ES6 的新功能？';
+    htmlAnswerOne.textContent = 'await 異步處理';
     htmlAnswerTwo.textContent = '箭頭符號';
     htmlAnswerThree.textContent = 'let、const 變數';
     htmlAnswerOne.addEventListener('click', es6GuestRight);
@@ -290,7 +292,7 @@ jsonB.addEventListener('click', function(){
 
 function jsonPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = 'json是什麼？';
+    questionHead.textContent = 'JSON 是什麼？';
     htmlAnswerOne.textContent = '資料庫常用的結構';
     htmlAnswerTwo.textContent = '操作事件的工具';
     htmlAnswerThree.textContent = '正規表達式的一種';
@@ -324,7 +326,7 @@ spaB.addEventListener('click', function(){
 
 function spaPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '哪種框架屬於SPA？';
+    questionHead.textContent = '哪種框架屬於 SPA？';
     htmlAnswerOne.textContent = 'React';
     htmlAnswerTwo.textContent = 'Vue';
     htmlAnswerThree.textContent = 'Regular';
@@ -354,10 +356,10 @@ apisB.addEventListener('click', function(){
 
 function apisPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '下列何者不是接APIs的方式？';
-    htmlAnswerOne.textContent = 'HTTPs';
-    htmlAnswerTwo.textContent = 'XMLHttpRequest';
-    htmlAnswerThree.textContent = 'Fetch';
+    questionHead.textContent = '下列何者是接 APIs 的方式？';
+    htmlAnswerOne.textContent = 'Fetch';
+    htmlAnswerTwo.textContent = 'HTTPs';
+    htmlAnswerThree.textContent = 'Promise';
     htmlAnswerOne.addEventListener('click', apisGuestRight);
 }
 
@@ -388,9 +390,9 @@ tddB.addEventListener('click', function(){
 
 function tddPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '為什麼要做TDD？';
+    questionHead.textContent = '為什麼要做 TDD？';
     htmlAnswerOne.textContent = '確保程式運作邏輯正確';
-    htmlAnswerTwo.textContent = '為了讓scrum運作順利';
+    htmlAnswerTwo.textContent = '為了讓 scrum 運作順利';
     htmlAnswerThree.textContent = '資料安全性';
     htmlAnswerOne.addEventListener('click', tddGuestRight);
 }
@@ -408,26 +410,324 @@ function tddLayout(){
 
 // 滑鼠移入事件
 
-htmlB.addEventListener('mousemove', showBoxRight);
-htmlB.addEventListener('mousout', noneBoxRight);
+// html
 
-function showBoxRight(e){
-    // floatBox.style.left = floatBox.getBoundingClientRect().right + 'px';
-   
-}
-window.addEventListener('scroll',getNumbera);
-function getNumbera(){
-    console.log(document.documentElement.scrollHeight)  // 總高度？
-    console.log(document.documentElement.clientHeight)  // 當前瀏覽器高度
-    console.log(document.documentElement.scrollTop)     // 已經滾動多少 px
-    console.log(document.documentElement.getBoundingClientRect());
+htmlB.addEventListener('mouseover', showBoxRight);
+htmlB.addEventListener('mouseleave', noneBoxRight);
+
+function showBoxRight(){
+    htmlB.style.width = '105px';
+    htmlB.style.height = '32px';
+    htmlB.style.lineHeight = '35px';
+    htmlB.style.fontSize = '18px';
+    showDivRight.style.top = '40px';
+    showDivRight.style.left = '20px';
+    showDivRight.style.width = '200px';
+    showDivRight.style.height = 'auto';
+    showDivRight.style.padding = '15px 10px 0px 10px';
+    showDivRight.innerHTML = 'HTML <br><br> 超文件標示語言（英語：HyperText Markup Language，簡稱：HTML）是一種用於建立網頁的標準標示語言。 <br><br>';
 }
 
 function noneBoxRight(){
-    floatBox.style.left = '0';
-    floatBox.style.top = '0';
+    htmlB.style.width = '100px';
+    htmlB.style.height = '30px';
+    htmlB.style.lineHeight = '30px';
+    htmlB.style.fontSize = '16px';
+    showDivRight.style.width = '180px';
+    showDivRight.style.height = 'auto';
+    showDivRight.innerHTML = '';
+    showDivRight.style.padding = '';
 }
 
+// js
+
+jsB.addEventListener('mouseover', showBoxRightJs);
+jsB.addEventListener('mouseleave', noneBoxRightJs);
+
+function showBoxRightJs(){
+    jsB.style.width = '105px';
+    jsB.style.height = '32px';
+    jsB.style.lineHeight = '35px';
+    jsB.style.fontSize = '18px';
+    showDivRight.style.top = '140px';
+    showDivRight.style.left = '20px';
+    showDivRight.style.width = '200px';
+    showDivRight.style.height = 'auto';
+    showDivRight.style.padding = '15px 10px 0px 10px';
+    showDivRight.innerHTML = 'JavaScript <br><br> JavaScript 是一門基於原型、函式先行的語言，是一門多範式的語言，它支援物件導向編程，指令式程式設計，以及函數語言程式設計。 <br><br>';
+}
+
+function noneBoxRightJs(){
+    jsB.style.width = '100px';
+    jsB.style.height = '30px';
+    jsB.style.lineHeight = '30px';
+    jsB.style.fontSize = '16px';
+    showDivRight.style.width = '180px';
+    showDivRight.style.height = 'auto';
+    showDivRight.innerHTML = '';
+    showDivRight.style.padding = '';
+}
+
+// dom
+
+domB.addEventListener('mouseover', showBoxRightDom);
+domB.addEventListener('mouseleave', noneBoxRightDom);
+
+function showBoxRightDom(){
+    domB.style.width = '105px';
+    domB.style.height = '32px';
+    domB.style.lineHeight = '35px';
+    domB.style.fontSize = '18px';
+    showDivRight.style.top = '240px';
+    showDivRight.style.left = '20px';
+    showDivRight.style.width = '200px';
+    showDivRight.style.height = 'auto';
+    showDivRight.style.padding = '15px 10px 0px 10px';
+    showDivRight.innerHTML = 'DOM <br><br> 文件物件模型（英語：Document Object Model，縮寫 DOM），是 W3C 組織推薦的處理可延伸標示語言的標準程式埠。 <br><br>';
+}
+
+function noneBoxRightDom(){
+    domB.style.width = '100px';
+    domB.style.height = '30px';
+    domB.style.lineHeight = '30px';
+    domB.style.fontSize = '16px';
+    showDivRight.style.width = '180px';
+    showDivRight.style.height = 'auto';
+    showDivRight.innerHTML = '';
+    showDivRight.style.padding = '';
+}
+
+// ajax
+
+ajaxB.addEventListener('mouseover', showBoxRightAjax);
+ajaxB.addEventListener('mouseleave', noneBoxRightAjax);
+
+function showBoxRightAjax(){
+    ajaxB.style.width = '105px';
+    ajaxB.style.height = '32px';
+    ajaxB.style.lineHeight = '35px';
+    ajaxB.style.fontSize = '18px';
+    showDivRight.style.top = '335px';
+    showDivRight.style.left = '20px';
+    showDivRight.style.width = '200px';
+    showDivRight.style.height = 'auto';
+    showDivRight.style.padding = '15px 10px 0px 10px';
+    showDivRight.innerHTML = 'AJAX <br><br> AJAX 即「Asynchronous JavaScript and XML」（非同步的 JavaScript 與 XML 技術），指的是一套綜合了多項技術的瀏覽器端網頁開發技術。 <br><br>';
+}
+
+function noneBoxRightAjax(){
+    ajaxB.style.width = '100px';
+    ajaxB.style.height = '30px';
+    ajaxB.style.lineHeight = '30px';
+    ajaxB.style.fontSize = '16px';
+    showDivRight.style.width = '180px';
+    showDivRight.style.height = 'auto';
+    showDivRight.innerHTML = '';
+    showDivRight.style.padding = '';
+}
+
+// json
+
+jsonB.addEventListener('mouseover', showBoxRightJson);
+jsonB.addEventListener('mouseleave', noneBoxRightJson);
+
+function showBoxRightJson(){
+    jsonB.style.width = '105px';
+    jsonB.style.height = '32px';
+    jsonB.style.lineHeight = '35px';
+    jsonB.style.fontSize = '18px';
+    showDivRight.style.top = '435px';
+    showDivRight.style.left = '20px';
+    showDivRight.style.width = '200px';
+    showDivRight.style.height = 'auto';
+    showDivRight.style.padding = '15px 10px 0px 10px';
+    showDivRight.innerHTML = 'JSON <br><br> JSON（JavaScript Object Notation）是一種輕量級的資料交換語言，該語言以易於讓人閱讀的文字為基礎，用來傳輸由屬性值或者序列性的值組成的資料物件。 <br><br>';
+}
+
+function noneBoxRightJson(){
+    jsonB.style.width = '100px';
+    jsonB.style.height = '30px';
+    jsonB.style.lineHeight = '30px';
+    jsonB.style.fontSize = '16px';
+    showDivRight.style.width = '180px';
+    showDivRight.style.height = 'auto';
+    showDivRight.innerHTML = '';
+    showDivRight.style.padding = '';
+}
+
+// APIs
+
+apisB.addEventListener('mouseover', showBoxRightApis);
+apisB.addEventListener('mouseleave', noneBoxRightApis);
+
+function showBoxRightApis(){
+    apisB.style.width = '105px';
+    apisB.style.height = '32px';
+    apisB.style.lineHeight = '35px';
+    apisB.style.fontSize = '18px';
+    showDivRight.style.top = '445px';
+    showDivRight.style.left = '20px';
+    showDivRight.style.width = '200px';
+    showDivRight.style.height = 'auto';
+    showDivRight.style.padding = '15px 10px 0px 10px';
+    showDivRight.innerHTML = 'APIs <br><br> 又稱為應用編程介面，就是軟體系統不同組成部分銜接的約定。由於近年來軟體的規模日益龐大，常常需要把複雜的系統劃分成小的組成部分，編程介面的設計十分重要。 <br><br>';
+}
+
+function noneBoxRightApis(){
+    apisB.style.width = '100px';
+    apisB.style.height = '30px';
+    apisB.style.lineHeight = '30px';
+    apisB.style.fontSize = '16px';
+    showDivRight.style.width = '180px';
+    showDivRight.style.height = 'auto';
+    showDivRight.innerHTML = '';
+    showDivRight.style.padding = '';
+}
+
+// TDD
+
+tddB.addEventListener('mouseover', showBoxRightTdd);
+tddB.addEventListener('mouseleave', noneBoxRightTdd);
+
+function showBoxRightTdd(){
+    tddB.style.width = '105px';
+    tddB.style.height = '32px';
+    tddB.style.lineHeight = '35px';
+    tddB.style.fontSize = '18px';
+    showDivRight.style.top = '445px';
+    showDivRight.style.left = '20px';
+    showDivRight.style.width = '200px';
+    showDivRight.style.height = 'auto';
+    showDivRight.style.padding = '15px 10px 0px 10px';
+    showDivRight.innerHTML = 'TDD <br><br> 測試驅動開發（英語：Test-driven development，縮寫為 TDD）是一種軟體開發過程中的應用方法，由極限編程中倡導，以其倡導先寫測試程序，然後編碼實現其功能得名。 <br><br>';
+}
+
+function noneBoxRightTdd(){
+    tddB.style.width = '100px';
+    tddB.style.height = '30px';
+    tddB.style.lineHeight = '30px';
+    tddB.style.fontSize = '16px';
+    showDivRight.style.width = '180px';
+    showDivRight.style.height = 'auto';
+    showDivRight.innerHTML = '';
+    showDivRight.style.padding = '';
+}
+
+// css
+
+cssB.addEventListener('mouseover', showBoxLeft);
+cssB.addEventListener('mouseleave', noneBoxLeft);
+
+function showBoxLeft(){
+    cssB.style.width = '105px';
+    cssB.style.height = '32px';
+    cssB.style.lineHeight = '35px';
+    cssB.style.fontSize = '18px';
+    showDivLeft.style.top = '140px';
+    showDivLeft.style.right = '20px';
+    showDivLeft.style.width = '200px';
+    showDivLeft.style.height = 'auto';
+    showDivLeft.style.padding = '15px 10px 0px 10px';
+    showDivLeft.innerHTML = 'CSS <br><br> 層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），是一種用來為結構化文件（如 HTML 文件或 XML 應用）添加樣式（字型、間距和顏色等）的電腦語言。 <br><br>';
+}
+
+function noneBoxLeft(){
+    cssB.style.width = '100px';
+    cssB.style.height = '30px';
+    cssB.style.lineHeight = '30px';
+    cssB.style.fontSize = '16px';
+    showDivLeft.style.width = '180px';
+    showDivLeft.style.height = 'auto';
+    showDivLeft.innerHTML = '';
+    showDivLeft.style.padding = '';
+}
+
+// jQuery
+
+jQueryB.addEventListener('mouseover', showBoxJquery);
+jQueryB.addEventListener('mouseleave', noneBoxJquery);
+
+function showBoxJquery(){
+    jQueryB.style.width = '105px';
+    jQueryB.style.height = '32px';
+    jQueryB.style.lineHeight = '35px';
+    jQueryB.style.fontSize = '18px';
+    showDivLeft.style.top = '240px';
+    showDivLeft.style.right = '20px';
+    showDivLeft.style.width = '200px';
+    showDivLeft.style.height = 'auto';
+    showDivLeft.style.padding = '15px 10px 0px 10px';
+    showDivLeft.innerHTML = 'jQuery <br><br> jQuery 是一套跨瀏覽器的 JavaScript 函式庫，簡化 HTML 與 JavaScript 之間的操作。 <br><br>';
+}
+
+function noneBoxJquery(){
+    jQueryB.style.width = '100px';
+    jQueryB.style.height = '30px';
+    jQueryB.style.lineHeight = '30px';
+    jQueryB.style.fontSize = '16px';
+    showDivLeft.style.width = '180px';
+    showDivLeft.style.height = 'auto';
+    showDivLeft.innerHTML = '';
+    showDivLeft.style.padding = '';
+}
+
+// ES6
+
+es6B.addEventListener('mouseover', showBoxEs6);
+es6B.addEventListener('mouseleave', noneBoxEs6);
+
+function showBoxEs6(){
+    es6B.style.width = '105px';
+    es6B.style.height = '32px';
+    es6B.style.lineHeight = '35px';
+    es6B.style.fontSize = '18px';
+    showDivLeft.style.top = '435px';
+    showDivLeft.style.right = '20px';
+    showDivLeft.style.width = '200px';
+    showDivLeft.style.height = 'auto';
+    showDivLeft.style.padding = '15px 10px 0px 10px';
+    showDivLeft.innerHTML = 'ES6 <br><br> ECMAScript 的第六版修訂，於 2015 年完成標準化。這個標準被部分實現於大部分現代瀏覽器。可以查閱這張兼容性表來查看不同瀏覽器和工具的實現情況。 <br><br>';
+}
+
+function noneBoxEs6(){
+    es6B.style.width = '100px';
+    es6B.style.height = '30px';
+    es6B.style.lineHeight = '30px';
+    es6B.style.fontSize = '16px';
+    showDivLeft.style.width = '180px';
+    showDivLeft.style.height = 'auto';
+    showDivLeft.innerHTML = '';
+    showDivLeft.style.padding = '';
+}
+
+// SPA
+
+spaB.addEventListener('mouseover', showBoxSpa);
+spaB.addEventListener('mouseleave', noneBoxSpa);
+
+function showBoxSpa(){
+    spaB.style.width = '105px';
+    spaB.style.height = '32px';
+    spaB.style.lineHeight = '35px';
+    spaB.style.fontSize = '18px';
+    showDivLeft.style.top = '485px';
+    showDivLeft.style.right = '20px';
+    showDivLeft.style.width = '200px';
+    showDivLeft.style.height = 'auto';
+    showDivLeft.style.padding = '15px 10px 0px 10px';
+    showDivLeft.innerHTML = 'SPA <br><br> SPA 屬於單頁面開發，SPA 必須有一個軟體框架，讓開發者以這個框架為基礎，提供 User 更偏向 Desktop application 的使用經驗。 <br><br>';
+}
+
+function noneBoxSpa(){
+    spaB.style.width = '100px';
+    spaB.style.height = '30px';
+    spaB.style.lineHeight = '30px';
+    spaB.style.fontSize = '16px';
+    showDivLeft.style.width = '180px';
+    showDivLeft.style.height = 'auto';
+    showDivLeft.innerHTML = '';
+    showDivLeft.style.padding = '';
+}
 
 // alert 
 
