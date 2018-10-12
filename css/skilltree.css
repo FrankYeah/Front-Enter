@@ -262,7 +262,7 @@ div>div.question-box{
 div>div>p.question-head{
     color: white;
     font-size: 18px;
-    padding: 20px 50px 40px 50px;
+    padding: 20px 40px 40px 40px;
     text-align: center;
     letter-spacing: 1px;
     line-height: 30px;
@@ -270,16 +270,17 @@ div>div>p.question-head{
 
 div>div>p.question-content{
     color: rgb(26, 216, 211);
-    font-size: 18px;
+    font-size: 16px;
     background-color: white;
     text-align: center;
-    padding: 0px 23px 0px 23px;
+    padding: 10px 22px;
     margin: 0 auto;
-    width: 135px;
+    width: 200px;
     border-radius: 5px;
     line-height: 30px;
     cursor: pointer;
     margin-top: 10px;
+    letter-spacing: 1px;
 }
 
 /* mousemove */

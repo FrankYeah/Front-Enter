@@ -1,31 +1,26 @@
 // 所有的 DOM
 
 // 問題開關
+
 const questionDiv = document.getElementById('questionDiv');
 const questionHead = document.getElementById('questionHead');
 const htmlAnswerOne = document.getElementById('htmlAnswerOne');
 const htmlAnswerTwo = document.getElementById('htmlAnswerTwo');
 const htmlAnswerThree = document.getElementById('htmlAnswerThree');
-
 const htmlB = document.getElementById('htmlB');
 const htmlOne = document.getElementById('htmlOne');
 const cssB = document.getElementById('cssB');
-
 const cssOne = document.getElementById('cssOne');
 const jsB = document.getElementById('jsB');
-
 const jsOne = document.getElementById('jsOne');
 const jsTwo = document.getElementById('jsTwo');
 const jQueryB = document.getElementById('jQueryB');
 const iQueryOne = document.getElementById('iQueryOne');
 const domB = document.getElementById('domB');
-
 const domOne = document.getElementById('domOne');
 const ajaxB = document.getElementById('ajaxB');
-
 const ajaxOne = document.getElementById('ajaxOne');
 const ajaxTwo = document.getElementById('ajaxTwo');
-
 const es6B = document.getElementById('es6B');
 const jsonB = document.getElementById('jsonB');
 const es6One = document.getElementById('es6One');
@@ -35,9 +30,19 @@ const apisB = document.getElementById('apisB');
 const spaOne = document.getElementById('spaOne');
 const apisOne = document.getElementById('apisOne');
 const tddB = document.getElementById('tddB');
-
 const showDivRight =document.getElementById('showDivRight');
 const showDivLeft =document.getElementById('showDivLeft');
+
+// 點擊空白關閉視窗
+
+questionDiv.addEventListener('click', closeMyQ);
+let QClick = 0;
+function closeMyQ(){
+    if(QClick==0){
+        questionDiv.style.display = 'none';
+    }else{
+    }
+}
 
 // html
 
@@ -45,6 +50,10 @@ htmlB.addEventListener('click', htmlPass);
 
 function htmlPass(){
     questionDiv.style.display = 'flex';
+    questionHead.textContent = ' 請問 HTML 是什麼？';
+    htmlAnswerOne.textContent = '標籤語言';
+    htmlAnswerTwo.textContent = '資料庫工具';
+    htmlAnswerThree.textContent = '瀏覽器規範';
     htmlAnswerOne.addEventListener('click', htmlGuestRight);
     htmlAnswerTwo.addEventListener('click', htmlGuestWrong);
     htmlAnswerThree.addEventListener('click', htmlGuestWrong);
@@ -80,13 +89,11 @@ cssB.addEventListener('click', function(){
     }
 });
 
-
-
 function cssPass(){
     questionDiv.style.display = 'flex';
     questionHead.textContent = ' SCSS 跟 CSS 差別？';
     htmlAnswerOne.textContent = 'SCSS 可用變數控制';
-    htmlAnswerTwo.textContent = 'SCSS 不能寫在 CSS 檔案中';
+    htmlAnswerTwo.textContent = 'SCSS 不能寫在 CSS 檔';
     htmlAnswerThree.textContent = '不同程式語言';
     htmlAnswerOne.addEventListener('click', cssGuestRight);
 }
@@ -118,7 +125,7 @@ jsB.addEventListener('click', function(){
 
 function jsPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = 'JavaScript 的變數不包括何者？';
+    questionHead.textContent = '何者不是 JavaScript 定義變數的方式？';
     htmlAnswerOne.textContent = 'function';
     htmlAnswerTwo.textContent = 'var';
     htmlAnswerThree.textContent = 'let';
