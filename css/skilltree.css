@@ -345,13 +345,18 @@ div.final-pass{
     z-index: 4;
 }
 
+@media ( max-width: 650px ){
+    div.skill-description>p.description-word{
+        width: 300px;
+    }
+
 @media ( max-width: 500px ){
     section{
         align-items: center;
     }
     
     section>div.keyvisualSpans{
-        padding: 142px 0px 70px 23px;
+        /* padding: 142px 0px 70px 23px; */
     }
 }
 
