@@ -123,40 +123,12 @@ function htmlGuestRight(event){
     userIcon.style.top = '10.2%';
     userIcon.style.left = '40%';
 
-    // 測試
-    finalPass.style.width = '100%';
-    finalPass.style.height = '100%';
-    finalPass.style.fontSize = '120px';
-    finalPass.style.paddingTop = '15%';
-    finalPass.style.color = 'rgb(26,216,211)';
-    finalPass.style.backgroundColor = 'rgba(128,128,128,.9)';
-    finalPass.textContent = '恭喜通關';
-    setTimeout( oneFinal, 1000);
-}
-
-function oneFinal(){
-    setTimeout( okFinal, 3000);
-}
-
-function okFinal(){
-    finalPass.style.fontSize = '0px';
-    finalPass.style.width = '0%';
-    finalPass.style.height = '0%';
-    finalPass.style.paddingTop = '0%';
-    finalPass.style.lineHeight = '0px';
-    finalPass.style.backgroundColor = 'white';
-    finalPass.style.transform = 'rotate(360deg)';
-    setTimeout( noneFinal, 3000);
-}
-
-function noneFinal(){
-    finalPass.style.display = 'none';
 }
 
 function htmlLayout(){
     htmlB.style.backgroundColor = 'rgb(26, 216, 211)';
     htmlB.style.color = 'white';
-    htmlOne.style.background = 'url("../images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    htmlOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
     cssB.style.cursor = 'pointer';
     cssB.style.color = 'rgb(26, 216, 211)';
     cssB.style.border = '1px solid rgb(26, 216, 211)';
@@ -192,7 +164,7 @@ function cssGuestRight(){
 function cssLayout(){
     cssB.style.backgroundColor = 'rgb(26, 216, 211)';
     cssB.style.color = 'white';
-    cssOne.style.background = 'url("../images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    cssOne.style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
     jsB.style.cursor = 'pointer';
     jsB.style.color = 'rgb(26, 216, 211)';
     jsB.style.border = '1px solid rgb(26, 216, 211)';
@@ -228,8 +200,8 @@ function jsGuestRight(){
 function jsLayout(){
     jsB.style.backgroundColor = 'rgb(26, 216, 211)';
     jsB.style.color = 'white';
-    jsOne.style.background = 'url("../images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    jsTwo.style.background = 'url("../images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    jsOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    jsTwo.style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
     jQueryB.style.cursor = 'pointer';
     jQueryB.style.color = 'rgb(26, 216, 211)';
     jQueryB.style.border = '1px solid rgb(26, 216, 211)';
@@ -300,7 +272,7 @@ function domGuestRight(){
 function domLayout(){
     domB.style.backgroundColor = 'rgb(26, 216, 211)';
     domB.style.color = 'white';
-    domOne.style.background = 'url("../images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    domOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
     ajaxB.style.cursor = 'pointer';
     ajaxB.style.color = 'rgb(26, 216, 211)';
     ajaxB.style.border = '1px solid rgb(26, 216, 211)';
@@ -336,8 +308,8 @@ function ajaxGuestRight(){
 function ajaxLayout(){
     ajaxB.style.backgroundColor = 'rgb(26, 216, 211)';
     ajaxB.style.color = 'white';
-    ajaxOne.style.background = 'url("../images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    ajaxTwo.style.background = 'url("../images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    ajaxOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    ajaxTwo.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
     es6B.style.cursor = 'pointer';
     es6B.style.color = 'rgb(26, 216, 211)';
     es6B.style.border = '1px solid rgb(26, 216, 211)';
@@ -376,7 +348,7 @@ function es6GuestRight(){
 function es6Layout(){
     es6B.style.backgroundColor = 'rgb(26, 216, 211)';
     es6B.style.color = 'white';
-    es6One.style.background = 'url("../images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    es6One.style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
     spaB.style.cursor = 'pointer';
     spaB.style.color = 'rgb(26, 216, 211)';
     spaB.style.border = '1px solid rgb(26, 216, 211)';
@@ -412,7 +384,7 @@ function jsonGuestRight(){
 function jsonLayout(){
     jsonB.style.backgroundColor = 'rgb(26, 216, 211)';
     jsonB.style.color = 'white';
-    jsonOne.style.background = 'url("../images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    jsonOne.style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
     apisB.style.cursor = 'pointer';
     apisB.style.color = 'rgb(26, 216, 211)';
     apisB.style.border = '1px solid rgb(26, 216, 211)';
@@ -480,7 +452,7 @@ function apisGuestRight(){
 function apisLayout(){
     apisB.style.backgroundColor = 'rgb(26, 216, 211)';
     apisB.style.color = 'white';
-    apisOne.style.background = 'url("../images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    apisOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
     tddB.style.cursor = 'pointer';
     tddB.style.color = 'rgb(26, 216, 211)';
     tddB.style.border = '1px solid rgb(26, 216, 211)';
@@ -859,3 +831,35 @@ alertBigBox.style.display = 'none';
 alertButton.addEventListener('click', ()=>{
     alertBigBox.style.display = 'none';
 });
+
+
+
+
+    // 測試
+    // finalPass.style.width = '100%';
+    // finalPass.style.height = '100%';
+    // finalPass.style.fontSize = '120px';
+    // finalPass.style.paddingTop = '15%';
+    // finalPass.style.color = 'rgb(26,216,211)';
+    // finalPass.style.backgroundColor = 'rgba(128,128,128,.9)';
+    // finalPass.textContent = '恭喜通關';
+    // setTimeout( oneFinal, 1000);
+
+function oneFinal(){
+    setTimeout( okFinal, 3000);
+}
+
+function okFinal(){
+    finalPass.style.fontSize = '0px';
+    finalPass.style.width = '0%';
+    finalPass.style.height = '0%';
+    finalPass.style.paddingTop = '0%';
+    finalPass.style.lineHeight = '0px';
+    finalPass.style.backgroundColor = 'white';
+    finalPass.style.transform = 'rotate(360deg)';
+    setTimeout( noneFinal, 3000);
+}
+
+function noneFinal(){
+    finalPass.style.display = 'none';
+}
