@@ -91,7 +91,7 @@ function htmlPass(){
 function htmlGuestWrongTwo(event){
     event.stopPropagation();
     htmlAnswerTwo.style.animation = "wobbleHorizontal 0.4s ease 0s 1 alternate";
-    htmlAnswerTwo.style.background= 'url(../images/cancel-FC4803.svg)';
+    htmlAnswerTwo.style.background= 'url(../Front-Enter/images/cancel-FC4803.svg)';
     htmlAnswerTwo.style.backgroundSize= 'contain';
     htmlAnswerTwo.style.backgroundColor= 'white';
     htmlAnswerTwo.style.backgroundRepeat= 'no-repeat';
@@ -102,7 +102,7 @@ function htmlGuestWrongTwo(event){
 function htmlGuestWrongThree(event){
     event.stopPropagation();
     htmlAnswerThree.style.animation = "wobbleHorizontal 0.4s ease 0s 1 alternate";
-    htmlAnswerThree.style.background= 'url(../images/cancel-FC4803.svg)';
+    htmlAnswerThree.style.background= 'url(../Front-Enter/images/cancel-FC4803.svg)';
     htmlAnswerThree.style.backgroundSize= 'contain';
     htmlAnswerThree.style.backgroundColor= 'white';
     htmlAnswerThree.style. backgroundRepeat= 'no-repeat';
@@ -112,7 +112,7 @@ function htmlGuestWrongThree(event){
 
 function htmlGuestRight(event){
     event.stopPropagation();
-    htmlAnswerOne.style.background= 'url(../images/checked-FFD800.svg)';
+    htmlAnswerOne.style.background= 'url(../Front-Enter/images/checked-FFD800.svg)';
     htmlAnswerOne.style.backgroundSize= 'contain';
     htmlAnswerOne.style.backgroundColor= 'white';
     htmlAnswerOne.style. backgroundRepeat= 'no-repeat';
