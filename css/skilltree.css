@@ -11,13 +11,14 @@ section{
     margin-top: 105px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 }
 
 section>div.keyvisualSpans{
     font-size: 24px;
     color: white;
-    padding: 6px 0px 70px 23px;
+    background-color: rgba(128,128,128,0.7);
+    padding: 11px 23px 11px 23px;
     border-radius: 5px;
     letter-spacing: 10px;
     text-align: center;
@@ -26,26 +27,44 @@ section>div.keyvisualSpans{
 /* description */
 
 div.skill-description{
-    height: 380px;
-    width: 100%;
-    background-color: rgb(26,216,211);
-    color: white;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../images/second-img.jpg);
+    background-color: rgba(128, 128, 128, 0.4);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom;
+    background-position-x: center;
+    /* background-attachment: fixed; */
+    height: 600px;
+    align-items: center;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    align-items: center;    
     justify-content: center;
+    filter: brightness(100%);
+    transition: height 0.6s linear;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 90px;
+}
+
+div.skill-description>div.bottom-line{
+    border: 1px solid white;
+    width: 15px;
+    margin: -10px auto 0 auto;
 }
 
 div.skill-description>p.description-head{
     font-size: 24px;
-    font-weight: bold;
+    color: white;
+    letter-spacing: 3px;
 }
 
 div.skill-description>p.description-word{
-    width: 300px;
+    width: 580px;
     text-align: center;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 18px;
+    line-height: 30px;
 }
 
 /* main */

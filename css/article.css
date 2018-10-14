@@ -49,7 +49,7 @@ section>div.section-grey{
 section>a>div>span.keyvisualSpan{
     font-size: 24px;
     color: white;
-    background-color: rgba(128, 128, 128, .1);
+    background-color: rgba(128,128,128,0.7);
     padding: 6px;
     border-radius: 5px;
     letter-spacing: 10px;
@@ -71,7 +71,7 @@ div.tag-box{
 }
 
 div.tag-box>div{
-    color: rgb(26, 216, 211);
+    color: rgb(128, 128, 128);
     line-height: 70px;
     cursor: pointer;
 }
