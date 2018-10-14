@@ -90,7 +90,7 @@ function htmlPass(){
 
 function htmlGuestWrongTwo(event){
     event.stopPropagation();
-    htmlAnswerTwo.style.animation = "wobbleHorizontal 0.4s ease 0s 1 alternate";
+    htmlAnswerTwo.style.animation = "wobbleHorizontal 0.6s ease 0s 1 alternate";
     htmlAnswerTwo.style.background= 'url(../Front-Enter/images/cancel-FC4803.svg)';
     htmlAnswerTwo.style.backgroundSize= 'contain';
     htmlAnswerTwo.style.backgroundColor= 'white';
@@ -101,7 +101,7 @@ function htmlGuestWrongTwo(event){
 
 function htmlGuestWrongThree(event){
     event.stopPropagation();
-    htmlAnswerThree.style.animation = "wobbleHorizontal 0.4s ease 0s 1 alternate";
+    htmlAnswerThree.style.animation = "wobbleHorizontal 0.6s ease 0s 1 alternate";
     htmlAnswerThree.style.background= 'url(../Front-Enter/images/cancel-FC4803.svg)';
     htmlAnswerThree.style.backgroundSize= 'contain';
     htmlAnswerThree.style.backgroundColor= 'white';
