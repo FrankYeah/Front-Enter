@@ -14,7 +14,7 @@ const keyvisualLink2 = document.getElementById('keyvisualLink2');
 const keyvisual0 = document.getElementById('keyvisual0');
 const keyvisual1 = document.getElementById('keyvisual1');
 const keyvisual2 = document.getElementById('keyvisual2');
-setInterval("changeKevisual()",5000);
+setInterval("changeKevisual()",4000);
 
 function changeKevisual(){
     keyvisualImg = [storePhoto[0],storePhoto[1],storePhoto[2]];
@@ -25,7 +25,7 @@ function changeKevisual(){
     keyvisual0.style.background  =  "url('" + keyvisualImg[0] + "')";    
     keyvisual0.style.backgroundRepeat  =  "no-repeat";  
     keyvisual0.style.backgroundSize  =  "cover";
-    keyvisual0.style.backgroundPositionY = 'bottom';
+    keyvisual0.style.backgroundPositionY = 'center';
     keyvisualLink0.href = keyvisualLinkArray[0];
 
     keyvisual1.style.background  =  "url('" + keyvisualImg[1] + "')";    

@@ -1,7 +1,7 @@
 /* section */
 
 section{
-    background: url("../images/FE_key_visual.jpg");
+    background: url("../images/skill-tree-key.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 380px;
@@ -11,18 +11,16 @@ section{
     margin-top: 105px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
-section>div.keyvisualSpan{
-    font-size: 25px;
-    color: rgb(26,216,211);
-    background-color: white;
-    padding: 6px;
+section>div.keyvisualSpans{
+    font-size: 24px;
+    color: white;
+    padding: 6px 0px 70px 23px;
     border-radius: 5px;
-    letter-spacing: 20px;
+    letter-spacing: 10px;
     text-align: center;
-    padding-left: 23px;
 }
 
 /* description */
@@ -327,6 +325,17 @@ div.final-pass{
     text-align: center;
     z-index: 4;
 }
+
+@media ( max-width: 500px ){
+    section{
+        align-items: center;
+    }
+    
+    section>div.keyvisualSpans{
+        padding: 142px 0px 70px 23px;
+    }
+}
+
 
 @keyframes wobbleHorizontal{
     0%   { margin-right: 53px; }

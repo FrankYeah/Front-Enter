@@ -1,7 +1,7 @@
 /* section */
 
 section{
-    background: url("../images/FE_key_visual.jpg");
+    background: url("../images/member-key.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 380px;
@@ -14,15 +14,13 @@ section{
     align-items: center;
 }
 
-section>div.keyvisualSpan{
-    font-size: 25px;
-    color: rgb(26,216,211);
-    background-color: white;
-    padding: 6px;
+section>div.keyvisualSpans{
+    font-size: 24px;
+    color: white;
+    padding: 0px 6px 0px 23px ;
     border-radius: 5px;
-    letter-spacing: 20px;
+    letter-spacing: 10px;
     text-align: center;
-    padding-left: 23px;
 }
 
 /* 主頁 */

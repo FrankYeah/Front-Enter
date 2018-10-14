@@ -48,11 +48,11 @@ section>div.section-grey{
 
 section>a>div>span.keyvisualSpan{
     font-size: 24px;
-    color: rgb(26,216,211);
-    background-color: white;
+    color: white;
+    background-color: rgba(128, 128, 128, .1);
     padding: 6px;
     border-radius: 5px;
-    letter-spacing: 20px;
+    letter-spacing: 10px;
     text-align: center;
     padding-left: 23px;
 }
