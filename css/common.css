@@ -5,7 +5,7 @@ body {
 
 body {
 	font-size: 16px;
-	font-family: "Noto Sans TC", "華康黑體","微軟正黑體", "新細明體", arial, sans-serif;
+	font-family: "Noto Sans TC", "華康黑體","微軟正黑體", arial, sans-serif;
 	color: #3f3a3a;
 }
 
@@ -993,4 +993,12 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
 @-o-keyframes letArrowMove {
     0%   { margin-left: '5px'; }
     100% { margin-left: '10px'; }
+}
+
+@keyframes arrowUpDownMove{
+    0%   {   top: 545px; }
+    25%   {  top: 550px; }
+    50%   {  top: 555px; }
+    75%   {  top: 550px; }
+    100%   { top: 545px; }
 }

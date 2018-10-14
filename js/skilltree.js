@@ -35,6 +35,7 @@ const showDivLeft = document.getElementById('showDivLeft');
 const questionBox = document.getElementById('questionBox');
 const userIcon = document.getElementById('userIcon');
 const finalPass = document.getElementById('finalPass');
+const arrowContinue = document.getElementById('arrowContinue');
 
 // 點擊空白關閉視窗
 
@@ -46,6 +47,7 @@ questionBox.addEventListener('click', function(event){
     htmlAnswerOne.style.background= '';
     htmlAnswerTwo.style.background= '';
     htmlAnswerThree.style.background= '';
+    arrowContinue.style.display = 'none';
 })
 
 questionDiv.addEventListener('click', closeMyQ);
@@ -58,6 +60,7 @@ function closeMyQ(){
         htmlAnswerOne.style.background= '';
         htmlAnswerTwo.style.background= '';
         htmlAnswerThree.style.background= '';
+        arrowContinue.style.display = 'none';
     }else{
     }
 }
@@ -122,6 +125,7 @@ function htmlGuestRight(event){
     htmlAnswerThree.style.animation = "";
     userIcon.style.top = '10.2%';
     userIcon.style.left = '40%';
+    arrowContinue.style.display = 'block';
 
 }
 

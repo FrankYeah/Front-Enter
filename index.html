@@ -13,6 +13,19 @@
     <script src='js/firebase.js'></script>
     <!-- <style id="css"></style> -->
     <style>
+        div.arrow-down{
+            background: url(../images/next.svg);
+            background-size: cover;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin: 50px auto;
+            transform: rotate(90deg);
+            position: absolute;
+            top: 550px;
+            left: 50%;
+            animation: arrowUpDownMove 0.6s ease 0s infinite alternate;
+        }
         p.key-one{
             font-size:38px; font-weight: bold; 
         }
@@ -102,9 +115,9 @@
 
     <section>
         <div class="keyvisualSpan">
-            <p class="key-one" style="">FRONT-ENTER</p>
-            <p class="key-two" style="">前端轉職資訊</p>
-           
+            <p class="key-one">FRONT-ENTER</p>
+            <p class="key-two">前端轉職資訊</p>
+            <div id="arrowDown" class="arrow-down"></div>
            
         </div>
     </section>

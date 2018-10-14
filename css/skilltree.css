@@ -303,6 +303,17 @@ div>div>p.question-content{
     letter-spacing: 1px;
 }
 
+div>div>div.arrow-continue{
+    display: none;
+    background: url(../images/next.svg);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin: 75px auto;
+    animation: arrowLeftRightMove 0.4s ease 0s infinite alternate;
+    cursor: pointer;
+}
+
 /* mousemove */
 
 div.float-box{
@@ -361,15 +372,18 @@ div.final-pass{
     }
 }
 
-
 @media ( max-width: 500px ){
     section{
         align-items: center;
     }
-    
-    section>div.keyvisualSpans{
-        /* padding: 142px 0px 70px 23px; */
-    }
+}
+
+@keyframes arrowLeftRightMove{
+    0%   { margin-left: 165px; }
+    25%   { margin-left: 170px; }
+    50%   { margin-left: 175px; }
+    75%   { margin-left: 170px; }
+    100%   { margin-left: 165px; }
 }
 
 
