@@ -111,6 +111,86 @@ if(articleId == null){
     getAllData.orderByChild("name").equalTo("AppWorks School").on("child_added", function(snapshot) {
         data = snapshot.val();   createLayout(data);
     });  
+}else if(articleId == '台北' || articleId == '台' || articleId == '北' 
+    ){
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("city").equalTo("台北").on("child_added", function(snapshot) {
+    data = snapshot.val();   createLayout(data);
+    });  
+}else if(articleId == '各地' || articleId == '各' || articleId == '地' 
+    ){
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("city").equalTo("各地").on("child_added", function(snapshot) {
+    data = snapshot.val();   createLayout(data);
+    });  
+}else if(articleId == '一' || articleId == '一對一' 
+    ){
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("classType").equalTo("一對一").on("child_added", function(snapshot) {
+    data = snapshot.val();   createLayout(data);
+    });  
+}else if(articleId == '大' || articleId == '大班' || articleId == '大班制' 
+    ){
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("classType").equalTo("大班制").on("child_added", function(snapshot) {
+    data = snapshot.val();   createLayout(data);
+    });  
+}else if(articleId == '小' || articleId == '小班' || articleId == '小班制' 
+    ){
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("classType").equalTo("小班制").on("child_added", function(snapshot) {
+    data = snapshot.val();   createLayout(data);
+    });  
+}else if(articleId == '放養' || articleId == '放' || articleId == '放養制'  || articleId == '養' 
+    ){
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("teachWay").equalTo("放養制").on("child_added", function(snapshot) {
+    data = snapshot.val();   createLayout(data);
+    });  
+}else if(articleId == '手' || articleId == '手把手' || articleId == '手把手教'  || articleId == '手把手教制' 
+    ){
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("teachWay").equalTo("手把手教制").on("child_added", function(snapshot) {
+    data = snapshot.val();   createLayout(data);
+    });  
+}else if(articleId == '前' || articleId == '端' || articleId == '前端' 
+    ){
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+        data = snapshot.val();  storePhoto.push(data.rectangleUrl);
+        // storeLink.push('content.html?id=' + data.creatTime);
+        document.getElementById('mainId').innerHTML = '';
+    });
+    getAllData.orderByChild("skill").equalTo("前端").on("child_added", function(snapshot) {
+    data = snapshot.val();   createLayout(data);
+    });  
 }else{
     let newElement = document.createElement('div');
     newElement.textContent = 'no result';

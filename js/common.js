@@ -704,3 +704,43 @@ function maxValue(){
     clientTotal = [];
 
 }
+
+// 推播測試
+
+const messaging = firebase.messaging();
+messaging.requestPermission()
+  .then(res => {
+    // 若允許通知 -> 向 firebase 拿 token
+    return messaging.getToken();
+  }, err => {
+    // 若拒絕通知
+    console.log(err);  
+  })
+  .then(token => {
+    // 成功取得 token
+    postToken(token); // 打給後端 api
+    console.log(token);
+  })
+
+  var notifyConfig = {
+    body: '歡迎來 Front-Enter 逛逛', // 設定內容
+    icon: '../Front-Enter/images/favicon.ico' // 設定 icon
+  };
+  
+  if (Notification.permission === 'default' || Notification.permission === 'undefined') {
+    Notification.requestPermission(function (permission) {
+      if (permission === 'granted') { // 使用者同意授權
+        var notification = new Notification('Hi there!', notifyConfig); // 建立通知
+      }
+    });
+  }
+
+  var notify = new Notification('hi' , {
+    body: '快來 Front-Enter 唷',
+    icon: '../Front-Enter/images/favicon.ico'
+  });
+  
+  notify.onclick = function(e) { // 綁定點擊事件
+    e.preventDefault(); // prevent the browser from focusing the Notification's tab
+    window.open('https://frankyeah.github.io/Front-Enter/index.html'); // 打開特定網頁
+  }
