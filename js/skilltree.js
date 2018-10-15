@@ -59,34 +59,25 @@ whiteDivIcon.addEventListener('click', function(event){
 
 cuteOne.addEventListener('click', function(){
 
-    if (confirm("確定更換此圖？")) {
-        userIcon.style.background = 'url(../Front-Enter/images/cute.svg)';
-        userIcon.style.backgroundSize = 'cover';
-        fullIcon.style.display = 'none';
-    } else {
-    }
+    userIcon.style.background = 'url(../Front-Enter/images/cute.svg)';
+    userIcon.style.backgroundSize = 'cover';
+    fullIcon.style.display = 'none';
 
 })
 
 cuteTwo.addEventListener('click', function(){
 
-    if (confirm("確定更換此圖？")) {
-        userIcon.style.background = 'url(../Front-Enter/images/cute2.svg)';
-        userIcon.style.backgroundSize = 'cover';
-        fullIcon.style.display = 'none';
-    } else {
-    }
+    userIcon.style.background = 'url(../Front-Enter/images/cute2.svg)';
+    userIcon.style.backgroundSize = 'cover';
+    fullIcon.style.display = 'none';
 
 })
 
 cuteThree.addEventListener('click', function(){
 
-    if (confirm("確定更換此圖？")) {
-        userIcon.style.background = 'url(../Front-Enter/images/cute3.svg)';
-        userIcon.style.backgroundSize = 'cover';
-        fullIcon.style.display = 'none';
-    } else {
-    }
+    userIcon.style.background = 'url(../Front-Enter/images/cute3.svg)';
+    userIcon.style.backgroundSize = 'cover';
+    fullIcon.style.display = 'none';
 
 })
 
