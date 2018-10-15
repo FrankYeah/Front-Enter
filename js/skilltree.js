@@ -36,6 +36,59 @@ const questionBox = document.getElementById('questionBox');
 const userIcon = document.getElementById('userIcon');
 const finalPass = document.getElementById('finalPass');
 const arrowContinue = document.getElementById('arrowContinue');
+const fullIcon = document.getElementById('fullIcon');
+const cuteOne = document.getElementById('cuteOne');
+const cuteTwo = document.getElementById('cuteTwo');
+const cuteThree = document.getElementById('cuteThree');
+
+// 變化 userIcon
+
+userIcon.addEventListener('click', changeMyIcon);
+
+function changeMyIcon(){
+    fullIcon.style.display = 'flex';
+}
+
+fullIcon.addEventListener('click', function(event){
+    fullIcon.style.display = 'none';
+});
+
+whiteDivIcon.addEventListener('click', function(event){
+    event.stopPropagation();
+});
+
+cuteOne.addEventListener('click', function(){
+
+    if (confirm("確定更換此圖？")) {
+        userIcon.style.background = 'url(../Front-Enter/images/cute.svg)';
+        userIcon.style.backgroundSize = 'cover';
+        fullIcon.style.display = 'none';
+    } else {
+    }
+
+})
+
+cuteTwo.addEventListener('click', function(){
+
+    if (confirm("確定更換此圖？")) {
+        userIcon.style.background = 'url(../Front-Enter/images/cute2.svg)';
+        userIcon.style.backgroundSize = 'cover';
+        fullIcon.style.display = 'none';
+    } else {
+    }
+
+})
+
+cuteThree.addEventListener('click', function(){
+
+    if (confirm("確定更換此圖？")) {
+        userIcon.style.background = 'url(../Front-Enter/images/cute3.svg)';
+        userIcon.style.backgroundSize = 'cover';
+        fullIcon.style.display = 'none';
+    } else {
+    }
+
+})
 
 // 點擊空白關閉視窗
 
