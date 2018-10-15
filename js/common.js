@@ -88,6 +88,11 @@ window.onload = function() {
             }
         },30);
     };  
+
+
+
+
+
 }
 
 // 搜尋
@@ -104,6 +109,7 @@ function startSearch(){
         whiteDivLeftText();
         whiteDivLeftBox();
         leftInput();
+        voiceButton();
         leftButton();
         countClick++;
     }else{
@@ -173,7 +179,7 @@ function whiteDivLeftBox(){
 
 function leftInput(){
     let newElement = document.createElement('input');
-    newElement.className = 'leftInput';
+    newElement.className = 'leftInput speech';
     newElement.id = 'leftInput';
     newElement.type = 'text';
     document.getElementById('whiteDivLeftBox').appendChild(newElement);
@@ -182,6 +188,62 @@ function leftInput(){
             event.preventDefault();
             window.location = 'article.html?id='+document.getElementById('leftInput').value ; 
         }
+    }
+}
+
+function voiceButton(){
+    let newElement = document.createElement('div');
+    newElement.className = 'voiceButton start';
+    document.getElementById('whiteDivLeftBox').appendChild(newElement);
+    newElement.onclick = function(){
+        
+    let isFirefox = navigator.userAgent.search("Firefox") > -1;
+
+    if(isFirefox){
+        let startBtn = document.querySelector(".start");
+        startBtn.style.display = "none";
+    }
+
+    if(!isFirefox){
+
+        const text = document.querySelector(".speech");
+        const startBtn = document.querySelector(".start");
+
+        window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition = new SpeechRecognition()
+
+        // set params
+        recognition.continuous = false;
+        recognition.lang = 'zh-TW';
+        recognition.interimResults = true;
+
+        // start immediately
+        // recognition.start();
+
+        recognition.onresult = function(event) {
+            console.log(event)
+            var result = event.results[event.results.length - 1];
+            text.value = result[result.length - 1 ].transcript;
+        }
+
+        // speech error handling
+        recognition.onerror = function(event){
+            console.log('error', event);
+        }
+
+        recognition.onend = function() {
+            console.log("end");
+            // auto restart
+            recognition.start();
+            window.location='article.html?id=' + text.value;
+        }
+
+        // startBtn.addEventListener("click", function() {
+            recognition.start();
+            this.style.display = "none";
+        // })
+
+    }
     }
 }
 
@@ -705,42 +767,7 @@ function maxValue(){
 
 }
 
-// 推播測試
+// google 語音
 
-const messaging = firebase.messaging();
-messaging.requestPermission()
-  .then(res => {
-    // 若允許通知 -> 向 firebase 拿 token
-    return messaging.getToken();
-  }, err => {
-    // 若拒絕通知
-    console.log(err);  
-  })
-  .then(token => {
-    // 成功取得 token
-    postToken(token); // 打給後端 api
-    console.log(token);
-  })
 
-  var notifyConfig = {
-    body: '歡迎來 Front-Enter 逛逛', // 設定內容
-    icon: '../Front-Enter/images/favicon.ico' // 設定 icon
-  };
-  
-  if (Notification.permission === 'default' || Notification.permission === 'undefined') {
-    Notification.requestPermission(function (permission) {
-      if (permission === 'granted') { // 使用者同意授權
-        var notification = new Notification('Hi there!', notifyConfig); // 建立通知
-      }
-    });
-  }
 
-  var notify = new Notification('hi' , {
-    body: '快來 Front-Enter 唷',
-    icon: '../Front-Enter/images/favicon.ico'
-  });
-  
-  notify.onclick = function(e) { // 綁定點擊事件
-    e.preventDefault(); // prevent the browser from focusing the Notification's tab
-    window.open('https://frankyeah.github.io/Front-Enter/index.html'); // 打開特定網頁
-  }
