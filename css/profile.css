@@ -18,7 +18,8 @@ section>div.keyvisualSpans{
     font-size: 24px;
     color: white;
     background-color: rgba(128,128,128,0.7);
-    padding: 11px 23px 11px 23px;
+    padding: 6px;
+    padding-left: 13px;
     border-radius: 5px;
     letter-spacing: 10px;
     text-align: center;
