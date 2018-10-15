@@ -37,7 +37,7 @@ function winScroll(){
         // logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
         headerP1.style.color="rgb(128, 128, 128)";headerP2.style.color="rgb(128, 128, 128)";headerP3.style.color="rgb(128, 128, 128)";
         header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"
-        if(userLogin.photoURL && userLogin.emailVerified == true){
+        if(userLogin && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '';
             headerP3.style.cursor = 'pointer';

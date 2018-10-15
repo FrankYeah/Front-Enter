@@ -14,7 +14,7 @@ const keyvisualLink2 = document.getElementById('keyvisualLink2');
 const keyvisual0 = document.getElementById('keyvisual0');
 const keyvisual1 = document.getElementById('keyvisual1');
 const keyvisual2 = document.getElementById('keyvisual2');
-setInterval("changeKevisual()",4000);
+setInterval("changeKevisual()",5000);
 
 function changeKevisual(){
     keyvisualImg = [storePhoto[0],storePhoto[1],storePhoto[2]];
@@ -45,7 +45,7 @@ function changeKevisual(){
         keyvisual1.style.display  =  "none";
         keyvisual2.style.display  =  "none";
         // keyvisualLink0.href = keyvisualLinkArray[0];
-        keyvisual0.style.animation = "opacityOut 1s ease 0s 1 alternate";
+        keyvisual0.style.animation = "opacityOut 5s ease 0s 1 alternate both";
         keyvisual0.style.backgroundPositionX = 'left';
 
     }else if(icount == 1){
@@ -53,7 +53,7 @@ function changeKevisual(){
         keyvisual1.style.display  =  "block";
         keyvisual2.style.display  =  "none";
         // keyvisualLink1.href = keyvisualLinkArray[1];
-        keyvisual1.style.animation = "opacityOut 1s ease 0s 1 alternate";
+        keyvisual1.style.animation = "opacityOut 5s ease 0s 1 alternate both";
         keyvisual1.style.backgroundPositionX = 'center';
 
     }else if(icount == 2){
@@ -61,7 +61,7 @@ function changeKevisual(){
         keyvisual0.style.display  =  "none";
         keyvisual2.style.display  =  "block";
         // keyvisualLink2.href = keyvisualLinkArray[2];
-        keyvisual2.style.animation = "opacityOut 2s ease 0s 1 alternate";
+        keyvisual2.style.animation = "opacityOut 5s ease 0s 1 alternate both";
         keyvisual2.style.backgroundPositionX = 'right';
 
     }

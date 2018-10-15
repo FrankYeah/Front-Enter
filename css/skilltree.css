@@ -362,8 +362,8 @@ div.full-icon{
 div.white-div-icon{
     z-index: 4;
     position: fixed;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 160px;
     border-radius: 4px;
     background: rgba(26, 216, 211, 0.8);
     display: flex;
@@ -374,13 +374,13 @@ div.white-div-icon{
 div.for-icon-p{
     color: white;
     text-align: center;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 div.for-cute-icon{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
 }
 

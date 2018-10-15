@@ -11,7 +11,8 @@ section{
     background-position-y: center;
     margin-top: 105px;
     cursor: text;
-}
+    opacity: 1;
+  }
 
 section>a>div{
     max-width: 1940px;
