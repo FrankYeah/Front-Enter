@@ -740,9 +740,9 @@ div.test-go-back-div>div.test-go-white-div>a.result-a>p.for-end-result:hover{
 
 @keyframes opacityOut{
     0%{opacity: 0;}
-    15%{opacity: 1;}
+    10%{opacity: 1;}
     50%{opacity: 1;}
-    85%{opacity: 1;}
+    90%{opacity: 1;}
     100%{opacity: 0;}
 }
 
