@@ -9,6 +9,7 @@ const header = document.getElementById('header');
 const loadingDrawing = document.getElementById('loadingDrawing');
 const loadingAnimation = document.getElementById('loadingAnimation');
 const loadingImg = document.getElementById('loadingImg');
+const myAside = document.getElementById('myAside');
 
 headerP3.addEventListener("mouseover", function(){
     headerP3.style.color='rgb(26, 216, 211)';
@@ -93,14 +94,15 @@ window.onload = function() {
     };  
 
     // 關閉 loading
-    setTimeout(letLoadingNone, 1800)
+    setTimeout(letLoadingNone, 1000)
     function letLoadingNone(){
         loadingAnimation.style.height = '0px';
+        loadingAnimation.style.opacity = '0.9';
         loadingDrawing.style.height = '0px';
-        // loadingAnimation.style.opacity = '0';
+        loadingDrawing.style.opacity = '0.9';
         loadingImg.style.marginBottom = '-1000px';
-        // loadingImg.style.height = '0px';
-        // loadingImg.style.width = '0px';
+        header.style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
+        myAside.style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
         setTimeout(displayNoneLoading, 600)
         function displayNoneLoading(){
             loadingAnimation.style.display = 'none';

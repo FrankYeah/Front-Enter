@@ -95,6 +95,7 @@ header{
     background-color: rgb(250, 250, 250); 
     background: linear-gradient(white,white); 
     align-items: center;
+
 }
 
 header>nav>div:hover{
@@ -1053,6 +1054,8 @@ div.loading-text{
     100% { content : '六角學院'; }
 }
 
+/* 箭頭動畫 */
+
 @keyframes letArrowMove{
     0%   { margin-left: 5px; }
     50%   { margin-left: 15px; }
@@ -1079,6 +1082,29 @@ div.loading-text{
     75%   {  top: 550px; }
     100%   { top: 545px; }
 }
+@-webkit-keyframes arrowUpDownMove{
+    0%   {   top: 545px; }
+    25%   {  top: 550px; }
+    50%   {  top: 555px; }
+    75%   {  top: 550px; }
+    100%   { top: 545px; }
+}
+@-moz-keyframes arrowUpDownMove{
+    0%   {   top: 545px; }
+    25%   {  top: 550px; }
+    50%   {  top: 555px; }
+    75%   {  top: 550px; }
+    100%   { top: 545px; }
+}
+@-o-keyframes arrowUpDownMove{
+    0%   {   top: 545px; }
+    25%   {  top: 550px; }
+    50%   {  top: 555px; }
+    75%   {  top: 550px; }
+    100%   { top: 545px; }
+}
+
+/* loading 動畫 */
 
 @keyframes loadingImgUpDown{
     0%   {  margin-bottom: 200px; }
@@ -1086,4 +1112,35 @@ div.loading-text{
     50%  {  margin-bottom: 200px; }
     75%  {  margin-bottom: 180px; }
     100% {  margin-bottom: 200px; }
+}
+@-webkit-keyframes loadingImgUpDown{
+    0%   {  margin-bottom: 200px; }
+    25%  {  margin-bottom: 180px; }
+    50%  {  margin-bottom: 200px; }
+    75%  {  margin-bottom: 180px; }
+    100% {  margin-bottom: 200px; }
+}
+@-moz-keyframes loadingImgUpDown{
+    0%   {  margin-bottom: 200px; }
+    25%  {  margin-bottom: 180px; }
+    50%  {  margin-bottom: 200px; }
+    75%  {  margin-bottom: 180px; }
+    100% {  margin-bottom: 200px; }
+}
+@-o-keyframes loadingImgUpDown{
+    0%   {  margin-bottom: 200px; }
+    25%  {  margin-bottom: 180px; }
+    50%  {  margin-bottom: 200px; }
+    75%  {  margin-bottom: 180px; }
+    100% {  margin-bottom: 200px; }
+}
+
+@keyframes headerGoUp{
+    0%   {  top:100px; }
+    100% {  top:0px; }
+}
+
+@keyframes asideBottom{
+    0%   {  bottom: 90%; }
+    100% {  bottom: 20%; }
 }
