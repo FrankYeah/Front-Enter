@@ -192,7 +192,7 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     rectangleUrl: rUrl,
     squareUrl : sUrl,
     creatTime: new Date().getTime(),
-    uid: newPostKey
+    uid: getMyUid
     });
     postAlreadyOut();
 }
