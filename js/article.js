@@ -209,7 +209,7 @@ if(articleId == null){
 function createLayout(data){
     articleBorn();
     if(userLogin){
-        // collectionSchool(data);
+        collectionSchool(data);
     }
     locationDivBorn();
     locationImgBorn();
@@ -233,7 +233,15 @@ function articleBorn(){
     document.getElementById('mainId').appendChild(newElement);
 }
 
-let collection = [];
+// 顯示已收藏
+
+
+
+// local storage
+
+let collection = [{
+    name: ''
+  }]
 
 function collectionSchool(data){
     let newElement = document.createElement('div');
@@ -245,41 +253,50 @@ function collectionSchool(data){
         // 點擊收藏後，先透過 createtime 抓到名稱 & 圖片
         getAllData.orderByChild("creatTime").equalTo(Number(newElement.id.replace(/[^0-9]+/g, ''))).on("child_added", function(snapshot) {
 
-            // 如果 localstorage 為空，則創造一個，再把值丟進去
+            // 如果 localstorage 為空
 
             if(!window.localStorage.getItem(`collection`)){
                 console.log(window.localStorage.getItem(`collection`))
-                let collectionData = {name:snapshot.val().name
-                                        // photo:snapshot.val().squareUrl
-                                    };
+                let collectionData = [{name:snapshot.val().name
+                                     }];
                 localStorage.setItem(`collection`, JSON.stringify(collectionData)); 
-            }{
-            // 如果 localstorage有資料，先將原本資料抓出來，再塞新的進去
-            console.log(window.localStorage.getItem(`collection`))
-            let myStorageCollect = [{name:snapshot.val().name
-                                        // photo:snapshot.val().squareUrl
-                                    }];
-            
-                //  myStorageCollect.push(JSON.parse(JSON.stringify(window.localStorage.getItem(`collection`))))
-                let getLocal;
-                getLocal = window.localStorage.getItem(`collection`);
-                myStorageCollect.push(JSON.parse(getLocal));
 
-                console.log(JSON.parse(getLocal));
-                console.log(getLocal);
-                console.log(myStorageCollect);
-                localStorage.setItem(`collection`, JSON.stringify(getLocal)); 
+            }else{
+
+                let myStorageCollect = {name:snapshot.val().name
+                                        };
+                    let getLocal;
+                    getLocal = JSON.parse(window.localStorage.getItem(`collection`));
+                    // console.log(getLocal)
+                    // console.log(getLocal.name)
+                    // console.log(getLocal[0].name)
+                    // console.log(myStorageCollect)
+                    // console.log(getLocal.length)
+
+                    for(let i = 0 ; i<getLocal.length ; i++){
+                        if(getLocal[i].name == snapshot.val().name){
+
+                            console.log('已經按過啦')
+                            getLocal.splice(i, 1);
+                            localStorage.setItem(`collection`, JSON.stringify(getLocal)); 
+                            return
+
+                        }else{
+
+                            console.log(i)
+                            console.log(getLocal.length)
+                            console.log(getLocal[i].name)
+                            console.log(snapshot.val().name)
+                            console.log('沒按過')
+
+                        }
+                    }
+                    console.log('出來啦')
+                    getLocal.push(myStorageCollect);
+                    localStorage.setItem(`collection`, JSON.stringify(getLocal)); 
 
 
-
-            }
-
-
-            let collectionData = {name:snapshot.val().name,
-                                  name:snapshot.val().squareUrl
-                                 }
-            window.localStorage.getItem(`collection`)
-            collection.push(collectionData);
+                }
         });    
         // 將名稱 & 圖片存入 localstorage
         // 在外面判斷是否有 localstorage資料，有的話，顏色要變，沒有就原樣
