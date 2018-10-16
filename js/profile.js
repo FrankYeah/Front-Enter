@@ -15,6 +15,8 @@ const createRightDiv = document.getElementById('createRightDiv');
 const createPostPost = document.getElementById('createPostPost');
 const createPostEdit = document.getElementById('createPostEdit');
 const forDeletePost = document.getElementById('forDeletePost');
+const rightCollection = document.getElementById('rightCollection');
+const myCollection = document.getElementById('myCollection');
 
 // window.onload = function(){
 //     this.setTimeout(loadAllLoginStuff, 2000);
@@ -213,6 +215,7 @@ function letPersonalAppear(){
     displayResult.style.display = 'flex';
     createRightDiv.style.display = 'none';
     forDeletePost.style.display = 'none';
+    rightCollection.style.display = 'none';
     forDeletePost.innerHTML = '';
 }
 
@@ -229,6 +232,7 @@ managePost.addEventListener('click', createPostLayout);
 function createPostLayout(){
     // 將個人資料隱藏
     displayResult.style.display = 'none';
+    rightCollection.style.display = 'none';
     // 發布貼文 編輯貼文顯現
     createRightDiv.style.display = 'flex';
     forDeletePost.style.display = 'flex';
@@ -317,6 +321,62 @@ function displayMyImg(){
         zz[i].style.border='1px solid rgb(26, 216, 211)';
     }
 }
+
+// 點擊收藏
+
+myCollection.addEventListener('click', createCollectionLayout);
+
+function createCollectionLayout(){
+    rightCollection.innerHTML = '';
+    displayResult.style.display = 'none';
+    rightCollection.style.display = 'flex';
+    createRightDiv.style.display = 'none';
+    createCollectionDiv();
+
+}
+
+function createCollectionDiv(){
+    let getLocal;
+    getLocal = JSON.parse(window.localStorage.getItem(`collection`));
+    for(let i = 0; i<getLocal.length ; i++){
+        inCollectionDiv(i);
+        inCollectionImg(getLocal,i);
+        inCollectionWord(getLocal,i);
+        inCollectionDelete(i);
+    }
+}
+
+function inCollectionDiv(i){
+    let newElement = document.createElement('div');
+    newElement.id = 'inCollectionDiv' + i;
+    newElement.className = 'in-collection-div';
+    document.getElementById('rightCollection').appendChild(newElement);
+}
+
+function inCollectionImg(getLocal, i){
+    let newElement = document.createElement('div');
+    newElement.id = 'inCollectionImg' + i;
+    newElement.style.background = "url('" + getLocal[i].photo + "')";   
+    newElement.style.backgroundSize = 'cover';
+    newElement.className = 'in-collection-img';
+    document.getElementById('inCollectionDiv' + i).appendChild(newElement);
+}
+
+function inCollectionWord(getLocal, i){
+    let newElement = document.createElement('div');
+    newElement.id = 'inCollectionWord' + i;
+    newElement.className = 'in-collection-word';
+    newElement.textContent = getLocal[i].name;
+    document.getElementById('inCollectionDiv' + i).appendChild(newElement);
+}
+
+function inCollectionDelete(i){
+    let newElement = document.createElement('div');
+    newElement.id = 'inCollectionDelete' + i;
+    newElement.className = 'in-collection-delete';
+    document.getElementById('inCollectionDiv' + i).appendChild(newElement);
+}
+
 
 // alert 
 

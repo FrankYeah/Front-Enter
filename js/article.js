@@ -237,6 +237,25 @@ function articleBorn(){
 
 
 
+if(window.localStorage.getItem(`collection`)){
+
+    let displayMyCollection;
+    displayMyCollection = JSON.parse(window.localStorage.getItem(`collection`));
+
+    getAllData.orderByChild("skill").on("child_added", function(snapshot) {
+
+        for(let i=0 ; i<displayMyCollection.length ; i++){
+        if(displayMyCollection[i].name == snapshot.val().name){
+            document.getElementById('collectionSchool' + snapshot.val().creatTime).style.background = 'url(../images/star-background.svg)';
+            document.getElementById('collectionSchool' + snapshot.val().creatTime).style.backgroundSize = 'cover';
+       
+        }else{}
+        }    
+
+    })
+
+}
+
 // local storage
 
 let collection = [{
@@ -256,15 +275,21 @@ function collectionSchool(data){
             // 如果 localstorage 為空
 
             if(!window.localStorage.getItem(`collection`)){
-                console.log(window.localStorage.getItem(`collection`))
-                let collectionData = [{name:snapshot.val().name
-                                     }];
+
+                newElement.style.background = 'url(../images/star-background.svg)';
+                newElement.style.backgroundSize = 'cover';
+                let collectionData = [{name:snapshot.val().name, 
+                                       photo:snapshot.val().rectangleUrl
+                                    }];
+                                     
+                
                 localStorage.setItem(`collection`, JSON.stringify(collectionData)); 
 
             }else{
 
-                let myStorageCollect = {name:snapshot.val().name
-                                        };
+                let myStorageCollect = {name:snapshot.val().name,
+                                        photo:snapshot.val().rectangleUrl
+                                        };                                       
                     let getLocal;
                     getLocal = JSON.parse(window.localStorage.getItem(`collection`));
                     // console.log(getLocal)
@@ -273,16 +298,18 @@ function collectionSchool(data){
                     // console.log(myStorageCollect)
                     // console.log(getLocal.length)
 
-                    for(let i = 0 ; i<getLocal.length ; i++){
+                    for(let i=0 ; i<getLocal.length ; i++){
                         if(getLocal[i].name == snapshot.val().name){
-
+                            newElement.style.background = 'url(../images/star-border.svg)';
+                            newElement.style.backgroundSize = 'cover';
                             console.log('已經按過啦')
                             getLocal.splice(i, 1);
                             localStorage.setItem(`collection`, JSON.stringify(getLocal)); 
                             return
 
                         }else{
-
+                            newElement.style.background = 'url(../images/star-background.svg)';
+                            newElement.style.backgroundSize = 'cover';
                             console.log(i)
                             console.log(getLocal.length)
                             console.log(getLocal[i].name)
