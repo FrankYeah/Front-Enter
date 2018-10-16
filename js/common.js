@@ -6,6 +6,9 @@ const headerP1 = document.getElementById('headerP1');
 const headerP2 = document.getElementById('headerP2');
 const headerP3 = document.getElementById('headerP3');
 const header = document.getElementById('header');
+const loadingDrawing = document.getElementById('loadingDrawing');
+const loadingAnimation = document.getElementById('loadingAnimation');
+const loadingImg = document.getElementById('loadingImg');
 
 headerP3.addEventListener("mouseover", function(){
     headerP3.style.color='rgb(26, 216, 211)';
@@ -89,8 +92,20 @@ window.onload = function() {
         },30);
     };  
 
-
-
+    // 關閉 loading
+    setTimeout(letLoadingNone, 1800)
+    function letLoadingNone(){
+        loadingAnimation.style.height = '0px';
+        loadingDrawing.style.height = '0px';
+        // loadingAnimation.style.opacity = '0';
+        loadingImg.style.marginBottom = '-1000px';
+        // loadingImg.style.height = '0px';
+        // loadingImg.style.width = '0px';
+        setTimeout(displayNoneLoading, 600)
+        function displayNoneLoading(){
+            loadingAnimation.style.display = 'none';
+        }
+    }
 
 
 }
