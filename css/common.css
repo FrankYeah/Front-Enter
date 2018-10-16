@@ -654,7 +654,7 @@ div.loading-img{
     height: 130px;
     transition: all 0.5s linear;
     margin-bottom: 200px;
-    animation: loadingImgUpDown 3s ease 0s infinite alternate;
+    animation: loadingImgUpDown 2.5s ease 0s infinite alternate;
 }
 
 div.loading-text{
@@ -1108,30 +1108,30 @@ div.loading-text{
 
 @keyframes loadingImgUpDown{
     0%   {  margin-bottom: 200px; }
-    25%  {  margin-bottom: 180px; }
+    25%  {  margin-bottom: 150px; }
     50%  {  margin-bottom: 200px; }
-    75%  {  margin-bottom: 180px; }
+    75%  {  margin-bottom: 150px; }
     100% {  margin-bottom: 200px; }
 }
 @-webkit-keyframes loadingImgUpDown{
     0%   {  margin-bottom: 200px; }
-    25%  {  margin-bottom: 180px; }
+    25%  {  margin-bottom: 150px; }
     50%  {  margin-bottom: 200px; }
-    75%  {  margin-bottom: 180px; }
+    75%  {  margin-bottom: 150px; }
     100% {  margin-bottom: 200px; }
 }
 @-moz-keyframes loadingImgUpDown{
     0%   {  margin-bottom: 200px; }
-    25%  {  margin-bottom: 180px; }
+    25%  {  margin-bottom: 150px; }
     50%  {  margin-bottom: 200px; }
-    75%  {  margin-bottom: 180px; }
+    75%  {  margin-bottom: 150px; }
     100% {  margin-bottom: 200px; }
 }
 @-o-keyframes loadingImgUpDown{
     0%   {  margin-bottom: 200px; }
-    25%  {  margin-bottom: 180px; }
+    25%  {  margin-bottom: 150px; }
     50%  {  margin-bottom: 200px; }
-    75%  {  margin-bottom: 180px; }
+    75%  {  margin-bottom: 150px; }
     100% {  margin-bottom: 200px; }
 }
 
