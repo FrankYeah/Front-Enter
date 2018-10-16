@@ -250,7 +250,7 @@ function storeDataToFirebase(){
         console.log(dataExist);
     });  
 
-    setTimeout(testDataExist ,3000);
+    setTimeout(testDataExist ,5000);
 
     function testDataExist(){
         if(dataExist == undefined){

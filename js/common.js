@@ -235,7 +235,14 @@ function voiceButton(){
             console.log("end");
             // auto restart
             recognition.start();
-            window.location='article.html?id=' + text.value;
+            if(text.value == ''){
+                console.log('no word')
+                startBtn.style.display = "block";
+            }else{
+                console.log('have word')
+                window.location='article.html?id=' + text.value;
+            }
+
         }
 
         // startBtn.addEventListener("click", function() {
