@@ -307,7 +307,7 @@ div.in-collection-div{
     align-content: center;
     width: 180px;
     height: 240px;
-    border: 1px solid rgb(26, 216, 211);
+    /* border: 1px solid rgb(26, 216, 211); */
     padding: 0px;
     margin: 8px;
 }
@@ -324,7 +324,7 @@ div.in-collection-img{
 }
 
 div.in-collection-img:hover{
-    transform: scale(1.1);
+    transform: scale(1.12);
 }
 
 div.in-collection-word{
