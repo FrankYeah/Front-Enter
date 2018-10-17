@@ -41,6 +41,8 @@ const cuteOne = document.getElementById('cuteOne');
 const cuteTwo = document.getElementById('cuteTwo');
 const cuteThree = document.getElementById('cuteThree');
 const typeWord = document.getElementById('typeWord');
+const bgMusic = document.getElementById('bgMusic');
+
 
 // 變化 userIcon
 
@@ -177,13 +179,17 @@ function htmlGuestRight(event){
         let str = '你通過第一關，HTML 是成為前端工程師的橋頭堡，也是網站給人的第一印象，一定要學好才行。';
         let i = 0;
         function htmlTyping(){
+            bgMusic.play();
+
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
                 setTimeout(htmlTyping, 60);
-                console.log('cscs')
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                // bgMusic.autoplay = false;
+                bgMusic.pause();
+
             }
         }
         htmlTyping();
@@ -231,6 +237,7 @@ function cssGuestRight(){
     if(this.textContent == 'SCSS 用變數控制'){
         let str = '哇，你竟然連 CSS 也略懂略懂。如果階層樣式學得好，就具備基礎網頁設計師的能力了，這時候，對於細節的掌握就更加重要囉。';
         let i = 0;
+        bgMusic.play();
         function cssTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -239,6 +246,7 @@ function cssGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         cssTyping();
@@ -287,6 +295,7 @@ function jsGuestRight(){
     if(this.textContent == 'function'){
         let str = '恭喜 JavaScript 關卡通過。JavaScript 同時也是小編最喜歡的語言，掌握它，就等於邁入前端工程師的行列，它不只能為你帶來一份工作，也擴展你的視野，擁有接軌科技的能力。';
         let i = 0;
+        bgMusic.play();
         function jsTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -295,6 +304,7 @@ function jsGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         jsTyping();
@@ -347,6 +357,7 @@ function jQueryGuestRight(){
     if(this.textContent == 'jQuery 含錢字符號'){
         let str = 'jQuery 是相當方便的 JavaScript 函式庫，它幫你把程式封裝好，只要加上經典的 $ 字號作為前綴，就能使用眾多功能。';
         let i = 0;
+        bgMusic.play();
         function jqueryTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -355,6 +366,7 @@ function jQueryGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         jqueryTyping();
@@ -399,6 +411,7 @@ function domGuestRight(){
     if(this.textContent == '透過 media 操作'){
         let str = 'RWD 很神奇吧，它讓你在手機、平板上，都能方便觀看網頁，而不用放大縮小視窗，是讓使用者體驗升級的良方。';
         let i = 0;
+        bgMusic.play();
         function rwdTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -407,6 +420,7 @@ function domGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         rwdTyping();
@@ -455,6 +469,7 @@ function ajaxGuestRight(){
     if(this.textContent == '測試程式正確性'){
         let str = '在學習程式語言之前，很難想像有 GitHub 的存在吧，竟然有個倉庫專門在管理程式語言，還能讓人複製、共同編輯，並記錄每一次的 commit ，是一款優秀的協作工具。';
         let i = 0;
+        bgMusic.play();
         function githubTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -463,6 +478,7 @@ function ajaxGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         githubTyping();
@@ -515,6 +531,7 @@ function es6GuestRight(){
     if(this.textContent == 'Gulp'){
         let str = 'css 屬於程式設計入門款，而預處理器能以更有效率的方式，撰寫階層樣式，如果你擁有 JavaScript 的基本概念，學起來會特別快唷。';
         let i = 0;
+        bgMusic.play();
         function scssTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -523,6 +540,7 @@ function es6GuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         scssTyping();
@@ -571,6 +589,7 @@ function jsonGuestRight(){
     if(this.textContent == 'Node.js'){
         let str = '你已經越來越厲害，掌握了近期火紅的打包工具，Webpack 和 React 是絕配，是幫助瀏覽器進行「翻譯」的良方。';
         let i = 0;
+        bgMusic.play();
         function webpackTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -579,6 +598,7 @@ function jsonGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         webpackTyping();
@@ -627,6 +647,7 @@ function spaGuestRight(){
     if(this.textContent == '樣式擴充元件'){
         let str = '看來你學蠻快的，Bootstrap 能做到的，css 也能做到，如果有時間，不仿試試手刻 Bootstrap 的特效，精進樣式調校的能力。';
         let i = 0;
+        bgMusic.play();
         function bootstrapTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -634,6 +655,7 @@ function spaGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         bootstrapTyping();
@@ -678,6 +700,7 @@ function apisGuestRight(){
     if(this.textContent == '建置單頁式網站'){
         let str = '你太強了，React 是不容易掌握的框架，能讓使用者的體驗更好，你所使用的 facebook 就是運用這套框架呢。';
         let i = 0;
+        bgMusic.play();
         function reactTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -685,6 +708,7 @@ function apisGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         reactTyping();
@@ -733,6 +757,7 @@ function tddGuestRight(){
     if(this.textContent == '確保程式邏輯正確'){
         let str = '終於抵達最後一關了，單元測試是為了確保函式的正確性，而進行的作業。雖然單元測試是最後一關，但工程的世界無止盡，身為一位 geek 就是要不斷學習精進唷。';
         let i = 0;
+        bgMusic.play();
         function unittestTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
@@ -740,6 +765,7 @@ function tddGuestRight(){
             
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                bgMusic.pause();
             }
         }
         unittestTyping();
