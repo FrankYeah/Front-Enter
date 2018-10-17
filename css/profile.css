@@ -125,6 +125,7 @@ main>div>div.create-right-div>div.post-edit-delete>p.post-button:hover{
 }
 
 main>div>div.right-collection{
+    color: rgb(26, 216, 211);
     display: none;
     flex-direction: row;
     width: 600px;

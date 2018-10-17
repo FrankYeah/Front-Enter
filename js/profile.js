@@ -336,14 +336,21 @@ function createCollectionLayout(){
 }
 
 function createCollectionDiv(){
+
     let getLocal;
     getLocal = JSON.parse(window.localStorage.getItem(`collection`));
-    for(let i = 0; i<getLocal.length ; i++){
-        inCollectionDiv(i);
-        inCollectionImg(getLocal,i);
-        inCollectionWord(getLocal,i);
-        inCollectionDelete(i);
+
+    if(getLocal == ''){
+        rightCollection.textContent = '無收藏';
+    }else{
+        for(let i = 0; i<getLocal.length ; i++){
+            inCollectionDiv(i);
+            inCollectionImg(getLocal,i);
+            inCollectionWord(getLocal,i);
+            inCollectionDelete(i);
+        }
     }
+
 }
 
 function inCollectionDiv(i){
