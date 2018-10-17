@@ -276,7 +276,7 @@ function collectionSchool(data){
 
             if(!window.localStorage.getItem(`collection`)){
 
-                newElement.style.background = 'url(../images/star-background.svg)';
+                newElement.style.background = 'url(../Front-Enter/images/star-background.svg)';
                 newElement.style.backgroundSize = 'cover';
                 let collectionData = [{name:snapshot.val().name, 
                                        photo:snapshot.val().rectangleUrl
@@ -300,7 +300,7 @@ function collectionSchool(data){
 
                     for(let i=0 ; i<getLocal.length ; i++){
                         if(getLocal[i].name == snapshot.val().name){
-                            newElement.style.background = 'url(../images/star-border.svg)';
+                            newElement.style.background = 'url(../Front-Enter/images/star-border.svg)';
                             newElement.style.backgroundSize = 'cover';
                             console.log('已經按過啦')
                             getLocal.splice(i, 1);
@@ -308,7 +308,7 @@ function collectionSchool(data){
                             return
 
                         }else{
-                            newElement.style.background = 'url(../images/star-background.svg)';
+                            newElement.style.background = 'url(../Front-Enter/images/star-background.svg)';
                             newElement.style.backgroundSize = 'cover';
                             console.log(i)
                             console.log(getLocal.length)

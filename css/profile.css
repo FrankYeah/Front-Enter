@@ -300,23 +300,21 @@ main>div>div.display-result>div.confirm-cancel>div{
     letter-spacing: 3px;
 }
 
-
-
 div.in-collection-div{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-content: center;
-    width: 150px;
-    height: 200px;
+    width: 180px;
+    height: 240px;
     border: 1px solid rgb(26, 216, 211);
     padding: 0px;
-    margin: 10px;
+    margin: 8px;
 }
 
 div.in-collection-img{
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
     background-position-x: center;
     background-position-y: center;
     margin: 0 auto;
@@ -417,5 +415,15 @@ div.in-collection-delete{
     }
     main>div>div.create-right-div>div.post-edit-delete{
         width: 300px;
+    }
+    main>div>div.right-collection{
+        width: 300px;
+    }
+    div.in-collection-div{
+        width: 200px;
+    }
+    div.in-collection-img{
+        width: 180px;
+        height: 180px;
     }
 }
