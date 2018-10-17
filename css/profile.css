@@ -321,6 +321,7 @@ div.in-collection-img{
     transition: all 0.6s;
     max-width: 100%;
     max-height: 100%;
+    border-radius: 5px;
 }
 
 div.in-collection-img:hover{
@@ -432,7 +433,6 @@ div.in-collection-delete{
     div.in-collection-img{
         width: 180px;
         height: 180px;
-        border-radius: 5px;
     }
     div.in-collection-img:hover{
         transform: scale(1.05);
