@@ -40,6 +40,7 @@ const fullIcon = document.getElementById('fullIcon');
 const cuteOne = document.getElementById('cuteOne');
 const cuteTwo = document.getElementById('cuteTwo');
 const cuteThree = document.getElementById('cuteThree');
+const typeWord = document.getElementById('typeWord');
 
 // 變化 userIcon
 
@@ -171,6 +172,24 @@ function htmlGuestRight(event){
     userIcon.style.left = '40%';
     arrowContinue.style.display = 'block';
 
+    //打字效果
+    if(this.textContent == '標籤語言'){
+        let str = '你通過第一關，HTML 是成為前端工程師的橋頭堡，也是網站給人的第一印象，一定要學好才行。';
+        let i = 0;
+        function htmlTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(htmlTyping, 60);
+                console.log('cscs')
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        htmlTyping();
+    }else{
+    }
+    //打字效果
 }
 
 function htmlLayout(){
@@ -207,6 +226,26 @@ function cssGuestRight(){
     cssLayout();
     userIcon.style.top = '10.2%';
     userIcon.style.left = '55%';
+
+    //打字效果
+    if(this.textContent == 'SCSS 用變數控制'){
+        let str = '哇，你竟然連 CSS 也略懂略懂。如果階層樣式學得好，就具備基礎網頁設計師的能力了，這時候，對於細節的掌握就更加重要囉。';
+        let i = 0;
+        function cssTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(cssTyping, 60);
+                console.log('cscs')
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        cssTyping();
+    }else{
+    }
+    //打字效果
+
 }
 
 function cssLayout(){
@@ -243,6 +282,26 @@ function jsGuestRight(){
     jsLayout();
     userIcon.style.top = '20.2%';
     userIcon.style.left = '53%';
+
+    //打字效果
+    if(this.textContent == 'function'){
+        let str = '恭喜 JavaScript 關卡通過。JavaScript 同時也是小編最喜歡的語言，掌握它，就等於邁入前端工程師的行列，它不只能為你帶來一份工作，也擴展你的視野，擁有接軌科技的能力。';
+        let i = 0;
+        function jsTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(jsTyping, 60);
+                console.log('cscs')
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        jsTyping();
+    }else{
+    }
+    //打字效果
+
 }
 
 function jsLayout(){
@@ -283,6 +342,26 @@ function jQueryGuestRight(){
     jQueryLayout();
     userIcon.style.top = '20.2%';
     userIcon.style.left = '42%';
+
+    //打字效果
+    if(this.textContent == 'jQuery 含錢字符號'){
+        let str = 'jQuery 是相當方便的 JavaScript 函式庫，它幫你把程式封裝好，只要加上經典的 $ 字號作為前綴，就能使用眾多功能。';
+        let i = 0;
+        function jqueryTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(jqueryTyping, 60);
+                console.log('cscs')
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        jqueryTyping();
+    }else{
+    }
+    //打字效果
+
 }
 
 function jQueryLayout(){
@@ -315,6 +394,26 @@ function domGuestRight(){
     domLayout();
     userIcon.style.top = '31.7%';
     userIcon.style.left = '48.5%';
+
+    //打字效果
+    if(this.textContent == '透過 media 操作'){
+        let str = 'RWD 很神奇吧，它讓你在手機、平板上，都能方便觀看網頁，而不用放大縮小視窗，是讓使用者體驗升級的良方。';
+        let i = 0;
+        function rwdTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(rwdTyping, 60);
+                console.log('cscs')
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        rwdTyping();
+    }else{
+    }
+    //打字效果
+
 }
 
 function domLayout(){
@@ -351,6 +450,26 @@ function ajaxGuestRight(){
     ajaxLayout();
     userIcon.style.top = '42.6%';
     userIcon.style.left = '48.5%';
+
+    //打字效果
+    if(this.textContent == '測試程式正確性'){
+        let str = '在學習程式語言之前，很難想像有 GitHub 的存在吧，竟然有個倉庫專門在管理程式語言，還能讓人複製、共同編輯，並記錄每一次的 commit ，是一款優秀的協作工具。';
+        let i = 0;
+        function githubTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(githubTyping, 60);
+                console.log('cscs')
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        githubTyping();
+    }else{
+    }
+    //打字效果   
+    
 }
 
 function ajaxLayout(){
@@ -391,6 +510,26 @@ function es6GuestRight(){
     es6Layout();
     userIcon.style.top = '42.6%';
     userIcon.style.left = '40.9%';
+
+    //打字效果
+    if(this.textContent == 'Gulp'){
+        let str = 'css 屬於程式設計入門款，而預處理器能以更有效率的方式，撰寫階層樣式，如果你擁有 JavaScript 的基本概念，學起來會特別快唷。';
+        let i = 0;
+        function scssTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(scssTyping, 60);
+                console.log('cscs')
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        scssTyping();
+    }else{
+    }
+    //打字效果   
+
 }
 
 function es6Layout(){
@@ -427,6 +566,26 @@ function jsonGuestRight(){
     jsonLayout();
     userIcon.style.top = '42.6%';
     userIcon.style.left = '55.9%';
+
+    //打字效果
+    if(this.textContent == 'Node.js'){
+        let str = '你已經越來越厲害，掌握了近期火紅的打包工具，Webpack 和 React 是絕配，是幫助瀏覽器進行「翻譯」的良方。';
+        let i = 0;
+        function webpackTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(webpackTyping, 60);
+                console.log('cscs')
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        webpackTyping();
+    }else{
+    }
+    //打字效果   
+
 }
 
 function jsonLayout(){
@@ -463,6 +622,25 @@ function spaGuestRight(){
     spaLayout();
     userIcon.style.top = '53.1%';
     userIcon.style.left = '39.4%';
+
+    //打字效果
+    if(this.textContent == '樣式擴充元件'){
+        let str = '看來你學蠻快的，Bootstrap 能做到的，css 也能做到，如果有時間，不仿試試手刻 Bootstrap 的特效，精進樣式調校的能力。';
+        let i = 0;
+        function bootstrapTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(bootstrapTyping, 60);
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        bootstrapTyping();
+    }else{
+    }
+    //打字效果   
+
 }
 
 function spaLayout(){
@@ -495,6 +673,25 @@ function apisGuestRight(){
     apisLayout();
     userIcon.style.top = '53.1%';
     userIcon.style.left = '57.3%';
+
+    //打字效果
+    if(this.textContent == '建置單頁式網站'){
+        let str = '你太強了，React 是不容易掌握的框架，能讓使用者的體驗更好，你所使用的 facebook 就是運用這套框架呢。';
+        let i = 0;
+        function reactTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(reactTyping, 60);
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        reactTyping();
+    }else{
+    }
+    //打字效果   
+
 }
 
 function apisLayout(){
@@ -531,6 +728,25 @@ function tddGuestRight(){
     tddLayout();
     userIcon.style.top = '63.8%';
     userIcon.style.left = '49%';
+
+    //打字效果
+    if(this.textContent == '確保程式邏輯正確'){
+        let str = '終於抵達最後一關了，單元測試是為了確保函式的正確性，而進行的作業。雖然單元測試是最後一關，但工程的世界無止盡，身為一位 geek 就是要不斷學習精進唷。';
+        let i = 0;
+        function unittestTyping(){
+            if (i <= str.length) {
+                typeWord.innerHTML = str.slice(0, i++) + '_';
+                setTimeout(unittestTyping, 60);
+            
+            }else{    
+                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+            }
+        }
+        unittestTyping();
+    }else{
+    }
+    //打字效果  
+
 }
 
 function tddLayout(){

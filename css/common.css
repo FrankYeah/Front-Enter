@@ -1145,8 +1145,32 @@ div.loading-text{
     0%   {  top:100px; }
     100% {  top:0px; }
 }
+@-webkit-keyframes headerGoUp{
+    0%   {  top:100px; }
+    100% {  top:0px; }
+}
+@-moz-keyframes headerGoUp{
+    0%   {  top:100px; }
+    100% {  top:0px; }
+}
+@-o-keyframes headerGoUp{
+    0%   {  top:100px; }
+    100% {  top:0px; }
+}
 
 @keyframes asideBottom{
+    0%   {  bottom: 90%; }
+    100% {  bottom: 20%; }
+}
+@-webkit-keyframes asideBottom{
+    0%   {  bottom: 90%; }
+    100% {  bottom: 20%; }
+}
+@-moz-keyframes asideBottom{
+    0%   {  bottom: 90%; }
+    100% {  bottom: 20%; }
+}
+@-o-keyframes asideBottom{
     0%   {  bottom: 90%; }
     100% {  bottom: 20%; }
 }
