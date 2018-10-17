@@ -318,6 +318,13 @@ div.in-collection-img{
     background-position-x: center;
     background-position-y: center;
     margin: 0 auto;
+    transition: all 0.6s;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+div.in-collection-img:hover{
+    transform: scale(1.1);
 }
 
 div.in-collection-word{
