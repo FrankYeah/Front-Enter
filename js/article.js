@@ -235,8 +235,6 @@ function articleBorn(){
 
 // 顯示已收藏
 
-
-
 if(window.localStorage.getItem(`collection`)){
 
     let displayMyCollection;
@@ -246,7 +244,7 @@ if(window.localStorage.getItem(`collection`)){
 
         for(let i=0 ; i<displayMyCollection.length ; i++){
         if(displayMyCollection[i].name == snapshot.val().name){
-            document.getElementById('collectionSchool' + snapshot.val().creatTime).style.background = 'url(../images/star-background.svg)';
+            document.getElementById('collectionSchool' + snapshot.val().creatTime).style.background = 'url(../Front-Enter/images/star-background.svg)';
             document.getElementById('collectionSchool' + snapshot.val().creatTime).style.backgroundSize = 'cover';
        
         }else{}
