@@ -28,6 +28,7 @@ function winScroll(){
         header.style.animation = "headerBackgroundOut 5s ease 0s 1 alternate forwards";
         if(userLogin && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(128, 128, 128)';
+            headerP3.textContent = '會員';
             if(userLogin.photoURL){
                 headerP3.textContent = '';
             }
@@ -43,9 +44,14 @@ function winScroll(){
         header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"
         if(userLogin && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(128, 128, 128)';
-            headerP3.textContent = '';
+            headerP3.textContent = '會員';
+            if(userLogin.photoURL){
+                headerP3.textContent = '';
+            }
             headerP3.style.cursor = 'pointer';
             console.log('photoURL & verified is true smaller 100')
+        }else{
+
         }
       }
 }
@@ -92,23 +98,6 @@ window.onload = function() {
             }
         },30);
     };  
-
-    // 關閉 loading
-    // setTimeout(letLoadingNone, 1000)
-    // function letLoadingNone(){
-    //     loadingAnimation.style.height = '0px';
-    //     loadingAnimation.style.opacity = '0.9';
-    //     loadingDrawing.style.height = '0px';
-    //     loadingDrawing.style.opacity = '0.9';
-    //     loadingImg.style.marginBottom = '-1000px';
-    //     header.style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
-    //     myAside.style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
-    //     setTimeout(displayNoneLoading, 600)
-    //     function displayNoneLoading(){
-    //         loadingAnimation.style.display = 'none';
-    //     }
-    // }
-
 
 }
 

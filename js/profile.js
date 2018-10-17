@@ -65,7 +65,7 @@ function loadAllLoginStuff(){
     inputPhoto.style.backgroundPosition= 'center';
     inputPhoto.style.backgroundSize= 'cover';
     inputPhoto.style.backgroundRepeat= 'no-repeat';
-    if(userLogin.email == 'aaa24295234@gmail.com'){
+    if(userLogin.email == 'aaa24295234@gmail.com' || userLogin.email == "frontenter2018@gmail.com"){
         managePost.style.display = 'block';
     }
 }
@@ -196,7 +196,7 @@ function logoutMeOut(){
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         userLogin = user;
-        if(userLogin.email == "aaa24295234@gmail.com"){
+        if(userLogin.email == "aaa24295234@gmail.com" || userLogin.email == "frontenter2018@gmail.com"){
             }else{
                 // window.location = 'profile.html';
             }
