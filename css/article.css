@@ -2,7 +2,7 @@
 
 section{
     position: relative;
-    /* background: url("../images/FE_key_visual.jpg"); */
+    background: url("../images/contact-key.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     height: 380px;
@@ -12,6 +12,7 @@ section{
     margin-top: 105px;
     cursor: text;
     opacity: 1;
+    /* animation : opacityOut 1s ease 0s 1 alternate both; */
   }
 
 section>a>div{

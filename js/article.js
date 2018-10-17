@@ -540,28 +540,19 @@ alertButton.addEventListener('click', ()=>{
     alertBigBox.style.display = 'none';
 });
 
+// 關閉 loading
 
-
-
-// 回調
-
-// var funcA = function(callback){
-//     var i = 3;
-  
-//     setTimeout(function(){
-//       console.log('function A');
-//         setTimeout(console.log("2"),2000)
-//         callback();
-//     }, i * 1000);
-//   };
-  
-//   var funcB = function(){
-//       var i = 3;
-  
-//       setTimeout(function(){
-//         console.log('function B');
-//       }, i * 1000);
-//   };
-  
-//   // 將 funcB 作為參數帶入 funcA()
-//   funcA( funcB );
+setTimeout(letLoadingNone, 1000)
+function letLoadingNone(){
+    loadingAnimation.style.height = '0px';
+    loadingAnimation.style.opacity = '0.9';
+    loadingDrawing.style.height = '0px';
+    loadingDrawing.style.opacity = '0.9';
+    loadingImg.style.marginBottom = '-1000px';
+    header.style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
+    myAside.style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
+    setTimeout(displayNoneLoading, 600)
+    function displayNoneLoading(){
+        loadingAnimation.style.display = 'none';
+    }
+}
