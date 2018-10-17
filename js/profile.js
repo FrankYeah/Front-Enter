@@ -375,6 +375,15 @@ function inCollectionDelete(i){
     newElement.id = 'inCollectionDelete' + i;
     newElement.className = 'in-collection-delete';
     document.getElementById('inCollectionDiv' + i).appendChild(newElement);
+    newElement.onclick = function(){
+
+        let getLocal;
+        getLocal = JSON.parse(window.localStorage.getItem(`collection`));
+        getLocal.splice(i, 1);
+        localStorage.setItem(`collection`, JSON.stringify(getLocal)); 
+        createCollectionLayout();
+
+    }
 }
 
 

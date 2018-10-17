@@ -173,6 +173,7 @@ main>article>div.collection-school{
     height: 20px;
     background: url('../images/star-border.svg');
     background-size: cover;
+    cursor: pointer;
 }
 
 main>article>div>div.location-img-born{
