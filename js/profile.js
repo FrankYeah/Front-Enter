@@ -411,7 +411,7 @@ alertButton.addEventListener('click', ()=>{
 
 // 關閉 loading
 
-setTimeout(letLoadingNone, 3000)
+setTimeout(letLoadingNone, 3500)
 function letLoadingNone(){
     loadingAnimation.style.height = '0px';
     loadingAnimation.style.opacity = '0.9';

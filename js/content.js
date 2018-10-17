@@ -620,7 +620,7 @@ alertButton.addEventListener('click', ()=>{
 
 // 關閉 loading
 
-setTimeout(letLoadingNone, 1000)
+setTimeout(letLoadingNone, 1500)
 function letLoadingNone(){
     loadingAnimation.style.height = '0px';
     loadingAnimation.style.opacity = '0.9';
