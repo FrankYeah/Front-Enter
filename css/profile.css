@@ -433,4 +433,7 @@ div.in-collection-delete{
         width: 180px;
         height: 180px;
     }
+    div.in-collection-img:hover{
+        transform: scale(1.05);
+    }
 }
