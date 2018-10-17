@@ -184,6 +184,8 @@ section>div.keyvisualSpan{
     padding-left: 23px;
 };
 
+
+
 @media ( max-width: 660px ){
     section>div.keyvisualSpan{
         font-size: 20px;
