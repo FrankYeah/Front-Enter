@@ -129,7 +129,7 @@ p.gray-border-word{
     border: 1px solid rgb(128, 128, 128);
     color: rgb(128, 128, 128);
     text-align: center;
-    padding: 2px;
+    padding: 2.5px;
     width: 100px;
     height: 30px;
     line-height: 30px;
@@ -142,7 +142,7 @@ p.blue-border-word{
     border: 1px solid rgb(26,216,211);
     color: rgb(26,216,211);
     text-align: center;
-    padding: 2px;
+    padding: 2.5px;
     width: 100px;
     height: 30px;
     line-height: 30px;
@@ -155,7 +155,7 @@ p.blue-border-back{
     border: 1px solid rgb(26,216,211);
     background-color: rgb(26,216,211);
     text-align: center;
-    padding: 2px;
+    padding: 2.5px;
     color: white;
     width: 100px;
     height: 30px;

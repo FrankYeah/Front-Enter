@@ -302,10 +302,10 @@ domB.addEventListener('click', function(){
 
 function domPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = 'DOM 屬於？';
-    htmlAnswerOne.textContent = '瀏覽器上的元素';
-    htmlAnswerTwo.textContent = '操作瀏覽器的語言';
-    htmlAnswerThree.textContent = '簡化版的 HTML';
+    questionHead.textContent = '如何在不同螢幕寬度下改變樣式？';
+    htmlAnswerOne.textContent = '透過 media 操作';
+    htmlAnswerTwo.textContent = '使用事件物件';
+    htmlAnswerThree.textContent = '變數控制';
     htmlAnswerOne.addEventListener('click', domGuestRight);
 }
 
@@ -338,10 +338,10 @@ ajaxB.addEventListener('click', function(){
 
 function ajaxPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = 'AJAX 能做什麼？';
-    htmlAnswerOne.textContent = '動態載入 DOM';
-    htmlAnswerTwo.textContent = '加速伺服器連線';
-    htmlAnswerThree.textContent = '安全加密的方式';
+    questionHead.textContent = 'GitHub 不能做什麼？';
+    htmlAnswerOne.textContent = '測試程式正確性';
+    htmlAnswerTwo.textContent = '程式碼倉庫';
+    htmlAnswerThree.textContent = '共同軟體開發';
     htmlAnswerOne.addEventListener('click', ajaxGuestRight);
 }
 
@@ -378,10 +378,10 @@ es6B.addEventListener('click', function(){
 
 function es6Pass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '哪個不是 ES6 的新功能？';
-    htmlAnswerOne.textContent = 'await 異步處理';
-    htmlAnswerTwo.textContent = '箭頭符號';
-    htmlAnswerThree.textContent = 'let、const 變數';
+    questionHead.textContent = '何者不屬於 CSS 預處理器？';
+    htmlAnswerOne.textContent = 'Gulp';
+    htmlAnswerTwo.textContent = 'SCSS';
+    htmlAnswerThree.textContent = 'PostCSS';
     htmlAnswerOne.addEventListener('click', es6GuestRight);
 }
 
@@ -414,10 +414,10 @@ jsonB.addEventListener('click', function(){
 
 function jsonPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = 'JSON 是什麼？';
-    htmlAnswerOne.textContent = '資料庫常用的結構';
-    htmlAnswerTwo.textContent = '操作事件的工具';
-    htmlAnswerThree.textContent = '正規表達式';
+    questionHead.textContent = '使用 Webpack 需要安裝？';
+    htmlAnswerOne.textContent = 'Node.js';
+    htmlAnswerTwo.textContent = 'Babel';
+    htmlAnswerThree.textContent = 'styled-components';
     htmlAnswerOne.addEventListener('click', jsonGuestRight);
 }
 
@@ -450,10 +450,10 @@ spaB.addEventListener('click', function(){
 
 function spaPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '哪種框架屬於 SPA？';
-    htmlAnswerOne.textContent = 'React';
-    htmlAnswerTwo.textContent = 'Vue';
-    htmlAnswerThree.textContent = 'Regular';
+    questionHead.textContent = 'Bootstrap 是一種？';
+    htmlAnswerOne.textContent = '樣式擴充元件';
+    htmlAnswerTwo.textContent = '打包工具';
+    htmlAnswerThree.textContent = '套件管理工具';
     htmlAnswerOne.addEventListener('click', spaGuestRight);
 }
 
@@ -482,10 +482,10 @@ apisB.addEventListener('click', function(){
 
 function apisPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '下列何者是接 APIs 的方式？';
-    htmlAnswerOne.textContent = 'Fetch';
-    htmlAnswerTwo.textContent = 'HTTPs';
-    htmlAnswerThree.textContent = 'Promise';
+    questionHead.textContent = 'React 有何特性？';
+    htmlAnswerOne.textContent = '建置單頁式網站';
+    htmlAnswerTwo.textContent = '不存在異步問題';
+    htmlAnswerThree.textContent = '不需要 Babel 編譯';
     htmlAnswerOne.addEventListener('click', apisGuestRight);
 }
 
@@ -518,7 +518,7 @@ tddB.addEventListener('click', function(){
 
 function tddPass(){
     questionDiv.style.display = 'flex';
-    questionHead.textContent = '為什麼要做 TDD？';
+    questionHead.textContent = '為什麼要做單元測試？';
     htmlAnswerOne.textContent = '確保程式邏輯正確';
     htmlAnswerTwo.textContent = '讓 scrum 運作順利';
     htmlAnswerThree.textContent = '資料安全性';
@@ -613,7 +613,7 @@ function showBoxRightDom(){
     showDivRight.style.width = '200px';
     showDivRight.style.height = 'auto';
     showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'DOM <br><br> 文件物件模型（英語：Document Object Model，縮寫 DOM），是 W3C 組織推薦的處理可延伸標示語言的標準程式埠。 <br><br>';
+    showDivRight.innerHTML = 'RWD <br><br> 響應式網頁設計（英語：Responsive web design，通常縮寫為 RWD），是一種網頁設計的技術做法，該設計可使網站在不同的裝置上瀏覽時，對應不同解析度皆有適合的呈現，減少使用者進行縮放、平移和捲動等操作行為。 <br><br>';
 }
 
 function noneBoxRightDom(){
@@ -642,7 +642,7 @@ function showBoxRightAjax(){
     showDivRight.style.width = '200px';
     showDivRight.style.height = 'auto';
     showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'AJAX <br><br> AJAX 即「Asynchronous JavaScript and XML」（非同步的 JavaScript 與 XML 技術），指的是一套綜合了多項技術的瀏覽器端網頁開發技術。 <br><br>';
+    showDivRight.innerHTML = 'GitHub <br><br> GitHub 是透過 Git 進行版本控制的軟體原始碼代管服務，由 GitHub 公司（曾稱 Logical Awesome）開發者使用 Ruby on Rails 編寫而成。 <br><br>';
 }
 
 function noneBoxRightAjax(){
@@ -671,7 +671,7 @@ function showBoxRightJson(){
     showDivRight.style.width = '200px';
     showDivRight.style.height = 'auto';
     showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'JSON <br><br> JSON（JavaScript Object Notation）是一種輕量級的資料交換語言，該語言以易於讓人閱讀的文字為基礎，用來傳輸由屬性值或者序列性的值組成的資料物件。 <br><br>';
+    showDivRight.innerHTML = 'Webpack <br><br> Webpack 是一個開源的前端打包工具。Webpack 提供了前端開發缺乏的模組化開發方式，將各種靜態資源視為模組，並從它生成優化過的程式碼。 <br><br>';
 }
 
 function noneBoxRightJson(){
@@ -700,7 +700,7 @@ function showBoxRightApis(){
     showDivRight.style.width = '200px';
     showDivRight.style.height = 'auto';
     showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'APIs <br><br> 又稱為應用編程介面，就是軟體系統不同組成部分銜接的約定。由於近年來軟體的規模日益龐大，常常需要把複雜的系統劃分成小的組成部分，編程介面的設計十分重要。 <br><br>';
+    showDivRight.innerHTML = 'React <br><br> React 是一個為資料提供彩現為 HTML 視圖的開源 JavaScript 庫。React 視圖通常採用包含以自訂 HTML 標記規定的其他元件的元件彩現。 <br><br>';
 }
 
 function noneBoxRightApis(){
@@ -729,7 +729,7 @@ function showBoxRightTdd(){
     showDivRight.style.width = '200px';
     showDivRight.style.height = 'auto';
     showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'TDD <br><br> 測試驅動開發（英語：Test-driven development，縮寫為 TDD）是一種軟體開發過程中的應用方法，由極限編程中倡導，以其倡導先寫測試程序，然後編碼實現其功能得名。 <br><br>';
+    showDivRight.innerHTML = 'Unit Testing <br><br> 在電腦編程中，單元測試（英語：Unit Testing）又稱為模組測試，是針對程式模組（軟體設計的最小單位）來進行正確性檢驗的測試工作。程式單元是應用的最小可測試部件。 <br><br>';
 }
 
 function noneBoxRightTdd(){
@@ -816,7 +816,7 @@ function showBoxEs6(){
     showDivLeft.style.width = '200px';
     showDivLeft.style.height = 'auto';
     showDivLeft.style.padding = '15px 10px 0px 10px';
-    showDivLeft.innerHTML = 'ES6 <br><br> ECMAScript 的第六版修訂，於 2015 年完成標準化。這個標準被部分實現於大部分現代瀏覽器。可以查閱這張兼容性表來查看不同瀏覽器和工具的實現情況。 <br><br>';
+    showDivLeft.innerHTML = 'SCSS <br><br> Sass 是一個將指令碼解析成 CSS 的手稿語言，即 SassScript。Sass 包括兩套語法。最開始的語法叫做「縮排語法」，使用縮排來區分程式碼塊，並且用換行將不同規則分隔開。而較新的語法叫做「SCSS」。 <br><br>';
 }
 
 function noneBoxEs6(){
@@ -845,7 +845,7 @@ function showBoxSpa(){
     showDivLeft.style.width = '200px';
     showDivLeft.style.height = 'auto';
     showDivLeft.style.padding = '15px 10px 0px 10px';
-    showDivLeft.innerHTML = 'SPA <br><br> SPA 屬於單頁面開發，SPA 必須有一個軟體框架，讓開發者以這個框架為基礎，提供 User 更偏向 Desktop application 的使用經驗。 <br><br>';
+    showDivLeft.innerHTML = 'bootstrap <br><br> Bootstrap 是一組用於網站和網路應用程式開發的開源前端框架，提供字體排印、表單、按鈕、導航及其他各種元件及 Javascript 擴充套件，旨在使動態網頁和 Web 應用的開發更加容易。 <br><br>';
 }
 
 function noneBoxSpa(){
