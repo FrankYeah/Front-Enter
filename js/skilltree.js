@@ -42,7 +42,7 @@ const cuteTwo = document.getElementById('cuteTwo');
 const cuteThree = document.getElementById('cuteThree');
 const typeWord = document.getElementById('typeWord');
 const bgMusic = document.getElementById('bgMusic');
-
+const fullType = document.getElementById('fullType');
 
 // 變化 userIcon
 
@@ -176,6 +176,7 @@ function htmlGuestRight(event){
 
     //打字效果
     if(this.textContent == '標籤語言'){
+        fullType.style.display = 'flex';
         let str = '你通過第一關，HTML 是成為前端工程師的橋頭堡，也是網站給人的第一印象，一定要學好才行。';
         let i = 0;
         function htmlTyping(){
@@ -189,6 +190,7 @@ function htmlGuestRight(event){
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 // bgMusic.autoplay = false;
                 bgMusic.pause();
+                setTimeout(closeFullType, 3000)
 
             }
         }
@@ -196,6 +198,10 @@ function htmlGuestRight(event){
     }else{
     }
     //打字效果
+}
+
+function closeFullType(){
+    fullType.style.display = 'none';
 }
 
 function htmlLayout(){
@@ -235,6 +241,7 @@ function cssGuestRight(){
 
     //打字效果
     if(this.textContent == 'SCSS 用變數控制'){
+        fullType.style.display = 'flex';  
         let str = '哇，你竟然連 CSS 也略懂略懂。如果階層樣式學得好，就具備基礎網頁設計師的能力了，這時候，對於細節的掌握就更加重要囉。';
         let i = 0;
         bgMusic.play();
@@ -247,6 +254,7 @@ function cssGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
+                setTimeout(closeFullType, 3000);
             }
         }
         cssTyping();
