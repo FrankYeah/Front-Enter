@@ -432,6 +432,7 @@ div.in-collection-delete{
     div.in-collection-img{
         width: 180px;
         height: 180px;
+        border-radius: 5px;
     }
     div.in-collection-img:hover{
         transform: scale(1.05);
