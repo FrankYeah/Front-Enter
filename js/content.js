@@ -68,6 +68,12 @@ function createLayout(data){
     boxtableSix();
     tableSixLeft();
     tableSixRight(data);
+    boxtableSeven();
+    tableSevenLeft();
+    tableSevenRight(data);
+    boxtableEight();
+    tableEightLeft();
+    tableEightRight(data);
     // contactPhoneBorn(data);
     // contactMailBorn(data);
 }
@@ -589,6 +595,52 @@ function tableSixRight(data){
     newElement.textContent = data.technology;
     newElement.id = 'tableSixRight';
     document.getElementById('boxtableSix').appendChild(newElement);
+}
+
+function boxtableSeven(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table-one';
+    newElement.id = 'boxtableSeven';
+    document.getElementById('boxTable').appendChild(newElement);
+}
+
+function tableSevenLeft(){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-left';
+    newElement.textContent = '信箱';
+    newElement.id = 'tableSevenLeft';
+    document.getElementById('boxtableSeven').appendChild(newElement);
+}
+
+function tableSevenRight(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-right';
+    newElement.textContent = data.mail;
+    newElement.id = 'tableSevenRight';
+    document.getElementById('boxtableSeven').appendChild(newElement);
+}
+
+function boxtableEight(){
+    let newElement = document.createElement('div');
+    newElement.className = 'box-table-one';
+    newElement.id = 'boxtableEight';
+    document.getElementById('boxTable').appendChild(newElement);
+}
+
+function tableEightLeft(){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-left';
+    newElement.textContent = '電話';
+    newElement.id = 'tableEightLeft';
+    document.getElementById('boxtableEight').appendChild(newElement);
+}
+
+function tableEightRight(data){
+    let newElement = document.createElement('div');
+    newElement.className = 'table-one-right';
+    newElement.textContent = data.phone;
+    newElement.id = 'tableEightRight';
+    document.getElementById('boxtableEight').appendChild(newElement);
 }
 
 // 聯絡我們
