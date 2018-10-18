@@ -262,7 +262,7 @@ function cssGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000);
+                setTimeout(closeFullType, 1500);
             }
         }
         cssTyping();
@@ -322,7 +322,7 @@ function jsGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         jsTyping();
@@ -386,7 +386,7 @@ function jQueryGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         jqueryTyping();
@@ -442,7 +442,7 @@ function domGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         rwdTyping();
@@ -502,7 +502,7 @@ function ajaxGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         githubTyping();
@@ -566,7 +566,7 @@ function es6GuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         scssTyping();
@@ -626,7 +626,7 @@ function jsonGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         webpackTyping();
@@ -685,7 +685,7 @@ function spaGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         bootstrapTyping();
@@ -740,7 +740,7 @@ function apisGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         reactTyping();
@@ -799,7 +799,7 @@ function tddGuestRight(){
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
-                setTimeout(closeFullType, 2000)
+                setTimeout(closeFullType, 1500)
             }
         }
         unittestTyping();
