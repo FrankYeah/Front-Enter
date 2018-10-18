@@ -439,7 +439,7 @@ div.final-pass{
 /* 小通關字 */
 
 div.full-type{
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     display: none;
     flex-direction: row;

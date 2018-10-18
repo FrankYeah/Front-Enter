@@ -190,7 +190,7 @@ function htmlGuestRight(event){
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 // bgMusic.autoplay = false;
                 bgMusic.pause();
-                setTimeout(closeFullType, 1000)
+                setTimeout(closeFullType, 1500)
 
             }
         }
