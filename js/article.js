@@ -277,7 +277,8 @@ function collectionSchool(data){
                 newElement.style.background = 'url(../Front-Enter/images/star-background.svg)';
                 newElement.style.backgroundSize = 'cover';
                 let collectionData = [{name:snapshot.val().name, 
-                                       photo:snapshot.val().rectangleUrl
+                                       photo:snapshot.val().rectangleUrl,
+                                       creatTime:snapshot.val().creatTime
                                     }];
                                      
                 
@@ -286,7 +287,8 @@ function collectionSchool(data){
             }else{
 
                 let myStorageCollect = {name:snapshot.val().name,
-                                        photo:snapshot.val().rectangleUrl
+                                        photo:snapshot.val().rectangleUrl,
+                                        creatTime:snapshot.val().creatTime
                                         };                                       
                     let getLocal;
                     getLocal = JSON.parse(window.localStorage.getItem(`collection`));

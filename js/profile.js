@@ -367,6 +367,9 @@ function inCollectionImg(getLocal, i){
     newElement.style.backgroundSize = 'cover';
     newElement.className = 'in-collection-img';
     document.getElementById('inCollectionDiv' + i).appendChild(newElement);
+    newElement.onclick = function(){
+        window.location = "/Front-Enter/content.html?id=" + getLocal[i].creatTime;
+    }
 }
 
 function inCollectionWord(getLocal, i){
