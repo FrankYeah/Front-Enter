@@ -309,7 +309,7 @@ function jsGuestRight(){
 
     //打字效果
     if(this.textContent == 'function'){
-        let str = '恭喜 JavaScript 關卡通過。JavaScript 同時也是小編最喜歡的語言，掌握它，就等於邁入前端工程師的行列，它不只能為你帶來一份工作，也擴展你的視野，擁有接軌科技的能力。';
+        let str = '恭喜你通過 JavaScript 關卡。JavaScript 也是小編最喜歡的語言，掌握它，就等於邁入前端工程師的行列，它不只能為你帶來一份工作，也擴展你的視野，擁有接軌科技的能力。';
         let i = 0;
         bgMusic.play();
         fullType.style.display = 'flex'; 
@@ -1156,39 +1156,6 @@ alertButton.addEventListener('click', ()=>{
     alertBigBox.style.display = 'none';
 });
 
-
-
-
-    // 測試
-    // finalPass.style.width = '100%';
-    // finalPass.style.height = '100%';
-    // finalPass.style.fontSize = '120px';
-    // finalPass.style.paddingTop = '15%';
-    // finalPass.style.color = 'rgb(26,216,211)';
-    // finalPass.style.backgroundColor = 'rgba(128,128,128,.9)';
-    // finalPass.textContent = '恭喜通關';
-    // setTimeout( oneFinal, 1000);
-
-function oneFinal(){
-    setTimeout( okFinal, 3000);
-}
-
-function okFinal(){
-    finalPass.style.fontSize = '0px';
-    finalPass.style.width = '0%';
-    finalPass.style.height = '0%';
-    finalPass.style.paddingTop = '0%';
-    finalPass.style.lineHeight = '0px';
-    finalPass.style.backgroundColor = 'white';
-    finalPass.style.transform = 'rotate(360deg)';
-    setTimeout( noneFinal, 3000);
-}
-
-function noneFinal(){
-    finalPass.style.display = 'none';
-}
-
-
 // 關閉 loading
 
 setTimeout(letLoadingNone, 1000)
@@ -1205,3 +1172,36 @@ function letLoadingNone(){
         loadingAnimation.style.display = 'none';
     }
 }
+
+userIcon.addEventListener('mouseover', countNumber);
+let clearNum;
+
+function countNumber(){
+
+ // Number of online users is the number of objects in the presence list.
+listRef.on("value", function(snap) {
+        console.log("# of online users = " + snap.numChildren());
+        userIcon.innerHTML = snap.numChildren() + " 人也在玩";
+    
+}); 
+
+}
+
+userIcon.addEventListener('mouseleave', function(){
+    userIcon.innerHTML = '';
+})
+
+// realtime on site number
+
+let listRef = database.ref("counter");
+let userRef = listRef.push();
+// Add ourselves to presence list when online.
+let presenceRef = database.ref(".info/connected");
+
+presenceRef.on("value", function(snap) {
+  if (snap.val()) {
+    // Remove ourselves when we disconnect.
+    userRef.onDisconnect().remove();
+     userRef.set(true);
+  }
+});

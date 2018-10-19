@@ -333,17 +333,21 @@ div.float-box{
 
 div.user-icon{
     position: absolute;
-    width: 40px;
+    width: 140px;
     height: 40px;
     background: url('../images/cute.svg') center center / cover no-repeat;
-    border-radius: 50%;
     top: 0;
     left: 48.5%;
-    transition: all 2.5s linear;
+    transition: all .5s linear;
+    background-size: contain;
+    background-position: left;
+    text-align: right;
+    color: rgb(26, 216, 211);
+    font-weight: bold;
 }
 
 div.user-icon:hover{
-    transform: rotate(1800deg);
+
 }
 
 div.full-icon{
