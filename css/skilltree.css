@@ -347,7 +347,7 @@ div.user-icon{
 }
 
 div.user-icon:hover{
-
+    filter: blur(1)
 }
 
 div.full-icon{

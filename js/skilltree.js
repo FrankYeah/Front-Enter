@@ -113,16 +113,16 @@ function closeMyQ(){
 }
 
 // 更換遊戲頭貼
-setTimeout(replaceIcon,3000 );
+// setTimeout(replaceIcon,3000 );
 
-function replaceIcon(){
-    if(userLogin.photoURL){
-        userIcon.style.background = "url('" + userLogin.photoURL + "')"; 
-        userIcon.style.backgroundPosition= 'center';
-        userIcon.style.backgroundSize= 'cover';
-        userIcon.style.backgroundRepeat= 'no-repeat';
-    }
-}
+// function replaceIcon(){
+//     if(userLogin.photoURL){
+//         userIcon.style.background = "url('" + userLogin.photoURL + "')"; 
+//         userIcon.style.backgroundPosition= 'center';
+//         userIcon.style.backgroundSize= 'cover';
+//         userIcon.style.backgroundRepeat= 'no-repeat';
+//     }
+// }
 // html
 
 htmlB.addEventListener('click', htmlPass);
