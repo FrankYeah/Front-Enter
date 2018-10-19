@@ -63,7 +63,9 @@ whiteDivIcon.addEventListener('click', function(event){
 cuteOne.addEventListener('click', function(){
 
     userIcon.style.background = 'url(../Front-Enter/images/cute.svg)';
-    userIcon.style.backgroundSize = 'cover';
+    userIcon.style.backgroundRepeat = 'no-repeat';
+    userIcon.style.backgroundSize = 'contain';
+    userIcon.style.backgroundPosition = 'left';
     fullIcon.style.display = 'none';
 
 })
@@ -71,7 +73,9 @@ cuteOne.addEventListener('click', function(){
 cuteTwo.addEventListener('click', function(){
 
     userIcon.style.background = 'url(../Front-Enter/images/cute2.svg)';
-    userIcon.style.backgroundSize = 'cover';
+    userIcon.style.backgroundRepeat = 'no-repeat';
+    userIcon.style.backgroundSize = 'contain';
+    userIcon.style.backgroundPosition = 'left';
     fullIcon.style.display = 'none';
 
 })
@@ -79,7 +83,9 @@ cuteTwo.addEventListener('click', function(){
 cuteThree.addEventListener('click', function(){
 
     userIcon.style.background = 'url(../Front-Enter/images/cute3.svg)';
-    userIcon.style.backgroundSize = 'cover';
+    userIcon.style.backgroundRepeat = 'no-repeat';
+    userIcon.style.backgroundSize = 'contain';
+    userIcon.style.backgroundPosition = 'left';
     fullIcon.style.display = 'none';
 
 })
@@ -113,17 +119,19 @@ function closeMyQ(){
 }
 
 // 更換遊戲頭貼
+
 // setTimeout(replaceIcon,3000 );
 
 // function replaceIcon(){
 //     if(userLogin.photoURL){
 //         userIcon.style.background = "url('" + userLogin.photoURL + "')"; 
 //         userIcon.style.backgroundPosition= 'center';
-//         userIcon.style.backgroundSize= 'cover';
+//         userIcon.style.backgroundSize= 'contain';
 //         userIcon.style.backgroundRepeat= 'no-repeat';
+//         userIcon.style.backgroundPosition = 'left';
 //     }
 // }
-// html
+
 
 htmlB.addEventListener('click', htmlPass);
 
