@@ -68,3 +68,32 @@ function letLoadingNone(){
         loadingAnimation.style.display = 'none';
     }
 }
+
+
+
+// realtime on site number
+
+let listRef = database.ref("counter");
+let userRef = listRef.push();
+
+// Add ourselves to presence list when online.
+
+let presenceRef = database.ref(".info/connected");
+presenceRef.on("value", function(snap) {
+  if (snap.val()) {
+    // Remove ourselves when we disconnect.
+    userRef.onDisconnect().remove();
+
+    userRef.set(true);
+  }
+});
+
+// Number of online users is the number of objects in the presence list.
+listRef.on("value", function(snap) {
+    setInterval(  tellMeHow, 2000)
+
+  function tellMeHow(){
+    console.log("# of online users = " + snap.numChildren());
+
+  }
+});  
