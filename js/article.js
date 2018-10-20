@@ -501,36 +501,6 @@ oneByOne.onclick = function(){
     });   
 }
 
-// const mySelect = document.getElementById('mySelect');
-// mySelect.onchange = function(event){
-//     console.log(event.target.value)
-    
-//     document.getElementById('mainId').innerHTML = '';
-
-//     //全部
-//     if(event.target.value == '全部'){
-//         getAllData.orderByChild("skill").on("child_added", function(snapshot) {
-//             data = snapshot.val();
-//             storePhoto.push(data.rectangleUrl);
-//             storeLink.push('content.html?id=' + data.creatTime);
-//             createLayout(data);
-//         });
-//     }else{
-//         //小班制
-//         //放養制
-//         getAllData.orderByChild("teachWay").equalTo(event.target.value).on("child_added", function(snapshot) {
-//             data = snapshot.val();
-//             createLayout(data);
-//         });   
-
-//         //一對一
-//         getAllData.orderByChild("classType").equalTo(event.target.value).on("child_added", function(snapshot) {
-//             data = snapshot.val();
-//             createLayout(data);
-//         });   
-//     }
-// }
-
 // alert 
 
 const alertBigBox = document.getElementById('alertBigBox');
