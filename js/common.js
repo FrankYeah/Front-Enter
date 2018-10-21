@@ -83,7 +83,7 @@ window.onload = function() {
         //設置定時器
         timer = setInterval(function(){
             //獲取滾動條到頂部的高度
-            let osTop = document.documentElement.scrollTop || document.body.scrollTop ;  //同时兼容了ie和Chrome浏览器
+            let osTop = document.documentElement.scrollTop || document.body.scrollTop ;  //同时兼容了ie和Chrome
                 
             //减少的速度
             let isSpeed = Math.floor(-osTop / 6);
