@@ -605,7 +605,7 @@ function getAllSelectLogic(){
         });  
     }else if(getAllSelect[0] == '不重要'){
         getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
+            // clientTotal.push(snapshot.val().name)
         });  
     }
     // 費用
@@ -649,7 +649,7 @@ function getAllSelectLogic(){
       
     }else if(getAllSelect[1] == '不重要'){
         getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
+            // clientTotal.push(snapshot.val().name)
         });  
     }
     // 每周時數
@@ -687,7 +687,7 @@ function getAllSelectLogic(){
         
     }else if(getAllSelect[2] == '不重要'){
         getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
+            // clientTotal.push(snapshot.val().name)
         });  
     }
     // 班制
@@ -697,7 +697,7 @@ function getAllSelectLogic(){
         });  
     }else if(getAllSelect[3] == '不重要'){
         getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
+            // clientTotal.push(snapshot.val().name)
         });  
     }
     // 教學制度
@@ -707,7 +707,7 @@ function getAllSelectLogic(){
         });  
     }else if(getAllSelect[4] == '不重要'){
         getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
-            clientTotal.push(snapshot.val().name)
+            // clientTotal.push(snapshot.val().name)
         });  
     }
     
