@@ -18,14 +18,9 @@ const forDeletePost = document.getElementById('forDeletePost');
 const rightCollection = document.getElementById('rightCollection');
 const myCollection = document.getElementById('myCollection');
 
-// window.onload = function(){
-//     this.setTimeout(loadAllLoginStuff, 2000);
-// }
-
 setTimeout(loadAllLoginStuff, 4000);
 
 function loadAllLoginStuff(){
-    console.log('login ok')
     let getAllMemberData = database.ref("member");
     let dataExist;
     getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
@@ -44,7 +39,6 @@ function loadAllLoginStuff(){
                 inputName.value = 'name';
             }
             inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
-            console.log('data from google')
         }
     }else{
         // firebase 有資料 用裡面的
@@ -59,7 +53,6 @@ function loadAllLoginStuff(){
         if(dataExist.photoUrl){
             inputPhoto.style.background = "url('" + dataExist.photoUrl + "')";
         }
-        console.log('data from firebase')
     }
     
     inputPhoto.style.backgroundPosition= 'center';
@@ -83,7 +76,6 @@ function startFix(){
     inputPhone.style.backgroundColor = 'white';
     inputPhone.style.border = '1px solid rgba(230, 230, 230, 0.7)';
     inputName.style.border = '1px solid rgba(230, 230, 230, 0.7)';
-    console.log('abled')
     fixData.style.display = 'none';
     confirmCancel.style.display = 'flex';
 }
@@ -91,10 +83,8 @@ function startFix(){
 function startConfirm(){
     // disable
     inputName.disabled = true;
-    // inputMail.disabled = true;
     inputPhone.disabled = true;
     inputName.style.backgroundColor = 'rgba(230, 230, 230, 0)';
-    // inputMail.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     inputPhone.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     inputPhone.style.border = '0px solid rgba(230, 230, 230, 0.7)';
     inputName.style.border = '0px solid rgba(230, 230, 230, 0.7)';
@@ -131,19 +121,14 @@ function startConfirm(){
                 uid : dataExist.uid
             });
     }
-
-
-
     confirmAllDataChange();
 }
 
 function startCancel(){
     // disable
     inputName.disabled = true;
-    // inputMail.disabled = true;
     inputPhone.disabled = true;
     inputName.style.backgroundColor = 'rgba(230, 230, 230, 0)';
-    // inputMail.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     inputPhone.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     inputPhone.style.border = '0px solid rgba(230, 230, 230, 0.7)';
     inputName.style.border = '0px solid rgba(230, 230, 230, 0.7)';
@@ -165,7 +150,6 @@ function startCancel(){
             // firebase 沒有資料 用google的
             if(userLogin.photoURL){
                 inputName.value = userLogin.name;
-
             }
         }else{
             // firebase 有資料 用裡面的
@@ -175,19 +159,15 @@ function startCancel(){
     }
 
 //點擊貼文管理後，清空，顯示發布貼文、編輯貼文、刪除貼文
-
-
-
 //登出功能
 
 document.getElementById('logoutTest').onclick = logoutMeOut;
 
 function logoutMeOut(){
     firebase.auth().signOut().then(function() {
-        console.log("User sign out!");
         window.location.reload();
     }, function(error) {
-    console.log("User sign out error!");
+
     })
 }
 
@@ -198,11 +178,10 @@ firebase.auth().onAuthStateChanged(function(user) {
         userLogin = user;
         if(userLogin.email == "aaa24295234@gmail.com" || userLogin.email == "frontenter2018@gmail.com"){
             }else{
-                // window.location = 'profile.html';
+
             }
     } else {
         userLogin = null;
-        console.log("User is not logined yet.");
         window.location = 'index.html' ; 
     }
   });
@@ -246,7 +225,6 @@ function createUpPost(){
     let getAllDeleteData = database.ref("article");
     getAllDeleteData.orderByChild("skill").on("child_added", function(snapshot) {
         let myAllData = snapshot.val();
-        console.log(myAllData)
         bigPostDiv(myAllData);
         postButton(myAllData);
         editImg(myAllData);
@@ -272,7 +250,6 @@ function editImg(myAllData){
     let newElement = document.createElement('div');
     newElement.className = 'imgEdit';
     document.getElementById(myAllData.creatTime).appendChild(newElement);
-    console.log(newElement.parentNode.id);
     newElement.onclick = function(){
         window.location = 'edit.html?id=' + myAllData.creatTime;
     }
@@ -282,7 +259,6 @@ function deleteImg(myAllData){
     let newElement = document.createElement('div');
     newElement.className = 'imgDelete';
     document.getElementById(myAllData.creatTime).appendChild(newElement);
-    console.log(newElement.parentNode.id);
     newElement.onclick = function(){
         if (confirm("確定要刪除此貼文？")) {
             let getAllDeleteData = database.ref("article");
@@ -294,6 +270,7 @@ function deleteImg(myAllData){
                 });
             });  
         } else {
+
         }
     }
 }
@@ -339,7 +316,6 @@ function createCollectionDiv(){
 
     let getLocal;
     getLocal = JSON.parse(window.localStorage.getItem(`collection`));
-
     if(getLocal == ''){
         rightCollection.textContent = '無收藏';
     }else{

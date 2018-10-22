@@ -49,15 +49,10 @@ function clickButton(){
         // 取得檔案上傳狀態，並用數字顯示
 
         let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
         switch (snapshot.state) {
           case firebase.storage.TaskState.PAUSED: // or 'paused'
-
-            console.log('Upload is paused');
             break;
           case firebase.storage.TaskState.RUNNING: // or 'running'
-
-            console.log('Upload is running');
             break;
         }
     }, function(error) {
@@ -68,11 +63,8 @@ function clickButton(){
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 
     let downloadURL = uploadTask.snapshot.downloadURL;
-    console.log(downloadURL)
-
     let pathReference = storageRef.child('images/'+getFile.name);
     pathReference.getDownloadURL().then(function(url) {
-    console.log(url)
     squareUrl = url;
     callRetangle()
     })
@@ -83,19 +75,13 @@ function clickButton(){
         
         uploadTaskRec.on('state_changed', function(snapshot){
             // 觀察狀態變化，例如：progress, pause, and resume
-
             // 取得檔案上傳狀態，並用數字顯示
 
             let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log('Upload is ' + progress + '% done');
             switch (snapshot.state) {
             case firebase.storage.TaskState.PAUSED: // or 'paused'
-
-                console.log('Upload is paused');
                 break;
             case firebase.storage.TaskState.RUNNING: // or 'running'
-
-                console.log('Upload is running');
                 break;
             }
         }, function(error) {
@@ -111,7 +97,7 @@ function clickButton(){
         let pathReference = storageRef.child('images/'+getRectangleFile.name);
         pathReference.getDownloadURL().then(function(url) {
         console.log(url)
-        rectangleUrl = url
+        rectangleUrl = url;
 
         //存入所有資料
         let newPostKey = firebase.database().ref().child('article').push().key;
@@ -175,10 +161,9 @@ document.getElementById('logoutTest').onclick = logMeOut;
 
 function logMeOut(){
     firebase.auth().signOut().then(function() {
-        console.log("User sign out!");
         window.location.reload();
     }, function(error) {
-    console.log("User sign out error!");
+
     })
 }
 
@@ -193,7 +178,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   } else {
     userLogin = null;
-    console.log("User is not logined yet.");
     window.location = 'index.html' ; 
   }
 });
@@ -209,7 +193,6 @@ const alertBigBox = document.getElementById('alertBigBox');
 const alertButton = document.getElementById('alertButton');
 const alertWord = document.getElementById('alertWord');
 alertBigBox.style.display = 'none';
-
 alertButton.addEventListener('click', ()=>{
     alertBigBox.style.display = 'none';
 });
@@ -225,7 +208,7 @@ function letLoadingNone(){
     loadingImg.style.marginBottom = '-1000px';
     header.style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
     myAside.style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
-    setTimeout(displayNoneLoading, 600)
+    setTimeout(displayNoneLoading, 600);
     function displayNoneLoading(){
         loadingAnimation.style.display = 'none';
     }

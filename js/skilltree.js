@@ -1,5 +1,4 @@
 // 所有的 DOM
-
 // 問題開關
 
 const questionDiv = document.getElementById('questionDiv');
@@ -118,21 +117,6 @@ function closeMyQ(){
     }
 }
 
-// 更換遊戲頭貼
-
-// setTimeout(replaceIcon,3000 );
-
-// function replaceIcon(){
-//     if(userLogin.photoURL){
-//         userIcon.style.background = "url('" + userLogin.photoURL + "')"; 
-//         userIcon.style.backgroundPosition= 'center';
-//         userIcon.style.backgroundSize= 'contain';
-//         userIcon.style.backgroundRepeat= 'no-repeat';
-//         userIcon.style.backgroundPosition = 'left';
-//     }
-// }
-
-
 htmlB.addEventListener('click', htmlPass);
 
 function htmlPass(){
@@ -195,8 +179,7 @@ function htmlGuestRight(event){
                 setTimeout(htmlTyping, 60);
             
             }else{    
-                typeWord.innerHTML = str;//結束打字,移除 _ 光標
-                // bgMusic.autoplay = false;
+                typeWord.innerHTML = str;  //結束打字,移除 _ 光標
                 bgMusic.pause();
                 setTimeout(closeFullType, 1500)
 
@@ -235,7 +218,7 @@ cssB.addEventListener('click', function(){
     if(cssB.style.cursor){
         cssPass();
     }else{
-        console.log(cssB.style.cursor);
+
     }
 });
 
@@ -249,8 +232,6 @@ function cssPass(){
 }
 
 function cssGuestRight(){
-    // answerIsRight();
-    // questionDiv.style.display = 'none';
     cssLayout();
     userIcon.style.top = '10.2%';
     userIcon.style.left = '55%';
@@ -264,9 +245,7 @@ function cssGuestRight(){
         function cssTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
-                setTimeout(cssTyping, 60);
-                console.log('cscs')
-            
+                setTimeout(cssTyping, 60);           
             }else{    
                 typeWord.innerHTML = str;//結束打字,移除 _ 光標
                 bgMusic.pause();
@@ -295,7 +274,7 @@ jsB.addEventListener('click', function(){
     if(jsB.style.cursor){
         jsPass();
     }else{
-        console.log(cssB.style.cursor);
+
     }
 });
 
@@ -309,13 +288,11 @@ function jsPass(){
 }
 
 function jsGuestRight(){
-    // answerIsRight();
-    // questionDiv.style.display = 'none';
     jsLayout();
     userIcon.style.top = '20.2%';
     userIcon.style.left = '53%';
 
-    //打字效果
+    // 打字效果
     if(this.textContent == 'function'){
         let str = '恭喜你通過 JavaScript 關卡。JavaScript 也是小編最喜歡的語言，掌握它，就等於邁入前端工程師的行列，它不只能為你帶來一份工作，也擴展你的視野，擁有接軌科技的能力。';
         let i = 0;
@@ -325,10 +302,8 @@ function jsGuestRight(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
                 setTimeout(jsTyping, 60);
-                console.log('cscs')
-            
             }else{    
-                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                typeWord.innerHTML = str; //結束打字,移除 _ 光標
                 bgMusic.pause();
                 setTimeout(closeFullType, 1500)
             }
@@ -336,7 +311,7 @@ function jsGuestRight(){
         jsTyping();
     }else{
     }
-    //打字效果
+    // 打字效果
 
 }
 
@@ -359,7 +334,7 @@ jQueryB.addEventListener('click', function(){
     if(jQueryB.style.cursor){
         jQueryPass();
     }else{
-        console.log(cssB.style.cursor);
+
     }
 });
 
@@ -373,13 +348,11 @@ function jQueryPass(){
 }
 
 function jQueryGuestRight(){
-    // answerIsRight();
-    // questionDiv.style.display = 'none';
     jQueryLayout();
     userIcon.style.top = '20.2%';
     userIcon.style.left = '42%';
 
-    //打字效果
+    // 打字效果
     if(this.textContent == 'jQuery 含錢字符號'){
         let str = 'jQuery 是相當方便的 JavaScript 函式庫，它幫你把程式封裝好，只要加上經典的 $ 字號作為前綴，就能使用眾多功能。';
         let i = 0;
@@ -388,11 +361,9 @@ function jQueryGuestRight(){
         function jqueryTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
-                setTimeout(jqueryTyping, 60);
-                console.log('cscs')
-            
+                setTimeout(jqueryTyping, 60);           
             }else{    
-                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                typeWord.innerHTML = str;  //結束打字,移除 _ 光標
                 bgMusic.pause();
                 setTimeout(closeFullType, 1500)
             }
@@ -415,7 +386,7 @@ domB.addEventListener('click', function(){
     if(domB.style.cursor){
         domPass();
     }else{
-        console.log(cssB.style.cursor);
+
     }
 });
 
@@ -429,8 +400,6 @@ function domPass(){
 }
 
 function domGuestRight(){
-    // answerIsRight();
-    // questionDiv.style.display = 'none';
     domLayout();
     userIcon.style.top = '31.7%';
     userIcon.style.left = '48.5%';
@@ -444,11 +413,9 @@ function domGuestRight(){
         function rwdTyping(){
             if (i <= str.length) {
                 typeWord.innerHTML = str.slice(0, i++) + '_';
-                setTimeout(rwdTyping, 60);
-                console.log('cscs')
-            
+                setTimeout(rwdTyping, 60);           
             }else{    
-                typeWord.innerHTML = str;//結束打字,移除 _ 光標
+                typeWord.innerHTML = str;  // 結束打字,移除 _ 光標
                 bgMusic.pause();
                 setTimeout(closeFullType, 1500)
             }
@@ -457,7 +424,6 @@ function domGuestRight(){
     }else{
     }
     //打字效果
-
 }
 
 function domLayout(){
@@ -1199,7 +1165,7 @@ userIcon.addEventListener('mouseleave', function(){
     userIcon.innerHTML = '';
 })
 
-// realtime on site number
+// 顯示目前有多少人在玩
 
 let listRef = database.ref("counter");
 let userRef = listRef.push();

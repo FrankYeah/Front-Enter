@@ -11,20 +11,22 @@ const loadingAnimation = document.getElementById('loadingAnimation');
 const loadingImg = document.getElementById('loadingImg');
 const myAside = document.getElementById('myAside');
 
-headerP3.addEventListener("mouseover", function(){
+headerP3.addEventListener('mouseover', function(){
     headerP3.style.color='rgb(26, 216, 211)';
 });
-headerP3.addEventListener("mouseout", function(){
+headerP3.addEventListener('mouseout', function(){
     headerP3.style.color='rgb(128, 128, 128)';
 })
 
 window.addEventListener('scroll',winScroll);
 function winScroll(){
-    if(document.documentElement.scrollTop>0){
-        webSearch.src = "images/FE_search_green.png";
-        logo.src = "images/FE_logo-4.png";
+    if(document.documentElement.scrollTop > 0){
+        webSearch.src = 'images/FE_search_green.png';
+        logo.src = 'images/FE_logo-4.png';
         // logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
-        headerP1.style.color="rgb(128,128,128)";headerP2.style.color="rgb(128,128,128)";headerP3.style.color="rgb(128,128,128)";
+        headerP1.style.color="rgb(128,128,128)";
+        headerP2.style.color="rgb(128,128,128)";
+        headerP3.style.color="rgb(128,128,128)";
         header.style.animation = "headerBackgroundOut 5s ease 0s 1 alternate forwards";
         if(userLogin && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(128, 128, 128)';
@@ -750,19 +752,19 @@ function maxValue(){
         styleElem.innerHTML = "#endPieChart:before {transform: rotate(108deg);}";
     }else if(maxCount == 3){
         maxCount = '60%';
-        styleElem.innerHTML = "#endPieChart:before {transform: rotate(36deg);}";
+        styleElem.innerHTML = '#endPieChart:before {transform: rotate(36deg);}';
     }else if(maxCount == 2){
         maxCount = '40%'
-        styleElem.innerHTML = "#endPieChart:before {transform: rotate(0deg);}";
-        styleElemOne.innerHTML = "#endPieChart:after {transform: rotate(144deg);}";
-        styleElemTwo.innerHTML = "#endPieChart:after {border-color: rgb(26,216,211);}";
+        styleElem.innerHTML = '#endPieChart:before {transform: rotate(0deg);}';
+        styleElemOne.innerHTML = '#endPieChart:after {transform: rotate(144deg);}';
+        styleElemTwo.innerHTML = '#endPieChart:after {border-color: rgb(26,216,211);}';
     }else if(maxCount == 1){
-        maxCount = '20%'
-        styleElem.innerHTML = "#endPieChart:before {transform: rotate(0deg);}";
-        styleElemOne.innerHTML = "#endPieChart:after {transform: rotate(72deg);}";
-        styleElemTwo.innerHTML = "#endPieChart:after {border-color: rgb(26,216,211);}";
+        maxCount = '20%';
+        styleElem.innerHTML = '#endPieChart:before {transform: rotate(0deg);}';
+        styleElemOne.innerHTML = '#endPieChart:after {transform: rotate(72deg);}';
+        styleElemTwo.innerHTML = '#endPieChart:after {border-color: rgb(26,216,211);}';
     }else if(maxCount == 0){
-        maxCount = '0%'
+        maxCount = '0%';
     }
 
     console.log(maxEl)

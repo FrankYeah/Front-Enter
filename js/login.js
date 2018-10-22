@@ -10,7 +10,6 @@ function createLoginLayout(){
                 window.location = 'profile.html';
             }
         }else{
-            console.log('這個人還沒登入過欸')
             loginFullDiv();
             loginDivWhite();
             loginDivLogo();
@@ -21,12 +20,7 @@ function createLoginLayout(){
             registerLoginDiv();
             registerButtonP();
             loginButtonP();
-            // LoginStopLine();
-            // stopLineLeft();
-            // stopLineWord();
-            // stopLineLeft();
             gmailLoginButton();
-            // fbLoginButton();
         }
 }
 
@@ -38,8 +32,6 @@ function loginFullDiv(){
     newElement.onclick = function(){
         let child=document.getElementById("loginFullDiv");
         document.body.removeChild(child);
-        // let otherChild=document.getElementById("loginDivWhite");
-        // document.body.removeChild(otherChild);
     }
 }
 
@@ -116,28 +108,6 @@ function loginButtonP(){
     newElement.onclick = loginHere;
 }
 
-function LoginStopLine(){
-    let newElement = document.createElement('div');
-    newElement.id = 'LoginStopLine'
-    newElement.className = 'Login-stop-line';
-    document.getElementById('loginDivWhite').appendChild(newElement);
-}
-
-function stopLineLeft(){
-    let newElement = document.createElement('div');
-    newElement.id = 'stopLineLeft'
-    newElement.className = 'stop-line-left';
-    document.getElementById('LoginStopLine').appendChild(newElement);
-}
-
-function stopLineWord(){
-    let newElement = document.createElement('div');
-    newElement.id = 'stopLineWord';
-    newElement.textContent = 'or';
-    newElement.className = 'stop-line-word';
-    document.getElementById('LoginStopLine').appendChild(newElement);
-}
-
 function gmailLoginButton(){
     let newElement = document.createElement('p');
     newElement.id = 'gmailLoginButton'
@@ -147,16 +117,6 @@ function gmailLoginButton(){
     newElement.onclick = letGmailLogin;
 }
 
-function fbLoginButton(){
-    let newElement = document.createElement('p');
-    newElement.id = 'fbLoginButton'
-    newElement.className = 'fb-login-button';
-    newElement.textContent = '登出';
-    document.getElementById('loginDivWhite').appendChild(newElement);
-    // 假登出
-    newElement.onclick = logoutHere;
-}
-
 // 建立帳號
 
 function createAccount(){
@@ -164,9 +124,8 @@ function createAccount(){
     let createCode = document.getElementById('loginInputCode').value;
     firebase.auth().createUserWithEmailAndPassword(createMail, createCode).then(detectLogin()).catch(function(error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMsg = error.message;
-        console.log(errorMsg);
+        let errorCode = error.code;
+        let errorMsg = error.message;
         accountAlreadyBeRegister();
       });      
 }
@@ -178,9 +137,8 @@ function loginHere(){
     let userLoginCode = document.getElementById('loginInputCode').value;
     firebase.auth().signInWithEmailAndPassword(userLoginMail, userLoginCode).catch(function(error) {
         // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorMessage);
+        let errorCode = error.code;
+        let errorMessage = error.message;
         wrongPassword();
     })
     setTimeout(reloadLogin,5000)
@@ -198,15 +156,12 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userLogin = user;
     if(userLogin.emailVerified == true){
-    console.log("User is logined", user);
     //資料輸入
     storeDataToFirebase();
     }else{
-        console.log('尚未驗證此郵件')
         firebase.auth().signOut().then(function() {
-            console.log("User sign out!");
         }, function(error) {
-        console.log("User sign out error!");
+
         })
     }
   } else {
@@ -221,7 +176,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     function changeColorAgain(){
         headerP3.style.color = 'rgb(128, 128, 128)';
     }
-    console.log("User is not logined yet.");
   }
 });
 
@@ -247,14 +201,12 @@ function storeDataToFirebase(){
     let dataExist;
     getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
         dataExist = snapshot.val();
-        console.log(dataExist);
     });  
 
     setTimeout(testDataExist ,5000);
 
     function testDataExist(){
         if(dataExist == undefined){
-            console.log('undefined')
             let newPostKey = firebase.database().ref().child('member').push().key;
             firebase.database().ref('member/'+newPostKey).set({
                 name: userLogin.displayName,
@@ -265,16 +217,9 @@ function storeDataToFirebase(){
                 uid : newPostKey
             });
         }else{
-            console.log('have data')
+
         }
     }
-
-
-
-    // 有資料的話，直接略過此事
-
-    //沒資料的話，就在 firebase 中新增一筆
-
 }
 
 // 創建帳號後，檢測登入並寄送驗證信
@@ -283,15 +228,13 @@ function detectLogin(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           userLogin = user;
-          console.log("User is logined", user)
           user.sendEmailVerification().then(function() {
             veriefyMailSend();
           }, function(error) {
-            console.error("驗證信錯誤");
+
           });
-        } else {
+        }else{
           userLogin = null;
-          console.log("User is not logined yet.");
         }      
       });
 }
@@ -300,10 +243,9 @@ function detectLogin(){
 
 function logoutHere(){
     firebase.auth().signOut().then(function() {
-        console.log("User sign out!");
         window.location.reload();
     }, function(error) {
-    console.log("User sign out error!");
+
     })
 }
 
@@ -321,8 +263,6 @@ function judgeForgetCode(){
             userLoginMail = "";
           }, function(error) {
             // An error happened.
-        
-            console.error("更改密碼",error);
           });
     }
 }

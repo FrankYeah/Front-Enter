@@ -77,15 +77,10 @@ function clickButton(){
         // 取得檔案上傳狀態，並用數字顯示
 
         let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
         switch (snapshot.state) {
           case firebase.storage.TaskState.PAUSED: // or 'paused'
-
-            console.log('Upload is paused');
             break;
           case firebase.storage.TaskState.RUNNING: // or 'running'
-
-            console.log('Upload is running');
             break;
         }
     }, function(error) {
@@ -94,13 +89,9 @@ function clickButton(){
     }, function() {
     // Handle successful uploads on complete
     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-
     let downloadURL = uploadTask.snapshot.downloadURL;
-    console.log(downloadURL)
-
     let pathReference = storageRef.child('images/'+getFile.name);
     pathReference.getDownloadURL().then(function(url) {
-    console.log(url)
     squareUrl = url;
     callRetangle()
     })
@@ -115,15 +106,10 @@ function clickButton(){
             // 取得檔案上傳狀態，並用數字顯示
 
             let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-            console.log('Upload is ' + progress + '% done');
             switch (snapshot.state) {
             case firebase.storage.TaskState.PAUSED: // or 'paused'
-
-                console.log('Upload is paused');
                 break;
             case firebase.storage.TaskState.RUNNING: // or 'running'
-
-                console.log('Upload is running');
                 break;
             }
         }, function(error) {
@@ -134,11 +120,8 @@ function clickButton(){
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 
         let downloadURL = uploadTaskRec.snapshot.downloadURL;
-        console.log(downloadURL)
-
         let pathReference = storageRef.child('images/'+getRectangleFile.name);
         pathReference.getDownloadURL().then(function(url) {
-        console.log(url)
         rectangleUrl = url
 
         //存入所有資料
@@ -203,10 +186,9 @@ document.getElementById('logoutTest').onclick = logMeOut;
 
 function logMeOut(){
     firebase.auth().signOut().then(function() {
-        console.log("User sign out!");
         window.location.reload();
     }, function(error) {
-    console.log("User sign out error!");
+
     })
 }
 
@@ -221,7 +203,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   } else {
     userLogin = null;
-    console.log("User is not logined yet.");
     window.location = 'index.html' ; 
   }
 });
