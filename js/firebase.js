@@ -10,7 +10,6 @@
   };
 
   firebase.initializeApp(config);
-
   let database = firebase.database();
   let storage = firebase.storage();
   let storageRef = storage.ref();

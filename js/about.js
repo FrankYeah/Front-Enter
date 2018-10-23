@@ -1,6 +1,4 @@
-app.get('#aboutSend').addEventListener('click' ,sendToMail);
-
-function sendToMail(){
+app.get('#aboutSend').addEventListener('click' ,function(){
     if(app.get('#aboutName').value && app.get('#aboutMail').value && app.get('#aboutTitle').value && app.get('#aboutContent').value){
         let newPostKey = firebase.database().ref().child('feedback').push().key;
         firebase.database().ref('feedback/'+newPostKey).set({
@@ -11,31 +9,20 @@ function sendToMail(){
             content : app.get('#aboutContent').value,
             creatTime: new Date().getTime()
         });
-        getFeedback();
+        app.get('#alertBigBox').style.display = 'flex';
+        app.get('#alertWord').innerHTML = '成功送出，我們會盡快回覆您！';
+        app.get('#aboutName').value = '';
+        app.get('#aboutMail').value = '';
+        app.get('#aboutTitle').value = '';
+        app.get('#aboutContent').value = '';
     }else{
-        pleaseWriteRight('請確實填寫內容')
+        app.get('#alertBigBox').style.display = 'flex';
+        app.get('#alertWord').innerHTML = '請確實輸入資料';
     }
 }
-
-function getFeedback(){
-    successOut();
-    app.get('#aboutName').value = '';
-    app.get('#aboutMail').value = '';
-    app.get('#aboutTitle').value = '';
-    app.get('#aboutContent').value = '';
-}
+);
 
 // alert 
-
-function successOut(){
-    app.get('#alertBigBox').style.display = 'flex';
-    app.get('#alertWord').innerHTML = '成功送出，我們會盡快回覆您！';
-}
-
-function pleaseWriteRight(){
-    app.get('#alertBigBox').style.display = 'flex';
-    app.get('#alertWord').innerHTML = '請確實輸入資料';
-}
 
 app.get('#alertBigBox').style.display = 'none';
 app.get('#alertButton').addEventListener('click', ()=>{
@@ -44,19 +31,19 @@ app.get('#alertButton').addEventListener('click', ()=>{
 
 // close loading
 
-setTimeout(letLoadingNone, 1000)
-function letLoadingNone(){
-    loadingAnimation.style.height = '0px';
-    loadingAnimation.style.opacity = '0.9';
-    loadingDrawing.style.height = '0px';
-    loadingDrawing.style.opacity = '0.9';
-    loadingImg.style.marginBottom = '-1000px';
-    header.style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
-    myAside.style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
-    setTimeout(displayNoneLoading, 600)
-    function displayNoneLoading(){
-        loadingAnimation.style.display = 'none';
+setTimeout(function(){
+    app.get('#loadingAnimation').style.height = '0px';
+    app.get('#loadingAnimation').style.opacity = '0.9';
+    app.get('#loadingDrawing').style.height = '0px';
+    app.get('#loadingDrawing').style.opacity = '0.9';
+    app.get('#loadingImg').style.marginBottom = '-1000px';
+    app.get('#header').style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
+    app.get('#myAside').style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
+    setTimeout(function(){
+        app.get('#loadingAnimation').style.display = 'none';
     }
+    , 600)
 }
+, 1000)
 
 

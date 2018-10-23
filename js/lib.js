@@ -1,17 +1,10 @@
 // general method
-
 let app = {
 	evts: {},
-	favorite: {},
-	search: {},
 };
-
 // core operations
 app.get = function (selector) {
 	return document.querySelector(selector);
-};
-app.getAll = function (selector) {
-	return document.querySelectorAll(selector);
 };
 app.createElement = function (tagName, settings, parentElement) {
 	let obj = document.createElement(tagName);
@@ -25,21 +18,6 @@ app.createElement = function (tagName, settings, parentElement) {
 		app.setEventHandlers(obj, settings.evts);
 	}
 	if (parentElement instanceof Element) {
-		parentElement.appendChild(obj);
-	}
-	return obj;
-};
-app.modifyElement = function (obj, settings, parentElement) {
-	if (settings.atrs) {
-		app.setAttributes(obj, settings.atrs);
-	}
-	if (settings.stys) {
-		app.setStyles(obj, settings.stys);
-	}
-	if (settings.evts) {
-		app.setEventHandlers(obj, settings.evts);
-	}
-	if (parentElement instanceof Element && parentElement !== obj.parentNode) {
 		parentElement.appendChild(obj);
 	}
 	return obj;

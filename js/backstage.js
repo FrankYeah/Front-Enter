@@ -3,11 +3,9 @@ let squareUrl = '';
 let rectangleUrl = '';
 let getFile = '';
 let getRectangleFile = '';
-
 app.get("#mainUploadPic").addEventListener('change', function(){
     getFile = this.files[0]
 },false);
-
 app.get("#RectanglePic").addEventListener('change', function(){
     getRectangleFile = this.files[0]
 },false);
@@ -15,19 +13,15 @@ app.get("#RectanglePic").addEventListener('change', function(){
 // set the post
 
 app.get("#mainButton").addEventListener('click',clickButton);
-
 function clickButton(){
-        
     let storageRef = firebase.storage().ref();
     let uploadTask = storageRef.child('images/'+getFile.name).put(getFile);
     let uploadTaskRec = storageRef.child('images/'+getRectangleFile.name).put(getRectangleFile);
 
 // square photo
-
     uploadTask.on('state_changed', function(snapshot){
         // observe status：progress, pause, and resume
         // get upload status and display by number
-
         let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         switch (snapshot.state) {
           case firebase.storage.TaskState.PAUSED: // or 'paused'
@@ -52,7 +46,6 @@ function clickButton(){
 
 // rectangle img
     function callRetangle(){
-        
         uploadTaskRec.on('state_changed', function(snapshot){
             // observe status：progress, pause, and resume
             // get upload status and display by num
@@ -66,11 +59,9 @@ function clickButton(){
             }
         }, function(error) {
         // Handle unsuccessful uploads
-
         }, function() {
         // Handle successful uploads on complete
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-
         let downloadURL = uploadTaskRec.snapshot.downloadURL;
         let pathReference = storageRef.child('images/'+getRectangleFile.name);
         pathReference.getDownloadURL().then(function(url) {
@@ -98,10 +89,8 @@ function clickButton(){
         let rUrl = rectangleUrl;
         writePost(newPostKey, name, city, skill, technology, fee, totalDay, weekHour,foundYear,
                 teachWay, classType, teacherNum, topic, preface, content, phone, mail, sUrl, rUrl);
-
         })
         });
-
     }
 }
 
@@ -129,23 +118,19 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     creatTime: new Date().getTime(),
     uid: newPostKey
     });
-    postAlreadyOut();
+    app.get("#alertBigBox").style.display = 'flex';
+    app.get("#alertWord").innerHTML = '貼文已發布';
 }
 
 // log out
-
-app.get('#logoutTest').onclick = logMeOut;
-
-function logMeOut(){
+app.get('#logoutTest').onclick = function (){
     firebase.auth().signOut().then(function() {
         window.location.reload();
     }, function(error) {
-
     })
 }
 
 // set log in auth
-
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userLogin = user;
@@ -160,21 +145,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 //alert
-
-function postAlreadyOut(){
-    app.get("#alertBigBox").style.display = 'flex';
-    app.get("#alertWord").innerHTML = '貼文已發布';
-}
-
 app.get("#alertBigBox").style.display = 'none';
 app.get("#alertButton").addEventListener('click', ()=>{
     app.get("#alertBigBox").style.display = 'none';
 });
 
 // close loading
-
-setTimeout(letLoadingNone, 1000)
-function letLoadingNone(){
+setTimeout(function(){
     loadingAnimation.style.height = '0px';
     loadingAnimation.style.opacity = '0.9';
     loadingDrawing.style.height = '0px';
@@ -182,8 +159,9 @@ function letLoadingNone(){
     loadingImg.style.marginBottom = '-1000px';
     header.style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
     myAside.style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
-    setTimeout(displayNoneLoading, 600);
-    function displayNoneLoading(){
+    setTimeout(function(){
         loadingAnimation.style.display = 'none';
     }
+    , 600);
 }
+, 1000)

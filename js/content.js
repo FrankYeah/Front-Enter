@@ -111,7 +111,6 @@ function rotateLeftArrow(){
 }
 
 let rotateRotate = 0 ;
-
 function startLeft(){
     if(rotateRotate==0){
         rotateRotate = 4;
@@ -162,16 +161,13 @@ function deleteRotateFull(){
 }
 
 // alert 
-
 app.get("#alertBigBox").style.display = 'none';
 app.get("#alertButton").addEventListener('click', ()=>{
     app.get("#alertBigBox").style.display = 'none';
 });
 
 // close loading
-
-setTimeout(letLoadingNone, 1500)
-function letLoadingNone(){
+setTimeout(function(){
     app.get('#loadingAnimation').style.height = '0px';
     app.get('#loadingAnimation').style.opacity = '0.9';
     app.get('#loadingDrawing').style.height = '0px';
@@ -184,3 +180,4 @@ function letLoadingNone(){
         app.get('#loadingAnimation').style.display = 'none';
     }
 }
+, 1500)

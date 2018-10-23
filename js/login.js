@@ -1,7 +1,5 @@
 // create log in layout
-headerP3.addEventListener('click', createLoginLayout);
-
-function createLoginLayout(){
+headerP3.addEventListener('click', function(){
         // judge if log in or not
         if(userLogin){
             if(userLogin.email == 'aaa24295234@gmail.com'){
@@ -23,6 +21,7 @@ function createLoginLayout(){
             gmailLoginButton();
         }
 }
+);
 
 function loginFullDiv(){
     let newElement = document.createElement('div');
@@ -36,13 +35,14 @@ function loginFullDiv(){
 }
 
 function loginDivWhite(){
-    let newElement = document.createElement('div');
-    newElement.id = 'loginDivWhite';
-    newElement.className = 'login-div-white';
-    document.getElementById('loginFullDiv').appendChild(newElement);
-    newElement.onclick = function(event){
-        event.stopPropagation();
-    }
+    app.createElement("div", {atrs:{
+        className:'login-div-white',
+        id: 'loginDivWhite'
+    },  evts:{
+        click:function(event){
+            event.stopPropagation();
+        }
+    }}, app.get('#loginFullDiv'));
 }
 
 function loginDivLogo(){
@@ -126,7 +126,8 @@ function createAccount(){
         // Handle Errors here.
         let errorCode = error.code;
         let errorMsg = error.message;
-        accountAlreadyBeRegister();
+        alertBigBox.style.display = 'flex';
+        alertWord.innerHTML = '電子郵件已被註冊';
       });      
 }
 
@@ -139,13 +140,15 @@ function loginHere(){
         // Handle Errors here.
         let errorCode = error.code;
         let errorMessage = error.message;
-        wrongPassword();
+        alertBigBox.style.display = 'flex';
+        alertWord.innerHTML = '郵件或密碼輸入錯誤';
     })
     setTimeout(reloadLogin,5000)
 }
 
 function reloadLogin(){
-    itReadyToLogout();
+    alertBigBox.style.display = 'flex';
+    alertWord.innerHTML = '重新載入';
     window.location.reload();
 }
 
@@ -229,7 +232,8 @@ function detectLogin(){
         if (user) {
           userLogin = user;
           user.sendEmailVerification().then(function() {
-            veriefyMailSend();
+            alertBigBox.style.display = 'flex';
+            alertWord.innerHTML = '驗證信已寄出';
           }, function(error) {
 
           });
@@ -254,12 +258,14 @@ function logoutHere(){
 function judgeForgetCode(){
     let userLoginMail = document.getElementById('loginInputMail').value;
     if(userLoginMail == ''){
-        inputMailForgetPassword();
+        alertBigBox.style.display = 'flex';
+        alertWord.innerHTML = '請輸入電子郵件後，再次點選「忘記密碼」';
     }else{
         firebase.auth().sendPasswordResetEmail(userLoginMail).then(function() {
             // Email sent.
         
-            changePasswordAndMailSend();
+            alertBigBox.style.display = 'flex';
+            alertWord.innerHTML = '更改密碼 Email 已發送';
             userLoginMail = '';
           }, function(error) {
             // An error happened.
@@ -290,36 +296,4 @@ function letGmailLogin(){
         var credential = error.credential;
         // ...
     });
-}
-
-// alert
-
-function accountAlreadyBeRegister(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '電子郵件已被註冊';
-}
-
-function itReadyToLogout(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '重新載入';
-}
-
-function wrongPassword(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '郵件或密碼輸入錯誤';
-}
-
-function veriefyMailSend(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '驗證信已寄出';
-}
-
-function inputMailForgetPassword(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '請輸入電子郵件後，再次點選「忘記密碼」';
-}
-
-function changePasswordAndMailSend(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '更改密碼 Email 已發送';
 }

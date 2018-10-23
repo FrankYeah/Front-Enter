@@ -1,19 +1,13 @@
 // change userIcon
-
-app.get('#userIcon').addEventListener('click', changeMyIcon);
-
-function changeMyIcon(){
+app.get('#userIcon').addEventListener('click', function(){
     app.get('#fullIcon').style.display = 'flex';
-}
-
+});
 app.get('#fullIcon').addEventListener('click', function(event){
     app.get('#fullIcon').style.display = 'none';
 });
-
 whiteDivIcon.addEventListener('click', function(event){
     event.stopPropagation();
 });
-
 app.get('#cuteOne').addEventListener('click', function(){
     app.get('#userIcon').style.background = 'url(../Front-Enter/images/cute.svg)';
     app.get('#userIcon').style.backgroundRepeat = 'no-repeat';
@@ -21,7 +15,6 @@ app.get('#cuteOne').addEventListener('click', function(){
     app.get('#userIcon').style.backgroundPosition = 'left';
     app.get('#fullIcon').style.display = 'none';
 })
-
 app.get('#cuteTwo').addEventListener('click', function(){
     app.get('#userIcon').style.background = 'url(../Front-Enter/images/cute2.svg)';
     app.get('#userIcon').style.backgroundRepeat = 'no-repeat';
@@ -29,7 +22,6 @@ app.get('#cuteTwo').addEventListener('click', function(){
     app.get('#userIcon').style.backgroundPosition = 'left';
     app.get('#fullIcon').style.display = 'none';
 })
-
 app.get('#cuteThree').addEventListener('click', function(){
     app.get('#userIcon').style.background = 'url(../Front-Enter/images/cute3.svg)';
     app.get('#userIcon').style.backgroundRepeat = 'no-repeat';
@@ -39,7 +31,6 @@ app.get('#cuteThree').addEventListener('click', function(){
 })
 
 // click empty to close div
-
 app.get('#questionBox').addEventListener('click', function(event){
     event.stopPropagation();
     app.get('#questionDiv').style.display = 'none';
@@ -67,7 +58,6 @@ function closeMyQ(){
 }
 
 app.get('#htmlB').addEventListener('click', htmlPass);
-
 function htmlPass(){
     app.get('#questionDiv').style.display = 'flex';
     app.get('#questionHead').textContent = ' 請問 HTML 是什麼？';
@@ -138,15 +128,12 @@ function htmlGuestRight(event){
 function closeFullType(){
     app.get('#fullType').style.display = 'none';
 }
-
 app.get('#fullType').addEventListener('click', function(){
     app.get('#fullType').style.display = 'none';
 })
-
 app.get('#typeWord').addEventListener('click', function(){
     app.get('#fullType').style.display = 'none';
 })
-
 function htmlLayout(){
     app.get('#htmlB').style.backgroundColor = 'rgb(26, 216, 211)';
     app.get('#htmlB').style.color = 'white';
@@ -157,12 +144,10 @@ function htmlLayout(){
 }
 
 // css 
-
 app.get('#cssB').addEventListener('click', function(){
     if(app.get('#cssB').style.cursor){
         cssPass();
     }else{
-
     }
 });
 
@@ -198,7 +183,6 @@ function cssGuestRight(){
         }
         cssTyping();
     }else{
-
     }
 }
 
@@ -212,12 +196,10 @@ function cssLayout(){
 }
 
 // js 
-
 app.get('#jsB').addEventListener('click', function(){
     if(app.get('#jsB').style.cursor){
         jsPass();
     }else{
-
     }
 });
 
@@ -271,12 +253,10 @@ function jsLayout(){
 }
 
 // jQuery
-
 app.get('#jQueryB').addEventListener('click', function(){
     if(app.get('#jQueryB').style.cursor){
         jQueryPass();
     }else{
-
     }
 });
 
@@ -322,7 +302,6 @@ function jQueryLayout(){
 }
 
 // DOM
-
 app.get('#domB').addEventListener('click', function(){
     if(app.get('#domB').style.cursor){
         domPass();
@@ -363,7 +342,6 @@ function domGuestRight(){
         }
         rwdTyping();
     }else{
-
     }
 }
 
@@ -377,7 +355,6 @@ function domLayout(){
 }
 
 //ajax
-
 app.get('#ajaxB').addEventListener('click', function(){
     if(app.get('#ajaxB').style.cursor){
         ajaxPass();
@@ -436,7 +413,6 @@ function ajaxLayout(){
 }
 
 // ES6
-
 app.get('#es6B').addEventListener('click', function(){
     if(app.get('#es6B').style.cursor){
         es6Pass();
@@ -477,7 +453,6 @@ function es6GuestRight(){
         }
         scssTyping();
     }else{
-
     }
 }
 
@@ -491,12 +466,10 @@ function es6Layout(){
 }
 
 // json
-
 app.get('#jsonB').addEventListener('click', function(){
     if(app.get('#jsonB').style.cursor){
         jsonPass();
     }else{
-
     }
 });
 
@@ -545,12 +518,10 @@ function jsonLayout(){
 }
 
 // SPA
-
 app.get('#spaB').addEventListener('click', function(){
     if(app.get('#spaB').style.cursor){
         spaPass();
     }else{
-
     }
 });
 
@@ -578,7 +549,6 @@ function spaGuestRight(){
             if (i <= str.length) {
                 app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(bootstrapTyping, 60);
-            
             }else{    
                 app.get('#typeWord').innerHTML = str;
                 app.get('#bgMusic').pause();
@@ -596,12 +566,10 @@ function spaLayout(){
 }
 
 // APIs
-
 app.get('#apisB').addEventListener('click', function(){
     if(app.get('#apisB').style.cursor){
         apisPass();
     }else{
-
     }
 });
 
@@ -629,7 +597,6 @@ function apisGuestRight(){
             if (i <= str.length) {
                 app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(reactTyping, 60);
-            
             }else{    
                 app.get('#typeWord').innerHTML = str;
                 app.get('#bgMusic').pause();
@@ -651,7 +618,6 @@ function apisLayout(){
 }
 
 // TDD
-
 app.get('#tddB').addEventListener('click', function(){
     if(app.get('#tddB').style.cursor){
         tddPass();
@@ -703,7 +669,6 @@ function tddLayout(){
 }
 
 // mouse over
-
 // html
 
 app.get('#htmlB').addEventListener('mouseover', showBoxRight);
@@ -734,7 +699,6 @@ function noneBoxRight(){
 }
 
 // js
-
 app.get('#jsB').addEventListener('mouseover', showBoxRightJs);
 app.get('#jsB').addEventListener('mouseleave', noneBoxRightJs);
 
@@ -763,7 +727,6 @@ function noneBoxRightJs(){
 }
 
 // dom
-
 app.get('#domB').addEventListener('mouseover', showBoxRightDom);
 app.get('#domB').addEventListener('mouseleave', noneBoxRightDom);
 
@@ -792,7 +755,6 @@ function noneBoxRightDom(){
 }
 
 // ajax
-
 app.get('#ajaxB').addEventListener('mouseover', showBoxRightAjax);
 app.get('#ajaxB').addEventListener('mouseleave', noneBoxRightAjax);
 
@@ -821,7 +783,6 @@ function noneBoxRightAjax(){
 }
 
 // json
-
 app.get('#jsonB').addEventListener('mouseover', showBoxRightJson);
 app.get('#jsonB').addEventListener('mouseleave', noneBoxRightJson);
 
@@ -850,7 +811,6 @@ function noneBoxRightJson(){
 }
 
 // APIs
-
 app.get('#apisB').addEventListener('mouseover', showBoxRightApis);
 app.get('#apisB').addEventListener('mouseleave', noneBoxRightApis);
 
@@ -879,7 +839,6 @@ function noneBoxRightApis(){
 }
 
 // TDD
-
 app.get('#tddB').addEventListener('mouseover', showBoxRightTdd);
 app.get('#tddB').addEventListener('mouseleave', noneBoxRightTdd);
 
@@ -908,10 +867,8 @@ function noneBoxRightTdd(){
 }
 
 // css
-
 app.get('#cssB').addEventListener('mouseover', showBoxLeft);
 app.get('#cssB').addEventListener('mouseleave', noneBoxLeft);
-
 function showBoxLeft(){
     app.get('#cssB').style.width = '105px';
     app.get('#cssB').style.height = '32px';
@@ -937,7 +894,6 @@ function noneBoxLeft(){
 }
 
 // jQuery
-
 app.get('#jQueryB').addEventListener('mouseover', showBoxJquery);
 app.get('#jQueryB').addEventListener('mouseleave', noneBoxJquery);
 
@@ -1024,7 +980,6 @@ function noneBoxSpa(){
 }
 
 // alert 
-
 app.get("#alertBigBox").style.display = 'none';
 app.get("#alertButton").addEventListener('click', ()=>{
     app.get("#alertBigBox").style.display = 'none';
@@ -1032,8 +987,7 @@ app.get("#alertButton").addEventListener('click', ()=>{
 
 // close loading
 
-setTimeout(letLoadingNone, 1000)
-function letLoadingNone(){
+setTimeout(function(){
     loadingAnimation.style.height = '0px';
     loadingAnimation.style.opacity = '0.9';
     loadingDrawing.style.height = '0px';
@@ -1045,7 +999,7 @@ function letLoadingNone(){
     function displayNoneLoading(){
         loadingAnimation.style.display = 'none';
     }
-}
+}, 1000)
 
 app.get('#userIcon').addEventListener('mouseover', countNumber);
 let clearNum;
@@ -1056,7 +1010,6 @@ function countNumber(){
 listRef.on('value', function(snap) {
     app.get('#userIcon').innerHTML = snap.numChildren() + ' 人也在玩';
 }); 
-
 }
 
 app.get('#userIcon').addEventListener('mouseleave', function(){

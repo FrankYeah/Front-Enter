@@ -7,8 +7,7 @@ app.get('#headerP3').addEventListener('mouseout', function(){
     app.get('#headerP3').style.color='rgb(128, 128, 128)';
 })
 
-window.addEventListener('scroll',winScroll);
-function winScroll(){
+window.addEventListener('scroll',function(){
     if(document.documentElement.scrollTop > 0){
         app.get('#webSearch').src = 'images/FE_search_green.png';
         app.get('#logo').src = 'images/FE_logo-4.png';
@@ -44,11 +43,11 @@ function winScroll(){
         }
       }
 }
+);
 
 // back to top
 
 window.onload = function() {
-
     // detect log in and change word
     if(userLogin && userLogin.emailVerified == true){
         app.get('#headerP3').style.color = 'rgb(128, 128, 128)';

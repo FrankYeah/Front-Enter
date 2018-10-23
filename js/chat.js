@@ -8,7 +8,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 
-
   function initChat(user) {
     // Get a Firebase Database ref
     var chatRef = firebase.database().ref('chat');
@@ -19,9 +18,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     // Set the Firechat user
     chat.setUser(user.uid, user.displayName);
   }
-
-
-
 
 // alert 
 
