@@ -16,7 +16,7 @@ const mainContent = document.getElementById('mainContent');
 const mainPhone = document.getElementById('mainPhone');
 const mainMail = document.getElementById('mainMail');
 
-// 圖片上傳
+// upload img
 const mainUploadPic = document.getElementById('mainUploadPic');
 const RectanglePic = document.getElementById('RectanglePic');
 let squareUrl = '';
@@ -24,15 +24,15 @@ let rectangleUrl = '';
 let getFile = '';
 let getRectangleFile = '';
 
-mainUploadPic.addEventListener("change", function(){
+mainUploadPic.addEventListener('change', function(){
     getFile = this.files[0]
 },false);
 
-RectanglePic.addEventListener("change", function(){
+RectanglePic.addEventListener('change', function(){
     getRectangleFile = this.files[0]
 },false);
 
-//貼文送出
+// set the post
 
 mainButton.addEventListener('click',clickButton);
 
@@ -42,11 +42,11 @@ function clickButton(){
     let uploadTask = storageRef.child('images/'+getFile.name).put(getFile);
     let uploadTaskRec = storageRef.child('images/'+getRectangleFile.name).put(getRectangleFile);
 
-//方形圖片
+// square photo
 
     uploadTask.on('state_changed', function(snapshot){
-        // 觀察狀態變化，例如：progress, pause, and resume
-        // 取得檔案上傳狀態，並用數字顯示
+        // observe status：progress, pause, and resume
+        // get upload status and display by number
 
         let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         switch (snapshot.state) {
@@ -70,12 +70,12 @@ function clickButton(){
     })
     });
 
-//長方形圖片
+// rectangle img
     function callRetangle(){
         
         uploadTaskRec.on('state_changed', function(snapshot){
-            // 觀察狀態變化，例如：progress, pause, and resume
-            // 取得檔案上傳狀態，並用數字顯示
+            // observe status：progress, pause, and resume
+            // get upload status and display by num
 
             let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             switch (snapshot.state) {
@@ -92,11 +92,8 @@ function clickButton(){
         // For instance, get the download URL: https://firebasestorage.googleapis.com/...
 
         let downloadURL = uploadTaskRec.snapshot.downloadURL;
-        console.log(downloadURL)
-
         let pathReference = storageRef.child('images/'+getRectangleFile.name);
         pathReference.getDownloadURL().then(function(url) {
-        console.log(url)
         rectangleUrl = url;
 
         //存入所有資料
@@ -155,7 +152,7 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     postAlreadyOut();
 }
 
-// 登出功能
+// log out
 
 document.getElementById('logoutTest').onclick = logMeOut;
 
@@ -167,12 +164,12 @@ function logMeOut(){
     })
 }
 
-//設定登入權限
+// set log in auth
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userLogin = user;
-    if(userLogin.email == "aaa24295234@gmail.com" || userLogin.email == "frontenter2018@gmail.com"){
+    if(userLogin.email == 'aaa24295234@gmail.com' || userLogin.email == 'frontenter2018@gmail.com'){
     }else{
         window.location = 'profile.html';
     }
@@ -197,7 +194,7 @@ alertButton.addEventListener('click', ()=>{
     alertBigBox.style.display = 'none';
 });
 
-// 關閉 loading
+// close loading
 
 setTimeout(letLoadingNone, 1000)
 function letLoadingNone(){

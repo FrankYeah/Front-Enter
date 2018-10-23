@@ -1,20 +1,20 @@
-// 檢測登入
+// detect log in
 
 firebase.auth().onAuthStateChanged(function(user) {
     // Once authenticated, instantiate Firechat with the logged in user
     if (user) {
       initChat(user);
-      console.log(user)
+
     }
   });
 
 
   function initChat(user) {
     // Get a Firebase Database ref
-    var chatRef = firebase.database().ref("chat");
+    var chatRef = firebase.database().ref('chat');
 
     // Create a Firechat instance
-    var chat = new FirechatUI(chatRef, document.getElementById("firechat-wrapper"));
+    var chat = new FirechatUI(chatRef, document.getElementById('firechat-wrapper'));
 
     // Set the Firechat user
     chat.setUser(user.uid, user.displayName);
@@ -44,7 +44,7 @@ alertButton.addEventListener('click', ()=>{
     alertBigBox.style.display = 'none';
 });
 
-// 關閉 loading
+// close loading
 
 setTimeout(letLoadingNone, 1000)
 function letLoadingNone(){

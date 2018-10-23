@@ -1,10 +1,10 @@
-// 建立登入 layout
+// create log in layout
 headerP3.addEventListener('click', createLoginLayout);
 
 function createLoginLayout(){
-        //判斷是否登入
+        // judge if log in or not
         if(userLogin){
-            if(userLogin.email == "aaa24295234@gmail.com"){
+            if(userLogin.email == 'aaa24295234@gmail.com'){
                 window.location = 'profile.html';
             }else{
                 window.location = 'profile.html';
@@ -30,7 +30,7 @@ function loginFullDiv(){
     newElement.id = 'loginFullDiv';
     document.body.appendChild(newElement);
     newElement.onclick = function(){
-        let child=document.getElementById("loginFullDiv");
+        let child=document.getElementById('loginFullDiv');
         document.body.removeChild(child);
     }
 }
@@ -117,7 +117,7 @@ function gmailLoginButton(){
     newElement.onclick = letGmailLogin;
 }
 
-// 建立帳號
+// create account
 
 function createAccount(){
     let createMail = document.getElementById('loginInputMail').value;
@@ -130,7 +130,7 @@ function createAccount(){
       });      
 }
 
-// 登入
+// log in
 
 function loginHere(){
     let userLoginMail = document.getElementById('loginInputMail').value;
@@ -149,14 +149,14 @@ function reloadLogin(){
     window.location.reload();
 }
 
-// 監聽使用者是否登入
+// detect user log in
 
 let userLogin;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     userLogin = user;
     if(userLogin.emailVerified == true){
-    //資料輸入
+    // input data
     storeDataToFirebase();
     }else{
         firebase.auth().signOut().then(function() {
@@ -179,10 +179,10 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-// 檢測登入後，將資料寫入資料庫
+// detect log in , write data to database
 
 function storeDataToFirebase(){
-    // 更換頭像
+    // change user icon
     if(userLogin.photoURL){
         headerP3.style.background = "url('" + userLogin.photoURL + "')"; 
         headerP3.style.backgroundPosition= 'center';
@@ -195,11 +195,11 @@ function storeDataToFirebase(){
         headerP3.textContent = '會員';
     }
 
-    // 先判斷 user data 有無此人
+    // judge user data have this people
 
-    let getAllMemberData = database.ref("member");
+    let getAllMemberData = database.ref('member');
     let dataExist;
-    getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
+    getAllMemberData.orderByChild('mail').equalTo(userLogin.email).on('child_added', function(snapshot) {
         dataExist = snapshot.val();
     });  
 
@@ -222,7 +222,7 @@ function storeDataToFirebase(){
     }
 }
 
-// 創建帳號後，檢測登入並寄送驗證信
+// create an account, detect login and send a verify mail
 
 function detectLogin(){
     firebase.auth().onAuthStateChanged(function(user) {
@@ -239,7 +239,7 @@ function detectLogin(){
       });
 }
 
-// 登出
+// log out
 
 function logoutHere(){
     firebase.auth().signOut().then(function() {
@@ -249,7 +249,7 @@ function logoutHere(){
     })
 }
 
-// 忘記密碼
+// forget code
 
 function judgeForgetCode(){
     let userLoginMail = document.getElementById('loginInputMail').value;
@@ -260,14 +260,14 @@ function judgeForgetCode(){
             // Email sent.
         
             changePasswordAndMailSend();
-            userLoginMail = "";
+            userLoginMail = '';
           }, function(error) {
             // An error happened.
           });
     }
 }
 
-// google 登入
+// google log in
 
 let provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth().languageCode = 'pt';
@@ -321,5 +321,5 @@ function inputMailForgetPassword(){
 
 function changePasswordAndMailSend(){
     alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = "更改密碼 Email 已發送";
+    alertWord.innerHTML = '更改密碼 Email 已發送';
 }

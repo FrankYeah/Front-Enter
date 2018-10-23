@@ -9,7 +9,7 @@ alertButton.addEventListener('click', ()=>{
     alertBigBox.style.display = 'none';
 });
 
-// 關閉 loading
+// close loading
 
 setTimeout(letLoadingNone, 1000)
 function letLoadingNone(){

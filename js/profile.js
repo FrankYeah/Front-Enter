@@ -1,4 +1,4 @@
-// 個人資料
+// personal data
 
 const displayResult = document.getElementById('displayResult');
 const inputName = document.getElementById('inputName');
@@ -21,14 +21,14 @@ const myCollection = document.getElementById('myCollection');
 setTimeout(loadAllLoginStuff, 4000);
 
 function loadAllLoginStuff(){
-    let getAllMemberData = database.ref("member");
+    let getAllMemberData = database.ref('member');
     let dataExist;
-    getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
+    getAllMemberData.orderByChild('mail').equalTo(userLogin.email).on('child_added', function(snapshot) {
         dataExist = snapshot.val();
     });  
-    // 如果 firebase 有資料
+    // if firebase have data
     if(dataExist == undefined){
-        // firebase 沒有資料 用google的
+        // if firebase have no data, use google data
         if(userLogin.photoURL){
             inputName.value = userLogin.displayName;
             inputMail.value = userLogin.email;
@@ -41,7 +41,7 @@ function loadAllLoginStuff(){
             inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
         }
     }else{
-        // firebase 有資料 用裡面的
+        // if firebase have data, use it
         if(dataExist.name){
             inputName.value = dataExist.name;
         }
@@ -58,7 +58,7 @@ function loadAllLoginStuff(){
     inputPhoto.style.backgroundPosition= 'center';
     inputPhoto.style.backgroundSize= 'cover';
     inputPhoto.style.backgroundRepeat= 'no-repeat';
-    if(userLogin.email == 'aaa24295234@gmail.com' || userLogin.email == "frontenter2018@gmail.com"){
+    if(userLogin.email == 'aaa24295234@gmail.com' || userLogin.email == 'frontenter2018@gmail.com'){
         managePost.style.display = 'block';
     }
 }
@@ -69,10 +69,8 @@ makeCancel.addEventListener('click', startCancel);
 
 function startFix(){
     inputName.disabled = false;
-    // inputMail.disabled = false;
     inputPhone.disabled = false;
     inputName.style.backgroundColor = 'white';
-    // inputMail.style.backgroundColor = 'white';
     inputPhone.style.backgroundColor = 'white';
     inputPhone.style.border = '1px solid rgba(230, 230, 230, 0.7)';
     inputName.style.border = '1px solid rgba(230, 230, 230, 0.7)';
@@ -88,18 +86,18 @@ function startConfirm(){
     inputPhone.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     inputPhone.style.border = '0px solid rgba(230, 230, 230, 0.7)';
     inputName.style.border = '0px solid rgba(230, 230, 230, 0.7)';
-    // 顯示修改資料 
+    // display amend data
     fixData.style.display = 'block';
     confirmCancel.style.display = 'none';
-    // 將資料存上 firebase
-    let getAllMemberData = database.ref("member");
+    // store data to firebase
+    let getAllMemberData = database.ref('member');
     let dataExist;
-    getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
+    getAllMemberData.orderByChild('mail').equalTo(userLogin.email).on('child_added', function(snapshot) {
         dataExist = snapshot.val();
     });  
-    // 如果 firebase 有資料
+    // if firebase have data
     if(dataExist == undefined){
-        // firebase 沒有資料 用google的
+        // if firebase no data, use google
         if(userLogin.photoURL){
             firebase.database().ref('member/'+newPostKey).set({
                 name: inputName.value,
@@ -111,7 +109,7 @@ function startConfirm(){
             });
         }
     }else{
-        // firebase 有資料 用裡面的
+        // if firebase have data, use it 
             firebase.database().ref('member/'+ dataExist.uid).set({
                 name: inputName.value,
                 mail : userLogin.email,
@@ -132,34 +130,34 @@ function startCancel(){
     inputPhone.style.backgroundColor = 'rgba(230, 230, 230, 0)';
     inputPhone.style.border = '0px solid rgba(230, 230, 230, 0.7)';
     inputName.style.border = '0px solid rgba(230, 230, 230, 0.7)';
-    // 顯示修改資料 
+    // display amend data
     fixData.style.display = 'block';
     confirmCancel.style.display = 'none';
-    // 取消修改邏輯
+    // cancel amend logic
     cancelToFixData();
 }
 
     function cancelToFixData(){
-        let getAllMemberData = database.ref("member");
+        let getAllMemberData = database.ref('member');
         let dataExist;
-        getAllMemberData.orderByChild("mail").equalTo(userLogin.email).on("child_added", function(snapshot) {
+        getAllMemberData.orderByChild('mail').equalTo(userLogin.email).on('child_added', function(snapshot) {
             dataExist = snapshot.val();
         });  
-        // 如果 firebase 有資料
+        // if firebase have data
         if(dataExist == undefined){
-            // firebase 沒有資料 用google的
+            // firebase no data, use google
             if(userLogin.photoURL){
                 inputName.value = userLogin.name;
             }
         }else{
-            // firebase 有資料 用裡面的
+            // if firebase have data
             inputName.value =  dataExist.name;
             inputPhone.value = dataExist.phone;
         }
     }
 
-//點擊貼文管理後，清空，顯示發布貼文、編輯貼文、刪除貼文
-//登出功能
+// click post management, clear, display post、edit、delete
+// log out
 
 document.getElementById('logoutTest').onclick = logoutMeOut;
 
@@ -171,12 +169,12 @@ function logoutMeOut(){
     })
 }
 
-//設定登入權限
+// set log in auth
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         userLogin = user;
-        if(userLogin.email == "aaa24295234@gmail.com" || userLogin.email == "frontenter2018@gmail.com"){
+        if(userLogin.email == 'aaa24295234@gmail.com' || userLogin.email == 'frontenter2018@gmail.com'){
             }else{
 
             }
@@ -186,7 +184,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   });
 
-// 重現個人資料
+// re display personal data
 
 personalData.addEventListener('click', letPersonalAppear);
 
@@ -198,32 +196,32 @@ function letPersonalAppear(){
     forDeletePost.innerHTML = '';
 }
 
-// 發佈貼文
+// send the post
 
 createPostPost.addEventListener('click', function(){
     window.location = 'backstage.html';
 })
 
-// 管理貼文 managePost
+// manage Post
 
 managePost.addEventListener('click', createPostLayout);
 
 function createPostLayout(){
-    // 將個人資料隱藏
+    // hide personal data
     displayResult.style.display = 'none';
     rightCollection.style.display = 'none';
-    // 發布貼文 編輯貼文顯現
+    // send the post, edit show up
     createRightDiv.style.display = 'flex';
     forDeletePost.style.display = 'flex';
-    // 將目前貼文建立
+    // create post
         createUpPost();
 }
 
-// 貼文建立
+// create post
 
 function createUpPost(){
-    let getAllDeleteData = database.ref("article");
-    getAllDeleteData.orderByChild("skill").on("child_added", function(snapshot) {
+    let getAllDeleteData = database.ref('article');
+    getAllDeleteData.orderByChild('skill').on('child_added', function(snapshot) {
         let myAllData = snapshot.val();
         bigPostDiv(myAllData);
         postButton(myAllData);
@@ -260,10 +258,10 @@ function deleteImg(myAllData){
     newElement.className = 'imgDelete';
     document.getElementById(myAllData.creatTime).appendChild(newElement);
     newElement.onclick = function(){
-        if (confirm("確定要刪除此貼文？")) {
-            let getAllDeleteData = database.ref("article");
-            getAllDeleteData.orderByChild("creatTime").equalTo(myAllData.creatTime).on("child_added", function(snapshot) {
-                // 刪除資料
+        if (confirm('確定要刪除此貼文？')) {
+            let getAllDeleteData = database.ref('article');
+            getAllDeleteData.orderByChild('creatTime').equalTo(myAllData.creatTime).on('child_added', function(snapshot) {
+                // delete post
                 firebase.database().ref('/article/' + snapshot.val().uid).remove().then(function(){
                 youDeleteAnArticle(myAllData.name);
                 setTimeout(function(){window.location.reload()} , 1000)
@@ -275,23 +273,23 @@ function deleteImg(myAllData){
     }
 }
 
-// 點擊 編輯貼文
+// click edit post
 
 createPostEdit.addEventListener('click', displayMyImg);
 
 function displayMyImg(){
 
-    const xx = document.querySelectorAll("div.imgDelete");
+    const xx = document.querySelectorAll('div.imgDelete');
     for(let i=0; i<xx.length; i++){
-        xx[i].style.display="block";
+        xx[i].style.display='block';
     }
 
-    const yy = document.querySelectorAll("div.imgEdit");
+    const yy = document.querySelectorAll('div.imgEdit');
     for(let i=0; i<yy.length; i++){
-        yy[i].style.display="block";
+        yy[i].style.display='block';
     }
 
-    const zz = document.querySelectorAll("div.big-post-div");
+    const zz = document.querySelectorAll('div.big-post-div');
     for(let i=0; i<zz.length; i++){
         zz[i].style.color='rgb(26, 216, 211)';
         zz[i].style.backgroundColor='white';
@@ -299,7 +297,7 @@ function displayMyImg(){
     }
 }
 
-// 點擊收藏
+// click collection
 
 myCollection.addEventListener('click', createCollectionLayout);
 
@@ -344,7 +342,7 @@ function inCollectionImg(getLocal, i){
     newElement.className = 'in-collection-img';
     document.getElementById('inCollectionDiv' + i).appendChild(newElement);
     newElement.onclick = function(){
-        window.location = "/Front-Enter/content.html?id=" + getLocal[i].creatTime;
+        window.location = '/Front-Enter/content.html?id=' + getLocal[i].creatTime;
     }
 }
 
@@ -395,7 +393,7 @@ alertButton.addEventListener('click', ()=>{
 });
 
 
-// 關閉 loading
+// close loading
 
 setTimeout(letLoadingNone, 3500)
 function letLoadingNone(){

@@ -1,10 +1,10 @@
-// 抓 firebase 資料庫 json 資料
+// get firebase json
 
 let x = 0;
-let articleId = (new URL(document.location)).searchParams.get("id");  //取得url的id
-let getAllData = database.ref("article");
+let articleId = (new URL(document.location)).searchParams.get('id');  //get url id
+let getAllData = database.ref('article');
 let data;
-getAllData.orderByChild("creatTime").equalTo(Number(articleId)).on("child_added", function(snapshot) {
+getAllData.orderByChild('creatTime').equalTo(Number(articleId)).on('child_added', function(snapshot) {
     data = snapshot.val();
     createLayout(data);
 });
@@ -52,9 +52,9 @@ function createLayout(data){
 
 function keyvisualBorn(data){
     document.getElementById('section').style.background  =  "url('" + data.rectangleUrl + "')"; 
-    document.getElementById('section').style.backgroundRepeat  =  "no-repeat";  
-    document.getElementById('section').style.backgroundSize  =  "cover";
-    document.getElementById('section').style.backgroundPositionY  =  "center";
+    document.getElementById('section').style.backgroundRepeat  =  'no-repeat';  
+    document.getElementById('section').style.backgroundSize  =  'cover';
+    document.getElementById('section').style.backgroundPositionY  =  'center';
     document.getElementById('keyvisualSpan').textContent = data.name;
 }
 
@@ -145,8 +145,8 @@ function rotateCenterImg(url){
     newElement.className = 'rotate-center-img';
     newElement.id = 'rotateCenterImg';
     newElement.style.background = "url('" + url + "')";
-    newElement.style.backgroundRepeat  =  "no-repeat";  
-    newElement.style.backgroundSize  =  "cover";
+    newElement.style.backgroundRepeat  =  'no-repeat';  
+    newElement.style.backgroundSize  =  'cover';
     newElement.style.backgroundPositionX = 'center';
     document.getElementById('rotateBackFull').appendChild(newElement);
     newElement.onclick = function(event){
@@ -196,8 +196,8 @@ function startLeft(){
 ];
     // let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg', '../images/7.jpg', '../images/AppWorksShool-rectangle.jpg'];
     rotateCenterImg.style.background = "url('" + rImg[rotateRotate] + "')"; 
-    rotateCenterImg.style.backgroundRepeat  =  "no-repeat";  
-    rotateCenterImg.style.backgroundSize  =  "cover";
+    rotateCenterImg.style.backgroundRepeat  =  'no-repeat';  
+    rotateCenterImg.style.backgroundSize  =  'cover';
     rotateCenterImg.style.backgroundPositionX = 'center';
 
 }
@@ -220,18 +220,18 @@ function startRight(){
     const rotateCenterImg = document.getElementById('rotateCenterImg');
     rotateCenterImg.style.background = "url('" + rImg[rotateRotate] + "')";  
 
-    rotateCenterImg.style.backgroundRepeat  =  "no-repeat";  
-    rotateCenterImg.style.backgroundSize  =  "cover";
+    rotateCenterImg.style.backgroundRepeat  =  'no-repeat';  
+    rotateCenterImg.style.backgroundSize  =  'cover';
     rotateCenterImg.style.backgroundPositionX = 'center';
     
 }
 
 function deleteRotateFull(){
-    let anotherChild=document.getElementById("rotateBackFull");
+    let anotherChild=document.getElementById('rotateBackFull');
     document.body.removeChild(anotherChild);
 }
 
-// 右邊
+// right
 
 function mainContentBorn(){
     let newElement = document.createElement('div');
@@ -468,7 +468,7 @@ alertButton.addEventListener('click', ()=>{
     alertBigBox.style.display = 'none';
 });
 
-// 關閉 loading
+// close loading
 
 setTimeout(letLoadingNone, 1500)
 function letLoadingNone(){

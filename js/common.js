@@ -1,4 +1,4 @@
-//判斷滾動，改變 header、logo 顏色
+//when scrolling, change header
 
 const webSearch = document.getElementById('webSearch');
 const logo = document.getElementById('logo');
@@ -23,11 +23,10 @@ function winScroll(){
     if(document.documentElement.scrollTop > 0){
         webSearch.src = 'images/FE_search_green.png';
         logo.src = 'images/FE_logo-4.png';
-        // logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
-        headerP1.style.color="rgb(128,128,128)";
-        headerP2.style.color="rgb(128,128,128)";
-        headerP3.style.color="rgb(128,128,128)";
-        header.style.animation = "headerBackgroundOut 5s ease 0s 1 alternate forwards";
+        headerP1.style.color='rgb(128,128,128)';
+        headerP2.style.color='rgb(128,128,128)';
+        headerP3.style.color='rgb(128,128,128)';
+        header.style.animation = 'headerBackgroundOut 5s ease 0s 1 alternate forwards';
         if(userLogin && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '會員';
@@ -35,15 +34,15 @@ function winScroll(){
                 headerP3.textContent = '';
             }
             headerP3.style.cursor = 'pointer';
-            console.log('photoURL & verified is true larger 100')
         }
       }else if(document.documentElement.scrollTop<100){
-        webSearch.src = "images/FE_search_green.png";
-        logo.src = "images/FE_logo-4.png";
-        header.style.backgroundColor = "";
-        // logo.style.animation = "opacityOut 1s ease 0s 1 alternate";
-        headerP1.style.color="rgb(128, 128, 128)";headerP2.style.color="rgb(128, 128, 128)";headerP3.style.color="rgb(128, 128, 128)";
-        header.style.animation = "headerBackgroundIn 1s ease 0s 1 alternate"
+        webSearch.src = 'images/FE_search_green.png';
+        logo.src = 'images/FE_logo-4.png';
+        header.style.backgroundColor = '';
+        headerP1.style.color='rgb(128, 128, 128)';
+        headerP2.style.color='rgb(128, 128, 128)';
+        headerP3.style.color='rgb(128, 128, 128)';
+        header.style.animation = 'headerBackgroundIn 1s ease 0s 1 alternate';
         if(userLogin && userLogin.emailVerified == true){
             headerP3.style.color = 'rgb(128, 128, 128)';
             headerP3.textContent = '會員';
@@ -51,7 +50,6 @@ function winScroll(){
                 headerP3.textContent = '';
             }
             headerP3.style.cursor = 'pointer';
-            console.log('photoURL & verified is true smaller 100')
         }else{
 
         }
@@ -62,10 +60,9 @@ function winScroll(){
 
 window.onload = function() {
 
-    // 檢測登入狀態改變文字
+    // detect log in and change word
     if(userLogin && userLogin.emailVerified == true){
         headerP3.style.color = 'rgb(128, 128, 128)';
-        // headerP3.textContent = '';
         headerP3.style.cursor = 'pointer';
         headerP3.addEventListener('mouseenter', changeColor);
         headerP3.addEventListener('mouseleave', changeColorAgain)
@@ -82,19 +79,17 @@ window.onload = function() {
     let isTop = true;
 
     top.onclick = function(){
-        //設置定時器
+        // set timeout
         timer = setInterval(function(){
-            //獲取滾動條到頂部的高度
-            let osTop = document.documentElement.scrollTop || document.body.scrollTop ;  //同时兼容了ie和Chrome
+            // get scroll height
+            let osTop = document.documentElement.scrollTop || document.body.scrollTop ;  // deal IE、Chrome
                 
-            //减少的速度
+            // lower speed 
             let isSpeed = Math.floor(-osTop / 6);
             document.documentElement.scrollTop = document.body.scrollTop = osTop + isSpeed;
-            //console.log( osTop + isSpeed);
-
             isTop = true;
 
-            //判斷，然後清除定時器
+            //clear timer
             if (osTop == 0) {
                 clearInterval(timer);
             }
@@ -103,7 +98,7 @@ window.onload = function() {
 
 }
 
-// 搜尋
+// search
 
 webSearch.addEventListener('click', startSearch);
 let countClick = 0;
@@ -112,8 +107,6 @@ function startSearch(){
         fullSearchDiv();
         fullSearchWhiteDiv();
         whiteDivLeft();
-        // whiteDivRight();
-        // whiteDivLeftIcon();
         whiteDivLeftText();
         whiteDivLeftBox();
         leftInput();
@@ -121,9 +114,9 @@ function startSearch(){
         leftButton();
         countClick++;
     }else{
-        let child=document.getElementById("fullSearchDiv");
+        let child=document.getElementById('fullSearchDiv');
         document.body.removeChild(child);
-        let anotherChild=document.getElementById("fullSearchWhiteDiv");
+        let anotherChild=document.getElementById('fullSearchWhiteDiv');
         document.body.removeChild(anotherChild);
         countClick--;
     }
@@ -151,23 +144,6 @@ function whiteDivLeft(){
     newElement.id = 'whiteDivLeft';
     newElement.className = 'whiteDivLeft';
     document.getElementById('fullSearchWhiteDiv').appendChild(newElement);
-}
-
-function whiteDivRight(){
-    let newElement = document.createElement('div');
-    newElement.id = 'whiteDivRight';
-    newElement.className = 'whiteDivRight';
-    newElement.textContent = 'X';
-    document.getElementById('fullSearchWhiteDiv').appendChild(newElement);
-    newElement.onclick = function(){
-        startSearch();
-    }
-}
-
-function whiteDivLeftIcon(){
-    let newElement = document.createElement('div');
-    newElement.className = 'whiteDivLeftIcon';
-    document.getElementById('whiteDivLeft').appendChild(newElement);
 }
 
 function whiteDivLeftText(){
@@ -205,17 +181,17 @@ function voiceButton(){
     document.getElementById('whiteDivLeftBox').appendChild(newElement);
     newElement.onclick = function(){
         
-    let isFirefox = navigator.userAgent.search("Firefox") > -1;
+    let isFirefox = navigator.userAgent.search('Firefox') > -1;
 
     if(isFirefox){
-        let startBtn = document.querySelector(".start");
-        startBtn.style.display = "none";
+        let startBtn = document.querySelector('.start');
+        startBtn.style.display = 'none';
     }
 
     if(!isFirefox){
 
-        const text = document.querySelector(".speech");
-        const startBtn = document.querySelector(".start");
+        const text = document.querySelector('.speech');
+        const startBtn = document.querySelector('.start');
 
         window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         const recognition = new SpeechRecognition()
@@ -229,35 +205,27 @@ function voiceButton(){
         // recognition.start();
 
         recognition.onresult = function(event) {
-            console.log(event)
             var result = event.results[event.results.length - 1];
             text.value = result[result.length - 1 ].transcript;
         }
 
         // speech error handling
         recognition.onerror = function(event){
-            console.log('error', event);
+
         }
 
         recognition.onend = function() {
-            console.log("end");
             // auto restart
             recognition.start();
             if(text.value == ''){
-                console.log('no word')
-                startBtn.style.display = "block";
+                startBtn.style.display = 'block';
             }else{
-                console.log('have word')
                 window.location='article.html?id=' + text.value;
             }
 
         }
-
-        // startBtn.addEventListener("click", function() {
             recognition.start();
-            this.style.display = "none";
-        // })
-
+            this.style.display = 'none';
     }
     }
 }
@@ -275,11 +243,11 @@ function searchToArticle(){
     window.location = 'article.html?id='+document.getElementById('leftInput').value ; 
 }
 
-// 測驗 GO
+// test GO
 
 const testGo = document.getElementById('testGo');
 testGo.addEventListener('click', createTestGo)
-// 首頁按鈕
+// home page button
 const homeTestGo = document.getElementById('homeTestGo');
 if(homeTestGo){
     homeTestGo.addEventListener('click', createTestGo)
@@ -293,22 +261,21 @@ function createTestGo(){
         blueGreen();
         photoWithGray();
         testGoWhiteDiv();
-        // filterDiv();
         testOneHeader(oneHeader);
         firstPreface(oneList);
         testOneButton(oneButton);
 
         countClick++;
     }else{
-        let child=document.getElementById("testGoBackDiv");
+        let child=document.getElementById('testGoBackDiv');
         document.body.removeChild(child);
         countClick--;
-        // 清空
+        // clear
         getAllSelect = [];
         clientTotal = [];
-        styleElem.innerHTML = "#endPieChart:before {transform: rotate(180deg);}";
-        styleElemOne.innerHTML = "#endPieChart:after {transform: rotate(0deg);}";
-        styleElemTwo.innerHTML = "#endPieChart:after {border-color: #1cb5e0;}";
+        styleElem.innerHTML = '#endPieChart:before {transform: rotate(180deg);}';
+        styleElemOne.innerHTML = '#endPieChart:after {transform: rotate(0deg);}';
+        styleElemTwo.innerHTML = '#endPieChart:after {border-color: #1cb5e0;}';
     }
 }
 
@@ -350,12 +317,6 @@ function testGoWhiteDiv(){
     }
 }
 
-function filterDiv(){
-    let newElement = document.createElement('div');
-    newElement.className = 'filter-div';
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-}
-
 function testOneHeader(oneHeader){
     let newElement = document.createElement('p');
     newElement.className = 'test-one-header';
@@ -381,7 +342,7 @@ function firstPreface(oneList){
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-// 第一個「測驗開始」按鈕
+// first test GO button
 
 function testOneButton(oneButton){
     let newElement = document.createElement('p');
@@ -427,10 +388,9 @@ function testTwoStart(){
     testTwoSelect(TwoSelectEveryPlace);
     let TwoSelectNotImportant = '不重要';
     testTwoSelect(TwoSelectNotImportant);
-    // filterDiv();
 }
 
-// 顯示選項
+// display question
 
 let getAllSelect = [];
 
@@ -540,7 +500,7 @@ function testSixSelect(sixSelect){
     newElement.onclick = testEndStart;
 }
 
-// 顯示結果 & 圓形動畫製作
+// display result & pie chart making
 
 function testEndStart(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
@@ -586,144 +546,140 @@ function resultA(){
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function forEndResult(endResult){
+function forEndResult(){
     let newElement = document.createElement('p');
     newElement.className = 'for-end-result';
     newElement.id = 'forEndResult';
-    // newElement.textContent = endResult;
     document.getElementById('resultA').appendChild(newElement);
 }
 
-// 遊戲邏輯
-let getFirebaseData = database.ref("article");
+// game logic
+let getFirebaseData = database.ref('article');
 let clientTotal = [];
 // getAllSelect
 function getAllSelectLogic(){
     
-    // 城市
+    // city
     if(getAllSelect[0] != '不重要'){
-        getFirebaseData.orderByChild("city").equalTo(getAllSelect[0]).on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('city').equalTo(getAllSelect[0]).on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(getAllSelect[0] == '不重要'){
-        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
             // clientTotal.push(snapshot.val().name)
         });  
     }
-    // 費用
+    // fee
     if(parseInt(getAllSelect[1])<=3000){
-        getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('0').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("fee").equalTo('1800').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('1800').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("fee").equalTo('3000').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('3000').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(parseInt(getAllSelect[1])<=6000){
-        getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('0').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("fee").equalTo('1800').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('1800').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("fee").equalTo('3000').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('3000').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("fee").equalTo('5000').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('5000').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(parseInt(getAllSelect[1])<=10000){
-        getFirebaseData.orderByChild("fee").equalTo('0').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('0').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("fee").equalTo('1800').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('1800').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("fee").equalTo('3000').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('3000').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("fee").equalTo('5000').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('fee').equalTo('5000').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(parseInt(getAllSelect[1])>10000){
       
     }else if(getAllSelect[1] == '不重要'){
-        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
             // clientTotal.push(snapshot.val().name)
         });  
     }
-    // 每周時數
+    // week hour
     if(parseInt(getAllSelect[2])<=16){
-        getFirebaseData.orderByChild("weekHour").equalTo('16').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('16').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(parseInt(getAllSelect[2])<=30){
-        getFirebaseData.orderByChild("weekHour").equalTo('16').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('16').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("weekHour").equalTo('18').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('18').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("weekHour").equalTo('20').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('20').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(parseInt(getAllSelect[2])<=45){
-        getFirebaseData.orderByChild("weekHour").equalTo('16').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('16').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("weekHour").equalTo('18').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('18').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("weekHour").equalTo('20').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('20').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("weekHour").equalTo('32').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('32').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
-        getFirebaseData.orderByChild("weekHour").equalTo('40').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('weekHour').equalTo('40').on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(parseInt(getAllSelect[2])>45){
         
     }else if(getAllSelect[2] == '不重要'){
-        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
             // clientTotal.push(snapshot.val().name)
         });  
     }
-    // 班制
+    // class type
     if(getAllSelect[3] != '不重要'){
-        getFirebaseData.orderByChild("classType").equalTo(getAllSelect[3]).on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('classType').equalTo(getAllSelect[3]).on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(getAllSelect[3] == '不重要'){
-        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
             // clientTotal.push(snapshot.val().name)
         });  
     }
-    // 教學制度
+    // teach way
     if(getAllSelect[4] != '不重要'){
-        getFirebaseData.orderByChild("teachWay").equalTo(getAllSelect[4]).on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('teachWay').equalTo(getAllSelect[4]).on('child_added', function(snapshot) {
             clientTotal.push(snapshot.val().name)
         });  
     }else if(getAllSelect[4] == '不重要'){
-        getFirebaseData.orderByChild("skill").equalTo('前端').on("child_added", function(snapshot) {
+        getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
             // clientTotal.push(snapshot.val().name)
         });  
     }
     
-    // 取得重複最高的值
+    // get heightest value
     setTimeout(maxValue, 3000); 
-
-    // console.log(snapshot.val().name);
-
 }
 
 const pseudoPieChart = document.getElementById('endPieChart');
-let styleElem = document.head.appendChild(document.createElement("style"));
-let styleElemOne = document.head.appendChild(document.createElement("style"));
-let styleElemTwo = document.head.appendChild(document.createElement("style"));
+let styleElem = document.head.appendChild(document.createElement('style'));
+let styleElemOne = document.head.appendChild(document.createElement('style'));
+let styleElemTwo = document.head.appendChild(document.createElement('style'));
 
 function maxValue(){
     let modeMap = {};
@@ -732,7 +688,6 @@ function maxValue(){
     for(let i = 0; i < clientTotal.length; i++)
     {
         let el = clientTotal[i];
-        console.log(el)
         if(modeMap[el] == null)
             modeMap[el] = 1;
         else
@@ -749,7 +704,7 @@ function maxValue(){
         
     }else if(maxCount == 4){
         maxCount = '80%';
-        styleElem.innerHTML = "#endPieChart:before {transform: rotate(108deg);}";
+        styleElem.innerHTML = '#endPieChart:before {transform: rotate(108deg);}';
     }else if(maxCount == 3){
         maxCount = '60%';
         styleElem.innerHTML = '#endPieChart:before {transform: rotate(36deg);}';
@@ -766,23 +721,18 @@ function maxValue(){
     }else if(maxCount == 0){
         maxCount = '0%';
     }
-
-    console.log(maxEl)
-    console.log(maxCount)
     document.getElementById('forEndResult').textContent = maxEl;
     document.getElementById('whiteInPieChart').textContent = maxCount;
 
-    getFirebaseData.orderByChild("name").equalTo(maxEl).on("child_added", function(snapshot) {
-        document.getElementById('resultA').setAttribute('href', "/Front-Enter/content.html?id=" + snapshot.val().creatTime);
+    getFirebaseData.orderByChild('name').equalTo(maxEl).on('child_added', function(snapshot) {
+        document.getElementById('resultA').setAttribute('href', '/Front-Enter/content.html?id=' + snapshot.val().creatTime);
     });  
 
-    // 清空
+    // clear
     getAllSelect = [];
     clientTotal = [];
 
 }
-
-// google 語音
 
 
 

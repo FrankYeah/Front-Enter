@@ -171,7 +171,7 @@ p.blue-border-back{
 div.box-evenly{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -373,7 +373,7 @@ div.white-div-icon{
     background: rgba(26, 216, 211, 0.8);
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 div.for-icon-p{
@@ -385,7 +385,7 @@ div.for-icon-p{
 div.for-cute-icon{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
