@@ -1,76 +1,7 @@
-// general method
 
-let app = {
-	evts: {},
-	favorite: {},
-	search: {},
-};
-
-// core operations
-app.get = function (selector) {
-	return document.querySelector(selector);
-};
-app.getAll = function (selector) {
-	return document.querySelectorAll(selector);
-};
-app.createElement = function (tagName, settings, parentElement) {
-	let obj = document.createElement(tagName);
-	if (settings.atrs) {
-		app.setAttributes(obj, settings.atrs);
-	}
-	if (settings.stys) {
-		app.setStyles(obj, settings.stys);
-	}
-	if (settings.evts) {
-		app.setEventHandlers(obj, settings.evts);
-	}
-	if (parentElement instanceof Element) {
-		parentElement.appendChild(obj);
-	}
-	return obj;
-};
-app.modifyElement = function (obj, settings, parentElement) {
-	if (settings.atrs) {
-		app.setAttributes(obj, settings.atrs);
-	}
-	if (settings.stys) {
-		app.setStyles(obj, settings.stys);
-	}
-	if (settings.evts) {
-		app.setEventHandlers(obj, settings.evts);
-	}
-	if (parentElement instanceof Element && parentElement !== obj.parentNode) {
-		parentElement.appendChild(obj);
-	}
-	return obj;
-};
-app.setStyles = function (obj, styles) {
-	for (let name in styles) {
-		obj.style[name] = styles[name];
-	}
-	return obj;
-};
-app.setAttributes = function (obj, attributes) {
-	for (let name in attributes) {
-		obj[name] = attributes[name];
-	}
-	return obj;
-};
-app.setEventHandlers = function (obj, eventHandlers, useCapture) {
-	for (let name in eventHandlers) {
-		if (eventHandlers[name] instanceof Array) {
-			for (let i = 0; i < eventHandlers[name].length; i++) {
-				obj.addEventListener(name, eventHandlers[name][i], useCapture);
-			}
-		} else {
-			obj.addEventListener(name, eventHandlers[name], useCapture);
-		}
-	}
-	return obj;
-};
 
 //when scrolling, change header
-const header = document.getElementById('header');
+
 const loadingDrawing = document.getElementById('loadingDrawing');
 const loadingAnimation = document.getElementById('loadingAnimation');
 const loadingImg = document.getElementById('loadingImg');
@@ -91,7 +22,7 @@ function winScroll(){
         app.get("#headerP1").style.color='rgb(128,128,128)';
         app.get("#headerP2").style.color='rgb(128,128,128)';
         app.get("#headerP3").style.color='rgb(128,128,128)';
-        header.style.animation = 'headerBackgroundOut 5s ease 0s 1 alternate forwards';
+        app.get("#header").style.animation = 'headerBackgroundOut 5s ease 0s 1 alternate forwards';
         if(userLogin && userLogin.emailVerified == true){
             app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
             app.get("#headerP3").textContent = '會員';
@@ -103,11 +34,11 @@ function winScroll(){
       }else if(document.documentElement.scrollTop<100){
         app.get("#webSearch").src = 'images/FE_search_green.png';
         app.get("#logo").src = 'images/FE_logo-4.png';
-        header.style.backgroundColor = '';
+        app.get("#header").style.backgroundColor = '';
         app.get("#headerP1").style.color='rgb(128, 128, 128)';
         app.get("#headerP2").style.color='rgb(128, 128, 128)';
         app.get("#headerP3").style.color='rgb(128, 128, 128)';
-        header.style.animation = 'headerBackgroundIn 1s ease 0s 1 alternate';
+        app.get("#header").style.animation = 'headerBackgroundIn 1s ease 0s 1 alternate';
         if(userLogin && userLogin.emailVerified == true){
             app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
             app.get("#headerP3").textContent = '會員';
