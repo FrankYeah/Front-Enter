@@ -400,7 +400,6 @@ function readMoreOut(){
     let newElement = document.createElement('div');
     newElement.id = 'readMoreOut' + x;
     newElement.className = 'read-more-out';
-    newElement.onmouseover = arrowMove;
     document.getElementById('contentA' + x).appendChild(newElement);
 }
 
