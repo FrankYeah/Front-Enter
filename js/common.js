@@ -1,55 +1,120 @@
-//when scrolling, change header
+// general method
 
-const webSearch = document.getElementById('webSearch');
-const logo = document.getElementById('logo');
-const headerP1 = document.getElementById('headerP1');
-const headerP2 = document.getElementById('headerP2');
-const headerP3 = document.getElementById('headerP3');
+let app = {
+	evts: {},
+	favorite: {},
+	search: {},
+};
+
+// core operations
+app.get = function (selector) {
+	return document.querySelector(selector);
+};
+app.getAll = function (selector) {
+	return document.querySelectorAll(selector);
+};
+app.createElement = function (tagName, settings, parentElement) {
+	let obj = document.createElement(tagName);
+	if (settings.atrs) {
+		app.setAttributes(obj, settings.atrs);
+	}
+	if (settings.stys) {
+		app.setStyles(obj, settings.stys);
+	}
+	if (settings.evts) {
+		app.setEventHandlers(obj, settings.evts);
+	}
+	if (parentElement instanceof Element) {
+		parentElement.appendChild(obj);
+	}
+	return obj;
+};
+app.modifyElement = function (obj, settings, parentElement) {
+	if (settings.atrs) {
+		app.setAttributes(obj, settings.atrs);
+	}
+	if (settings.stys) {
+		app.setStyles(obj, settings.stys);
+	}
+	if (settings.evts) {
+		app.setEventHandlers(obj, settings.evts);
+	}
+	if (parentElement instanceof Element && parentElement !== obj.parentNode) {
+		parentElement.appendChild(obj);
+	}
+	return obj;
+};
+app.setStyles = function (obj, styles) {
+	for (let name in styles) {
+		obj.style[name] = styles[name];
+	}
+	return obj;
+};
+app.setAttributes = function (obj, attributes) {
+	for (let name in attributes) {
+		obj[name] = attributes[name];
+	}
+	return obj;
+};
+app.setEventHandlers = function (obj, eventHandlers, useCapture) {
+	for (let name in eventHandlers) {
+		if (eventHandlers[name] instanceof Array) {
+			for (let i = 0; i < eventHandlers[name].length; i++) {
+				obj.addEventListener(name, eventHandlers[name][i], useCapture);
+			}
+		} else {
+			obj.addEventListener(name, eventHandlers[name], useCapture);
+		}
+	}
+	return obj;
+};
+
+//when scrolling, change header
 const header = document.getElementById('header');
 const loadingDrawing = document.getElementById('loadingDrawing');
 const loadingAnimation = document.getElementById('loadingAnimation');
 const loadingImg = document.getElementById('loadingImg');
 const myAside = document.getElementById('myAside');
 
-headerP3.addEventListener('mouseover', function(){
-    headerP3.style.color='rgb(26, 216, 211)';
+app.get("#headerP3").addEventListener('mouseover', function(){
+    app.get("#headerP3").style.color='rgb(26, 216, 211)';
 });
-headerP3.addEventListener('mouseout', function(){
-    headerP3.style.color='rgb(128, 128, 128)';
+app.get("#headerP3").addEventListener('mouseout', function(){
+    app.get("#headerP3").style.color='rgb(128, 128, 128)';
 })
 
 window.addEventListener('scroll',winScroll);
 function winScroll(){
     if(document.documentElement.scrollTop > 0){
-        webSearch.src = 'images/FE_search_green.png';
-        logo.src = 'images/FE_logo-4.png';
-        headerP1.style.color='rgb(128,128,128)';
-        headerP2.style.color='rgb(128,128,128)';
-        headerP3.style.color='rgb(128,128,128)';
+        app.get("#webSearch").src = 'images/FE_search_green.png';
+        app.get("#logo").src = 'images/FE_logo-4.png';
+        app.get("#headerP1").style.color='rgb(128,128,128)';
+        app.get("#headerP2").style.color='rgb(128,128,128)';
+        app.get("#headerP3").style.color='rgb(128,128,128)';
         header.style.animation = 'headerBackgroundOut 5s ease 0s 1 alternate forwards';
         if(userLogin && userLogin.emailVerified == true){
-            headerP3.style.color = 'rgb(128, 128, 128)';
-            headerP3.textContent = '會員';
+            app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
+            app.get("#headerP3").textContent = '會員';
             if(userLogin.photoURL){
-                headerP3.textContent = '';
+                app.get("#headerP3").textContent = '';
             }
-            headerP3.style.cursor = 'pointer';
+            app.get("#headerP3").style.cursor = 'pointer';
         }
       }else if(document.documentElement.scrollTop<100){
-        webSearch.src = 'images/FE_search_green.png';
-        logo.src = 'images/FE_logo-4.png';
+        app.get("#webSearch").src = 'images/FE_search_green.png';
+        app.get("#logo").src = 'images/FE_logo-4.png';
         header.style.backgroundColor = '';
-        headerP1.style.color='rgb(128, 128, 128)';
-        headerP2.style.color='rgb(128, 128, 128)';
-        headerP3.style.color='rgb(128, 128, 128)';
+        app.get("#headerP1").style.color='rgb(128, 128, 128)';
+        app.get("#headerP2").style.color='rgb(128, 128, 128)';
+        app.get("#headerP3").style.color='rgb(128, 128, 128)';
         header.style.animation = 'headerBackgroundIn 1s ease 0s 1 alternate';
         if(userLogin && userLogin.emailVerified == true){
-            headerP3.style.color = 'rgb(128, 128, 128)';
-            headerP3.textContent = '會員';
+            app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
+            app.get("#headerP3").textContent = '會員';
             if(userLogin.photoURL){
-                headerP3.textContent = '';
+                app.get("#headerP3").textContent = '';
             }
-            headerP3.style.cursor = 'pointer';
+            app.get("#headerP3").style.cursor = 'pointer';
         }else{
 
         }
@@ -62,15 +127,15 @@ window.onload = function() {
 
     // detect log in and change word
     if(userLogin && userLogin.emailVerified == true){
-        headerP3.style.color = 'rgb(128, 128, 128)';
-        headerP3.style.cursor = 'pointer';
-        headerP3.addEventListener('mouseenter', changeColor);
-        headerP3.addEventListener('mouseleave', changeColorAgain)
+        app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
+        app.get("#headerP3").style.cursor = 'pointer';
+        app.get("#headerP3").addEventListener('mouseenter', changeColor);
+        app.get("#headerP3").addEventListener('mouseleave', changeColorAgain)
         function changeColor(){
-            headerP3.style.color = 'rgb(26, 216, 211)';
+            app.get("#headerP3").style.color = 'rgb(26, 216, 211)';
         }
         function changeColorAgain(){
-            headerP3.style.color = 'rgb(128, 128, 128)';
+            app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
         }
     }
 
@@ -100,7 +165,7 @@ window.onload = function() {
 
 // search
 
-webSearch.addEventListener('click', startSearch);
+app.get("#webSearch").addEventListener('click', startSearch);
 let countClick = 0;
 function startSearch(){
     if(countClick==0){
