@@ -1,66 +1,51 @@
-
 // keyvisual rotate
 let storePhoto = [];
 let storeLink = [];
 let icount=1;  
 let keyvisualImg;
 let keyvisualImg_len;
-let keyvisualLinkArray;
-const keyvisualLink0 = document.getElementById('keyvisualLink0');
-const keyvisualLink1 = document.getElementById('keyvisualLink1');
-const keyvisualLink2 = document.getElementById('keyvisualLink2');
-const keyvisual0 = document.getElementById('keyvisual0');
-const keyvisual1 = document.getElementById('keyvisual1');
-const keyvisual2 = document.getElementById('keyvisual2');
 setInterval('changeKevisual()',5000);
 
 function changeKevisual(){
     keyvisualImg = [storePhoto[0],storePhoto[1],storePhoto[2]];
     keyvisualImg_len = keyvisualImg.length; 
-    keyvisualLinkArray = [storeLink[0], storeLink[1], storeLink[2]]
 
-    // keyvisualLink.href = keyvisualLinkArray[icount];
-    keyvisual0.style.background  =  "url('" + keyvisualImg[0] + "')";    
-    keyvisual0.style.backgroundRepeat  =  'no-repeat';  
-    keyvisual0.style.backgroundSize  =  'cover';
-    keyvisual0.style.backgroundPositionY = 'center';
-    keyvisualLink0.href = keyvisualLinkArray[0];
+    app.get("#keyvisual0").style.background  =  "url('" + keyvisualImg[0] + "')";    
+    app.get("#keyvisual0").style.backgroundRepeat  =  'no-repeat';  
+    app.get("#keyvisual0").style.backgroundSize  =  'cover';
+    app.get("#keyvisual0").style.backgroundPositionY = 'center';
 
-    keyvisual1.style.background  =  "url('" + keyvisualImg[1] + "')";    
-    keyvisual1.style.backgroundRepeat  =  'no-repeat';  
-    keyvisual1.style.backgroundSize  =  'cover';
-    keyvisual1.style.backgroundPositionY = 'center';
-    keyvisualLink0.href = keyvisualLinkArray[1];
+    app.get("#keyvisual1").style.background  =  "url('" + keyvisualImg[1] + "')";    
+    app.get("#keyvisual1").style.backgroundRepeat  =  'no-repeat';  
+    app.get("#keyvisual1").style.backgroundSize  =  'cover';
+    app.get("#keyvisual1").style.backgroundPositionY = 'center';
 
-    keyvisual2.style.background  =  "url('" + keyvisualImg[2] + "')";    
-    keyvisual2.style.backgroundRepeat  =  'no-repeat';  
-    keyvisual2.style.backgroundSize  =  'cover';
-    keyvisual2.style.backgroundPositionY = 'center';
-    keyvisualLink0.href = keyvisualLinkArray[2];
+    app.get("#keyvisual2").style.background  =  "url('" + keyvisualImg[2] + "')";    
+    app.get("#keyvisual2").style.backgroundRepeat  =  'no-repeat';  
+    app.get("#keyvisual2").style.backgroundSize  =  'cover';
+    app.get("#keyvisual2").style.backgroundPositionY = 'center';
 
     if(icount == 0){
-        keyvisual0.style.display  =  'block';
-        keyvisual1.style.display  =  'none';
-        keyvisual2.style.display  =  'none';
-        // keyvisualLink0.href = keyvisualLinkArray[0];
-        keyvisual0.style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        keyvisual0.style.backgroundPositionX = 'left';
+        app.get("#keyvisual0").style.display  =  'block';
+        app.get("#keyvisual1").style.display  =  'none';
+        app.get("#keyvisual2").style.display  =  'none';
+
+        app.get("#keyvisual0").style.animation = 'opacityOut 5s ease 0s 1 alternate both';
+        app.get("#keyvisual0").style.backgroundPositionX = 'left';
 
     }else if(icount == 1){
-        keyvisual0.style.display  =  'none';
-        keyvisual1.style.display  =  'block';
-        keyvisual2.style.display  =  'none';
-        // keyvisualLink1.href = keyvisualLinkArray[1];
-        keyvisual1.style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        keyvisual1.style.backgroundPositionX = 'center';
+        app.get("#keyvisual0").style.display  =  'none';
+        app.get("#keyvisual1").style.display  =  'block';
+        app.get("#keyvisual2").style.display  =  'none';
+        app.get("#keyvisual1").style.animation = 'opacityOut 5s ease 0s 1 alternate both';
+        app.get("#keyvisual1").style.backgroundPositionX = 'center';
 
     }else if(icount == 2){
-        keyvisual1.style.display  =  'none';
-        keyvisual0.style.display  =  'none';
-        keyvisual2.style.display  =  'block';
-        // keyvisualLink2.href = keyvisualLinkArray[2];
-        keyvisual2.style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        keyvisual2.style.backgroundPositionX = 'right';
+        app.get("#keyvisual1").style.display  =  'none';
+        app.get("#keyvisual0").style.display  =  'none';
+        app.get("#keyvisual2").style.display  =  'block';
+        app.get("#keyvisual2").style.animation = 'opacityOut 5s ease 0s 1 alternate both';
+        app.get("#keyvisual2").style.backgroundPositionX = 'right';
 
     }
 
@@ -418,12 +403,11 @@ function readMoreDiv(){
 
 // all tag
 
-const getAllArticle = document.getElementById('getAllArticle');
-getAllArticle.onclick = function(){
-    getAllArticle.style.color = 'rgb(26, 216, 211)';
-    smallClass.style.color = 'rgb(128, 128, 128)';
-    letItGo.style.color = 'rgb(128, 128, 128)';
-    oneByOne.style.color = 'rgb(128, 128, 128)';
+app.get("#getAllArticle").onclick = function(){
+    app.get("#getAllArticle").style.color = 'rgb(26, 216, 211)';
+    app.get("#smallClass").style.color = 'rgb(128, 128, 128)';
+    app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
+    app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
 
     document.getElementById('mainId').innerHTML = '';
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
@@ -434,12 +418,11 @@ getAllArticle.onclick = function(){
         });
 }
 
-const smallClass = document.getElementById('smallClass');
-smallClass.onclick = function(){
-    getAllArticle.style.color = 'rgb(128, 128, 128)';
-    smallClass.style.color = 'rgb(26, 216, 211)';
-    letItGo.style.color = 'rgb(128, 128, 128)';
-    oneByOne.style.color = 'rgb(128, 128, 128)';
+app.get("#smallClass").onclick = function(){
+    app.get("#getAllArticle").style.color = 'rgb(128, 128, 128)';
+    app.get("#smallClass").style.color = 'rgb(26, 216, 211)';
+    app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
+    app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
     document.getElementById('mainId').innerHTML = '';
     getAllData.orderByChild('classType').equalTo('小班制').on('child_added', function(snapshot) {
         data = snapshot.val();
@@ -447,12 +430,11 @@ smallClass.onclick = function(){
     });   
 }
 
-const letItGo = document.getElementById('letItGo');
-letItGo.onclick = function(){
-    getAllArticle.style.color = 'rgb(128, 128, 128)';
-    smallClass.style.color = 'rgb(128, 128, 128)';
-    letItGo.style.color = 'rgb(26, 216, 211)';
-    oneByOne.style.color = 'rgb(128, 128, 128)';
+app.get("#letItGo").onclick = function(){
+    app.get("#getAllArticle").style.color = 'rgb(128, 128, 128)';
+    app.get("#smallClass").style.color = 'rgb(128, 128, 128)';
+    app.get("#letItGo").style.color = 'rgb(26, 216, 211)';
+    app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
     document.getElementById('mainId').innerHTML = '';
     getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', function(snapshot) {
         data = snapshot.val();
@@ -460,12 +442,11 @@ letItGo.onclick = function(){
     });   
 }
 
-const oneByOne = document.getElementById('oneByOne');
-oneByOne.onclick = function(){
-    getAllArticle.style.color = 'rgb(128, 128, 128)';
-    smallClass.style.color = 'rgb(128, 128, 128)';
-    letItGo.style.color = 'rgb(128, 128, 128)';
-    oneByOne.style.color = 'rgb(26, 216, 211)';
+app.get("#oneByOne").onclick = function(){
+    app.get("#getAllArticle").style.color = 'rgb(128, 128, 128)';
+    app.get("#smallClass").style.color = 'rgb(128, 128, 128)';
+    app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
+    app.get("#oneByOne").style.color = 'rgb(26, 216, 211)';
     document.getElementById('mainId').innerHTML = '';
     getAllData.orderByChild('classType').equalTo('一對一').on('child_added', function(snapshot) {
         data = snapshot.val();
@@ -475,13 +456,9 @@ oneByOne.onclick = function(){
 
 // alert 
 
-const alertBigBox = document.getElementById('alertBigBox');
-const alertButton = document.getElementById('alertButton');
-const alertWord = document.getElementById('alertWord');
-alertBigBox.style.display = 'none';
-
-alertButton.addEventListener('click', ()=>{
-    alertBigBox.style.display = 'none';
+app.get("#alertBigBox").style.display = 'none';
+app.get("#alertButton").addEventListener('click', ()=>{
+    app.get("#alertBigBox").style.display = 'none';
 });
 
 // close loading

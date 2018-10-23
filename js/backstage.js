@@ -1,40 +1,20 @@
-const mainButton = document.getElementById('mainButton');
-const mainName = document.getElementById('mainName');
-const mainCity = document.getElementById('mainCity');
-const mainSkill = document.getElementById('mainSkill');
-const mainTechnology = document.getElementById('mainTechnology');
-const mainFee = document.getElementById('mainFee');
-const mainTotalDay = document.getElementById('mainTotalDay');
-const mainWeekHour = document.getElementById('mainWeekHour');
-const mainFoundYear = document.getElementById('mainFoundYear');
-const mainTeachWay = document.getElementById('mainTeachWay');
-const mainClassType = document.getElementById('mainClassType');
-const mainTeacherNum = document.getElementById('mainTeacherNum');
-const mainTopic = document.getElementById('mainTopic');
-const mainPreface = document.getElementById('mainPreface');
-const mainContent = document.getElementById('mainContent');
-const mainPhone = document.getElementById('mainPhone');
-const mainMail = document.getElementById('mainMail');
-
 // upload img
-const mainUploadPic = document.getElementById('mainUploadPic');
-const RectanglePic = document.getElementById('RectanglePic');
 let squareUrl = '';
 let rectangleUrl = '';
 let getFile = '';
 let getRectangleFile = '';
 
-mainUploadPic.addEventListener('change', function(){
+app.get("#mainUploadPic").addEventListener('change', function(){
     getFile = this.files[0]
 },false);
 
-RectanglePic.addEventListener('change', function(){
+app.get("#RectanglePic").addEventListener('change', function(){
     getRectangleFile = this.files[0]
 },false);
 
 // set the post
 
-mainButton.addEventListener('click',clickButton);
+app.get("#mainButton").addEventListener('click',clickButton);
 
 function clickButton(){
         
@@ -98,22 +78,22 @@ function clickButton(){
 
         //存入所有資料
         let newPostKey = firebase.database().ref().child('article').push().key;
-        let name = mainName.value;
-        let city = mainCity.value;
-        let skill = mainSkill.value;
-        let technology = mainTechnology.value;
-        let fee = mainFee.value;
-        let totalDay = mainTotalDay.value;
-        let weekHour = mainWeekHour.value;
-        let foundYear = mainFoundYear.value;
-        let teachWay =  mainTeachWay.value;
-        let classType = mainClassType.value;
-        let teacherNum = mainTeacherNum.value;
-        let topic = mainTopic.value;
-        let preface = mainPreface.value;
-        let content = mainContent.value;
-        let phone = mainPhone.value;
-        let mail = mainMail.value;
+        let name = app.get("#mainName").value;
+        let city = app.get("#mainCity").value;
+        let skill = app.get("#mainSkill").value;
+        let technology = app.get("#mainTechnology").value;
+        let fee = app.get("#mainFee").value;
+        let totalDay = app.get("#mainTotalDay").value;
+        let weekHour = app.get("#mainWeekHour").value;
+        let foundYear = app.get("#mainFoundYear").value;
+        let teachWay =  app.get("#mainTeachWay").value;
+        let classType = app.get("#mainClassType").value;
+        let teacherNum = app.get("#mainTeacherNum").value;
+        let topic = app.get("#mainTopic").value;
+        let preface = app.get("#mainPreface").value;
+        let content = app.get("#mainContent").value;
+        let phone = app.get("#mainPhone").value;
+        let mail = app.get("#mainMail").value;
         let sUrl = squareUrl;
         let rUrl = rectangleUrl;
         writePost(newPostKey, name, city, skill, technology, fee, totalDay, weekHour,foundYear,
@@ -182,16 +162,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 //alert
 
 function postAlreadyOut(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '貼文已發布';
+    app.get("#alertBigBox").style.display = 'flex';
+    app.get("#alertWord").innerHTML = '貼文已發布';
 }
 
-const alertBigBox = document.getElementById('alertBigBox');
-const alertButton = document.getElementById('alertButton');
-const alertWord = document.getElementById('alertWord');
-alertBigBox.style.display = 'none';
-alertButton.addEventListener('click', ()=>{
-    alertBigBox.style.display = 'none';
+app.get("#alertBigBox").style.display = 'none';
+app.get("#alertButton").addEventListener('click', ()=>{
+    app.get("#alertBigBox").style.display = 'none';
 });
 
 // close loading

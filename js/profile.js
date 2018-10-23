@@ -1,23 +1,5 @@
 // personal data
 
-const displayResult = document.getElementById('displayResult');
-const inputName = document.getElementById('inputName');
-const inputMail = document.getElementById('inputMail');
-const inputPhoto = document.getElementById('inputPhoto');
-const inputPhone = document.getElementById('inputPhone');
-const fixData = document.getElementById('fixData');
-const confirmCancel = document.getElementById('confirmCancel');
-const makeConfirm = document.getElementById('makeConfirm');
-const makeCancel = document.getElementById('makeCancel');
-const managePost = document.getElementById('managePost');
-const personalData = document.getElementById('personalData');
-const createRightDiv = document.getElementById('createRightDiv');
-const createPostPost = document.getElementById('createPostPost');
-const createPostEdit = document.getElementById('createPostEdit');
-const forDeletePost = document.getElementById('forDeletePost');
-const rightCollection = document.getElementById('rightCollection');
-const myCollection = document.getElementById('myCollection');
-
 setTimeout(loadAllLoginStuff, 4000);
 
 function loadAllLoginStuff(){
@@ -30,65 +12,65 @@ function loadAllLoginStuff(){
     if(dataExist == undefined){
         // if firebase have no data, use google data
         if(userLogin.photoURL){
-            inputName.value = userLogin.displayName;
-            inputMail.value = userLogin.email;
+            app.get("#inputName").value = userLogin.displayName;
+            app.get("#inputMail").value = userLogin.email;
             if(userLogin.phoneNumber == undefined){
-                inputPhone.value = 'phone';
+                app.get("#inputPhone").value = 'phone';
             }
             if(userLogin.displayName == undefined){
-                inputName.value = 'name';
+                app.get("#inputName").value = 'name';
             }
-            inputPhoto.style.background = "url('" + userLogin.photoURL + "')";
+            app.get("#inputPhoto").style.background = "url('" + userLogin.photoURL + "')";
         }
     }else{
         // if firebase have data, use it
         if(dataExist.name){
-            inputName.value = dataExist.name;
+            app.get("#inputName").value = dataExist.name;
         }
-        inputMail.value = dataExist.mail;
+        app.get("#inputMail").value = dataExist.mail;
 
         if(dataExist.phone){
-            inputPhone.value = dataExist.phone;
+            app.get("#inputPhone").value = dataExist.phone;
         }
         if(dataExist.photoUrl){
-            inputPhoto.style.background = "url('" + dataExist.photoUrl + "')";
+            app.get("#inputPhoto").style.background = "url('" + dataExist.photoUrl + "')";
         }
     }
     
-    inputPhoto.style.backgroundPosition= 'center';
-    inputPhoto.style.backgroundSize= 'cover';
-    inputPhoto.style.backgroundRepeat= 'no-repeat';
+    app.get("#inputPhoto").style.backgroundPosition= 'center';
+    app.get("#inputPhoto").style.backgroundSize= 'cover';
+    app.get("#inputPhoto").style.backgroundRepeat= 'no-repeat';
     if(userLogin.email == 'aaa24295234@gmail.com' || userLogin.email == 'frontenter2018@gmail.com'){
-        managePost.style.display = 'block';
+        app.get("#managePost").style.display = 'block';
     }
 }
 
-fixData.addEventListener('click', startFix);
-makeConfirm.addEventListener('click', startConfirm);
-makeCancel.addEventListener('click', startCancel);
+app.get("#fixData").addEventListener('click', startFix);
+app.get("#makeConfirm").addEventListener('click', startConfirm);
+app.get("#makeCancel").addEventListener('click', startCancel);
 
 function startFix(){
-    inputName.disabled = false;
-    inputPhone.disabled = false;
-    inputName.style.backgroundColor = 'white';
-    inputPhone.style.backgroundColor = 'white';
-    inputPhone.style.border = '1px solid rgba(230, 230, 230, 0.7)';
-    inputName.style.border = '1px solid rgba(230, 230, 230, 0.7)';
-    fixData.style.display = 'none';
-    confirmCancel.style.display = 'flex';
+    app.get("#inputName").disabled = false;
+    app.get("#inputPhone").disabled = false;
+    app.get("#inputName").style.backgroundColor = 'white';
+    app.get("#inputPhone").style.backgroundColor = 'white';
+    app.get("#inputPhone").style.border = '1px solid rgba(230, 230, 230, 0.7)';
+    app.get("#inputName").style.border = '1px solid rgba(230, 230, 230, 0.7)';
+    app.get("#fixData").style.display = 'none';
+    app.get("#confirmCancel").style.display = 'flex';
 }
 
 function startConfirm(){
     // disable
-    inputName.disabled = true;
-    inputPhone.disabled = true;
-    inputName.style.backgroundColor = 'rgba(230, 230, 230, 0)';
-    inputPhone.style.backgroundColor = 'rgba(230, 230, 230, 0)';
-    inputPhone.style.border = '0px solid rgba(230, 230, 230, 0.7)';
-    inputName.style.border = '0px solid rgba(230, 230, 230, 0.7)';
+    app.get("#inputName").disabled = true;
+    app.get("#inputPhone").disabled = true;
+    app.get("#inputName").style.backgroundColor = 'rgba(230, 230, 230, 0)';
+    app.get("#inputPhone").style.backgroundColor = 'rgba(230, 230, 230, 0)';
+    app.get("#inputPhone").style.border = '0px solid rgba(230, 230, 230, 0.7)';
+    app.get("#inputName").style.border = '0px solid rgba(230, 230, 230, 0.7)';
     // display amend data
-    fixData.style.display = 'block';
-    confirmCancel.style.display = 'none';
+    app.get("#fixData").style.display = 'block';
+    app.get("#confirmCancel").style.display = 'none';
     // store data to firebase
     let getAllMemberData = database.ref('member');
     let dataExist;
@@ -100,9 +82,9 @@ function startConfirm(){
         // if firebase no data, use google
         if(userLogin.photoURL){
             firebase.database().ref('member/'+newPostKey).set({
-                name: inputName.value,
+                name: app.get("#inputName").value,
                 mail : userLogin.email,
-                phone : inputPhone.value,
+                phone : app.get("#inputPhone").value,
                 photoUrl : userLogin.photoURL,
                 creatTime: new Date().getTime(),
                 uid : newPostKey
@@ -111,9 +93,9 @@ function startConfirm(){
     }else{
         // if firebase have data, use it 
             firebase.database().ref('member/'+ dataExist.uid).set({
-                name: inputName.value,
+                name: app.get("#inputName").value,
                 mail : userLogin.email,
-                phone : inputPhone.value,
+                phone : app.get("#inputPhone").value,
                 photoUrl : userLogin.photoURL,
                 creatTime: new Date().getTime(),
                 uid : dataExist.uid
@@ -124,15 +106,15 @@ function startConfirm(){
 
 function startCancel(){
     // disable
-    inputName.disabled = true;
-    inputPhone.disabled = true;
-    inputName.style.backgroundColor = 'rgba(230, 230, 230, 0)';
-    inputPhone.style.backgroundColor = 'rgba(230, 230, 230, 0)';
-    inputPhone.style.border = '0px solid rgba(230, 230, 230, 0.7)';
-    inputName.style.border = '0px solid rgba(230, 230, 230, 0.7)';
+    app.get("#inputName").disabled = true;
+    app.get("#inputPhone").disabled = true;
+    app.get("#inputName").style.backgroundColor = 'rgba(230, 230, 230, 0)';
+    app.get("#inputPhone").style.backgroundColor = 'rgba(230, 230, 230, 0)';
+    app.get("#inputPhone").style.border = '0px solid rgba(230, 230, 230, 0.7)';
+    app.get("#inputName").style.border = '0px solid rgba(230, 230, 230, 0.7)';
     // display amend data
-    fixData.style.display = 'block';
-    confirmCancel.style.display = 'none';
+    app.get("#fixData").style.display = 'block';
+    app.get("#confirmCancel").style.display = 'none';
     // cancel amend logic
     cancelToFixData();
 }
@@ -147,12 +129,12 @@ function startCancel(){
         if(dataExist == undefined){
             // firebase no data, use google
             if(userLogin.photoURL){
-                inputName.value = userLogin.name;
+                app.get("#inputName").value = userLogin.name;
             }
         }else{
             // if firebase have data
-            inputName.value =  dataExist.name;
-            inputPhone.value = dataExist.phone;
+            app.get("#inputName").value =  dataExist.name;
+            app.get("#inputPhone").value = dataExist.phone;
         }
     }
 
@@ -186,33 +168,33 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 // re display personal data
 
-personalData.addEventListener('click', letPersonalAppear);
+app.get("#personalData").addEventListener('click', letPersonalAppear);
 
 function letPersonalAppear(){
-    displayResult.style.display = 'flex';
-    createRightDiv.style.display = 'none';
-    forDeletePost.style.display = 'none';
-    rightCollection.style.display = 'none';
-    forDeletePost.innerHTML = '';
+    app.get("#displayResult").style.display = 'flex';
+    app.get("#createRightDiv").style.display = 'none';
+    app.get("#forDeletePost").style.display = 'none';
+    app.get("#rightCollection").style.display = 'none';
+    app.get("#forDeletePost").innerHTML = '';
 }
 
 // send the post
 
-createPostPost.addEventListener('click', function(){
+app.get("#createPostPost").addEventListener('click', function(){
     window.location = 'backstage.html';
 })
 
 // manage Post
 
-managePost.addEventListener('click', createPostLayout);
+app.get("#managePost").addEventListener('click', createPostLayout);
 
 function createPostLayout(){
     // hide personal data
-    displayResult.style.display = 'none';
-    rightCollection.style.display = 'none';
+    app.get("#displayResult").style.display = 'none';
+    app.get("#rightCollection").style.display = 'none';
     // send the post, edit show up
-    createRightDiv.style.display = 'flex';
-    forDeletePost.style.display = 'flex';
+    app.get("#createRightDiv").style.display = 'flex';
+    app.get("#forDeletePost").style.display = 'flex';
     // create post
         createUpPost();
 }
@@ -275,7 +257,7 @@ function deleteImg(myAllData){
 
 // click edit post
 
-createPostEdit.addEventListener('click', displayMyImg);
+app.get("#createPostEdit").addEventListener('click', displayMyImg);
 
 function displayMyImg(){
 
@@ -299,13 +281,13 @@ function displayMyImg(){
 
 // click collection
 
-myCollection.addEventListener('click', createCollectionLayout);
+app.get("#myCollection").addEventListener('click', createCollectionLayout);
 
 function createCollectionLayout(){
-    rightCollection.innerHTML = '';
-    displayResult.style.display = 'none';
-    rightCollection.style.display = 'flex';
-    createRightDiv.style.display = 'none';
+    app.get("#rightCollection").innerHTML = '';
+    app.get("#displayResult").style.display = 'none';
+    app.get("#rightCollection").style.display = 'flex';
+    app.get("#createRightDiv").style.display = 'none';
     createCollectionDiv();
 
 }
@@ -315,7 +297,7 @@ function createCollectionDiv(){
     let getLocal;
     getLocal = JSON.parse(window.localStorage.getItem(`collection`));
     if(getLocal == ''){
-        rightCollection.textContent = '無收藏';
+        app.get("#rightCollection").textContent = '無收藏';
     }else{
         for(let i = 0; i<getLocal.length ; i++){
             inCollectionDiv(i);
@@ -374,22 +356,18 @@ function inCollectionDelete(i){
 // alert 
 
 function youDeleteAnArticle(x){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = x + '已刪除，準備重新載入';
+    app.get("#alertBigBox").style.display = 'flex';
+    app.get("#alertWord").innerHTML = x + '已刪除，準備重新載入';
 }
 
 function confirmAllDataChange(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '資料修改成功';
+    app.get("#alertBigBox").style.display = 'flex';
+    app.get("#alertWord").innerHTML = '資料修改成功';
 }
 
-const alertBigBox = document.getElementById('alertBigBox');
-const alertButton = document.getElementById('alertButton');
-const alertWord = document.getElementById('alertWord');
-alertBigBox.style.display = 'none';
-
-alertButton.addEventListener('click', ()=>{
-    alertBigBox.style.display = 'none';
+app.get("#alertBigBox").style.display = 'none';
+app.get("#alertButton").addEventListener('click', ()=>{
+    app.get("#alertBigBox").style.display = 'none';
 });
 
 

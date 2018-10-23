@@ -1,68 +1,49 @@
-const MykeyvisualSpan = document.getElementById('MykeyvisualSpan');
-const mainButton = document.getElementById('mainButton');
-const mainName = document.getElementById('mainName');
-const mainCity = document.getElementById('mainCity');
-const mainSkill = document.getElementById('mainSkill');
-const mainTechnology = document.getElementById('mainTechnology');
-const mainFee = document.getElementById('mainFee');
-const mainTotalDay = document.getElementById('mainTotalDay');
-const mainWeekHour = document.getElementById('mainWeekHour');
-const mainFoundYear = document.getElementById('mainFoundYear');
-const mainTeachWay = document.getElementById('mainTeachWay');
-const mainClassType = document.getElementById('mainClassType');
-const mainTeacherNum = document.getElementById('mainTeacherNum');
-const mainTopic = document.getElementById('mainTopic');
-const mainPreface = document.getElementById('mainPreface');
-const mainContent = document.getElementById('mainContent');
-const mainPhone = document.getElementById('mainPhone');
-const mainMail = document.getElementById('mainMail');
-
 // change word value
+
 let articleId = (new URL(document.location)).searchParams.get('id');  //get url id
 let getDataFromUrl = database.ref('article');
 let getMyUid;
 getDataFromUrl.orderByChild('creatTime').equalTo(Number(articleId)).on('child_added', function(snapshot) {
     getMyUid = snapshot.val().uid;
-    MykeyvisualSpan.textContent = snapshot.val().name + '(編輯)';
-    mainName.value = snapshot.val().name;
-    mainCity.value = snapshot.val().city;
-    mainSkill.value = snapshot.val().skill;
-    mainTechnology.value = snapshot.val().technology;
-    mainFee.value = snapshot.val().fee;
-    mainTotalDay.value = snapshot.val().totalDay;
-    mainWeekHour.value = snapshot.val().weekHour;
-    mainFoundYear.value = snapshot.val().foundYear;
-    mainTeachWay.value = snapshot.val().teachWay;
-    mainClassType.value = snapshot.val().classType;
-    mainTeacherNum.value = snapshot.val().teacherNum;
-    mainTopic.value = snapshot.val().topic;
-    mainPreface.value = snapshot.val().preface;
-    mainContent.value = snapshot.val().content;
-    mainPhone.value = snapshot.val().phone;
-    mainMail.value = snapshot.val().mail;
+    app.get("#MykeyvisualSpan").textContent = snapshot.val().name + '(編輯)';
+    app.get("#mainName").value = snapshot.val().name;
+    app.get("#mainCity").value = snapshot.val().city;
+    app.get("#mainSkill").value = snapshot.val().skill;
+    app.get("#mainTechnology").value = snapshot.val().technology;
+    app.get("#mainFee").value = snapshot.val().fee;
+    app.get("#mainTotalDay").value = snapshot.val().totalDay;
+    app.get("#mainWeekHour").value = snapshot.val().weekHour;
+    app.get("#mainFoundYear").value = snapshot.val().foundYear;
+    app.get("#mainTeachWay").value = snapshot.val().teachWay;
+    app.get("#mainClassType").value = snapshot.val().classType;
+    app.get("#mainTeacherNum").value = snapshot.val().teacherNum;
+    app.get("#mainTopic").value = snapshot.val().topic;
+    app.get("#mainPreface").value = snapshot.val().preface;
+    app.get("#mainContent").value = snapshot.val().content;
+    app.get("#mainPhone").value = snapshot.val().phone;
+    app.get("#mainMail").value = snapshot.val().mail;
 
 });  
 
 
 // upload img
-const mainUploadPic = document.getElementById('mainUploadPic');
-const RectanglePic = document.getElementById('RectanglePic');
+
 let squareUrl = '';
 let rectangleUrl = '';
 let getFile = '';
 let getRectangleFile = '';
 
-mainUploadPic.addEventListener('change', function(){
+app.get("#mainUploadPic").addEventListener('change', function(){
     getFile = this.files[0]
 },false);
 
-RectanglePic.addEventListener('change', function(){
+app.get("#RectanglePic").addEventListener('change', function(){
     getRectangleFile = this.files[0]
 },false);
 
 //send the post
 
-mainButton.addEventListener('click',clickButton);
+app.get("#mainButton").addEventListener('click',clickButton);
 
 function clickButton(){
         
@@ -126,22 +107,22 @@ function clickButton(){
 
         // store all data
         let newPostKey = firebase.database().ref().child('article').push().key;
-        let name = mainName.value;
-        let city = mainCity.value;
-        let skill = mainSkill.value;
-        let technology = mainTechnology.value;
-        let fee = mainFee.value;
-        let totalDay = mainTotalDay.value;
-        let weekHour = mainWeekHour.value;
-        let foundYear = mainFoundYear.value;
-        let teachWay =  mainTeachWay.value;
-        let classType = mainClassType.value;
-        let teacherNum = mainTeacherNum.value;
-        let topic = mainTopic.value;
-        let preface = mainPreface.value;
-        let content = mainContent.value;
-        let phone = mainPhone.value;
-        let mail = mainMail.value;
+        let name = app.get("#mainName").value;
+        let city = app.get("#mainCity").value;
+        let skill = app.get("#mainSkill").value;
+        let technology = app.get("#mainTechnology").value;
+        let fee = app.get("#mainFee").value;
+        let totalDay = app.get("#mainTotalDay").value;
+        let weekHour = app.get("#mainWeekHour").value;
+        let foundYear = app.get("#mainFoundYear").value;
+        let teachWay =  app.get("#mainTeachWay").value;
+        let classType = app.get("#mainClassType").value;
+        let teacherNum = app.get("#mainTeacherNum").value;
+        let topic = app.get("#mainTopic").value;
+        let preface = app.get("#mainPreface").value;
+        let content = app.get("#mainContent").value;
+        let phone = app.get("#mainPhone").value;
+        let mail = app.get("#mainMail").value;
         let sUrl = squareUrl;
         let rUrl = rectangleUrl;
         writePost(newPostKey, name, city, skill, technology, fee, totalDay, weekHour,foundYear,
@@ -210,17 +191,13 @@ firebase.auth().onAuthStateChanged(function(user) {
 //alert
 
 function postAlreadyOut(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '貼文已更新';
+    app.get("#alertBigBox").style.display = 'flex';
+    app.get("#alertWord").innerHTML = '貼文已更新';
 }
 
-const alertBigBox = document.getElementById('alertBigBox');
-const alertButton = document.getElementById('alertButton');
-const alertWord = document.getElementById('alertWord');
-alertBigBox.style.display = 'none';
-
-alertButton.addEventListener('click', ()=>{
-    alertBigBox.style.display = 'none';
+app.get("#alertBigBox").style.display = 'none';
+app.get("#alertButton").addEventListener('click', ()=>{
+    app.get("#alertBigBox").style.display = 'none';
 });
 
 // close loading

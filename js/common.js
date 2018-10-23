@@ -1,51 +1,44 @@
-
-
 //when scrolling, change header
 
-const loadingDrawing = document.getElementById('loadingDrawing');
-const loadingAnimation = document.getElementById('loadingAnimation');
-const loadingImg = document.getElementById('loadingImg');
-const myAside = document.getElementById('myAside');
-
-app.get("#headerP3").addEventListener('mouseover', function(){
-    app.get("#headerP3").style.color='rgb(26, 216, 211)';
+app.get('#headerP3').addEventListener('mouseover', function(){
+    app.get('#headerP3').style.color='rgb(26, 216, 211)';
 });
-app.get("#headerP3").addEventListener('mouseout', function(){
-    app.get("#headerP3").style.color='rgb(128, 128, 128)';
+app.get('#headerP3').addEventListener('mouseout', function(){
+    app.get('#headerP3').style.color='rgb(128, 128, 128)';
 })
 
 window.addEventListener('scroll',winScroll);
 function winScroll(){
     if(document.documentElement.scrollTop > 0){
-        app.get("#webSearch").src = 'images/FE_search_green.png';
-        app.get("#logo").src = 'images/FE_logo-4.png';
-        app.get("#headerP1").style.color='rgb(128,128,128)';
-        app.get("#headerP2").style.color='rgb(128,128,128)';
-        app.get("#headerP3").style.color='rgb(128,128,128)';
-        app.get("#header").style.animation = 'headerBackgroundOut 5s ease 0s 1 alternate forwards';
+        app.get('#webSearch').src = 'images/FE_search_green.png';
+        app.get('#logo').src = 'images/FE_logo-4.png';
+        app.get('#headerP1').style.color='rgb(128,128,128)';
+        app.get('#headerP2').style.color='rgb(128,128,128)';
+        app.get('#headerP3').style.color='rgb(128,128,128)';
+        app.get('#header').style.animation = 'headerBackgroundOut 5s ease 0s 1 alternate forwards';
         if(userLogin && userLogin.emailVerified == true){
-            app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
-            app.get("#headerP3").textContent = '會員';
+            app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
+            app.get('#headerP3').textContent = '會員';
             if(userLogin.photoURL){
-                app.get("#headerP3").textContent = '';
+                app.get('#headerP3').textContent = '';
             }
-            app.get("#headerP3").style.cursor = 'pointer';
+            app.get('#headerP3').style.cursor = 'pointer';
         }
       }else if(document.documentElement.scrollTop<100){
-        app.get("#webSearch").src = 'images/FE_search_green.png';
-        app.get("#logo").src = 'images/FE_logo-4.png';
-        app.get("#header").style.backgroundColor = '';
-        app.get("#headerP1").style.color='rgb(128, 128, 128)';
-        app.get("#headerP2").style.color='rgb(128, 128, 128)';
-        app.get("#headerP3").style.color='rgb(128, 128, 128)';
-        app.get("#header").style.animation = 'headerBackgroundIn 1s ease 0s 1 alternate';
+        app.get('#webSearch').src = 'images/FE_search_green.png';
+        app.get('#logo').src = 'images/FE_logo-4.png';
+        app.get('#header').style.backgroundColor = '';
+        app.get('#headerP1').style.color='rgb(128, 128, 128)';
+        app.get('#headerP2').style.color='rgb(128, 128, 128)';
+        app.get('#headerP3').style.color='rgb(128, 128, 128)';
+        app.get('#header').style.animation = 'headerBackgroundIn 1s ease 0s 1 alternate';
         if(userLogin && userLogin.emailVerified == true){
-            app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
-            app.get("#headerP3").textContent = '會員';
+            app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
+            app.get('#headerP3').textContent = '會員';
             if(userLogin.photoURL){
-                app.get("#headerP3").textContent = '';
+                app.get('#headerP3').textContent = '';
             }
-            app.get("#headerP3").style.cursor = 'pointer';
+            app.get('#headerP3').style.cursor = 'pointer';
         }else{
 
         }
@@ -58,15 +51,15 @@ window.onload = function() {
 
     // detect log in and change word
     if(userLogin && userLogin.emailVerified == true){
-        app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
-        app.get("#headerP3").style.cursor = 'pointer';
-        app.get("#headerP3").addEventListener('mouseenter', changeColor);
-        app.get("#headerP3").addEventListener('mouseleave', changeColorAgain)
+        app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
+        app.get('#headerP3').style.cursor = 'pointer';
+        app.get('#headerP3').addEventListener('mouseenter', changeColor);
+        app.get('#headerP3').addEventListener('mouseleave', changeColorAgain)
         function changeColor(){
-            app.get("#headerP3").style.color = 'rgb(26, 216, 211)';
+            app.get('#headerP3').style.color = 'rgb(26, 216, 211)';
         }
         function changeColorAgain(){
-            app.get("#headerP3").style.color = 'rgb(128, 128, 128)';
+            app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
         }
     }
 
@@ -96,7 +89,7 @@ window.onload = function() {
 
 // search
 
-app.get("#webSearch").addEventListener('click', startSearch);
+app.get('#webSearch').addEventListener('click', startSearch);
 let countClick = 0;
 function startSearch(){
     if(countClick==0){
@@ -241,12 +234,10 @@ function searchToArticle(){
 
 // test GO
 
-const testGo = document.getElementById('testGo');
-testGo.addEventListener('click', createTestGo)
+app.get('#testGo').addEventListener('click', createTestGo)
 // home page button
-const homeTestGo = document.getElementById('homeTestGo');
-if(homeTestGo){
-    homeTestGo.addEventListener('click', createTestGo)
+if(app.get('#homeTestGo')){
+    app.get('#homeTestGo').addEventListener('click', createTestGo)
 }
 function createTestGo(){
     if(countClick==0){
@@ -672,7 +663,6 @@ function getAllSelectLogic(){
     setTimeout(maxValue, 3000); 
 }
 
-const pseudoPieChart = document.getElementById('endPieChart');
 let styleElem = document.head.appendChild(document.createElement('style'));
 let styleElemOne = document.head.appendChild(document.createElement('style'));
 let styleElemTwo = document.head.appendChild(document.createElement('style'));

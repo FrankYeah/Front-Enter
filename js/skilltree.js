@@ -1,176 +1,131 @@
-// all the DOM
-// question gate
-
-const questionDiv = document.getElementById('questionDiv');
-const questionHead = document.getElementById('questionHead');
-const htmlAnswerOne = document.getElementById('htmlAnswerOne');
-const htmlAnswerTwo = document.getElementById('htmlAnswerTwo');
-const htmlAnswerThree = document.getElementById('htmlAnswerThree');
-const htmlB = document.getElementById('htmlB');
-const htmlOne = document.getElementById('htmlOne');
-const cssB = document.getElementById('cssB');
-const cssOne = document.getElementById('cssOne');
-const jsB = document.getElementById('jsB');
-const jsOne = document.getElementById('jsOne');
-const jsTwo = document.getElementById('jsTwo');
-const jQueryB = document.getElementById('jQueryB');
-const iQueryOne = document.getElementById('iQueryOne');
-const domB = document.getElementById('domB');
-const domOne = document.getElementById('domOne');
-const ajaxB = document.getElementById('ajaxB');
-const ajaxOne = document.getElementById('ajaxOne');
-const ajaxTwo = document.getElementById('ajaxTwo');
-const es6B = document.getElementById('es6B');
-const jsonB = document.getElementById('jsonB');
-const es6One = document.getElementById('es6One');
-const jsonOne = document.getElementById('jsonOne');
-const spaB = document.getElementById('spaB');
-const apisB = document.getElementById('apisB');
-const spaOne = document.getElementById('spaOne');
-const apisOne = document.getElementById('apisOne');
-const tddB = document.getElementById('tddB');
-const showDivRight = document.getElementById('showDivRight');
-const showDivLeft = document.getElementById('showDivLeft');
-const questionBox = document.getElementById('questionBox');
-const userIcon = document.getElementById('userIcon');
-const finalPass = document.getElementById('finalPass');
-const arrowContinue = document.getElementById('arrowContinue');
-const fullIcon = document.getElementById('fullIcon');
-const cuteOne = document.getElementById('cuteOne');
-const cuteTwo = document.getElementById('cuteTwo');
-const cuteThree = document.getElementById('cuteThree');
-const typeWord = document.getElementById('typeWord');
-const bgMusic = document.getElementById('bgMusic');
-const fullType = document.getElementById('fullType');
-
 // change userIcon
 
-userIcon.addEventListener('click', changeMyIcon);
+app.get('#userIcon').addEventListener('click', changeMyIcon);
 
 function changeMyIcon(){
-    fullIcon.style.display = 'flex';
+    app.get('#fullIcon').style.display = 'flex';
 }
 
-fullIcon.addEventListener('click', function(event){
-    fullIcon.style.display = 'none';
+app.get('#fullIcon').addEventListener('click', function(event){
+    app.get('#fullIcon').style.display = 'none';
 });
 
 whiteDivIcon.addEventListener('click', function(event){
     event.stopPropagation();
 });
 
-cuteOne.addEventListener('click', function(){
-    userIcon.style.background = 'url(../Front-Enter/images/cute.svg)';
-    userIcon.style.backgroundRepeat = 'no-repeat';
-    userIcon.style.backgroundSize = 'contain';
-    userIcon.style.backgroundPosition = 'left';
-    fullIcon.style.display = 'none';
+app.get('#cuteOne').addEventListener('click', function(){
+    app.get('#userIcon').style.background = 'url(../Front-Enter/images/cute.svg)';
+    app.get('#userIcon').style.backgroundRepeat = 'no-repeat';
+    app.get('#userIcon').style.backgroundSize = 'contain';
+    app.get('#userIcon').style.backgroundPosition = 'left';
+    app.get('#fullIcon').style.display = 'none';
 })
 
-cuteTwo.addEventListener('click', function(){
-    userIcon.style.background = 'url(../Front-Enter/images/cute2.svg)';
-    userIcon.style.backgroundRepeat = 'no-repeat';
-    userIcon.style.backgroundSize = 'contain';
-    userIcon.style.backgroundPosition = 'left';
-    fullIcon.style.display = 'none';
+app.get('#cuteTwo').addEventListener('click', function(){
+    app.get('#userIcon').style.background = 'url(../Front-Enter/images/cute2.svg)';
+    app.get('#userIcon').style.backgroundRepeat = 'no-repeat';
+    app.get('#userIcon').style.backgroundSize = 'contain';
+    app.get('#userIcon').style.backgroundPosition = 'left';
+    app.get('#fullIcon').style.display = 'none';
 })
 
-cuteThree.addEventListener('click', function(){
-    userIcon.style.background = 'url(../Front-Enter/images/cute3.svg)';
-    userIcon.style.backgroundRepeat = 'no-repeat';
-    userIcon.style.backgroundSize = 'contain';
-    userIcon.style.backgroundPosition = 'left';
-    fullIcon.style.display = 'none';
+app.get('#cuteThree').addEventListener('click', function(){
+    app.get('#userIcon').style.background = 'url(../Front-Enter/images/cute3.svg)';
+    app.get('#userIcon').style.backgroundRepeat = 'no-repeat';
+    app.get('#userIcon').style.backgroundSize = 'contain';
+    app.get('#userIcon').style.backgroundPosition = 'left';
+    app.get('#fullIcon').style.display = 'none';
 })
 
 // click empty to close div
 
-questionBox.addEventListener('click', function(event){
+app.get('#questionBox').addEventListener('click', function(event){
     event.stopPropagation();
-    questionDiv.style.display = 'none';
-    htmlAnswerTwo.style.animation = '';
-    htmlAnswerThree.style.animation = '';
-    htmlAnswerOne.style.background= '';
-    htmlAnswerTwo.style.background= '';
-    htmlAnswerThree.style.background= '';
-    arrowContinue.style.display = 'none';
+    app.get('#questionDiv').style.display = 'none';
+    app.get('#htmlAnswerTwo').style.animation = '';
+    app.get('#htmlAnswerThree').style.animation = '';
+    app.get('#htmlAnswerOne').style.background= '';
+    app.get('#htmlAnswerTwo').style.background= '';
+    app.get('#htmlAnswerThree').style.background= '';
+    app.get('#arrowContinue').style.display = 'none';
 })
 
-questionDiv.addEventListener('click', closeMyQ);
+app.get('#questionDiv').addEventListener('click', closeMyQ);
 let QClick = 0;
 function closeMyQ(){
     if(QClick==0){
-        questionDiv.style.display = 'none';
-        htmlAnswerTwo.style.animation = '';
-        htmlAnswerThree.style.animation = '';
-        htmlAnswerOne.style.background= '';
-        htmlAnswerTwo.style.background= '';
-        htmlAnswerThree.style.background= '';
-        arrowContinue.style.display = 'none';
+        app.get('#questionDiv').style.display = 'none';
+        app.get('#htmlAnswerTwo').style.animation = '';
+        app.get('#htmlAnswerThree').style.animation = '';
+        app.get('#htmlAnswerOne').style.background= '';
+        app.get('#htmlAnswerTwo').style.background= '';
+        app.get('#htmlAnswerThree').style.background= '';
+        app.get('#arrowContinue').style.display = 'none';
     }else{
     }
 }
 
-htmlB.addEventListener('click', htmlPass);
+app.get('#htmlB').addEventListener('click', htmlPass);
 
 function htmlPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = ' 請問 HTML 是什麼？';
-    htmlAnswerOne.textContent = '標籤語言';
-    htmlAnswerTwo.textContent = '資料庫工具';
-    htmlAnswerThree.textContent = '瀏覽器規範';
-    htmlAnswerOne.addEventListener('click', htmlGuestRight);
-    htmlAnswerTwo.addEventListener('click', htmlGuestWrongTwo);
-    htmlAnswerThree.addEventListener('click', htmlGuestWrongThree);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = ' 請問 HTML 是什麼？';
+    app.get('#htmlAnswerOne').textContent = '標籤語言';
+    app.get('#htmlAnswerTwo').textContent = '資料庫工具';
+    app.get('#htmlAnswerThree').textContent = '瀏覽器規範';
+    app.get('#htmlAnswerOne').addEventListener('click', htmlGuestRight);
+    app.get('#htmlAnswerTwo').addEventListener('click', htmlGuestWrongTwo);
+    app.get('#htmlAnswerThree').addEventListener('click', htmlGuestWrongThree);
 }
 
 function htmlGuestWrongTwo(event){
     event.stopPropagation();
-    htmlAnswerTwo.style.animation = 'wobbleHorizontal 0.6s ease 0s 1 alternate';
-    htmlAnswerTwo.style.background= 'url(../Front-Enter/images/cancel-FC4803.svg)';
-    htmlAnswerTwo.style.backgroundSize= 'contain';
-    htmlAnswerTwo.style.backgroundColor= 'white';
-    htmlAnswerTwo.style.backgroundRepeat= 'no-repeat';
-    htmlAnswerTwo.style.backgroundOrigin = 'content-box';
+    app.get('#htmlAnswerTwo').style.animation = 'wobbleHorizontal 0.6s ease 0s 1 alternate';
+    app.get('#htmlAnswerTwo').style.background= 'url(../Front-Enter/images/cancel-FC4803.svg)';
+    app.get('#htmlAnswerTwo').style.backgroundSize= 'contain';
+    app.get('#htmlAnswerTwo').style.backgroundColor= 'white';
+    app.get('#htmlAnswerTwo').style.backgroundRepeat= 'no-repeat';
+    app.get('#htmlAnswerTwo').style.backgroundOrigin = 'content-box';
 }
 
 function htmlGuestWrongThree(event){
     event.stopPropagation();
-    htmlAnswerThree.style.animation = 'wobbleHorizontal 0.6s ease 0s 1 alternate';
-    htmlAnswerThree.style.background= 'url(../Front-Enter/images/cancel-FC4803.svg)';
-    htmlAnswerThree.style.backgroundSize= 'contain';
-    htmlAnswerThree.style.backgroundColor= 'white';
-    htmlAnswerThree.style. backgroundRepeat= 'no-repeat';
-    htmlAnswerThree.style.backgroundOrigin = 'content-box';
+    app.get('#htmlAnswerThree').style.animation = 'wobbleHorizontal 0.6s ease 0s 1 alternate';
+    app.get('#htmlAnswerThree').style.background= 'url(../Front-Enter/images/cancel-FC4803.svg)';
+    app.get('#htmlAnswerThree').style.backgroundSize= 'contain';
+    app.get('#htmlAnswerThree').style.backgroundColor= 'white';
+    app.get('#htmlAnswerThree').style. backgroundRepeat= 'no-repeat';
+    app.get('#htmlAnswerThree').style.backgroundOrigin = 'content-box';
 }
 
 function htmlGuestRight(event){
     event.stopPropagation();
-    htmlAnswerOne.style.background= 'url(../Front-Enter/images/checked-FFD800.svg)';
-    htmlAnswerOne.style.backgroundSize= 'contain';
-    htmlAnswerOne.style.backgroundColor= 'white';
-    htmlAnswerOne.style. backgroundRepeat= 'no-repeat';
-    htmlAnswerOne.style.backgroundOrigin = 'content-box';
+    app.get('#htmlAnswerOne').style.background= 'url(../Front-Enter/images/checked-FFD800.svg)';
+    app.get('#htmlAnswerOne').style.backgroundSize= 'contain';
+    app.get('#htmlAnswerOne').style.backgroundColor= 'white';
+    app.get('#htmlAnswerOne').style. backgroundRepeat= 'no-repeat';
+    app.get('#htmlAnswerOne').style.backgroundOrigin = 'content-box';
     htmlLayout();
-    htmlAnswerTwo.style.animation = '';
-    htmlAnswerThree.style.animation = '';
-    userIcon.style.top = '10.2%';
-    userIcon.style.left = '40%';
-    arrowContinue.style.display = 'block';
+    app.get('#htmlAnswerTwo').style.animation = '';
+    app.get('#htmlAnswerThree').style.animation = '';
+    app.get('#userIcon').style.top = '10.2%';
+    app.get('#userIcon').style.left = '40%';
+    app.get('#arrowContinue').style.display = 'block';
 
     // type
     if(this.textContent == '標籤語言'){
-        fullType.style.display = 'flex';
+        app.get('#fullType').style.display = 'flex';
         let str = '你通過第一關，HTML 是成為前端工程師的橋頭堡，也是網站給人的第一印象，一定要學好才行。';
         let i = 0;
         function htmlTyping(){
-            bgMusic.play();
+            app.get('#bgMusic').play();
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(htmlTyping, 60);
             }else{    
-                typeWord.innerHTML = str;  //end, remove _ 
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str;  //end, remove _ 
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -181,30 +136,30 @@ function htmlGuestRight(event){
 }
 
 function closeFullType(){
-    fullType.style.display = 'none';
+    app.get('#fullType').style.display = 'none';
 }
 
-fullType.addEventListener('click', function(){
-    fullType.style.display = 'none';
+app.get('#fullType').addEventListener('click', function(){
+    app.get('#fullType').style.display = 'none';
 })
 
-typeWord.addEventListener('click', function(){
-    fullType.style.display = 'none';
+app.get('#typeWord').addEventListener('click', function(){
+    app.get('#fullType').style.display = 'none';
 })
 
 function htmlLayout(){
-    htmlB.style.backgroundColor = 'rgb(26, 216, 211)';
-    htmlB.style.color = 'white';
-    htmlOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    cssB.style.cursor = 'pointer';
-    cssB.style.color = 'rgb(26, 216, 211)';
-    cssB.style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#htmlB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#htmlB').style.color = 'white';
+    app.get('#htmlOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    app.get('#cssB').style.cursor = 'pointer';
+    app.get('#cssB').style.color = 'rgb(26, 216, 211)';
+    app.get('#cssB').style.border = '1px solid rgb(26, 216, 211)';
 }
 
 // css 
 
-cssB.addEventListener('click', function(){
-    if(cssB.style.cursor){
+app.get('#cssB').addEventListener('click', function(){
+    if(app.get('#cssB').style.cursor){
         cssPass();
     }else{
 
@@ -212,32 +167,32 @@ cssB.addEventListener('click', function(){
 });
 
 function cssPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = ' SCSS 跟 CSS 差別？';
-    htmlAnswerOne.textContent = 'SCSS 用變數控制';
-    htmlAnswerTwo.textContent = 'SCSS 非縮排語法';
-    htmlAnswerThree.textContent = '不同程式語言';
-    htmlAnswerOne.addEventListener('click', cssGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = ' SCSS 跟 CSS 差別？';
+    app.get('#htmlAnswerOne').textContent = 'SCSS 用變數控制';
+    app.get('#htmlAnswerTwo').textContent = 'SCSS 非縮排語法';
+    app.get('#htmlAnswerThree').textContent = '不同程式語言';
+    app.get('#htmlAnswerOne').addEventListener('click', cssGuestRight);
 }
 
 function cssGuestRight(){
     cssLayout();
-    userIcon.style.top = '10.2%';
-    userIcon.style.left = '55%';
+    app.get('#userIcon').style.top = '10.2%';
+    app.get('#userIcon').style.left = '55%';
 
     // type
     if(this.textContent == 'SCSS 用變數控制'){
-        fullType.style.display = 'flex';  
+        app.get('#fullType').style.display = 'flex';  
         let str = '哇，你竟然連 CSS 也略懂略懂。如果階層樣式學得好，就具備基礎網頁設計師的能力了，這時候，對於細節的掌握就更加重要囉。';
         let i = 0;
-        bgMusic.play();
+        app.get('#bgMusic').play();
         function cssTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(cssTyping, 60);           
             }else{    
-                typeWord.innerHTML = str; //end, remove _ 
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str; //end, remove _ 
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500);
             }
         }
@@ -248,18 +203,18 @@ function cssGuestRight(){
 }
 
 function cssLayout(){
-    cssB.style.backgroundColor = 'rgb(26, 216, 211)';
-    cssB.style.color = 'white';
-    cssOne.style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
-    jsB.style.cursor = 'pointer';
-    jsB.style.color = 'rgb(26, 216, 211)';
-    jsB.style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#cssB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#cssB').style.color = 'white';
+    app.get('#cssOne').style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    app.get('#jsB').style.cursor = 'pointer';
+    app.get('#jsB').style.color = 'rgb(26, 216, 211)';
+    app.get('#jsB').style.border = '1px solid rgb(26, 216, 211)';
 }
 
 // js 
 
-jsB.addEventListener('click', function(){
-    if(jsB.style.cursor){
+app.get('#jsB').addEventListener('click', function(){
+    if(app.get('#jsB').style.cursor){
         jsPass();
     }else{
 
@@ -267,32 +222,32 @@ jsB.addEventListener('click', function(){
 });
 
 function jsPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = '何者非 JS 定義變數的方式？';
-    htmlAnswerOne.textContent = 'function';
-    htmlAnswerTwo.textContent = 'var';
-    htmlAnswerThree.textContent = 'let';
-    htmlAnswerOne.addEventListener('click', jsGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = '何者非 JS 定義變數的方式？';
+    app.get('#htmlAnswerOne').textContent = 'function';
+    app.get('#htmlAnswerTwo').textContent = 'var';
+    app.get('#htmlAnswerThree').textContent = 'let';
+    app.get('#htmlAnswerOne').addEventListener('click', jsGuestRight);
 }
 
 function jsGuestRight(){
     jsLayout();
-    userIcon.style.top = '20.2%';
-    userIcon.style.left = '53%';
+    app.get('#userIcon').style.top = '20.2%';
+    app.get('#userIcon').style.left = '53%';
 
     // type
     if(this.textContent == 'function'){
         let str = '恭喜你通過 JavaScript 關卡。JavaScript 也是小編最喜歡的語言，掌握它，就等於邁入前端工程師的行列，它不只能為你帶來一份工作，也擴展你的視野，擁有接軌科技的能力。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex'; 
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex'; 
         function jsTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(jsTyping, 60);
             }else{    
-                typeWord.innerHTML = str; 
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str; 
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -303,22 +258,22 @@ function jsGuestRight(){
 }
 
 function jsLayout(){
-    jsB.style.backgroundColor = 'rgb(26, 216, 211)';
-    jsB.style.color = 'white';
-    jsOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    jsTwo.style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
-    jQueryB.style.cursor = 'pointer';
-    jQueryB.style.color = 'rgb(26, 216, 211)';
-    jQueryB.style.border = '1px solid rgb(26, 216, 211)';
-    domB.style.cursor = 'pointer';
-    domB.style.color = 'rgb(26, 216, 211)';
-    domB.style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#jsB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#jsB').style.color = 'white';
+    app.get('#jsOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    app.get('#jsTwo').style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    app.get('#jQueryB').style.cursor = 'pointer';
+    app.get('#jQueryB').style.color = 'rgb(26, 216, 211)';
+    app.get('#jQueryB').style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#domB').style.cursor = 'pointer';
+    app.get('#domB').style.color = 'rgb(26, 216, 211)';
+    app.get('#domB').style.border = '1px solid rgb(26, 216, 211)';
 }
 
 // jQuery
 
-jQueryB.addEventListener('click', function(){
-    if(jQueryB.style.cursor){
+app.get('#jQueryB').addEventListener('click', function(){
+    if(app.get('#jQueryB').style.cursor){
         jQueryPass();
     }else{
 
@@ -326,32 +281,32 @@ jQueryB.addEventListener('click', function(){
 });
 
 function jQueryPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = 'jQuery 與 JS 之比較何者正確？';
-    htmlAnswerOne.textContent = 'jQuery 含錢字符號';
-    htmlAnswerTwo.textContent = 'JS 是一種框架';
-    htmlAnswerThree.textContent = 'jQuery 並未開源';
-    htmlAnswerOne.addEventListener('click', jQueryGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = 'jQuery 與 JS 之比較何者正確？';
+    app.get('#htmlAnswerOne').textContent = 'jQuery 含錢字符號';
+    app.get('#htmlAnswerTwo').textContent = 'JS 是一種框架';
+    app.get('#htmlAnswerThree').textContent = 'jQuery 並未開源';
+    app.get('#htmlAnswerOne').addEventListener('click', jQueryGuestRight);
 }
 
 function jQueryGuestRight(){
     jQueryLayout();
-    userIcon.style.top = '20.2%';
-    userIcon.style.left = '42%';
+    app.get('#userIcon').style.top = '20.2%';
+    app.get('#userIcon').style.left = '42%';
 
     // type
     if(this.textContent == 'jQuery 含錢字符號'){
         let str = 'jQuery 是相當方便的 JavaScript 函式庫，它幫你把程式封裝好，只要加上經典的 $ 字號作為前綴，就能使用眾多功能。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex';       
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex';       
         function jqueryTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(jqueryTyping, 60);           
             }else{    
-                typeWord.innerHTML = str; 
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str; 
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -362,14 +317,14 @@ function jQueryGuestRight(){
 }
 
 function jQueryLayout(){
-    jQueryB.style.backgroundColor = 'rgb(26, 216, 211)';
-    jQueryB.style.color = 'white';
+    app.get('#jQueryB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#jQueryB').style.color = 'white';
 }
 
 // DOM
 
-domB.addEventListener('click', function(){
-    if(domB.style.cursor){
+app.get('#domB').addEventListener('click', function(){
+    if(app.get('#domB').style.cursor){
         domPass();
     }else{
 
@@ -377,32 +332,32 @@ domB.addEventListener('click', function(){
 });
 
 function domPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = '如何在不同螢幕寬度下改變樣式？';
-    htmlAnswerOne.textContent = '透過 media 操作';
-    htmlAnswerTwo.textContent = '使用事件物件';
-    htmlAnswerThree.textContent = '變數控制';
-    htmlAnswerOne.addEventListener('click', domGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = '如何在不同螢幕寬度下改變樣式？';
+    app.get('#htmlAnswerOne').textContent = '透過 media 操作';
+    app.get('#htmlAnswerTwo').textContent = '使用事件物件';
+    app.get('#htmlAnswerThree').textContent = '變數控制';
+    app.get('#htmlAnswerOne').addEventListener('click', domGuestRight);
 }
 
 function domGuestRight(){
     domLayout();
-    userIcon.style.top = '31.7%';
-    userIcon.style.left = '48.5%';
+    app.get('#userIcon').style.top = '31.7%';
+    app.get('#userIcon').style.left = '48.5%';
 
     // type
     if(this.textContent == '透過 media 操作'){
         let str = 'RWD 很神奇吧，它讓你在手機、平板上，都能方便觀看網頁，而不用放大縮小視窗，是讓使用者體驗升級的良方。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex';  
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex';  
         function rwdTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(rwdTyping, 60);           
             }else{    
-                typeWord.innerHTML = str;  
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str;  
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -413,18 +368,18 @@ function domGuestRight(){
 }
 
 function domLayout(){
-    domB.style.backgroundColor = 'rgb(26, 216, 211)';
-    domB.style.color = 'white';
-    domOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    ajaxB.style.cursor = 'pointer';
-    ajaxB.style.color = 'rgb(26, 216, 211)';
-    ajaxB.style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#domB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#domB').style.color = 'white';
+    app.get('#domOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    app.get('#ajaxB').style.cursor = 'pointer';
+    app.get('#ajaxB').style.color = 'rgb(26, 216, 211)';
+    app.get('#ajaxB').style.border = '1px solid rgb(26, 216, 211)';
 }
 
 //ajax
 
-ajaxB.addEventListener('click', function(){
-    if(ajaxB.style.cursor){
+app.get('#ajaxB').addEventListener('click', function(){
+    if(app.get('#ajaxB').style.cursor){
         ajaxPass();
     }else{
 
@@ -432,32 +387,32 @@ ajaxB.addEventListener('click', function(){
 });
 
 function ajaxPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = 'GitHub 不能做什麼？';
-    htmlAnswerOne.textContent = '測試程式正確性';
-    htmlAnswerTwo.textContent = '程式碼倉庫';
-    htmlAnswerThree.textContent = '共同軟體開發';
-    htmlAnswerOne.addEventListener('click', ajaxGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = 'GitHub 不能做什麼？';
+    app.get('#htmlAnswerOne').textContent = '測試程式正確性';
+    app.get('#htmlAnswerTwo').textContent = '程式碼倉庫';
+    app.get('#htmlAnswerThree').textContent = '共同軟體開發';
+    app.get('#htmlAnswerOne').addEventListener('click', ajaxGuestRight);
 }
 
 function ajaxGuestRight(){
     ajaxLayout();
-    userIcon.style.top = '42.6%';
-    userIcon.style.left = '48.5%';
+    app.get('#userIcon').style.top = '42.6%';
+    app.get('#userIcon').style.left = '48.5%';
 
     // type
     if(this.textContent == '測試程式正確性'){
         let str = '在學習程式語言之前，很難想像有 GitHub 的存在吧，竟然有個倉庫專門在管理程式語言，還能讓人複製、共同編輯，並記錄每一次的 commit ，是一款優秀的協作工具。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex';  
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex';  
         function githubTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(githubTyping, 60);            
             }else{    
-                typeWord.innerHTML = str;
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str;
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -468,22 +423,22 @@ function ajaxGuestRight(){
 }
 
 function ajaxLayout(){
-    ajaxB.style.backgroundColor = 'rgb(26, 216, 211)';
-    ajaxB.style.color = 'white';
-    ajaxOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    ajaxTwo.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    es6B.style.cursor = 'pointer';
-    es6B.style.color = 'rgb(26, 216, 211)';
-    es6B.style.border = '1px solid rgb(26, 216, 211)';
-    jsonB.style.cursor = 'pointer';
-    jsonB.style.color = 'rgb(26, 216, 211)';
-    jsonB.style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#ajaxB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#ajaxB').style.color = 'white';
+    app.get('#ajaxOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    app.get('#ajaxTwo').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    app.get('#es6B').style.cursor = 'pointer';
+    app.get('#es6B').style.color = 'rgb(26, 216, 211)';
+    app.get('#es6B').style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#jsonB').style.cursor = 'pointer';
+    app.get('#jsonB').style.color = 'rgb(26, 216, 211)';
+    app.get('#jsonB').style.border = '1px solid rgb(26, 216, 211)';
 }
 
 // ES6
 
-es6B.addEventListener('click', function(){
-    if(es6B.style.cursor){
+app.get('#es6B').addEventListener('click', function(){
+    if(app.get('#es6B').style.cursor){
         es6Pass();
     }else{
 
@@ -491,32 +446,32 @@ es6B.addEventListener('click', function(){
 });
 
 function es6Pass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = '何者不屬於 CSS 預處理器？';
-    htmlAnswerOne.textContent = 'Gulp';
-    htmlAnswerTwo.textContent = 'SCSS';
-    htmlAnswerThree.textContent = 'PostCSS';
-    htmlAnswerOne.addEventListener('click', es6GuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = '何者不屬於 CSS 預處理器？';
+    app.get('#htmlAnswerOne').textContent = 'Gulp';
+    app.get('#htmlAnswerTwo').textContent = 'SCSS';
+    app.get('#htmlAnswerThree').textContent = 'PostCSS';
+    app.get('#htmlAnswerOne').addEventListener('click', es6GuestRight);
 }
 
 function es6GuestRight(){
     es6Layout();
-    userIcon.style.top = '42.6%';
-    userIcon.style.left = '40.9%';
+    app.get('#userIcon').style.top = '42.6%';
+    app.get('#userIcon').style.left = '40.9%';
 
     // type
     if(this.textContent == 'Gulp'){
         let str = 'css 屬於程式設計入門款，而預處理器能以更有效率的方式，撰寫階層樣式，如果你擁有 JavaScript 的基本概念，學起來會特別快唷。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex';    
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex';    
         function scssTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(scssTyping, 60);            
             }else{    
-                typeWord.innerHTML = str;
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str;
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -527,18 +482,18 @@ function es6GuestRight(){
 }
 
 function es6Layout(){
-    es6B.style.backgroundColor = 'rgb(26, 216, 211)';
-    es6B.style.color = 'white';
-    es6One.style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
-    spaB.style.cursor = 'pointer';
-    spaB.style.color = 'rgb(26, 216, 211)';
-    spaB.style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#es6B').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#es6B').style.color = 'white';
+    app.get('#es6One').style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    app.get('#spaB').style.cursor = 'pointer';
+    app.get('#spaB').style.color = 'rgb(26, 216, 211)';
+    app.get('#spaB').style.border = '1px solid rgb(26, 216, 211)';
 }
 
 // json
 
-jsonB.addEventListener('click', function(){
-    if(jsonB.style.cursor){
+app.get('#jsonB').addEventListener('click', function(){
+    if(app.get('#jsonB').style.cursor){
         jsonPass();
     }else{
 
@@ -546,32 +501,32 @@ jsonB.addEventListener('click', function(){
 });
 
 function jsonPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = '使用 Webpack 需要安裝？';
-    htmlAnswerOne.textContent = 'Node.js';
-    htmlAnswerTwo.textContent = 'Babel';
-    htmlAnswerThree.textContent = 'styled-components';
-    htmlAnswerOne.addEventListener('click', jsonGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = '使用 Webpack 需要安裝？';
+    app.get('#htmlAnswerOne').textContent = 'Node.js';
+    app.get('#htmlAnswerTwo').textContent = 'Babel';
+    app.get('#htmlAnswerThree').textContent = 'styled-components';
+    app.get('#htmlAnswerOne').addEventListener('click', jsonGuestRight);
 }
 
 function jsonGuestRight(){
     jsonLayout();
-    userIcon.style.top = '42.6%';
-    userIcon.style.left = '55.9%';
+    app.get('#userIcon').style.top = '42.6%';
+    app.get('#userIcon').style.left = '55.9%';
 
     // type
     if(this.textContent == 'Node.js'){
         let str = '你已經越來越厲害，掌握了近期火紅的打包工具，Webpack 和 React 是絕配，是幫助瀏覽器進行「翻譯」的良方。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex'; 
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex'; 
         function webpackTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(webpackTyping, 60);           
             }else{    
-                typeWord.innerHTML = str;
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str;
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -581,18 +536,18 @@ function jsonGuestRight(){
 }
 
 function jsonLayout(){
-    jsonB.style.backgroundColor = 'rgb(26, 216, 211)';
-    jsonB.style.color = 'white';
-    jsonOne.style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
-    apisB.style.cursor = 'pointer';
-    apisB.style.color = 'rgb(26, 216, 211)';
-    apisB.style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#jsonB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#jsonB').style.color = 'white';
+    app.get('#jsonOne').style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    app.get('#apisB').style.cursor = 'pointer';
+    app.get('#apisB').style.color = 'rgb(26, 216, 211)';
+    app.get('#apisB').style.border = '1px solid rgb(26, 216, 211)';
 }
 
 // SPA
 
-spaB.addEventListener('click', function(){
-    if(spaB.style.cursor){
+app.get('#spaB').addEventListener('click', function(){
+    if(app.get('#spaB').style.cursor){
         spaPass();
     }else{
 
@@ -600,33 +555,33 @@ spaB.addEventListener('click', function(){
 });
 
 function spaPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = 'Bootstrap 是一種？';
-    htmlAnswerOne.textContent = '樣式擴充元件';
-    htmlAnswerTwo.textContent = '打包工具';
-    htmlAnswerThree.textContent = '套件管理工具';
-    htmlAnswerOne.addEventListener('click', spaGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = 'Bootstrap 是一種？';
+    app.get('#htmlAnswerOne').textContent = '樣式擴充元件';
+    app.get('#htmlAnswerTwo').textContent = '打包工具';
+    app.get('#htmlAnswerThree').textContent = '套件管理工具';
+    app.get('#htmlAnswerOne').addEventListener('click', spaGuestRight);
 }
 
 function spaGuestRight(){
     spaLayout();
-    userIcon.style.top = '53.1%';
-    userIcon.style.left = '39.4%';
+    app.get('#userIcon').style.top = '53.1%';
+    app.get('#userIcon').style.left = '39.4%';
 
     // type
     if(this.textContent == '樣式擴充元件'){
         let str = '看來你學蠻快的，Bootstrap 能做到的，css 也能做到，如果有時間，不仿試試手刻 Bootstrap 的特效，精進樣式調校的能力。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex';   
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex';   
         function bootstrapTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(bootstrapTyping, 60);
             
             }else{    
-                typeWord.innerHTML = str;
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str;
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -636,14 +591,14 @@ function spaGuestRight(){
 }
 
 function spaLayout(){
-    spaB.style.backgroundColor = 'rgb(26, 216, 211)';
-    spaB.style.color = 'white';
+    app.get('#spaB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#spaB').style.color = 'white';
 }
 
 // APIs
 
-apisB.addEventListener('click', function(){
-    if(apisB.style.cursor){
+app.get('#apisB').addEventListener('click', function(){
+    if(app.get('#apisB').style.cursor){
         apisPass();
     }else{
 
@@ -651,33 +606,33 @@ apisB.addEventListener('click', function(){
 });
 
 function apisPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = 'React 有何特性？';
-    htmlAnswerOne.textContent = '建置單頁式網站';
-    htmlAnswerTwo.textContent = '不存在異步問題';
-    htmlAnswerThree.textContent = '不需要 Babel 編譯';
-    htmlAnswerOne.addEventListener('click', apisGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = 'React 有何特性？';
+    app.get('#htmlAnswerOne').textContent = '建置單頁式網站';
+    app.get('#htmlAnswerTwo').textContent = '不存在異步問題';
+    app.get('#htmlAnswerThree').textContent = '不需要 Babel 編譯';
+    app.get('#htmlAnswerOne').addEventListener('click', apisGuestRight);
 }
 
 function apisGuestRight(){
     apisLayout();
-    userIcon.style.top = '53.1%';
-    userIcon.style.left = '57.3%';
+    app.get('#userIcon').style.top = '53.1%';
+    app.get('#userIcon').style.left = '57.3%';
 
     // type
     if(this.textContent == '建置單頁式網站'){
         let str = '你太強了，React 是不容易掌握的框架，能讓使用者的體驗更好，你所使用的 facebook 就是運用這套框架呢。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex';  
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex';  
         function reactTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(reactTyping, 60);
             
             }else{    
-                typeWord.innerHTML = str;
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str;
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -687,18 +642,18 @@ function apisGuestRight(){
 }
 
 function apisLayout(){
-    apisB.style.backgroundColor = 'rgb(26, 216, 211)';
-    apisB.style.color = 'white';
-    apisOne.style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    tddB.style.cursor = 'pointer';
-    tddB.style.color = 'rgb(26, 216, 211)';
-    tddB.style.border = '1px solid rgb(26, 216, 211)';
+    app.get('#apisB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#apisB').style.color = 'white';
+    app.get('#apisOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    app.get('#tddB').style.cursor = 'pointer';
+    app.get('#tddB').style.color = 'rgb(26, 216, 211)';
+    app.get('#tddB').style.border = '1px solid rgb(26, 216, 211)';
 }
 
 // TDD
 
-tddB.addEventListener('click', function(){
-    if(tddB.style.cursor){
+app.get('#tddB').addEventListener('click', function(){
+    if(app.get('#tddB').style.cursor){
         tddPass();
     }else{
 
@@ -706,33 +661,33 @@ tddB.addEventListener('click', function(){
 });
 
 function tddPass(){
-    questionDiv.style.display = 'flex';
-    questionHead.textContent = '為什麼要做單元測試？';
-    htmlAnswerOne.textContent = '確保程式邏輯正確';
-    htmlAnswerTwo.textContent = '讓 scrum 運作順利';
-    htmlAnswerThree.textContent = '資料安全性';
-    htmlAnswerOne.addEventListener('click', tddGuestRight);
+    app.get('#questionDiv').style.display = 'flex';
+    app.get('#questionHead').textContent = '為什麼要做單元測試？';
+    app.get('#htmlAnswerOne').textContent = '確保程式邏輯正確';
+    app.get('#htmlAnswerTwo').textContent = '讓 scrum 運作順利';
+    app.get('#htmlAnswerThree').textContent = '資料安全性';
+    app.get('#htmlAnswerOne').addEventListener('click', tddGuestRight);
 }
 
 function tddGuestRight(){
     tddLayout();
-    userIcon.style.top = '63.8%';
-    userIcon.style.left = '49%';
+    app.get('#userIcon').style.top = '63.8%';
+    app.get('#userIcon').style.left = '49%';
 
     // type
     if(this.textContent == '確保程式邏輯正確'){
         let str = '終於抵達最後一關了，單元測試是為了確保函式的正確性，而進行的作業。雖然單元測試是最後一關，但工程的世界無止盡，身為一位 geek 就是要不斷學習精進唷。';
         let i = 0;
-        bgMusic.play();
-        fullType.style.display = 'flex'; 
+        app.get('#bgMusic').play();
+        app.get('#fullType').style.display = 'flex'; 
         function unittestTyping(){
             if (i <= str.length) {
-                typeWord.innerHTML = str.slice(0, i++) + '_';
+                app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
                 setTimeout(unittestTyping, 60);
             
             }else{    
-                typeWord.innerHTML = str;
-                bgMusic.pause();
+                app.get('#typeWord').innerHTML = str;
+                app.get('#bgMusic').pause();
                 setTimeout(closeFullType, 1500)
             }
         }
@@ -743,339 +698,336 @@ function tddGuestRight(){
 }
 
 function tddLayout(){
-    tddB.style.backgroundColor = 'rgb(26, 216, 211)';
-    tddB.style.color = 'white';
+    app.get('#tddB').style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get('#tddB').style.color = 'white';
 }
 
 // mouse over
 
 // html
 
-htmlB.addEventListener('mouseover', showBoxRight);
-htmlB.addEventListener('mouseleave', noneBoxRight);
+app.get('#htmlB').addEventListener('mouseover', showBoxRight);
+app.get('#htmlB').addEventListener('mouseleave', noneBoxRight);
 
 function showBoxRight(){
-    htmlB.style.width = '105px';
-    htmlB.style.height = '32px';
-    htmlB.style.lineHeight = '32px';
-    htmlB.style.fontSize = '17px';
-    showDivRight.style.top = '40px';
-    showDivRight.style.left = '20px';
-    showDivRight.style.width = '200px';
-    showDivRight.style.height = 'auto';
-    showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'HTML <br><br> 超文件標示語言（英語：HyperText Markup Language，簡稱：HTML）是一種用於建立網頁的標準標示語言。 <br><br>';
+    app.get('#htmlB').style.width = '105px';
+    app.get('#htmlB').style.height = '32px';
+    app.get('#htmlB').style.lineHeight = '32px';
+    app.get('#htmlB').style.fontSize = '17px';
+    app.get('#showDivRight').style.top = '40px';
+    app.get('#showDivRight').style.left = '20px';
+    app.get('#showDivRight').style.width = '200px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivRight').innerHTML = 'HTML <br><br> 超文件標示語言（英語：HyperText Markup Language，簡稱：HTML）是一種用於建立網頁的標準標示語言。 <br><br>';
 }
 
 function noneBoxRight(){
-    htmlB.style.width = '100px';
-    htmlB.style.height = '30px';
-    htmlB.style.lineHeight = '30px';
-    htmlB.style.fontSize = '16px';
-    showDivRight.style.width = '180px';
-    showDivRight.style.height = 'auto';
-    showDivRight.innerHTML = '';
-    showDivRight.style.padding = '';
+    app.get('#htmlB').style.width = '100px';
+    app.get('#htmlB').style.height = '30px';
+    app.get('#htmlB').style.lineHeight = '30px';
+    app.get('#htmlB').style.fontSize = '16px';
+    app.get('#showDivRight').style.width = '180px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').innerHTML = '';
+    app.get('#showDivRight').style.padding = '';
 }
 
 // js
 
-jsB.addEventListener('mouseover', showBoxRightJs);
-jsB.addEventListener('mouseleave', noneBoxRightJs);
+app.get('#jsB').addEventListener('mouseover', showBoxRightJs);
+app.get('#jsB').addEventListener('mouseleave', noneBoxRightJs);
 
 function showBoxRightJs(){
-    jsB.style.width = '105px';
-    jsB.style.height = '32px';
-    jsB.style.lineHeight = '35px';
-    jsB.style.fontSize = '18px';
-    showDivRight.style.top = '140px';
-    showDivRight.style.left = '20px';
-    showDivRight.style.width = '200px';
-    showDivRight.style.height = 'auto';
-    showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'JavaScript <br><br> JavaScript 是一門基於原型、函式先行的語言，是一門多範式的語言，它支援物件導向編程，指令式程式設計，以及函數語言程式設計。 <br><br>';
+    app.get('#jsB').style.width = '105px';
+    app.get('#jsB').style.height = '32px';
+    app.get('#jsB').style.lineHeight = '35px';
+    app.get('#jsB').style.fontSize = '18px';
+    app.get('#showDivRight').style.top = '140px';
+    app.get('#showDivRight').style.left = '20px';
+    app.get('#showDivRight').style.width = '200px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivRight').innerHTML = 'JavaScript <br><br> JavaScript 是一門基於原型、函式先行的語言，是一門多範式的語言，它支援物件導向編程，指令式程式設計，以及函數語言程式設計。 <br><br>';
 }
 
 function noneBoxRightJs(){
-    jsB.style.width = '100px';
-    jsB.style.height = '30px';
-    jsB.style.lineHeight = '30px';
-    jsB.style.fontSize = '16px';
-    showDivRight.style.width = '180px';
-    showDivRight.style.height = 'auto';
-    showDivRight.innerHTML = '';
-    showDivRight.style.padding = '';
+    app.get('#jsB').style.width = '100px';
+    app.get('#jsB').style.height = '30px';
+    app.get('#jsB').style.lineHeight = '30px';
+    app.get('#jsB').style.fontSize = '16px';
+    app.get('#showDivRight').style.width = '180px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').innerHTML = '';
+    app.get('#showDivRight').style.padding = '';
 }
 
 // dom
 
-domB.addEventListener('mouseover', showBoxRightDom);
-domB.addEventListener('mouseleave', noneBoxRightDom);
+app.get('#domB').addEventListener('mouseover', showBoxRightDom);
+app.get('#domB').addEventListener('mouseleave', noneBoxRightDom);
 
 function showBoxRightDom(){
-    domB.style.width = '105px';
-    domB.style.height = '32px';
-    domB.style.lineHeight = '35px';
-    domB.style.fontSize = '18px';
-    showDivRight.style.top = '240px';
-    showDivRight.style.left = '20px';
-    showDivRight.style.width = '200px';
-    showDivRight.style.height = 'auto';
-    showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'RWD <br><br> 響應式網頁設計（英語：Responsive web design，通常縮寫為 RWD），是一種網頁設計的技術做法，該設計可使網站在不同的裝置上瀏覽時，對應不同解析度皆有適合的呈現，減少使用者進行縮放、平移和捲動等操作行為。 <br><br>';
+    app.get('#domB').style.width = '105px';
+    app.get('#domB').style.height = '32px';
+    app.get('#domB').style.lineHeight = '35px';
+    app.get('#domB').style.fontSize = '18px';
+    app.get('#showDivRight').style.top = '240px';
+    app.get('#showDivRight').style.left = '20px';
+    app.get('#showDivRight').style.width = '200px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivRight').innerHTML = 'RWD <br><br> 響應式網頁設計（英語：Responsive web design，通常縮寫為 RWD），是一種網頁設計的技術做法，該設計可使網站在不同的裝置上瀏覽時，對應不同解析度皆有適合的呈現，減少使用者進行縮放、平移和捲動等操作行為。 <br><br>';
 }
 
 function noneBoxRightDom(){
-    domB.style.width = '100px';
-    domB.style.height = '30px';
-    domB.style.lineHeight = '30px';
-    domB.style.fontSize = '16px';
-    showDivRight.style.width = '180px';
-    showDivRight.style.height = 'auto';
-    showDivRight.innerHTML = '';
-    showDivRight.style.padding = '';
+    app.get('#domB').style.width = '100px';
+    app.get('#domB').style.height = '30px';
+    app.get('#domB').style.lineHeight = '30px';
+    app.get('#domB').style.fontSize = '16px';
+    app.get('#showDivRight').style.width = '180px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').innerHTML = '';
+    app.get('#showDivRight').style.padding = '';
 }
 
 // ajax
 
-ajaxB.addEventListener('mouseover', showBoxRightAjax);
-ajaxB.addEventListener('mouseleave', noneBoxRightAjax);
+app.get('#ajaxB').addEventListener('mouseover', showBoxRightAjax);
+app.get('#ajaxB').addEventListener('mouseleave', noneBoxRightAjax);
 
 function showBoxRightAjax(){
-    ajaxB.style.width = '105px';
-    ajaxB.style.height = '32px';
-    ajaxB.style.lineHeight = '35px';
-    ajaxB.style.fontSize = '18px';
-    showDivRight.style.top = '335px';
-    showDivRight.style.left = '20px';
-    showDivRight.style.width = '200px';
-    showDivRight.style.height = 'auto';
-    showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'GitHub <br><br> GitHub 是透過 Git 進行版本控制的軟體原始碼代管服務，由 GitHub 公司（曾稱 Logical Awesome）開發者使用 Ruby on Rails 編寫而成。 <br><br>';
+    app.get('#ajaxB').style.width = '105px';
+    app.get('#ajaxB').style.height = '32px';
+    app.get('#ajaxB').style.lineHeight = '35px';
+    app.get('#ajaxB').style.fontSize = '18px';
+    app.get('#showDivRight').style.top = '335px';
+    app.get('#showDivRight').style.left = '20px';
+    app.get('#showDivRight').style.width = '200px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivRight').innerHTML = 'GitHub <br><br> GitHub 是透過 Git 進行版本控制的軟體原始碼代管服務，由 GitHub 公司（曾稱 Logical Awesome）開發者使用 Ruby on Rails 編寫而成。 <br><br>';
 }
 
 function noneBoxRightAjax(){
-    ajaxB.style.width = '100px';
-    ajaxB.style.height = '30px';
-    ajaxB.style.lineHeight = '30px';
-    ajaxB.style.fontSize = '16px';
-    showDivRight.style.width = '180px';
-    showDivRight.style.height = 'auto';
-    showDivRight.innerHTML = '';
-    showDivRight.style.padding = '';
+    app.get('#ajaxB').style.width = '100px';
+    app.get('#ajaxB').style.height = '30px';
+    app.get('#ajaxB').style.lineHeight = '30px';
+    app.get('#ajaxB').style.fontSize = '16px';
+    app.get('#showDivRight').style.width = '180px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').innerHTML = '';
+    app.get('#showDivRight').style.padding = '';
 }
 
 // json
 
-jsonB.addEventListener('mouseover', showBoxRightJson);
-jsonB.addEventListener('mouseleave', noneBoxRightJson);
+app.get('#jsonB').addEventListener('mouseover', showBoxRightJson);
+app.get('#jsonB').addEventListener('mouseleave', noneBoxRightJson);
 
 function showBoxRightJson(){
-    jsonB.style.width = '105px';
-    jsonB.style.height = '32px';
-    jsonB.style.lineHeight = '35px';
-    jsonB.style.fontSize = '18px';
-    showDivRight.style.top = '435px';
-    showDivRight.style.left = '20px';
-    showDivRight.style.width = '200px';
-    showDivRight.style.height = 'auto';
-    showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'Webpack <br><br> Webpack 是一個開源的前端打包工具。Webpack 提供了前端開發缺乏的模組化開發方式，將各種靜態資源視為模組，並從它生成優化過的程式碼。 <br><br>';
+    app.get('#jsonB').style.width = '105px';
+    app.get('#jsonB').style.height = '32px';
+    app.get('#jsonB').style.lineHeight = '35px';
+    app.get('#jsonB').style.fontSize = '18px';
+    app.get('#showDivRight').style.top = '435px';
+    app.get('#showDivRight').style.left = '20px';
+    app.get('#showDivRight').style.width = '200px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivRight').innerHTML = 'Webpack <br><br> Webpack 是一個開源的前端打包工具。Webpack 提供了前端開發缺乏的模組化開發方式，將各種靜態資源視為模組，並從它生成優化過的程式碼。 <br><br>';
 }
 
 function noneBoxRightJson(){
-    jsonB.style.width = '100px';
-    jsonB.style.height = '30px';
-    jsonB.style.lineHeight = '30px';
-    jsonB.style.fontSize = '16px';
-    showDivRight.style.width = '180px';
-    showDivRight.style.height = 'auto';
-    showDivRight.innerHTML = '';
-    showDivRight.style.padding = '';
+    app.get('#jsonB').style.width = '100px';
+    app.get('#jsonB').style.height = '30px';
+    app.get('#jsonB').style.lineHeight = '30px';
+    app.get('#jsonB').style.fontSize = '16px';
+    app.get('#showDivRight').style.width = '180px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').innerHTML = '';
+    app.get('#showDivRight').style.padding = '';
 }
 
 // APIs
 
-apisB.addEventListener('mouseover', showBoxRightApis);
-apisB.addEventListener('mouseleave', noneBoxRightApis);
+app.get('#apisB').addEventListener('mouseover', showBoxRightApis);
+app.get('#apisB').addEventListener('mouseleave', noneBoxRightApis);
 
 function showBoxRightApis(){
-    apisB.style.width = '105px';
-    apisB.style.height = '32px';
-    apisB.style.lineHeight = '35px';
-    apisB.style.fontSize = '18px';
-    showDivRight.style.top = '445px';
-    showDivRight.style.left = '20px';
-    showDivRight.style.width = '200px';
-    showDivRight.style.height = 'auto';
-    showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'React <br><br> React 是一個為資料提供彩現為 HTML 視圖的開源 JavaScript 庫。React 視圖通常採用包含以自訂 HTML 標記規定的其他元件的元件彩現。 <br><br>';
+    app.get('#apisB').style.width = '105px';
+    app.get('#apisB').style.height = '32px';
+    app.get('#apisB').style.lineHeight = '35px';
+    app.get('#apisB').style.fontSize = '18px';
+    app.get('#showDivRight').style.top = '445px';
+    app.get('#showDivRight').style.left = '20px';
+    app.get('#showDivRight').style.width = '200px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivRight').innerHTML = 'React <br><br> React 是一個為資料提供彩現為 HTML 視圖的開源 JavaScript 庫。React 視圖通常採用包含以自訂 HTML 標記規定的其他元件的元件彩現。 <br><br>';
 }
 
 function noneBoxRightApis(){
-    apisB.style.width = '100px';
-    apisB.style.height = '30px';
-    apisB.style.lineHeight = '30px';
-    apisB.style.fontSize = '16px';
-    showDivRight.style.width = '180px';
-    showDivRight.style.height = 'auto';
-    showDivRight.innerHTML = '';
-    showDivRight.style.padding = '';
+    app.get('#apisB').style.width = '100px';
+    app.get('#apisB').style.height = '30px';
+    app.get('#apisB').style.lineHeight = '30px';
+    app.get('#apisB').style.fontSize = '16px';
+    app.get('#showDivRight').style.width = '180px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').innerHTML = '';
+    app.get('#showDivRight').style.padding = '';
 }
 
 // TDD
 
-tddB.addEventListener('mouseover', showBoxRightTdd);
-tddB.addEventListener('mouseleave', noneBoxRightTdd);
+app.get('#tddB').addEventListener('mouseover', showBoxRightTdd);
+app.get('#tddB').addEventListener('mouseleave', noneBoxRightTdd);
 
 function showBoxRightTdd(){
-    tddB.style.width = '105px';
-    tddB.style.height = '32px';
-    tddB.style.lineHeight = '35px';
-    tddB.style.fontSize = '18px';
-    showDivRight.style.top = '445px';
-    showDivRight.style.left = '20px';
-    showDivRight.style.width = '200px';
-    showDivRight.style.height = 'auto';
-    showDivRight.style.padding = '15px 10px 0px 10px';
-    showDivRight.innerHTML = 'Unit Testing <br><br> 在電腦編程中，單元測試（英語：Unit Testing）又稱為模組測試，是針對程式模組（軟體設計的最小單位）來進行正確性檢驗的測試工作。程式單元是應用的最小可測試部件。 <br><br>';
+    app.get('#tddB').style.width = '105px';
+    app.get('#tddB').style.height = '32px';
+    app.get('#tddB').style.lineHeight = '35px';
+    app.get('#tddB').style.fontSize = '18px';
+    app.get('#showDivRight').style.top = '445px';
+    app.get('#showDivRight').style.left = '20px';
+    app.get('#showDivRight').style.width = '200px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivRight').innerHTML = 'Unit Testing <br><br> 在電腦編程中，單元測試（英語：Unit Testing）又稱為模組測試，是針對程式模組（軟體設計的最小單位）來進行正確性檢驗的測試工作。程式單元是應用的最小可測試部件。 <br><br>';
 }
 
 function noneBoxRightTdd(){
-    tddB.style.width = '100px';
-    tddB.style.height = '30px';
-    tddB.style.lineHeight = '30px';
-    tddB.style.fontSize = '16px';
-    showDivRight.style.width = '180px';
-    showDivRight.style.height = 'auto';
-    showDivRight.innerHTML = '';
-    showDivRight.style.padding = '';
+    app.get('#tddB').style.width = '100px';
+    app.get('#tddB').style.height = '30px';
+    app.get('#tddB').style.lineHeight = '30px';
+    app.get('#tddB').style.fontSize = '16px';
+    app.get('#showDivRight').style.width = '180px';
+    app.get('#showDivRight').style.height = 'auto';
+    app.get('#showDivRight').innerHTML = '';
+    app.get('#showDivRight').style.padding = '';
 }
 
 // css
 
-cssB.addEventListener('mouseover', showBoxLeft);
-cssB.addEventListener('mouseleave', noneBoxLeft);
+app.get('#cssB').addEventListener('mouseover', showBoxLeft);
+app.get('#cssB').addEventListener('mouseleave', noneBoxLeft);
 
 function showBoxLeft(){
-    cssB.style.width = '105px';
-    cssB.style.height = '32px';
-    cssB.style.lineHeight = '35px';
-    cssB.style.fontSize = '18px';
-    showDivLeft.style.top = '140px';
-    showDivLeft.style.right = '20px';
-    showDivLeft.style.width = '200px';
-    showDivLeft.style.height = 'auto';
-    showDivLeft.style.padding = '15px 10px 0px 10px';
-    showDivLeft.innerHTML = 'CSS <br><br> 層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），是一種用來為結構化文件（如 HTML 文件或 XML 應用）添加樣式（字型、間距和顏色等）的電腦語言。 <br><br>';
+    app.get('#cssB').style.width = '105px';
+    app.get('#cssB').style.height = '32px';
+    app.get('#cssB').style.lineHeight = '35px';
+    app.get('#cssB').style.fontSize = '18px';
+    app.get('#showDivLeft').style.top = '140px';
+    app.get('#showDivLeft').style.right = '20px';
+    app.get('#showDivLeft').style.width = '200px';
+    app.get('#showDivLeft').style.height = 'auto';
+    app.get('#showDivLeft').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivLeft').innerHTML = 'CSS <br><br> 層疊樣式表（英語：Cascading Style Sheets，簡寫CSS），是一種用來為結構化文件（如 HTML 文件或 XML 應用）添加樣式（字型、間距和顏色等）的電腦語言。 <br><br>';
 }
 
 function noneBoxLeft(){
-    cssB.style.width = '100px';
-    cssB.style.height = '30px';
-    cssB.style.lineHeight = '30px';
-    cssB.style.fontSize = '16px';
-    showDivLeft.style.width = '180px';
-    showDivLeft.style.height = 'auto';
-    showDivLeft.innerHTML = '';
-    showDivLeft.style.padding = '';
+    app.get('#cssB').style.width = '100px';
+    app.get('#cssB').style.height = '30px';
+    app.get('#cssB').style.lineHeight = '30px';
+    app.get('#cssB').style.fontSize = '16px';
+    app.get('#showDivLeft').style.width = '180px';
+    app.get('#showDivLeft').style.height = 'auto';
+    app.get('#showDivLeft').innerHTML = '';
+    app.get('#showDivLeft').style.padding = '';
 }
 
 // jQuery
 
-jQueryB.addEventListener('mouseover', showBoxJquery);
-jQueryB.addEventListener('mouseleave', noneBoxJquery);
+app.get('#jQueryB').addEventListener('mouseover', showBoxJquery);
+app.get('#jQueryB').addEventListener('mouseleave', noneBoxJquery);
 
 function showBoxJquery(){
-    jQueryB.style.width = '105px';
-    jQueryB.style.height = '32px';
-    jQueryB.style.lineHeight = '35px';
-    jQueryB.style.fontSize = '18px';
-    showDivLeft.style.top = '240px';
-    showDivLeft.style.right = '20px';
-    showDivLeft.style.width = '200px';
-    showDivLeft.style.height = 'auto';
-    showDivLeft.style.padding = '15px 10px 0px 10px';
-    showDivLeft.innerHTML = 'jQuery <br><br> jQuery 是一套跨瀏覽器的 JavaScript 函式庫，簡化 HTML 與 JavaScript 之間的操作。 <br><br>';
+    app.get('#jQueryB').style.width = '105px';
+    app.get('#jQueryB').style.height = '32px';
+    app.get('#jQueryB').style.lineHeight = '35px';
+    app.get('#jQueryB').style.fontSize = '18px';
+    app.get('#showDivLeft').style.top = '240px';
+    app.get('#showDivLeft').style.right = '20px';
+    app.get('#showDivLeft').style.width = '200px';
+    app.get('#showDivLeft').style.height = 'auto';
+    app.get('#showDivLeft').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivLeft').innerHTML = 'jQuery <br><br> jQuery 是一套跨瀏覽器的 JavaScript 函式庫，簡化 HTML 與 JavaScript 之間的操作。 <br><br>';
 }
 
 function noneBoxJquery(){
-    jQueryB.style.width = '100px';
-    jQueryB.style.height = '30px';
-    jQueryB.style.lineHeight = '30px';
-    jQueryB.style.fontSize = '16px';
-    showDivLeft.style.width = '180px';
-    showDivLeft.style.height = 'auto';
-    showDivLeft.innerHTML = '';
-    showDivLeft.style.padding = '';
+    app.get('#jQueryB').style.width = '100px';
+    app.get('#jQueryB').style.height = '30px';
+    app.get('#jQueryB').style.lineHeight = '30px';
+    app.get('#jQueryB').style.fontSize = '16px';
+    app.get('#showDivLeft').style.width = '180px';
+    app.get('#showDivLeft').style.height = 'auto';
+    app.get('#showDivLeft').innerHTML = '';
+    app.get('#showDivLeft').style.padding = '';
 }
 
 // ES6
 
-es6B.addEventListener('mouseover', showBoxEs6);
-es6B.addEventListener('mouseleave', noneBoxEs6);
+app.get('#es6B').addEventListener('mouseover', showBoxEs6);
+app.get('#es6B').addEventListener('mouseleave', noneBoxEs6);
 
 function showBoxEs6(){
-    es6B.style.width = '105px';
-    es6B.style.height = '32px';
-    es6B.style.lineHeight = '35px';
-    es6B.style.fontSize = '18px';
-    showDivLeft.style.top = '435px';
-    showDivLeft.style.right = '20px';
-    showDivLeft.style.width = '200px';
-    showDivLeft.style.height = 'auto';
-    showDivLeft.style.padding = '15px 10px 0px 10px';
-    showDivLeft.innerHTML = 'SCSS <br><br> Sass 是一個將指令碼解析成 CSS 的手稿語言，即 SassScript。Sass 包括兩套語法。最開始的語法叫做「縮排語法」，使用縮排來區分程式碼塊，並且用換行將不同規則分隔開。而較新的語法叫做「SCSS」。 <br><br>';
+    app.get('#es6B').style.width = '105px';
+    app.get('#es6B').style.height = '32px';
+    app.get('#es6B').style.lineHeight = '35px';
+    app.get('#es6B').style.fontSize = '18px';
+    app.get('#showDivLeft').style.top = '435px';
+    app.get('#showDivLeft').style.right = '20px';
+    app.get('#showDivLeft').style.width = '200px';
+    app.get('#showDivLeft').style.height = 'auto';
+    app.get('#showDivLeft').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivLeft').innerHTML = 'SCSS <br><br> Sass 是一個將指令碼解析成 CSS 的手稿語言，即 SassScript。Sass 包括兩套語法。最開始的語法叫做「縮排語法」，使用縮排來區分程式碼塊，並且用換行將不同規則分隔開。而較新的語法叫做「SCSS」。 <br><br>';
 }
 
 function noneBoxEs6(){
-    es6B.style.width = '100px';
-    es6B.style.height = '30px';
-    es6B.style.lineHeight = '30px';
-    es6B.style.fontSize = '16px';
-    showDivLeft.style.width = '180px';
-    showDivLeft.style.height = 'auto';
-    showDivLeft.innerHTML = '';
-    showDivLeft.style.padding = '';
+    app.get('#es6B').style.width = '100px';
+    app.get('#es6B').style.height = '30px';
+    app.get('#es6B').style.lineHeight = '30px';
+    app.get('#es6B').style.fontSize = '16px';
+    app.get('#showDivLeft').style.width = '180px';
+    app.get('#showDivLeft').style.height = 'auto';
+    app.get('#showDivLeft').innerHTML = '';
+    app.get('#showDivLeft').style.padding = '';
 }
 
 // SPA
 
-spaB.addEventListener('mouseover', showBoxSpa);
-spaB.addEventListener('mouseleave', noneBoxSpa);
+app.get('#spaB').addEventListener('mouseover', showBoxSpa);
+app.get('#spaB').addEventListener('mouseleave', noneBoxSpa);
 
 function showBoxSpa(){
-    spaB.style.width = '105px';
-    spaB.style.height = '32px';
-    spaB.style.lineHeight = '35px';
-    spaB.style.fontSize = '18px';
-    showDivLeft.style.top = '485px';
-    showDivLeft.style.right = '20px';
-    showDivLeft.style.width = '200px';
-    showDivLeft.style.height = 'auto';
-    showDivLeft.style.padding = '15px 10px 0px 10px';
-    showDivLeft.innerHTML = 'bootstrap <br><br> Bootstrap 是一組用於網站和網路應用程式開發的開源前端框架，提供字體排印、表單、按鈕、導航及其他各種元件及 Javascript 擴充套件，旨在使動態網頁和 Web 應用的開發更加容易。 <br><br>';
+    app.get('#spaB').style.width = '105px';
+    app.get('#spaB').style.height = '32px';
+    app.get('#spaB').style.lineHeight = '35px';
+    app.get('#spaB').style.fontSize = '18px';
+    app.get('#showDivLeft').style.top = '485px';
+    app.get('#showDivLeft').style.right = '20px';
+    app.get('#showDivLeft').style.width = '200px';
+    app.get('#showDivLeft').style.height = 'auto';
+    app.get('#showDivLeft').style.padding = '15px 10px 0px 10px';
+    app.get('#showDivLeft').innerHTML = 'bootstrap <br><br> Bootstrap 是一組用於網站和網路應用程式開發的開源前端框架，提供字體排印、表單、按鈕、導航及其他各種元件及 Javascript 擴充套件，旨在使動態網頁和 Web 應用的開發更加容易。 <br><br>';
 }
 
 function noneBoxSpa(){
-    spaB.style.width = '100px';
-    spaB.style.height = '30px';
-    spaB.style.lineHeight = '30px';
-    spaB.style.fontSize = '16px';
-    showDivLeft.style.width = '180px';
-    showDivLeft.style.height = 'auto';
-    showDivLeft.innerHTML = '';
-    showDivLeft.style.padding = '';
+    app.get('#spaB').style.width = '100px';
+    app.get('#spaB').style.height = '30px';
+    app.get('#spaB').style.lineHeight = '30px';
+    app.get('#spaB').style.fontSize = '16px';
+    app.get('#showDivLeft').style.width = '180px';
+    app.get('#showDivLeft').style.height = 'auto';
+    app.get('#showDivLeft').innerHTML = '';
+    app.get('#showDivLeft').style.padding = '';
 }
 
 // alert 
-const alertBigBox = document.getElementById('alertBigBox');
-const alertButton = document.getElementById('alertButton');
-const alertWord = document.getElementById('alertWord');
-alertBigBox.style.display = 'none';
 
-alertButton.addEventListener('click', ()=>{
-    alertBigBox.style.display = 'none';
+app.get("#alertBigBox").style.display = 'none';
+app.get("#alertButton").addEventListener('click', ()=>{
+    app.get("#alertBigBox").style.display = 'none';
 });
 
 // close loading
@@ -1095,20 +1047,20 @@ function letLoadingNone(){
     }
 }
 
-userIcon.addEventListener('mouseover', countNumber);
+app.get('#userIcon').addEventListener('mouseover', countNumber);
 let clearNum;
 
 function countNumber(){
 
  // Number of online users is the number of objects in the presence list.
 listRef.on('value', function(snap) {
-        userIcon.innerHTML = snap.numChildren() + ' 人也在玩';
+    app.get('#userIcon').innerHTML = snap.numChildren() + ' 人也在玩';
 }); 
 
 }
 
-userIcon.addEventListener('mouseleave', function(){
-    userIcon.innerHTML = '';
+app.get('#userIcon').addEventListener('mouseleave', function(){
+    app.get('#userIcon').innerHTML = '';
 })
 
 // display how many person on site

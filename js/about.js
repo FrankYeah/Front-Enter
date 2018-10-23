@@ -1,20 +1,14 @@
-const aboutName = document.getElementById('aboutName');
-const aboutMail = document.getElementById('aboutMail');
-const aboutTitle = document.getElementById('aboutTitle');
-const aboutContnet = document.getElementById('aboutContnet');
-const aboutSend = document.getElementById('aboutSend');
-
-aboutSend.addEventListener('click' ,sendToMail);
+app.get('#aboutSend').addEventListener('click' ,sendToMail);
 
 function sendToMail(){
-    if(aboutName.value && aboutMail.value && aboutTitle.value && aboutContent.value){
+    if(app.get('#aboutName').value && app.get('#aboutMail').value && app.get('#aboutTitle').value && app.get('#aboutContent').value){
         let newPostKey = firebase.database().ref().child('feedback').push().key;
         firebase.database().ref('feedback/'+newPostKey).set({
             uid: newPostKey,
-            name: aboutName.value,
-            mail : aboutMail.value,
-            title : aboutTitle.value,
-            content : aboutContent.value,
+            name: app.get('#aboutName').value,
+            mail : app.get('#aboutMail').value,
+            title : app.get('#aboutTitle').value,
+            content : app.get('#aboutContent').value,
             creatTime: new Date().getTime()
         });
         getFeedback();
@@ -25,10 +19,10 @@ function sendToMail(){
 
 function getFeedback(){
     successOut();
-    aboutName.value = '';
-    aboutMail.value = '';
-    aboutTitle.value = '';
-    aboutContent.value = '';
+    app.get('#aboutName').value = '';
+    app.get('#aboutMail').value = '';
+    app.get('#aboutTitle').value = '';
+    app.get('#aboutContent').value = '';
 }
 
 // alert 
