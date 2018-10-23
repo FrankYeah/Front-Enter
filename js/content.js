@@ -10,8 +10,13 @@ getAllData.orderByChild('creatTime').equalTo(Number(articleId)).on('child_added'
 });
 
 function createLayout(data){
-    keyvisualBorn(data);
-    mainChartBorn();
+    app.get('#section').style.background  =  "url('" + data.rectangleUrl + "') 50% / cover no-repeat"; 
+    app.get('#keyvisualSpan').textContent = data.name;
+    app.createElement("div", {atrs:{
+        className:'main-chart',
+        id: 'mainChart'
+    }}, app.get('#mainId'));
+
     imageLeftOne();
     imageLeftTwo();
     imageLeftThree();
@@ -50,22 +55,14 @@ function createLayout(data){
     tableEightRight(data);
 }
 
-function keyvisualBorn(data){
-    document.getElementById('section').style.background  =  "url('" + data.rectangleUrl + "')"; 
-    document.getElementById('section').style.backgroundRepeat  =  'no-repeat';  
-    document.getElementById('section').style.backgroundSize  =  'cover';
-    document.getElementById('section').style.backgroundPositionY  =  'center';
-    document.getElementById('keyvisualSpan').textContent = data.name;
-}
-
-function mainChartBorn(){
-    let newElement = document.createElement('div');
-    newElement.id = 'mainChart';
-    newElement.className = 'main-chart';
-    document.getElementById('mainId').appendChild(newElement);
-}
-
 function imageLeftOne(data){
+    app.createElement("div", {atrs:{
+        className:'image-left image-left-one',
+    }, evts:{
+        click:app.evts.clickSize
+    }}, app.get('#mainChart'));
+
+
     let newElement = document.createElement('div');
     newElement.className = 'image-left image-left-one';
     document.getElementById('mainChart').appendChild(newElement);

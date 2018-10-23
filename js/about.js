@@ -28,22 +28,18 @@ function getFeedback(){
 // alert 
 
 function successOut(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '成功送出，我們會盡快回覆您！';
+    app.get('#alertBigBox').style.display = 'flex';
+    app.get('#alertWord').innerHTML = '成功送出，我們會盡快回覆您！';
 }
 
 function pleaseWriteRight(){
-    alertBigBox.style.display = 'flex';
-    alertWord.innerHTML = '請確實輸入資料';
+    app.get('#alertBigBox').style.display = 'flex';
+    app.get('#alertWord').innerHTML = '請確實輸入資料';
 }
 
-const alertBigBox = document.getElementById('alertBigBox');
-const alertButton = document.getElementById('alertButton');
-const alertWord = document.getElementById('alertWord');
-alertBigBox.style.display = 'none';
-
-alertButton.addEventListener('click', ()=>{
-    alertBigBox.style.display = 'none';
+app.get('#alertBigBox').style.display = 'none';
+app.get('#alertButton').addEventListener('click', ()=>{
+    app.get('#alertBigBox').style.display = 'none';
 });
 
 // close loading

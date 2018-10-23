@@ -74,7 +74,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('name').equalTo('彭彭的課程教學').on('child_added', function(snapshot) {
         data = snapshot.val();  createLayout(data);
@@ -86,7 +86,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('name').equalTo('AppWorks School').on('child_added', function(snapshot) {
         data = snapshot.val();   createLayout(data);
@@ -96,7 +96,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('city').equalTo('台北').on('child_added', function(snapshot) {
     data = snapshot.val();   createLayout(data);
@@ -106,7 +106,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('city').equalTo('各地').on('child_added', function(snapshot) {
     data = snapshot.val();   createLayout(data);
@@ -116,7 +116,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('classType').equalTo('一對一').on('child_added', function(snapshot) {
     data = snapshot.val();   createLayout(data);
@@ -126,7 +126,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('classType').equalTo('大班制').on('child_added', function(snapshot) {
     data = snapshot.val();   createLayout(data);
@@ -136,7 +136,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('classType').equalTo('小班制').on('child_added', function(snapshot) {
     data = snapshot.val();   createLayout(data);
@@ -146,7 +146,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', function(snapshot) {
     data = snapshot.val();   createLayout(data);
@@ -156,7 +156,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('teachWay').equalTo('手把手教制').on('child_added', function(snapshot) {
     data = snapshot.val();   createLayout(data);
@@ -166,7 +166,7 @@ if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
     getAllData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
     data = snapshot.val();   createLayout(data);
@@ -175,12 +175,12 @@ if(articleId == null){
     let newElement = document.createElement('div');
     newElement.textContent = 'no result';
     newElement.style.color = 'rgb(26, 216, 211)';
-    document.getElementById('mainId').appendChild(newElement);
+    app.get('#mainId').appendChild(newElement);
 
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();  storePhoto.push(data.rectangleUrl);
         // storeLink.push('content.html?id=' + data.creatTime);
-        document.getElementById('mainId').innerHTML = '';
+        app.get('#mainId').innerHTML = '';
     });
 }
 
@@ -210,7 +210,7 @@ function createLayout(data){
 function articleBorn(){
     let newElement = document.createElement('article');
     newElement.id = 'article' + x;
-    document.getElementById('mainId').appendChild(newElement);
+    app.get('#mainId').appendChild(newElement);
 }
 
 // display collected
@@ -330,7 +330,7 @@ function pLocationBorn(data){
 // clear layout
 
 function clearContent(city){
-    document.getElementById('mainId').innerHTML = '';
+    app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('city').equalTo(city).on('child_added', function(snapshot) {
         data = snapshot.val();
         createLayout(data);
@@ -409,7 +409,7 @@ app.get("#getAllArticle").onclick = function(){
     app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
     app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
 
-    document.getElementById('mainId').innerHTML = '';
+    app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();
         storePhoto.push(data.rectangleUrl);
@@ -423,7 +423,7 @@ app.get("#smallClass").onclick = function(){
     app.get("#smallClass").style.color = 'rgb(26, 216, 211)';
     app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
     app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
-    document.getElementById('mainId').innerHTML = '';
+    app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('classType').equalTo('小班制').on('child_added', function(snapshot) {
         data = snapshot.val();
         createLayout(data);
@@ -435,7 +435,7 @@ app.get("#letItGo").onclick = function(){
     app.get("#smallClass").style.color = 'rgb(128, 128, 128)';
     app.get("#letItGo").style.color = 'rgb(26, 216, 211)';
     app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
-    document.getElementById('mainId').innerHTML = '';
+    app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', function(snapshot) {
         data = snapshot.val();
         createLayout(data);
@@ -447,7 +447,7 @@ app.get("#oneByOne").onclick = function(){
     app.get("#smallClass").style.color = 'rgb(128, 128, 128)';
     app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
     app.get("#oneByOne").style.color = 'rgb(26, 216, 211)';
-    document.getElementById('mainId').innerHTML = '';
+    app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('classType').equalTo('一對一').on('child_added', function(snapshot) {
         data = snapshot.val();
         createLayout(data);

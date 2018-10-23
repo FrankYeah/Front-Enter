@@ -134,7 +134,7 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
 
 // log out
 
-document.getElementById('logoutTest').onclick = logMeOut;
+app.get('#logoutTest').onclick = logMeOut;
 
 function logMeOut(){
     firebase.auth().signOut().then(function() {
