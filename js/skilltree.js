@@ -5,7 +5,7 @@ app.get('#userIcon').addEventListener('click', function(){
 app.get('#fullIcon').addEventListener('click', function(event){
     app.get('#fullIcon').style.display = 'none';
 });
-whiteDivIcon.addEventListener('click', function(event){
+app.get('#whiteDivIcon').addEventListener('click', function(event){
     event.stopPropagation();
 });
 app.get('#cuteOne').addEventListener('click', function(){
@@ -42,9 +42,8 @@ app.get('#questionBox').addEventListener('click', function(event){
     app.get('#arrowContinue').style.display = 'none';
 })
 
-app.get('#questionDiv').addEventListener('click', closeMyQ);
 let QClick = 0;
-function closeMyQ(){
+app.get('#questionDiv').addEventListener('click', function(){
     if(QClick==0){
         app.get('#questionDiv').style.display = 'none';
         app.get('#htmlAnswerTwo').style.animation = '';
@@ -55,10 +54,9 @@ function closeMyQ(){
         app.get('#arrowContinue').style.display = 'none';
     }else{
     }
-}
+});
 
-app.get('#htmlB').addEventListener('click', htmlPass);
-function htmlPass(){
+app.get('#htmlB').addEventListener('click', function(){
     app.get('#questionDiv').style.display = 'flex';
     app.get('#questionHead').textContent = ' 請問 HTML 是什麼？';
     app.get('#htmlAnswerOne').textContent = '標籤語言';
@@ -67,7 +65,7 @@ function htmlPass(){
     app.get('#htmlAnswerOne').addEventListener('click', htmlGuestRight);
     app.get('#htmlAnswerTwo').addEventListener('click', htmlGuestWrongTwo);
     app.get('#htmlAnswerThree').addEventListener('click', htmlGuestWrongThree);
-}
+});
 
 function htmlGuestWrongTwo(event){
     event.stopPropagation();
@@ -121,7 +119,6 @@ function htmlGuestRight(event){
         }
         htmlTyping();
     }else{
-
     }
 }
 
@@ -359,7 +356,6 @@ app.get('#ajaxB').addEventListener('click', function(){
     if(app.get('#ajaxB').style.cursor){
         ajaxPass();
     }else{
-
     }
 });
 
@@ -376,7 +372,6 @@ function ajaxGuestRight(){
     ajaxLayout();
     app.get('#userIcon').style.top = '42.6%';
     app.get('#userIcon').style.left = '48.5%';
-
     // type
     if(this.textContent == '測試程式正確性'){
         let str = '在學習程式語言之前，很難想像有 GitHub 的存在吧，竟然有個倉庫專門在管理程式語言，還能讓人複製、共同編輯，並記錄每一次的 commit ，是一款優秀的協作工具。';
@@ -417,7 +412,6 @@ app.get('#es6B').addEventListener('click', function(){
     if(app.get('#es6B').style.cursor){
         es6Pass();
     }else{
-
     }
 });
 
@@ -538,7 +532,6 @@ function spaGuestRight(){
     spaLayout();
     app.get('#userIcon').style.top = '53.1%';
     app.get('#userIcon').style.left = '39.4%';
-
     // type
     if(this.textContent == '樣式擴充元件'){
         let str = '看來你學蠻快的，Bootstrap 能做到的，css 也能做到，如果有時間，不仿試試手刻 Bootstrap 的特效，精進樣式調校的能力。';
@@ -659,7 +652,6 @@ function tddGuestRight(){
         }
         unittestTyping();
     }else{
-
     }
 }
 
@@ -922,7 +914,6 @@ function noneBoxJquery(){
 }
 
 // ES6
-
 app.get('#es6B').addEventListener('mouseover', showBoxEs6);
 app.get('#es6B').addEventListener('mouseleave', noneBoxEs6);
 
@@ -951,7 +942,6 @@ function noneBoxEs6(){
 }
 
 // SPA
-
 app.get('#spaB').addEventListener('mouseover', showBoxSpa);
 app.get('#spaB').addEventListener('mouseleave', noneBoxSpa);
 
@@ -980,13 +970,12 @@ function noneBoxSpa(){
 }
 
 // alert 
-app.get("#alertBigBox").style.display = 'none';
-app.get("#alertButton").addEventListener('click', ()=>{
-    app.get("#alertBigBox").style.display = 'none';
+app.get('#alertBigBox').style.display = 'none';
+app.get('#alertButton').addEventListener('click', ()=>{
+    app.get('#alertBigBox').style.display = 'none';
 });
 
 // close loading
-
 setTimeout(function(){
     loadingAnimation.style.height = '0px';
     loadingAnimation.style.opacity = '0.9';
@@ -995,34 +984,27 @@ setTimeout(function(){
     loadingImg.style.marginBottom = '-1000px';
     header.style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
     myAside.style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
-    setTimeout(displayNoneLoading, 600)
-    function displayNoneLoading(){
+    setTimeout(function(){
         loadingAnimation.style.display = 'none';
-    }
+    }, 600)
 }, 1000)
 
-app.get('#userIcon').addEventListener('mouseover', countNumber);
-let clearNum;
-
-function countNumber(){
-
+app.get('#userIcon').addEventListener('mouseover', function(){
  // Number of online users is the number of objects in the presence list.
 listRef.on('value', function(snap) {
     app.get('#userIcon').innerHTML = snap.numChildren() + ' 人也在玩';
 }); 
-}
+});
 
 app.get('#userIcon').addEventListener('mouseleave', function(){
     app.get('#userIcon').innerHTML = '';
 })
 
 // display how many person on site
-
 let listRef = database.ref('counter');
 let userRef = listRef.push();
 // Add ourselves to presence list when online.
 let presenceRef = database.ref('.info/connected');
-
 presenceRef.on('value', function(snap) {
   if (snap.val()) {
     // Remove ourselves when we disconnect.

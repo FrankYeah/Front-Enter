@@ -10,31 +10,31 @@ setInterval('app.article.changeKevisual()',5000);
 app.article.changeKevisual = function(){
     keyvisualImg = [storePhoto[0],storePhoto[1],storePhoto[2]];
     keyvisualImg_len = keyvisualImg.length; 
-    app.get("#keyvisual0").style.background  =  "url('" + keyvisualImg[0] + "') 50% / cover no-repeat";    
-    app.get("#keyvisual0").style.backgroundPositionY = 'center';
-    app.get("#keyvisual1").style.background  =  "url('" + keyvisualImg[1] + "') 50% / cover no-repeat";    
-    app.get("#keyvisual1").style.backgroundPositionY = 'center';
-    app.get("#keyvisual2").style.background  =  "url('" + keyvisualImg[2] + "') 50% / cover no-repeat";    
-    app.get("#keyvisual2").style.backgroundPositionY = 'center';
+    app.get('#keyvisual0').style.background = "url('" + keyvisualImg[0] + "') 50% / cover no-repeat";    
+    app.get('#keyvisual0').style.backgroundPositionY = 'center';
+    app.get('#keyvisual1').style.background = "url('" + keyvisualImg[1] + "') 50% / cover no-repeat";    
+    app.get('#keyvisual1').style.backgroundPositionY = 'center';
+    app.get('#keyvisual2').style.background = "url('" + keyvisualImg[2] + "') 50% / cover no-repeat";    
+    app.get('#keyvisual2').style.backgroundPositionY = 'center';
 
     if(icount == 0){
-        app.get("#keyvisual0").style.display  =  'block';
-        app.get("#keyvisual1").style.display  =  'none';
-        app.get("#keyvisual2").style.display  =  'none';
-        app.get("#keyvisual0").style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        app.get("#keyvisual0").style.backgroundPositionX = 'center';
+        app.get('#keyvisual0').style.display  =  'block';
+        app.get('#keyvisual1').style.display  =  'none';
+        app.get('#keyvisual2').style.display  =  'none';
+        app.get('#keyvisual0').style.animation = 'opacityOut 5s ease 0s 1 alternate both';
+        app.get('#keyvisual0').style.backgroundPositionX = 'center';
     }else if(icount == 1){
-        app.get("#keyvisual0").style.display  =  'none';
-        app.get("#keyvisual1").style.display  =  'block';
-        app.get("#keyvisual2").style.display  =  'none';
-        app.get("#keyvisual1").style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        app.get("#keyvisual1").style.backgroundPositionX = 'center';
+        app.get('#keyvisual0').style.display  =  'none';
+        app.get('#keyvisual1').style.display  =  'block';
+        app.get('#keyvisual2').style.display  =  'none';
+        app.get('#keyvisual1').style.animation = 'opacityOut 5s ease 0s 1 alternate both';
+        app.get('#keyvisual1').style.backgroundPositionX = 'center';
     }else if(icount == 2){
-        app.get("#keyvisual1").style.display  =  'none';
-        app.get("#keyvisual0").style.display  =  'none';
-        app.get("#keyvisual2").style.display  =  'block';
-        app.get("#keyvisual2").style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        app.get("#keyvisual2").style.backgroundPositionX = 'center';
+        app.get('#keyvisual1').style.display  =  'none';
+        app.get('#keyvisual0').style.display  =  'none';
+        app.get('#keyvisual2').style.display  =  'block';
+        app.get('#keyvisual2').style.animation = 'opacityOut 5s ease 0s 1 alternate both';
+        app.get('#keyvisual2').style.backgroundPositionX = 'center';
     }
     icount++;
     if(icount>=keyvisualImg_len) { icount=0;}
@@ -48,7 +48,7 @@ let articleId = (new URL(document.location)).searchParams.get('id');  // get url
 
 if(articleId == null){
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
-        data = snapshot.val();
+        data = snapshot.val(); 
         createLayout(data);
     });
 }else if(articleId == '彭彭' || articleId == 'pengpeng' || articleId == 'peng'
@@ -262,7 +262,7 @@ app.article.tagLineBorn = function(){
 
 app.article.contentABorn = function(data){
     let newElement = document.createElement('a');
-    newElement.id = 'contentA' + x;
+    newElement.id = 'contentA' + x; 
     newElement.setAttribute('href', '/Front-Enter/content.html?id=' + data.creatTime);
     document.getElementById('article' + x).appendChild(newElement);
 }
@@ -317,11 +317,11 @@ app.article.readMoreDiv = function(){
 }
 
 // all tag
-app.get("#getAllArticle").onclick = function(){
-    app.get("#getAllArticle").style.color = 'rgb(26, 216, 211)';
-    app.get("#smallClass").style.color = 'rgb(128, 128, 128)';
-    app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
-    app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
+app.get('#getAllArticle').onclick = function(){
+    app.get('#getAllArticle').style.color = 'rgb(26, 216, 211)';
+    app.get('#smallClass').style.color = 'rgb(128, 128, 128)';
+    app.get('#letItGo').style.color = 'rgb(128, 128, 128)';
+    app.get('#oneByOne').style.color = 'rgb(128, 128, 128)';
     app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();
@@ -329,11 +329,11 @@ app.get("#getAllArticle").onclick = function(){
         });
 }
 
-app.get("#smallClass").onclick = function(){
-    app.get("#getAllArticle").style.color = 'rgb(128, 128, 128)';
-    app.get("#smallClass").style.color = 'rgb(26, 216, 211)';
-    app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
-    app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
+app.get('#smallClass').onclick = function(){
+    app.get('#smallClass').style.color = 'rgb(26, 216, 211)';
+    app.get('#getAllArticle').style.color = 'rgb(128, 128, 128)';
+    app.get('#letItGo').style.color = 'rgb(128, 128, 128)';
+    app.get('#oneByOne').style.color = 'rgb(128, 128, 128)';
     app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('classType').equalTo('小班制').on('child_added', function(snapshot) {
         data = snapshot.val();
@@ -341,11 +341,11 @@ app.get("#smallClass").onclick = function(){
     });   
 }
 
-app.get("#letItGo").onclick = function(){
-    app.get("#getAllArticle").style.color = 'rgb(128, 128, 128)' 
-    ;app.get("#smallClass").style.color = 'rgb(128, 128, 128)';
-    app.get("#letItGo").style.color = 'rgb(26, 216, 211)' 
-    ;app.get("#oneByOne").style.color = 'rgb(128, 128, 128)';
+app.get('#letItGo').onclick = function(){
+    app.get('#letItGo').style.color = 'rgb(26, 216, 211)'; 
+    app.get('#getAllArticle').style.color = 'rgb(128, 128, 128)';
+    app.get('#smallClass').style.color = 'rgb(128, 128, 128)';
+    ;app.get('#oneByOne').style.color = 'rgb(128, 128, 128)';
     app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', function(snapshot) {
         data = snapshot.val();
@@ -353,11 +353,11 @@ app.get("#letItGo").onclick = function(){
     });   
 }
 
-app.get("#oneByOne").onclick = function(){
-    app.get("#getAllArticle").style.color = 'rgb(128, 128, 128)';
-    app.get("#smallClass").style.color = 'rgb(128, 128, 128)';
-    app.get("#letItGo").style.color = 'rgb(128, 128, 128)';
-    app.get("#oneByOne").style.color = 'rgb(26, 216, 211)';
+app.get('#oneByOne').onclick = function(){
+    app.get('#oneByOne').style.color = 'rgb(26, 216, 211)';
+    app.get('#getAllArticle').style.color = 'rgb(128, 128, 128)';
+    app.get('#smallClass').style.color = 'rgb(128, 128, 128)';
+    app.get('#letItGo').style.color = 'rgb(128, 128, 128)';
     app.get('#mainId').innerHTML = '';
     getAllData.orderByChild('classType').equalTo('一對一').on('child_added', function(snapshot) {
         data = snapshot.val();
@@ -366,9 +366,9 @@ app.get("#oneByOne").onclick = function(){
 }
 
 // alert 
-app.get("#alertBigBox").style.display = 'none';
-app.get("#alertButton").addEventListener('click', ()=>{
-    app.get("#alertBigBox").style.display = 'none';
+app.get('#alertBigBox').style.display = 'none';
+app.get('#alertButton').addEventListener('click', ()=>{
+    app.get('#alertBigBox').style.display = 'none';
 });
 
 // close loading

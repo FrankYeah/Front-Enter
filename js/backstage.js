@@ -3,16 +3,16 @@ let squareUrl = '';
 let rectangleUrl = '';
 let getFile = '';
 let getRectangleFile = '';
-app.get("#mainUploadPic").addEventListener('change', function(){
+app.get('#mainUploadPic').addEventListener('change', function(){
     getFile = this.files[0]
 },false);
-app.get("#RectanglePic").addEventListener('change', function(){
+app.get('#RectanglePic').addEventListener('change', function(){
     getRectangleFile = this.files[0]
 },false);
 
 // set the post
 
-app.get("#mainButton").addEventListener('click',clickButton);
+app.get('#mainButton').addEventListener('click',clickButton);
 function clickButton(){
     let storageRef = firebase.storage().ref();
     let uploadTask = storageRef.child('images/'+getFile.name).put(getFile);
@@ -69,22 +69,22 @@ function clickButton(){
 
         //存入所有資料
         let newPostKey = firebase.database().ref().child('article').push().key;
-        let name = app.get("#mainName").value;
-        let city = app.get("#mainCity").value;
-        let skill = app.get("#mainSkill").value;
-        let technology = app.get("#mainTechnology").value;
-        let fee = app.get("#mainFee").value;
-        let totalDay = app.get("#mainTotalDay").value;
-        let weekHour = app.get("#mainWeekHour").value;
-        let foundYear = app.get("#mainFoundYear").value;
-        let teachWay =  app.get("#mainTeachWay").value;
-        let classType = app.get("#mainClassType").value;
-        let teacherNum = app.get("#mainTeacherNum").value;
-        let topic = app.get("#mainTopic").value;
-        let preface = app.get("#mainPreface").value;
-        let content = app.get("#mainContent").value;
-        let phone = app.get("#mainPhone").value;
-        let mail = app.get("#mainMail").value;
+        let name = app.get('#mainName').value;
+        let city = app.get('#mainCity').value;
+        let skill = app.get('#mainSkill').value;
+        let technology = app.get('#mainTechnology').value;
+        let fee = app.get('#mainFee').value;
+        let totalDay = app.get('#mainTotalDay').value;
+        let weekHour = app.get('#mainWeekHour').value;
+        let foundYear = app.get('#mainFoundYear').value;
+        let teachWay =  app.get('#mainTeachWay').value;
+        let classType = app.get('#mainClassType').value;
+        let teacherNum = app.get('#mainTeacherNum').value;
+        let topic = app.get('#mainTopic').value;
+        let preface = app.get('#mainPreface').value;
+        let content = app.get('#mainContent').value;
+        let phone = app.get('#mainPhone').value;
+        let mail = app.get('#mainMail').value;
         let sUrl = squareUrl;
         let rUrl = rectangleUrl;
         writePost(newPostKey, name, city, skill, technology, fee, totalDay, weekHour,foundYear,
@@ -118,8 +118,8 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     creatTime: new Date().getTime(),
     uid: newPostKey
     });
-    app.get("#alertBigBox").style.display = 'flex';
-    app.get("#alertWord").innerHTML = '貼文已發布';
+    app.get('#alertBigBox').style.display = 'flex';
+    app.get('#alertWord').innerHTML = '貼文已發布';
 }
 
 // log out
@@ -145,9 +145,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 //alert
-app.get("#alertBigBox").style.display = 'none';
-app.get("#alertButton").addEventListener('click', ()=>{
-    app.get("#alertBigBox").style.display = 'none';
+app.get('#alertBigBox').style.display = 'none';
+app.get('#alertButton').addEventListener('click', ()=>{
+    app.get('#alertBigBox').style.display = 'none';
 });
 
 // close loading

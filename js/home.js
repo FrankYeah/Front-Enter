@@ -1,7 +1,7 @@
 // alert 
-app.get("#alertBigBox").style.display = 'none';
-app.get("#alertButton").addEventListener('click', ()=>{
-    app.get("#alertBigBox").style.display = 'none';
+app.get('#alertBigBox').style.display = 'none';
+app.get('#alertButton').addEventListener('click', ()=>{
+    app.get('#alertBigBox').style.display = 'none';
 });
 
 // close loading

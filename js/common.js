@@ -7,11 +7,6 @@ app.get('#headerP3').addEventListener('mouseout', function(){
 })
 window.addEventListener('scroll',function(){
     if(document.documentElement.scrollTop > 0){
-        app.get('#webSearch').src = 'images/FE_search_green.png';
-        app.get('#logo').src = 'images/FE_logo-4.png';
-        app.get('#headerP1').style.color='rgb(128,128,128)';
-        app.get('#headerP2').style.color='rgb(128,128,128)';
-        app.get('#headerP3').style.color='rgb(128,128,128)';
         app.get('#header').style.animation = 'headerBackgroundOut 5s ease 0s 1 alternate forwards';
         if(userLogin && userLogin.emailVerified == true){
             app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
@@ -22,12 +17,6 @@ window.addEventListener('scroll',function(){
             app.get('#headerP3').style.cursor = 'pointer';
         }
       }else if(document.documentElement.scrollTop<100){
-        app.get('#webSearch').src = 'images/FE_search_green.png';
-        app.get('#logo').src = 'images/FE_logo-4.png';
-        app.get('#header').style.backgroundColor = '';
-        app.get('#headerP1').style.color='rgb(128, 128, 128)';
-        app.get('#headerP2').style.color='rgb(128, 128, 128)';
-        app.get('#headerP3').style.color='rgb(128, 128, 128)';
         app.get('#header').style.animation = 'headerBackgroundIn 1s ease 0s 1 alternate';
         if(userLogin && userLogin.emailVerified == true){
             app.get('#headerP3').style.color = 'rgb(128, 128, 128)';

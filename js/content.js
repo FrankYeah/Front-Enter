@@ -127,10 +127,10 @@ function startLeft(){
     , '../Front-Enter/images/7.jpg', '../Front-Enter/images/AppWorksShool-rectangle.jpg'
 ];
     // let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg', '../images/7.jpg', '../images/AppWorksShool-rectangle.jpg'];
-    app.get("#rotateCenterImg").style.background = "url('" + rImg[rotateRotate] + "')"; 
-    app.get("#rotateCenterImg").style.backgroundRepeat  =  'no-repeat';  
-    app.get("#rotateCenterImg").style.backgroundSize  =  'cover';
-    app.get("#rotateCenterImg").style.backgroundPositionX = 'center';
+    app.get('#rotateCenterImg').style.background = "url('" + rImg[rotateRotate] + "')"; 
+    app.get('#rotateCenterImg').style.backgroundRepeat  =  'no-repeat';  
+    app.get('#rotateCenterImg').style.backgroundSize  =  'cover';
+    app.get('#rotateCenterImg').style.backgroundPositionX = 'center';
 }
 
 function startRight(){
@@ -148,10 +148,10 @@ function startRight(){
     let rImg = ['../Front-Enter/images/2.jpg', '../Front-Enter/images/13.jpg'
     , '../Front-Enter/images/15.jpg', '../Front-Enter/images/7.jpg', '../Front-Enter/images/AppWorksShool-rectangle.jpg'];
     // let rImg = ['../images/2.jpg', '../images/13.jpg', '../images/15.jpg', '../images/7.jpg', '../images/AppWorksShool-rectangle.jpg'];
-    app.get("#rotateCenterImg").style.background = "url('" + rImg[rotateRotate] + "')";  
-    app.get("#rotateCenterImg").style.backgroundRepeat  =  'no-repeat';  
-    app.get("#rotateCenterImg").style.backgroundSize  =  'cover';
-    app.get("#rotateCenterImg").style.backgroundPositionX = 'center';
+    app.get('#rotateCenterImg').style.background = "url('" + rImg[rotateRotate] + "')";  
+    app.get('#rotateCenterImg').style.backgroundRepeat  =  'no-repeat';  
+    app.get('#rotateCenterImg').style.backgroundSize  =  'cover';
+    app.get('#rotateCenterImg').style.backgroundPositionX = 'center';
     
 }
 
@@ -161,9 +161,9 @@ function deleteRotateFull(){
 }
 
 // alert 
-app.get("#alertBigBox").style.display = 'none';
-app.get("#alertButton").addEventListener('click', ()=>{
-    app.get("#alertBigBox").style.display = 'none';
+app.get('#alertBigBox').style.display = 'none';
+app.get('#alertButton').addEventListener('click', ()=>{
+    app.get('#alertBigBox').style.display = 'none';
 });
 
 // close loading

@@ -4,23 +4,23 @@ let getDataFromUrl = database.ref('article');
 let getMyUid;
 getDataFromUrl.orderByChild('creatTime').equalTo(Number(articleId)).on('child_added', function(snapshot) {
     getMyUid = snapshot.val().uid;
-    app.get("#MykeyvisualSpan").textContent = snapshot.val().name + '(編輯)';
-    app.get("#mainName").value = snapshot.val().name;
-    app.get("#mainCity").value = snapshot.val().city;
-    app.get("#mainSkill").value = snapshot.val().skill;
-    app.get("#mainTechnology").value = snapshot.val().technology;
-    app.get("#mainFee").value = snapshot.val().fee;
-    app.get("#mainTotalDay").value = snapshot.val().totalDay;
-    app.get("#mainWeekHour").value = snapshot.val().weekHour;
-    app.get("#mainFoundYear").value = snapshot.val().foundYear;
-    app.get("#mainTeachWay").value = snapshot.val().teachWay;
-    app.get("#mainClassType").value = snapshot.val().classType;
-    app.get("#mainTeacherNum").value = snapshot.val().teacherNum;
-    app.get("#mainTopic").value = snapshot.val().topic;
-    app.get("#mainPreface").value = snapshot.val().preface;
-    app.get("#mainContent").value = snapshot.val().content;
-    app.get("#mainPhone").value = snapshot.val().phone;
-    app.get("#mainMail").value = snapshot.val().mail;
+    app.get('#MykeyvisualSpan').textContent = snapshot.val().name + '(編輯)';
+    app.get('#mainName').value = snapshot.val().name;
+    app.get('#mainCity').value = snapshot.val().city;
+    app.get('#mainSkill').value = snapshot.val().skill;
+    app.get('#mainTechnology').value = snapshot.val().technology;
+    app.get('#mainFee').value = snapshot.val().fee;
+    app.get('#mainTotalDay').value = snapshot.val().totalDay;
+    app.get('#mainWeekHour').value = snapshot.val().weekHour;
+    app.get('#mainFoundYear').value = snapshot.val().foundYear;
+    app.get('#mainTeachWay').value = snapshot.val().teachWay;
+    app.get('#mainClassType').value = snapshot.val().classType;
+    app.get('#mainTeacherNum').value = snapshot.val().teacherNum;
+    app.get('#mainTopic').value = snapshot.val().topic;
+    app.get('#mainPreface').value = snapshot.val().preface;
+    app.get('#mainContent').value = snapshot.val().content;
+    app.get('#mainPhone').value = snapshot.val().phone;
+    app.get('#mainMail').value = snapshot.val().mail;
 });  
 
 // upload img
@@ -28,16 +28,16 @@ let squareUrl = '';
 let rectangleUrl = '';
 let getFile = '';
 let getRectangleFile = '';
-app.get("#mainUploadPic").addEventListener('change', function(){
+app.get('#mainUploadPic').addEventListener('change', function(){
     getFile = this.files[0]
 },false);
 
-app.get("#RectanglePic").addEventListener('change', function(){
+app.get('#RectanglePic').addEventListener('change', function(){
     getRectangleFile = this.files[0]
 },false);
 
 //send the post
-app.get("#mainButton").addEventListener('click',clickButton);
+app.get('#mainButton').addEventListener('click',clickButton);
 
 function clickButton(){
     let storageRef = firebase.storage().ref();
@@ -97,22 +97,22 @@ function clickButton(){
 
         // store all data
         let newPostKey = firebase.database().ref().child('article').push().key;
-        let name = app.get("#mainName").value;
-        let city = app.get("#mainCity").value;
-        let skill = app.get("#mainSkill").value;
-        let technology = app.get("#mainTechnology").value;
-        let fee = app.get("#mainFee").value;
-        let totalDay = app.get("#mainTotalDay").value;
-        let weekHour = app.get("#mainWeekHour").value;
-        let foundYear = app.get("#mainFoundYear").value;
-        let teachWay =  app.get("#mainTeachWay").value;
-        let classType = app.get("#mainClassType").value;
-        let teacherNum = app.get("#mainTeacherNum").value;
-        let topic = app.get("#mainTopic").value;
-        let preface = app.get("#mainPreface").value;
-        let content = app.get("#mainContent").value;
-        let phone = app.get("#mainPhone").value;
-        let mail = app.get("#mainMail").value;
+        let name = app.get('#mainName').value;
+        let city = app.get('#mainCity').value;
+        let skill = app.get('#mainSkill').value;
+        let technology = app.get('#mainTechnology').value;
+        let fee = app.get('#mainFee').value;
+        let totalDay = app.get('#mainTotalDay').value;
+        let weekHour = app.get('#mainWeekHour').value;
+        let foundYear = app.get('#mainFoundYear').value;
+        let teachWay =  app.get('#mainTeachWay').value;
+        let classType = app.get('#mainClassType').value;
+        let teacherNum = app.get('#mainTeacherNum').value;
+        let topic = app.get('#mainTopic').value;
+        let preface = app.get('#mainPreface').value;
+        let content = app.get('#mainContent').value;
+        let phone = app.get('#mainPhone').value;
+        let mail = app.get('#mainMail').value;
         let sUrl = squareUrl;
         let rUrl = rectangleUrl;
         writePost(newPostKey, name, city, skill, technology, fee, totalDay, weekHour,foundYear,
@@ -146,8 +146,8 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
     creatTime: new Date().getTime(),
     uid: getMyUid
     });
-    app.get("#alertBigBox").style.display = 'flex';
-    app.get("#alertWord").innerHTML = '貼文已更新';
+    app.get('#alertBigBox').style.display = 'flex';
+    app.get('#alertWord').innerHTML = '貼文已更新';
 }
 
 // log out
@@ -173,9 +173,9 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 //alert
-app.get("#alertBigBox").style.display = 'none';
-app.get("#alertButton").addEventListener('click', ()=>{
-    app.get("#alertBigBox").style.display = 'none';
+app.get('#alertBigBox').style.display = 'none';
+app.get('#alertButton').addEventListener('click', ()=>{
+    app.get('#alertBigBox').style.display = 'none';
 });
 
 // close loading

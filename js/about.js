@@ -19,8 +19,7 @@ app.get('#aboutSend').addEventListener('click' ,function(){
         app.get('#alertBigBox').style.display = 'flex';
         app.get('#alertWord').innerHTML = '請確實輸入資料';
     }
-}
-);
+});
 
 // alert 
 app.get('#alertBigBox').style.display = 'none';
@@ -39,9 +38,5 @@ setTimeout(function(){
     app.get('#myAside').style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
     setTimeout(function(){
         app.get('#loadingAnimation').style.display = 'none';
-    }
-    , 600)
-}
-, 1000)
-
-
+    }, 600)
+}, 1000)
