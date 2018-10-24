@@ -60,13 +60,13 @@ app.get('#imageLeftFive').addEventListener('click', function(){
 })
 
 function rotateImg(url){
-    rotateBackFull();
-    rotateLeftArrow();
-    rotateCenterImg(url)
-    rotateRightArrow();
+    app.rotate.rotateBackFull();
+    app.rotate.rotateLeftArrow();
+    app.rotate.rotateCenterImg(url)
+    app.rotate.rotateRightArrow();
 }
 
-function rotateBackFull(){
+app.rotate.rotateBackFull = function(){
     let newElement = document.createElement('div');
     newElement.className = 'rotate-back-full';
     newElement.id = 'rotateBackFull';
@@ -74,7 +74,7 @@ function rotateBackFull(){
     newElement.onclick = deleteRotateFull;
 }
 
-function rotateCenterImg(url){
+app.rotate.rotateCenterImg = function(url){
     let newElement = document.createElement('div');
     newElement.className = 'rotate-center-img';
     newElement.id = 'rotateCenterImg';
@@ -88,7 +88,7 @@ function rotateCenterImg(url){
     }
 }
 
-function rotateRightArrow(){
+app.rotate.rotateRightArrow = function(){
     let newElement = document.createElement('div');
     newElement.className = 'rotate-right-arrow';
     newElement.id = 'rotateRightArrow';
@@ -99,7 +99,7 @@ function rotateRightArrow(){
     }
 }
 
-function rotateLeftArrow(){
+app.rotate.rotateLeftArrow = function(){
     let newElement = document.createElement('div');
     newElement.className = 'rotate-left-arrow';
     newElement.id = 'rotateLeftArrow';

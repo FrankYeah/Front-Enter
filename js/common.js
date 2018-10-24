@@ -1,12 +1,10 @@
 //when scrolling, change header
-
 app.get('#headerP3').addEventListener('mouseover', function(){
     app.get('#headerP3').style.color='rgb(26, 216, 211)';
 });
 app.get('#headerP3').addEventListener('mouseout', function(){
     app.get('#headerP3').style.color='rgb(128, 128, 128)';
 })
-
 window.addEventListener('scroll',function(){
     if(document.documentElement.scrollTop > 0){
         app.get('#webSearch').src = 'images/FE_search_green.png';
@@ -39,67 +37,56 @@ window.addEventListener('scroll',function(){
             }
             app.get('#headerP3').style.cursor = 'pointer';
         }else{
-
         }
       }
 }
 );
 
 // back to top
-
 window.onload = function() {
     // detect log in and change word
     if(userLogin && userLogin.emailVerified == true){
         app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
         app.get('#headerP3').style.cursor = 'pointer';
-        app.get('#headerP3').addEventListener('mouseenter', changeColor);
-        app.get('#headerP3').addEventListener('mouseleave', changeColorAgain)
-        function changeColor(){
+        app.get('#headerP3').addEventListener('mouseenter',function(){
             app.get('#headerP3').style.color = 'rgb(26, 216, 211)';
-        }
-        function changeColorAgain(){
+        });
+        app.get('#headerP3').addEventListener('mouseleave',function changeColorAgain(){
             app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
-        }
+        })
     }
-
-    let top = document.getElementById('tops');
     let timer = null;
     let isTop = true;
-
-    top.onclick = function(){
+    app.get('#tops').onclick = function(){
         // set timeout
         timer = setInterval(function(){
             // get scroll height
             let osTop = document.documentElement.scrollTop || document.body.scrollTop ;  // deal IE、Chrome
-                
             // lower speed 
             let isSpeed = Math.floor(-osTop / 6);
             document.documentElement.scrollTop = document.body.scrollTop = osTop + isSpeed;
             isTop = true;
-
             //clear timer
             if (osTop == 0) {
                 clearInterval(timer);
             }
         },30);
     };  
-
 }
 
 // search
-
-app.get('#webSearch').addEventListener('click', startSearch);
 let countClick = 0;
+app.get('#webSearch').addEventListener('click', startSearch);
 function startSearch(){
     if(countClick==0){
-        fullSearchDiv();
-        fullSearchWhiteDiv();
-        whiteDivLeft();
-        whiteDivLeftText();
-        whiteDivLeftBox();
-        leftInput();
-        voiceButton();
-        leftButton();
+        app.search.createSearchDiv();
+        app.search.createSearchWhiteDiv();
+        app.search.createWhiteDivLeft();
+        app.search.createWhiteDivLeftText();
+        app.search.createWhiteDivLeftBox();
+        app.search.createLeftInput();
+        app.search.createVoiceButton();
+        app.search.createLeftButton();
         countClick++;
     }else{
         let child=document.getElementById('fullSearchDiv');
@@ -110,7 +97,7 @@ function startSearch(){
     }
 }
 
-function fullSearchDiv(){
+app.search.createSearchDiv = function(){
     let newElement = document.createElement('div');
     newElement.id = 'fullSearchDiv';
     newElement.className = 'fullSearchDiv';
@@ -120,28 +107,28 @@ function fullSearchDiv(){
     }
 }
 
-function fullSearchWhiteDiv(){
+app.search.createSearchWhiteDiv = function(){
     let newElement = document.createElement('div');
     newElement.id = 'fullSearchWhiteDiv';
     newElement.className = 'fullSearchWhiteDiv';
     document.body.appendChild(newElement);
 }
 
-function whiteDivLeft(){
+app.search.createWhiteDivLeft = function(){
     let newElement = document.createElement('div');
     newElement.id = 'whiteDivLeft';
     newElement.className = 'whiteDivLeft';
     document.getElementById('fullSearchWhiteDiv').appendChild(newElement);
 }
 
-function whiteDivLeftText(){
+app.search.createWhiteDivLeftText = function (){
     let newElement = document.createElement('p');
     newElement.className = 'whiteDivLeftText';
     newElement.textContent = 'SEARCH';
     document.getElementById('whiteDivLeft').appendChild(newElement);
 }
 
-function whiteDivLeftBox(){
+app.search.createWhiteDivLeftBox = function(){
     let newElement = document.createElement('form');
     newElement.id = 'whiteDivLeftBox';
     newElement.className = 'whiteDivLeftBox';
@@ -149,7 +136,7 @@ function whiteDivLeftBox(){
     document.getElementById('whiteDivLeft').appendChild(newElement);
 }
 
-function leftInput(){
+app.search.createLeftInput = function(){
     let newElement = document.createElement('input');
     newElement.className = 'leftInput speech';
     newElement.id = 'leftInput';
@@ -163,45 +150,34 @@ function leftInput(){
     }
 }
 
-function voiceButton(){
+app.search.createVoiceButton = function(){
     let newElement = document.createElement('div');
     newElement.className = 'voiceButton start';
     document.getElementById('whiteDivLeftBox').appendChild(newElement);
     newElement.onclick = function(){
-        
     let isFirefox = navigator.userAgent.search('Firefox') > -1;
-
     if(isFirefox){
         let startBtn = document.querySelector('.start');
         startBtn.style.display = 'none';
     }
-
     if(!isFirefox){
-
         const text = document.querySelector('.speech');
         const startBtn = document.querySelector('.start');
-
         window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
         const recognition = new SpeechRecognition()
-
         // set params
         recognition.continuous = false;
         recognition.lang = 'zh-TW';
         recognition.interimResults = true;
-
         // start immediately
         // recognition.start();
-
         recognition.onresult = function(event) {
             var result = event.results[event.results.length - 1];
             text.value = result[result.length - 1 ].transcript;
         }
-
         // speech error handling
         recognition.onerror = function(event){
-
         }
-
         recognition.onend = function() {
             // auto restart
             recognition.start();
@@ -210,7 +186,6 @@ function voiceButton(){
             }else{
                 window.location='article.html?id=' + text.value;
             }
-
         }
             recognition.start();
             this.style.display = 'none';
@@ -218,7 +193,7 @@ function voiceButton(){
     }
 }
 
-function leftButton(){
+app.search.createLeftButton = function(){
     let newElement = document.createElement('div');
     newElement.className = 'leftButton';
     document.getElementById('whiteDivLeftBox').appendChild(newElement);
@@ -227,12 +202,7 @@ function leftButton(){
     }
 }
 
-function searchToArticle(){
-    window.location = 'article.html?id='+document.getElementById('leftInput').value ; 
-}
-
 // test GO
-
 app.get('#testGo').addEventListener('click', createTestGo)
 // home page button
 if(app.get('#homeTestGo')){
@@ -240,17 +210,13 @@ if(app.get('#homeTestGo')){
 }
 function createTestGo(){
     if(countClick==0){
-        let oneHeader = '測驗說明';
-        let oneList = '點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。';
-        let oneButton = '開始測驗';
-        testGoBackDiv();
-        blueGreen();
-        photoWithGray();
-        testGoWhiteDiv();
-        testOneHeader(oneHeader);
-        firstPreface(oneList);
-        testOneButton(oneButton);
-
+        app.testGo.testGoBackDiv();
+        app.testGo.createBlueGreen();
+        app.testGo.createPhotoWithGray();
+        app.testGo.testGoWhiteDiv();
+        app.testGo.testOneHeader('測驗說明');
+        app.testGo.createFirstPreface('點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。');
+        app.testGo.testOneButton('開始測驗');
         countClick++;
     }else{
         let child=document.getElementById('testGoBackDiv');
@@ -265,7 +231,7 @@ function createTestGo(){
     }
 }
 
-function testGoBackDiv(){
+app.testGo.testGoBackDiv =function(){
     let newElement = document.createElement('div');
     newElement.className = 'test-go-back-div';
     newElement.id = 'testGoBackDiv';
@@ -273,7 +239,7 @@ function testGoBackDiv(){
     newElement.onclick = createTestGo;
 }
 
-function blueGreen(){
+app.testGo.createBlueGreen = function(){
     let newElement = document.createElement('div');
     newElement.className = 'blue-green';
     newElement.id = 'blueGreen';
@@ -283,7 +249,7 @@ function blueGreen(){
     }
 }
 
-function photoWithGray(){
+app.testGo.createPhotoWithGray = function(){
     let newElement = document.createElement('div');
     newElement.className = 'photo-with-gray';
     newElement.id = 'photoWithGray';
@@ -293,7 +259,7 @@ function photoWithGray(){
     }
 }
 
-function testGoWhiteDiv(){
+app.testGo.testGoWhiteDiv = function(){
     let newElement = document.createElement('div');
     newElement.className = 'test-go-white-div';
     newElement.id = 'testGoWhiteDiv';
@@ -303,7 +269,7 @@ function testGoWhiteDiv(){
     }
 }
 
-function testOneHeader(oneHeader){
+app.testGo.testOneHeader = function(oneHeader){
     let newElement = document.createElement('p');
     newElement.className = 'test-one-header';
     newElement.id = 'testOneHeader';
@@ -311,8 +277,7 @@ function testOneHeader(oneHeader){
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-
-function testOneList(oneList){
+app.testGo.testOneList = function(oneList){
     let newElement = document.createElement('p');
     newElement.className = 'test-one-list';
     newElement.id = 'testOneList';
@@ -320,7 +285,7 @@ function testOneList(oneList){
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function firstPreface(oneList){
+app.testGo.createFirstPreface = function(oneList){
     let newElement = document.createElement('p');
     newElement.className = 'first-preface';
     newElement.id = 'firstPreface';
@@ -329,17 +294,16 @@ function firstPreface(oneList){
 }
 
 // first test GO button
-
-function testOneButton(oneButton){
+app.testGo.testOneButton = function(oneButton){
     let newElement = document.createElement('p');
     newElement.className = 'test-one-button';
     newElement.id = 'testOneButton';
     newElement.textContent = oneButton;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = testTwoStart;
+    newElement.onclick = app.testGo.testTwoStart;
 }
 
-function testTwoQuestionCount(questionCount){
+app.testGo.testTwoQuestionCount = function(questionCount){
     let newElement = document.createElement('p');
     newElement.className = 'test-two-question-count';
     newElement.id = 'testTwoQuestionCount';
@@ -347,161 +311,124 @@ function testTwoQuestionCount(questionCount){
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function testTwoSelect(twoSelect){
+app.testGo.testTwoSelect = function(twoSelect){
     let newElement = document.createElement('p');
     newElement.className = 'test-two-select';
     newElement.id = 'testTwoSelect';
     newElement.textContent = twoSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = testThreeStart;
-
+    newElement.onclick = app.testGo.testThreeStart;
 }
 
-function testTwoStart(){
+app.testGo.testTwoStart = function(){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
-
-    let oneButton = '選擇在哪座城市學習？'
-    testOneList(oneButton);
-    let questionCount = '1/5';
-    testTwoQuestionCount(questionCount);
-    let TwoSelectTaipei = '台北';
-    testTwoSelect(TwoSelectTaipei);
-    let TwoSelectTaichung = '台中';
-    testTwoSelect(TwoSelectTaichung);
-    let TwoSelectKau = '高雄';
-    testTwoSelect(TwoSelectKau);
-    let TwoSelectEveryPlace = '各地';
-    testTwoSelect(TwoSelectEveryPlace);
-    let TwoSelectNotImportant = '不重要';
-    testTwoSelect(TwoSelectNotImportant);
+    app.testGo.testOneList('選擇在哪座城市學習？');
+    app.testGo.testTwoQuestionCount('1/5');
+    app.testGo.testTwoSelect('台北');
+    app.testGo.testTwoSelect('台中');
+    app.testGo.testTwoSelect('高雄');
+    app.testGo.testTwoSelect('各地');
+    app.testGo.testTwoSelect('不重要');
 }
 
 // display question
-
 let getAllSelect = [];
-
-function testThreeStart(event){
+app.testGo.testThreeStart = function(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
-    let oneButton = '每月能撥出多少費用學習？'
-    testOneList(oneButton);
-    let questionCount = '2/5';
-    testTwoQuestionCount(questionCount);
-    let threeSelectThree = '3000元以下';
-    testThreeSelect(threeSelectThree);
-    let threeSelectSix = '6000元內';
-    testThreeSelect(threeSelectSix);
-    let threeSelectTen = '10000元內';
-    testThreeSelect(threeSelectTen);
-    let threeSelectTenUp = '10001元以上';
-    testThreeSelect(threeSelectTenUp);
-    let threeSelectNotImportant = '不重要';
-    testThreeSelect(threeSelectNotImportant);
+    app.testGo.testOneList('每月能撥出多少費用學習？');
+    app.testGo.testTwoQuestionCount('2/5');
+    app.testGo.testThreeSelect('3000元以下');
+    app.testGo.testThreeSelect('6000元內');
+    app.testGo.testThreeSelect('10000元內');
+    app.testGo.testThreeSelect('10001元以上');
+    app.testGo.testThreeSelect('不重要');
     getAllSelect.push(event.target.textContent);
 }
 
-function testThreeSelect(threeSelect){
+app.testGo.testThreeSelect = function(threeSelect){
     let newElement = document.createElement('p');
     newElement.className = 'test-two-select';
     newElement.id = 'testThreeSelect';
     newElement.textContent = threeSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = testFourStart;
+    newElement.onclick = app.testGo.testFourStart;
 }
 
-function testFourStart(event){
+app.testGo.testFourStart = function(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     let oneButton = '每周能撥出多少時間學習？'
-    testOneList(oneButton);
-    let questionCount = '3/5';
-    testTwoQuestionCount(questionCount);
-    let fourSelectfifty = '16小時以下';
-    testFourSelect(fourSelectfifty);
-    let fourSelectThirty = '30小時內';
-    testFourSelect(fourSelectThirty);
-    let fourSelectFortyFive = '45小時內';
-    testFourSelect(fourSelectFortyFive);
-    let fourSelectFortyFiveUp = '46小時以上';
-    testFourSelect(fourSelectFortyFiveUp);
-    let fourSelectNotImportant = '不重要';
-    testFourSelect(fourSelectNotImportant);
+    app.testGo.testOneList('每周能撥出多少時間學習？');
+    app.testGo.testTwoQuestionCount('3/5');
+    app.testGo.testFourSelect('16小時以下');
+    app.testGo.testFourSelect('30小時內');
+    app.testGo.testFourSelect('45小時內');
+    app.testGo.testFourSelect('46小時以上');
+    app.testGo.testFourSelect('不重要');
     getAllSelect.push(event.target.textContent);
 }
 
-function testFourSelect(fourSelect){
+app.testGo.testFourSelect = function(fourSelect){
     let newElement = document.createElement('p');
     newElement.className = 'test-two-select';
     newElement.id = 'testFourSelect';
     newElement.textContent = fourSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = testFiveStart;
+    newElement.onclick = app.testGo.testFiveStart;
 }
 
-function testFiveStart(event){
+app.testGo.testFiveStart = function(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
-    let oneButton = '對班制的需求是？';
-    testOneList(oneButton);
-    let questionCount = '4/5';
-    testTwoQuestionCount(questionCount);
-    let fiveSelectBigClass = '大班制';
-    testFiveSelect(fiveSelectBigClass);
-    let fiveSelectsmallClass = '小班制';
-    testFiveSelect(fiveSelectsmallClass);
-    let fiveSelectOneWithOne = '一對一';
-    testFiveSelect(fiveSelectOneWithOne);
-    let fiveSelectNotImportant = '不重要';
-    testFiveSelect(fiveSelectNotImportant);
+    app.testGo.testOneList('對班制的需求是？');
+    app.testGo.testTwoQuestionCount('4/5');
+    app.testGo.testFiveSelect('大班制');
+    app.testGo.testFiveSelect('小班制');
+    app.testGo.testFiveSelect('一對一');
+    app.testGo.testFiveSelect('不重要');
     getAllSelect.push(event.target.textContent);
 }
 
-function testFiveSelect(fiveSelect){
+app.testGo.testFiveSelect = function(fiveSelect){
     let newElement = document.createElement('p');
     newElement.className = 'test-two-select';
     newElement.id = 'testFiveSelect';
     newElement.textContent = fiveSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = testSixStart;
+    newElement.onclick = app.testGo.testSixStart;
 }
 
-function testSixStart(event){
+app.testGo.testSixStart = function(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
-    let oneButton = '喜歡什麼樣的教學方式？';
-    testOneList(oneButton);
-    let questionCount = '5/5';
-    testTwoQuestionCount(questionCount);
-    let sixSelectLetGo = '放養制';
-    testSixSelect(sixSelectLetGo);
-    let sixSelectOneByOne = '手把手教制';
-    testSixSelect(sixSelectOneByOne);
-    let sixSelectNotImportant = '不重要';
-    testSixSelect(sixSelectNotImportant);
+    app.testGo.testOneList('喜歡什麼樣的教學方式？');
+    app.testGo.testTwoQuestionCount('5/5');
+    app.testGo.testSixSelect('放養制');
+    app.testGo.testSixSelect('手把手教制');
+    app.testGo.testSixSelect('不重要');
     getAllSelect.push(event.target.textContent);
 }
 
-function testSixSelect(sixSelect){
+app.testGo.testSixSelect = function(sixSelect){
     let newElement = document.createElement('p');
     newElement.className = 'test-two-select';
     newElement.id = 'testSixSelect';
     newElement.textContent = sixSelect;
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = testEndStart;
+    newElement.onclick = app.testGo.testEndStart;
 }
 
 // display result & pie chart making
 
-function testEndStart(event){
+app.testGo.testEndStart = function(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
-    let oneHeader = '你有多適合下列學校呢？';
-    testOneList(oneHeader);
-    endPieChart();
-    whiteInPieChart();
-    resultA();
-    let endResult = '六角學院';
-    forEndResult(endResult);
+    app.testGo.testOneList('你有多適合下列學校呢？');
+    app.testGo.endPieChart();
+    app.testGo.whiteInPieChart();
+    app.testGo.resultA();
+    app.testGo.forEndResult('六角學院');
     getAllSelect.push(event.target.textContent);
-    getAllSelectLogic();
+    app.testGo.getAllSelectLogic();
 }
 
-function testEndSelect(endSelect){
+app.testGo.testEndSelect = function(endSelect){
     let newElement = document.createElement('p');
     newElement.className = 'test-two-select';
     newElement.id = 'testEndSelect';
@@ -509,22 +436,21 @@ function testEndSelect(endSelect){
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function endPieChart(){
+app.testGo.endPieChart = function(){
     let newElement = document.createElement('div');
     newElement.className = 'end-pie-chart';
     newElement.id = 'endPieChart';
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function whiteInPieChart(){
+app.testGo.whiteInPieChart = function(){
     let newElement = document.createElement('div');
     newElement.className = 'white-in-pie-chart';
     newElement.id = 'whiteInPieChart';
-    // newElement.textContent = '100%';
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function resultA(){
+app.testGo.resultA = function(){
     let newElement = document.createElement('a');
     newElement.id = 'resultA';
     newElement.className = 'result-a';
@@ -532,7 +458,7 @@ function resultA(){
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
 }
 
-function forEndResult(){
+app.testGo.forEndResult = function(){
     let newElement = document.createElement('p');
     newElement.className = 'for-end-result';
     newElement.id = 'forEndResult';
@@ -542,9 +468,7 @@ function forEndResult(){
 // game logic
 let getFirebaseData = database.ref('article');
 let clientTotal = [];
-// getAllSelect
-function getAllSelectLogic(){
-    
+app.testGo.getAllSelectLogic = function(){
     // city
     if(getAllSelect[0] != '不重要'){
         getFirebaseData.orderByChild('city').equalTo(getAllSelect[0]).on('child_added', function(snapshot) {
@@ -552,7 +476,6 @@ function getAllSelectLogic(){
         });  
     }else if(getAllSelect[0] == '不重要'){
         getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
-            // clientTotal.push(snapshot.val().name)
         });  
     }
     // fee
@@ -596,7 +519,6 @@ function getAllSelectLogic(){
       
     }else if(getAllSelect[1] == '不重要'){
         getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
-            // clientTotal.push(snapshot.val().name)
         });  
     }
     // week hour
@@ -634,7 +556,6 @@ function getAllSelectLogic(){
         
     }else if(getAllSelect[2] == '不重要'){
         getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
-            // clientTotal.push(snapshot.val().name)
         });  
     }
     // class type
@@ -644,7 +565,6 @@ function getAllSelectLogic(){
         });  
     }else if(getAllSelect[3] == '不重要'){
         getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
-            // clientTotal.push(snapshot.val().name)
         });  
     }
     // teach way
@@ -654,19 +574,17 @@ function getAllSelectLogic(){
         });  
     }else if(getAllSelect[4] == '不重要'){
         getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
-            // clientTotal.push(snapshot.val().name)
         });  
     }
     
     // get heightest value
-    setTimeout(maxValue, 3000); 
+    setTimeout(app.testGo.maxValue, 3000); 
 }
 
 let styleElem = document.head.appendChild(document.createElement('style'));
 let styleElemOne = document.head.appendChild(document.createElement('style'));
 let styleElemTwo = document.head.appendChild(document.createElement('style'));
-
-function maxValue(){
+app.testGo.maxValue = function(){
     let modeMap = {};
     let maxEl = clientTotal[0];
     let maxCount = 1;
@@ -686,7 +604,6 @@ function maxValue(){
 
     if(maxCount == 5){
         maxCount = '100%';
-        
     }else if(maxCount == 4){
         maxCount = '80%';
         styleElem.innerHTML = '#endPieChart:before {transform: rotate(108deg);}';
@@ -708,16 +625,10 @@ function maxValue(){
     }
     document.getElementById('forEndResult').textContent = maxEl;
     document.getElementById('whiteInPieChart').textContent = maxCount;
-
     getFirebaseData.orderByChild('name').equalTo(maxEl).on('child_added', function(snapshot) {
         document.getElementById('resultA').setAttribute('href', '/Front-Enter/content.html?id=' + snapshot.val().creatTime);
     });  
-
     // clear
     getAllSelect = [];
     clientTotal = [];
-
 }
-
-
-

@@ -8,22 +8,22 @@ headerP3.addEventListener('click', function(){
                 window.location = 'profile.html';
             }
         }else{
-            loginFullDiv();
-            loginDivWhite();
-            loginDivLogo();
-            loginInputDiv();
-            loginInputMail();
-            loginInputCode();
-            loginForgetCode();
-            registerLoginDiv();
-            registerButtonP();
-            loginButtonP();
-            gmailLoginButton();
+            app.log.loginFullDiv();
+            app.log.loginDivWhite();
+            app.log.loginDivLogo();
+            app.log.loginInputDiv();
+            app.log.loginInputMail();
+            app.log.loginInputCode();
+            app.log.loginForgetCode();
+            app.log.registerLoginDiv();
+            app.log.registerButtonP();
+            app.log.loginButtonP();
+            app.log.gmailLoginButton();
         }
 }
 );
 
-function loginFullDiv(){
+app.log.loginFullDiv = function(){
     let newElement = document.createElement('div');
     newElement.className = 'login-full-div';
     newElement.id = 'loginFullDiv';
@@ -34,31 +34,30 @@ function loginFullDiv(){
     }
 }
 
-function loginDivWhite(){
-    app.createElement("div", {atrs:{
-        className:'login-div-white',
-        id: 'loginDivWhite'
-    },  evts:{
-        click:function(event){
-            event.stopPropagation();
-        }
-    }}, app.get('#loginFullDiv'));
+app.log.loginDivWhite = function(){
+    let newElement = document.createElement('div');
+    newElement.className = 'login-div-white';
+    newElement.id = 'loginDivWhite';
+    document.getElementById('loginFullDiv').appendChild(newElement);
+    newElement.onclick = function(event){
+        event.stopPropagation();
+    }
 }
 
-function loginDivLogo(){
+app.log.loginDivLogo = function(){
     let newElement = document.createElement('div');
     newElement.className = 'login-div-logo';
     document.getElementById('loginDivWhite').appendChild(newElement);
 }
 
-function loginInputDiv(){
+app.log.loginInputDiv = function(){
     let newElement = document.createElement('div');
     newElement.id = 'loginInputDiv';
     newElement.className = 'login-input-div';
     document.getElementById('loginDivWhite').appendChild(newElement);
 }
 
-function loginInputMail(){
+app.log.loginInputMail = function(){
     let newElement = document.createElement('input');
     newElement.id = 'loginInputMail';
     newElement.className = 'login-input-mail';
@@ -66,7 +65,7 @@ function loginInputMail(){
     document.getElementById('loginInputDiv').appendChild(newElement);
 }
 
-function loginInputCode(){
+app.log.loginInputCode = function(){
     let newElement = document.createElement('input');
     newElement.id = 'loginInputCode';
     newElement.className = 'login-input-code';
@@ -75,51 +74,50 @@ function loginInputCode(){
     document.getElementById('loginInputDiv').appendChild(newElement);
 }
 
-function loginForgetCode(){
+app.log.loginForgetCode = function(){
     let newElement = document.createElement('p');
     newElement.className = 'login-forget-code';
     newElement.textContent = '忘記密碼？'
     document.getElementById('loginDivWhite').appendChild(newElement);
-    newElement.onclick = judgeForgetCode;
+    newElement.onclick = app.log.judgeForgetCode;
 }
 
-function registerLoginDiv(){
+app.log.registerLoginDiv = function(){
     let newElement = document.createElement('div');
     newElement.id = 'registerLoginDiv'
     newElement.className = 'register-login-div';
     document.getElementById('loginDivWhite').appendChild(newElement);
 }
 
-function registerButtonP(){
+app.log.registerButtonP = function(){
     let newElement = document.createElement('p');
     newElement.id = 'registerButtonP'
     newElement.className = 'register-button-p';
     newElement.textContent = '註冊';
     document.getElementById('registerLoginDiv').appendChild(newElement);
-    newElement.onclick = createAccount;
+    newElement.onclick = app.log.createAccount;
 }
 
-function loginButtonP(){
+app.log.loginButtonP = function(){
     let newElement = document.createElement('p');
     newElement.id = 'loginButtonP'
     newElement.className = 'login-button-p';
     newElement.textContent = '登入';
     document.getElementById('registerLoginDiv').appendChild(newElement);
-    newElement.onclick = loginHere;
+    newElement.onclick = app.log.loginHere;
 }
 
-function gmailLoginButton(){
+app.log.gmailLoginButton = function(){
     let newElement = document.createElement('p');
     newElement.id = 'gmailLoginButton'
     newElement.className = 'gmail-login-button';
     newElement.textContent = 'Log In With Gmail';
     document.getElementById('loginDivWhite').appendChild(newElement);
-    newElement.onclick = letGmailLogin;
+    newElement.onclick = app.log.letGmailLogin;
 }
 
 // create account
-
-function createAccount(){
+app.log.createAccount = function(){
     let createMail = document.getElementById('loginInputMail').value;
     let createCode = document.getElementById('loginInputCode').value;
     firebase.auth().createUserWithEmailAndPassword(createMail, createCode).then(detectLogin()).catch(function(error) {
@@ -132,8 +130,7 @@ function createAccount(){
 }
 
 // log in
-
-function loginHere(){
+app.log.loginHere = function(){
     let userLoginMail = document.getElementById('loginInputMail').value;
     let userLoginCode = document.getElementById('loginInputCode').value;
     firebase.auth().signInWithEmailAndPassword(userLoginMail, userLoginCode).catch(function(error) {
@@ -153,7 +150,6 @@ function reloadLogin(){
 }
 
 // detect user log in
-
 let userLogin;
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -164,7 +160,6 @@ firebase.auth().onAuthStateChanged(function(user) {
     }else{
         firebase.auth().signOut().then(function() {
         }, function(error) {
-
         })
     }
   } else {
@@ -183,7 +178,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 
 // detect log in , write data to database
-
 function storeDataToFirebase(){
     // change user icon
     if(userLogin.photoURL){
@@ -199,16 +193,13 @@ function storeDataToFirebase(){
     }
 
     // judge user data have this people
-
     let getAllMemberData = database.ref('member');
     let dataExist;
     getAllMemberData.orderByChild('mail').equalTo(userLogin.email).on('child_added', function(snapshot) {
         dataExist = snapshot.val();
     });  
 
-    setTimeout(testDataExist ,5000);
-
-    function testDataExist(){
+    setTimeout(function(){
         if(dataExist == undefined){
             let newPostKey = firebase.database().ref().child('member').push().key;
             firebase.database().ref('member/'+newPostKey).set({
@@ -220,13 +211,11 @@ function storeDataToFirebase(){
                 uid : newPostKey
             });
         }else{
-
         }
-    }
+    } ,5000);
 }
 
 // create an account, detect login and send a verify mail
-
 function detectLogin(){
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
@@ -235,7 +224,6 @@ function detectLogin(){
             alertBigBox.style.display = 'flex';
             alertWord.innerHTML = '驗證信已寄出';
           }, function(error) {
-
           });
         }else{
           userLogin = null;
@@ -244,18 +232,15 @@ function detectLogin(){
 }
 
 // log out
-
 function logoutHere(){
     firebase.auth().signOut().then(function() {
         window.location.reload();
     }, function(error) {
-
     })
 }
 
 // forget code
-
-function judgeForgetCode(){
+app.log.judgeForgetCode = function(){
     let userLoginMail = document.getElementById('loginInputMail').value;
     if(userLoginMail == ''){
         alertBigBox.style.display = 'flex';
@@ -263,7 +248,6 @@ function judgeForgetCode(){
     }else{
         firebase.auth().sendPasswordResetEmail(userLoginMail).then(function() {
             // Email sent.
-        
             alertBigBox.style.display = 'flex';
             alertWord.innerHTML = '更改密碼 Email 已發送';
             userLoginMail = '';
@@ -274,11 +258,9 @@ function judgeForgetCode(){
 }
 
 // google log in
-
 let provider = new firebase.auth.GoogleAuthProvider();
 firebase.auth().languageCode = 'pt';
-
-function letGmailLogin(){
+app.log.letGmailLogin = function(){
     firebase.auth().signInWithPopup(provider).then(function(result) {
         // This gives you a Google Access Token. You can use it to access the Google API.
         var token = result.credential.accessToken;

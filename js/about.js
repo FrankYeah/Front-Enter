@@ -23,14 +23,12 @@ app.get('#aboutSend').addEventListener('click' ,function(){
 );
 
 // alert 
-
 app.get('#alertBigBox').style.display = 'none';
 app.get('#alertButton').addEventListener('click', ()=>{
     app.get('#alertBigBox').style.display = 'none';
 });
 
 // close loading
-
 setTimeout(function(){
     app.get('#loadingAnimation').style.height = '0px';
     app.get('#loadingAnimation').style.opacity = '0.9';
