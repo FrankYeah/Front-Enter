@@ -977,16 +977,7 @@ app.get('#alertButton').addEventListener('click', ()=>{
 
 // close loading
 setTimeout(function(){
-    loadingAnimation.style.height = '0px';
-    loadingAnimation.style.opacity = '0.9';
-    loadingDrawing.style.height = '0px';
-    loadingDrawing.style.opacity = '0.9';
-    loadingImg.style.marginBottom = '-1000px';
-    header.style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
-    myAside.style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
-    setTimeout(function(){
-        loadingAnimation.style.display = 'none';
-    }, 600)
+    app.loading();
 }, 1000)
 
 app.get('#userIcon').addEventListener('mouseover', function(){

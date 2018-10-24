@@ -3,6 +3,13 @@ let storePhoto = [];
 let icount=1;  
 let keyvisualImg;
 let keyvisualImg_len;
+app.keyvisual = function(keyBlock, keyNone1, keyNone2){
+    app.get(keyBlock).style.display  =  'block';
+    app.get(keyNone1).style.display  =  'none';
+    app.get(keyNone2).style.display  =  'none';
+    app.get(keyBlock).style.animation = 'opacityOut 5s ease 0s 1 alternate both';
+    app.get(keyBlock).style.backgroundPositionX = 'center';
+}
 database.ref('article').orderByChild('skill').on('child_added', function(snapshot) {
     storePhoto.push(snapshot.val().rectangleUrl);
 });
@@ -16,25 +23,12 @@ app.article.changeKevisual = function(){
     app.get('#keyvisual1').style.backgroundPositionY = 'center';
     app.get('#keyvisual2').style.background = "url('" + keyvisualImg[2] + "') 50% / cover no-repeat";    
     app.get('#keyvisual2').style.backgroundPositionY = 'center';
-
     if(icount == 0){
-        app.get('#keyvisual0').style.display  =  'block';
-        app.get('#keyvisual1').style.display  =  'none';
-        app.get('#keyvisual2').style.display  =  'none';
-        app.get('#keyvisual0').style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        app.get('#keyvisual0').style.backgroundPositionX = 'center';
+        app.keyvisual('#keyvisual0', '#keyvisual1', '#keyvisual2');
     }else if(icount == 1){
-        app.get('#keyvisual0').style.display  =  'none';
-        app.get('#keyvisual1').style.display  =  'block';
-        app.get('#keyvisual2').style.display  =  'none';
-        app.get('#keyvisual1').style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        app.get('#keyvisual1').style.backgroundPositionX = 'center';
+        app.keyvisual('#keyvisual1', '#keyvisual0', '#keyvisual2');
     }else if(icount == 2){
-        app.get('#keyvisual1').style.display  =  'none';
-        app.get('#keyvisual0').style.display  =  'none';
-        app.get('#keyvisual2').style.display  =  'block';
-        app.get('#keyvisual2').style.animation = 'opacityOut 5s ease 0s 1 alternate both';
-        app.get('#keyvisual2').style.backgroundPositionX = 'center';
+        app.keyvisual('#keyvisual2', '#keyvisual0', '#keyvisual1');
     }
     icount++;
     if(icount>=keyvisualImg_len) { icount=0;}
@@ -317,12 +311,16 @@ app.article.readMoreDiv = function(){
 }
 
 // all tag
-app.get('#getAllArticle').onclick = function(){
-    app.get('#getAllArticle').style.color = 'rgb(26, 216, 211)';
-    app.get('#smallClass').style.color = 'rgb(128, 128, 128)';
-    app.get('#letItGo').style.color = 'rgb(128, 128, 128)';
-    app.get('#oneByOne').style.color = 'rgb(128, 128, 128)';
+app.tag = function(all, smallClass, letGo, oneByOne){
+    app.get('#getAllArticle').style.color = all;
+    app.get('#smallClass').style.color = smallClass;
+    app.get('#letItGo').style.color = letGo;
+    app.get('#oneByOne').style.color = oneByOne;
     app.get('#mainId').innerHTML = '';
+}
+
+app.get('#getAllArticle').onclick = function(){
+    app.tag('rgb(26, 216, 211)', 'rgb(128, 128, 128)','rgb(128, 128, 128)', 'rgb(128, 128, 128)');
     getAllData.orderByChild('skill').on('child_added', function(snapshot) {
         data = snapshot.val();
         createLayout(data);
@@ -330,11 +328,7 @@ app.get('#getAllArticle').onclick = function(){
 }
 
 app.get('#smallClass').onclick = function(){
-    app.get('#smallClass').style.color = 'rgb(26, 216, 211)';
-    app.get('#getAllArticle').style.color = 'rgb(128, 128, 128)';
-    app.get('#letItGo').style.color = 'rgb(128, 128, 128)';
-    app.get('#oneByOne').style.color = 'rgb(128, 128, 128)';
-    app.get('#mainId').innerHTML = '';
+    app.tag('rgb(128, 128, 128)', 'rgb(26, 216, 211)','rgb(128, 128, 128)', 'rgb(128, 128, 128)');
     getAllData.orderByChild('classType').equalTo('小班制').on('child_added', function(snapshot) {
         data = snapshot.val();
         createLayout(data);
@@ -342,11 +336,7 @@ app.get('#smallClass').onclick = function(){
 }
 
 app.get('#letItGo').onclick = function(){
-    app.get('#letItGo').style.color = 'rgb(26, 216, 211)'; 
-    app.get('#getAllArticle').style.color = 'rgb(128, 128, 128)';
-    app.get('#smallClass').style.color = 'rgb(128, 128, 128)';
-    ;app.get('#oneByOne').style.color = 'rgb(128, 128, 128)';
-    app.get('#mainId').innerHTML = '';
+    app.tag('rgb(128, 128, 128)', 'rgb(128, 128, 128)', 'rgb(26, 216, 211)','rgb(128, 128, 128)');
     getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', function(snapshot) {
         data = snapshot.val();
         createLayout(data);
@@ -354,11 +344,7 @@ app.get('#letItGo').onclick = function(){
 }
 
 app.get('#oneByOne').onclick = function(){
-    app.get('#oneByOne').style.color = 'rgb(26, 216, 211)';
-    app.get('#getAllArticle').style.color = 'rgb(128, 128, 128)';
-    app.get('#smallClass').style.color = 'rgb(128, 128, 128)';
-    app.get('#letItGo').style.color = 'rgb(128, 128, 128)';
-    app.get('#mainId').innerHTML = '';
+    app.tag('rgb(128, 128, 128)', 'rgb(128, 128, 128)','rgb(128, 128, 128)', 'rgb(26, 216, 211)');
     getAllData.orderByChild('classType').equalTo('一對一').on('child_added', function(snapshot) {
         data = snapshot.val();
         createLayout(data);
@@ -373,14 +359,5 @@ app.get('#alertButton').addEventListener('click', ()=>{
 
 // close loading
 setTimeout(function(){
-    app.get('#loadingAnimation').style.height = '0px';
-    app.get('#loadingAnimation').style.opacity = '0.9';
-    app.get('#loadingDrawing').style.height = '0px';
-    app.get('#loadingDrawing').style.opacity = '0.9';
-    app.get('#loadingImg').style.marginBottom = '-1000px';
-    app.get('#header').style.animation = 'headerGoUp 0.9s ease 0s 1 alternate';
-    app.get('#myAside').style.animation = 'asideBottom 0.9s ease 0s 1 alternate';
-    setTimeout(function(){
-        app.get('#loadingAnimation').style.display = 'none';
-    }, 600);
+    app.loading();
 }, 1000);
