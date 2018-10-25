@@ -121,30 +121,24 @@ if(articleId == null){
 
 // get firebase json to deal with search
 function createLayout(data){
-    app.article.articleBorn();
+    app.createElement('article', '', 'article' + x, 'mainId', '', '');
     if(userLogin){
         app.article.collectionSchool(data);
     }
-    app.article.locationDivBorn();
-    app.article.locationImgBorn();
-    app.article.aLocationBorn();
+    app.createElement('div', '', 'locationDiv' + x, 'article' + x , '', '');
+    app.createElement('div', 'location-img-born', 'locationImgBorn' + x, 'locationDiv' + x , '', '');
+    app.createElement('a', '', 'aLocation' + x, 'locationDiv' + x , '', '');
     app.article.pLocationBorn(data);
     app.article.contentABorn(data);
-    app.article.imgDivBorn();
+    app.createElement('div', 'article-div', 'imgDiv' + x, 'contentA' + x , '', '');
     app.article.imgBorn(data);
-    app.article.pNameBorn(data);
+    app.createElement('p', 'article-head', '', 'contentA' + x , data.name, '');
     app.article.pPrefaceBorn(data);
-    app.article.readMoreOut();
-    app.article.readMoreWord();
-    app.article.readMoreDiv();
-    app.article.tagLineBorn();
+    app.createElement('div', 'read-more-out', 'readMoreOut' + x, 'contentA' + x , '', '');
+    app.createElement('div', 'read-more-word', 'readMoreWord', 'readMoreOut' + x , 'read more', '');
+    app.createElement('div', 'read-more-div', 'readMoreDiv', 'readMoreOut' + x , '', '');
+    app.createElement('div', 'tag-line', '', 'article' + x , '', '');
     x ++;
-}
-
-app.article.articleBorn = function(){
-    let newElement = document.createElement('article');
-    newElement.id = 'article' + x;
-    app.get('#mainId').appendChild(newElement);
 }
 
 // display collected
@@ -210,25 +204,6 @@ app.article.collectionSchool = function(data){
     }
 }
 
-app.article.locationDivBorn = function(){
-    let newElement = document.createElement('div');
-    newElement.id = 'locationDiv' + x;
-    document.getElementById('article' + x).appendChild(newElement);
-}
-
-app.article.locationImgBorn = function(){
-    let newElement = document.createElement('div');
-    newElement.id = 'locationImgBorn' + x;
-    newElement.className = 'location-img-born';
-    document.getElementById('locationDiv' + x).appendChild(newElement);
-}
-
-app.article.aLocationBorn = function(data){
-    let newElement = document.createElement('a');
-    newElement.id = 'aLocation' + x;
-    document.getElementById('locationDiv' + x).appendChild(newElement);
-}
-
 app.article.pLocationBorn = function(data){
     let newElement = document.createElement('p');
     newElement.className = 'article-location';
@@ -248,24 +223,11 @@ app.article.clearContent = function(city){
     });    
 }
 
-app.article.tagLineBorn = function(){
-    let newElement = document.createElement('div');
-    newElement.className = 'tag-line';
-    document.getElementById('article' + x).appendChild(newElement);
-}
-
 app.article.contentABorn = function(data){
     let newElement = document.createElement('a');
     newElement.id = 'contentA' + x; 
     newElement.setAttribute('href', '/Front-Enter/content.html?id=' + data.creatTime);
     document.getElementById('article' + x).appendChild(newElement);
-}
-
-app.article.imgDivBorn = function(){
-    let newElement = document.createElement('div');
-    newElement.className = 'article-div';
-    newElement.id = 'imgDiv' + x;
-    document.getElementById('contentA' + x).appendChild(newElement);
 }
 
 app.article.imgBorn = function(data){
@@ -275,39 +237,10 @@ app.article.imgBorn = function(data){
     document.getElementById('imgDiv' + x).appendChild(newElement);
 }
 
-app.article.pNameBorn = function(data){
-    let newElement = document.createElement('p');
-    newElement.className = 'article-head';
-    newElement.textContent = data.name;
-    document.getElementById('contentA' + x).appendChild(newElement);
-}
-
 app.article.pPrefaceBorn = function(data){
     let newElement = document.createElement('p');
     newElement.innerHTML = data.preface;
     document.getElementById('contentA' + x).appendChild(newElement);
-}
-
-app.article.readMoreOut = function(){
-    let newElement = document.createElement('div');
-    newElement.id = 'readMoreOut' + x;
-    newElement.className = 'read-more-out';
-    document.getElementById('contentA' + x).appendChild(newElement);
-}
-
-app.article.readMoreWord = function(){
-    let newElement = document.createElement('div');
-    newElement.textContent = 'read more';
-    newElement.id = 'readMoreWord';
-    newElement.className = 'read-more-word';
-    document.getElementById('readMoreOut' + x).appendChild(newElement);
-}
-
-app.article.readMoreDiv = function(){
-    let newElement = document.createElement('div');
-    newElement.className = 'read-more-div';
-    newElement.id = 'readMoreDiv';
-    document.getElementById('readMoreOut' + x).appendChild(newElement);
 }
 
 // all tag

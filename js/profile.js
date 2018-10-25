@@ -183,25 +183,11 @@ function createUpPost(){
     let getAllDeleteData = database.ref('article');
     getAllDeleteData.orderByChild('skill').on('child_added', function(snapshot) {
         let myAllData = snapshot.val();
-        bigPostDiv(myAllData);
-        postButton(myAllData);
+        app.createElement('div', 'big-post-div', myAllData.creatTime, 'forDeletePost', '', '');
+        app.createElement('div', 'post-button', '', myAllData.creatTime, myAllData.name, '');
         editImg(myAllData);
         deleteImg(myAllData);
     });
-}
-
-function bigPostDiv(myAllData){
-    let newElement = document.createElement('div');
-    newElement.className = 'big-post-div';
-    newElement.id = myAllData.creatTime;
-    document.getElementById('forDeletePost').appendChild(newElement);
-}
-
-function postButton(myAllData){
-    let newElement = document.createElement('div');
-    newElement.className = 'post-button';
-    newElement.textContent = myAllData.name;
-    document.getElementById(myAllData.creatTime).appendChild(newElement);
 }
 
 function editImg(myAllData){
@@ -234,9 +220,7 @@ function deleteImg(myAllData){
 }
 
 // click edit post
-app.get('#createPostEdit').addEventListener('click', displayMyImg);
-
-function displayMyImg(){
+app.get('#createPostEdit').addEventListener('click', function(){
     const xx = document.querySelectorAll('div.imgDelete');
     for(let i=0; i<xx.length; i++){
         xx[i].style.display='block';
@@ -251,7 +235,7 @@ function displayMyImg(){
         zz[i].style.backgroundColor='white';
         zz[i].style.border='1px solid rgb(26, 216, 211)';
     }
-}
+});
 
 // click collection
 app.get('#myCollection').addEventListener('click',createCollectionLayout);
@@ -268,20 +252,13 @@ function createCollectionLayout(){
             app.get('#rightCollection').textContent = '無收藏';
         }else{
             for(let i = 0; i<getLocal.length ; i++){
-                inCollectionDiv(i);
+                app.createElement('div', 'in-collection-div', 'inCollectionDiv' + i, 'rightCollection', '', '');
                 inCollectionImg(getLocal,i);
                 inCollectionWord(getLocal,i);
                 inCollectionDelete(i);
             }
         }
     })()
-}
-
-function inCollectionDiv(i){
-    let newElement = document.createElement('div');
-    newElement.id = 'inCollectionDiv' + i;
-    newElement.className = 'in-collection-div';
-    document.getElementById('rightCollection').appendChild(newElement);
 }
 
 function inCollectionImg(getLocal, i){

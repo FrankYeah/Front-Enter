@@ -70,8 +70,8 @@ function startSearch(){
     if(countClick==0){
         app.search.createSearchDiv();
         app.search.createSearchWhiteDiv();
-        app.search.createWhiteDivLeft();
-        app.search.createWhiteDivLeftText();
+        app.createElement('div', 'whiteDivLeft', 'whiteDivLeft', 'fullSearchWhiteDiv', '', '');
+        app.createElement('p', 'whiteDivLeftText', '', 'whiteDivLeft', 'SEARCH', '');
         app.search.createWhiteDivLeftBox();
         app.search.createLeftInput();
         app.search.createVoiceButton();
@@ -101,20 +101,6 @@ app.search.createSearchWhiteDiv = function(){
     newElement.id = 'fullSearchWhiteDiv';
     newElement.className = 'fullSearchWhiteDiv';
     document.body.appendChild(newElement);
-}
-
-app.search.createWhiteDivLeft = function(){
-    let newElement = document.createElement('div');
-    newElement.id = 'whiteDivLeft';
-    newElement.className = 'whiteDivLeft';
-    document.getElementById('fullSearchWhiteDiv').appendChild(newElement);
-}
-
-app.search.createWhiteDivLeftText = function (){
-    let newElement = document.createElement('p');
-    newElement.className = 'whiteDivLeftText';
-    newElement.textContent = 'SEARCH';
-    document.getElementById('whiteDivLeft').appendChild(newElement);
 }
 
 app.search.createWhiteDivLeftBox = function(){
@@ -203,7 +189,7 @@ function createTestGo(){
         app.testGo.createBlueGreen();
         app.testGo.createPhotoWithGray();
         app.testGo.testGoWhiteDiv();
-        app.testGo.testOneHeader('測驗說明');
+        app.createElement('p', 'test-one-header', 'testOneHeader', 'testGoWhiteDiv', '測驗說明', '');
         app.testGo.createFirstPreface('點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。');
         app.testGo.testOneButton('開始測驗');
         countClick++;
@@ -258,28 +244,12 @@ app.testGo.testGoWhiteDiv = function(){
     }
 }
 
-app.testGo.testOneHeader = function(oneHeader){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-one-header';
-    newElement.id = 'testOneHeader';
-    newElement.textContent = oneHeader;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-}
-
 app.testGo.testOneList = function(oneList){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-one-list';
-    newElement.id = 'testOneList';
-    newElement.textContent = oneList;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    app.createElement('p', 'test-one-list', 'testOneList', 'testGoWhiteDiv', oneList, '');
 }
 
 app.testGo.createFirstPreface = function(oneList){
-    let newElement = document.createElement('p');
-    newElement.className = 'first-preface';
-    newElement.id = 'firstPreface';
-    newElement.textContent = oneList;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    app.createElement('p', 'first-preface', 'firstPreface', 'testGoWhiteDiv', oneList, '');
 }
 
 // first test GO button
@@ -293,11 +263,7 @@ app.testGo.testOneButton = function(oneButton){
 }
 
 app.testGo.testTwoQuestionCount = function(questionCount){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-two-question-count';
-    newElement.id = 'testTwoQuestionCount';
-    newElement.textContent = questionCount;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    app.createElement('p', 'test-two-question-count', 'testTwoQuestionCount', 'testGoWhiteDiv', questionCount, '');
 }
 
 app.testGo.testTwoSelect = function(twoSelect){
@@ -405,7 +371,6 @@ app.testGo.testSixSelect = function(sixSelect){
 }
 
 // display result & pie chart making
-
 app.testGo.testEndStart = function(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     app.testGo.testOneList('你有多適合下列學校呢？');
@@ -418,25 +383,15 @@ app.testGo.testEndStart = function(event){
 }
 
 app.testGo.testEndSelect = function(endSelect){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-two-select';
-    newElement.id = 'testEndSelect';
-    newElement.textContent = endSelect;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    app.createElement('p', 'test-two-select', 'testEndSelect', 'testGoWhiteDiv', endSelect, '');
 }
 
 app.testGo.endPieChart = function(){
-    let newElement = document.createElement('div');
-    newElement.className = 'end-pie-chart';
-    newElement.id = 'endPieChart';
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    app.createElement('div', 'end-pie-chart', 'endPieChart', 'testGoWhiteDiv', '', '');
 }
 
 app.testGo.whiteInPieChart = function(){
-    let newElement = document.createElement('div');
-    newElement.className = 'white-in-pie-chart';
-    newElement.id = 'whiteInPieChart';
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
+    app.createElement('div', 'white-in-pie-chart', 'whiteInPieChart', 'testGoWhiteDiv', '', '');
 }
 
 app.testGo.resultA = function(){
@@ -448,10 +403,7 @@ app.testGo.resultA = function(){
 }
 
 app.testGo.forEndResult = function(){
-    let newElement = document.createElement('p');
-    newElement.className = 'for-end-result';
-    newElement.id = 'forEndResult';
-    document.getElementById('resultA').appendChild(newElement);
+    app.createElement('p', 'for-end-result', 'forEndResult', 'resultA', '', '');
 }
 
 // game logic
