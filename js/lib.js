@@ -5,7 +5,8 @@ let app = {
 	testGo: {},
 	log:{},
 	rotate:{},
-	article:{}
+    article:{},
+    skillTree:{}
 };
 // core operations
 app.get = function (selector) {
