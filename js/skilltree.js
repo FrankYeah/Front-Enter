@@ -54,9 +54,9 @@ app.qa = function(q, a1, a2, a3){
 
 app.get('#htmlB').addEventListener('click', function(){
     app.qa('請問 HTML 是什麼？','標籤語言','資料庫工具', '瀏覽器規範');
-    app.get('#htmlAnswerOne').addEventListener('click', app.skillTree.htmlGuestRight);
-    app.get('#htmlAnswerTwo').addEventListener('click', app.skillTree.htmlGuestWrongTwo);
-    app.get('#htmlAnswerThree').addEventListener('click', app.skillTree.htmlGuestWrongThree);
+    app.get('#htmlAnswerOne').addEventListener('click', app.skillTree.guestHtmlRight);
+    app.get('#htmlAnswerTwo').addEventListener('click', app.skillTree.guestHtmlWrongTwo);
+    app.get('#htmlAnswerThree').addEventListener('click', app.skillTree.guestHtmlWrongThree);
 });
 
 app.guestWrong = function(bc){
@@ -68,12 +68,12 @@ app.guestWrong = function(bc){
     app.get(bc).style.backgroundOrigin = 'content-box';
 }
 
-app.skillTree.htmlGuestWrongTwo = function(event){
+app.skillTree.guestHtmlWrongTwo = function(event){
     event.stopPropagation();
     app.guestWrong('#htmlAnswerTwo');
 }
 
-app.skillTree.htmlGuestWrongThree = function(event){
+app.skillTree.guestHtmlWrongThree = function(event){
     event.stopPropagation();
     app.guestWrong('#htmlAnswerThree');
 }
@@ -85,30 +85,29 @@ app.typing = function(top, left,sameText, encourage, event){
         app.get('#fullType').style.display = 'flex';
         let str = encourage;
         let i = 0;
-        app.skillTree.htmlTyping = function(){
+        app.skillTree.typingWord = function(){
             app.get('#bgMusic').play();
             if (i <= str.length) {
                 app.get('#typeWord').innerHTML = str.slice(0, i++) + '_';
-                setTimeout(app.skillTree.htmlTyping, 60);
+                setTimeout(app.skillTree.typingWord, 60);
             }else{    
                 app.get('#typeWord').innerHTML = str;  //end, remove _ 
                 app.get('#bgMusic').pause();
                 setTimeout(function(){app.get('#fullType').style.display = 'none';}, 1500)
             }
         }
-        app.skillTree.htmlTyping();
-    }else{
+        app.skillTree.typingWord();
     }
 }
 
-app.skillTree.htmlGuestRight = function(event){
+app.skillTree.guestHtmlRight = function(event){
     event.stopPropagation();
     app.get('#htmlAnswerOne').style.background= 'url(../Front-Enter/images/checked-FFD800.svg)';
     app.get('#htmlAnswerOne').style.backgroundSize= 'contain';
     app.get('#htmlAnswerOne').style.backgroundColor= 'white';
     app.get('#htmlAnswerOne').style. backgroundRepeat= 'no-repeat';
     app.get('#htmlAnswerOne').style.backgroundOrigin = 'content-box';
-    app.skillTree.htmlLayout();
+    app.skillTree.winGame('#htmlB', '#htmlOne', '#htmlOne', '#htmlOne', '#cssB', '#cssB');
     app.get('#htmlAnswerTwo').style.animation = '';
     app.get('#htmlAnswerThree').style.animation = '';
     app.get('#arrowContinue').style.display = 'block';
@@ -122,240 +121,132 @@ app.get('#fullType').addEventListener('click', function(){
 app.get('#typeWord').addEventListener('click', function(){
     app.get('#fullType').style.display = 'none';
 })
-app.skillTree.htmlLayout = function(){
-    app.get('#htmlB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#htmlB').style.color = 'white';
-    app.get('#htmlOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    app.get('#cssB').style.cursor = 'pointer';
-    app.get('#cssB').style.color = 'rgb(26, 216, 211)';
-    app.get('#cssB').style.border = '1px solid rgb(26, 216, 211)';
+app.skillTree.winGame = function(fullColor, minus, diagonalOne, diagonalTwo, boderColorOne, boderColorTwo){
+    app.get(fullColor).style.backgroundColor = 'rgb(26, 216, 211)';
+    app.get(fullColor).style.color = 'white';
+    app.get(minus).style.background = 'url("../images/minus-symbol.svg") 0% 0% / cover no-repeat ';
+    app.get(diagonalOne).style.background = 'url("../images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    app.get(diagonalTwo).style.background = 'url("../images/diagonal-line.svg") 0% 0% / cover no-repeat ';
+    app.get(boderColorOne).style.cursor = 'pointer';
+    app.get(boderColorOne).style.color = 'rgb(26, 216, 211)';
+    app.get(boderColorOne).style.border = '1px solid rgb(26, 216, 211)';
+    app.get(boderColorTwo).style.cursor = 'pointer';
+    app.get(boderColorTwo).style.color = 'rgb(26, 216, 211)';
+    app.get(boderColorTwo).style.border = '1px solid rgb(26, 216, 211)';
 }
 
 // css 
 app.get('#cssB').addEventListener('click', function(){
     if(app.get('#cssB').style.cursor){
-        app.skillTree.cssPass();
-    }else{
+        app.qa('SCSS 跟 CSS 差別？','SCSS 用變數控制','SCSS 非縮排語法', '不同程式語言');
+        app.get('#htmlAnswerOne').addEventListener('click', function(){
+            app.skillTree.winGame('#cssB', '#cssOne', '#htmlOne', '#htmlOne', '#jsB', '#jsB');
+            app.typing('10.2%','55%', 'SCSS 用變數控制', '哇，你竟然連 CSS 也略懂略懂。如果階層樣式學得好，就具備基礎網頁設計師的能力了，這時候，對於細節的掌握就更加重要囉。', event);
+        });
     }
 });
-
-app.skillTree.cssPass = function(){
-    app.qa('SCSS 跟 CSS 差別？','SCSS 用變數控制','SCSS 非縮排語法', '不同程式語言');
-    app.get('#htmlAnswerOne').addEventListener('click', function(){
-        app.skillTree.cssLayout();
-        app.typing('10.2%','55%', 'SCSS 用變數控制', '哇，你竟然連 CSS 也略懂略懂。如果階層樣式學得好，就具備基礎網頁設計師的能力了，這時候，對於細節的掌握就更加重要囉。', event);
-    });
-}
-
-app.skillTree.cssLayout = function(){
-    app.get('#cssB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#cssB').style.color = 'white';
-    app.get('#cssOne').style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
-    app.get('#jsB').style.cursor = 'pointer';
-    app.get('#jsB').style.color = 'rgb(26, 216, 211)';
-    app.get('#jsB').style.border = '1px solid rgb(26, 216, 211)';
-}
 
 // js 
 app.get('#jsB').addEventListener('click', function(){
     if(app.get('#jsB').style.cursor){
-        app.skillTree.jsPass();
-    }else{
+        app.qa('何者非 JS 定義變數的方式？','function','var', 'let');
+        app.get('#htmlAnswerOne').addEventListener('click', function(){
+            app.skillTree.winGame('#jsB', '#jsTwo', '#jsOne', '#jsOne', '#jQueryB', '#rwdB');
+            app.typing('20.2%', '53%', 'function', '恭喜你通過 JavaScript 關卡。JavaScript 也是小編最喜歡的語言，掌握它，就等於邁入前端工程師的行列，它不只能為你帶來一份工作，也擴展你的視野，擁有接軌科技的能力。', event);
+        });
     }
 });
-
-app.skillTree.jsPass = function(){
-    app.qa('何者非 JS 定義變數的方式？','function','var', 'let');
-    app.get('#htmlAnswerOne').addEventListener('click', jsGuestRight);
-}
-
-function jsGuestRight(){
-    app.skillTree.jsLayout();
-    app.typing('20.2%', '53%', 'function', '恭喜你通過 JavaScript 關卡。JavaScript 也是小編最喜歡的語言，掌握它，就等於邁入前端工程師的行列，它不只能為你帶來一份工作，也擴展你的視野，擁有接軌科技的能力。', event);
-}
-
-app.skillTree.jsLayout = function(){
-    app.get('#jsB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#jsB').style.color = 'white';
-    app.get('#jsOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    app.get('#jsTwo').style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
-    app.get('#jQueryB').style.cursor = 'pointer';
-    app.get('#jQueryB').style.color = 'rgb(26, 216, 211)';
-    app.get('#jQueryB').style.border = '1px solid rgb(26, 216, 211)';
-    app.get('#rwdB').style.cursor = 'pointer';
-    app.get('#rwdB').style.color = 'rgb(26, 216, 211)';
-    app.get('#rwdB').style.border = '1px solid rgb(26, 216, 211)';
-}
 
 // jQuery
 app.get('#jQueryB').addEventListener('click', function(){
     if(app.get('#jQueryB').style.cursor){
-        app.skillTree.jQueryPass();
-    }else{
+        app.qa('jQuery 與 JS 之比較何者正確？','jQuery 含錢字符號','JS 是一種框架', 'jQuery 並未開源');
+        app.get('#htmlAnswerOne').addEventListener('click', function(){
+            app.get('#jQueryB').style.backgroundColor = 'rgb(26, 216, 211)';
+            app.get('#jQueryB').style.color = 'white';
+            app.typing('20.2%', '42%', 'jQuery 含錢字符號', 'jQuery 是相當方便的 JavaScript 函式庫，它幫你把程式封裝好，只要加上經典的 $ 字號作為前綴，就能使用眾多功能。', event);
+        });
     }
 });
 
-app.skillTree.jQueryPass = function(){
-    app.qa('jQuery 與 JS 之比較何者正確？','jQuery 含錢字符號','JS 是一種框架', 'jQuery 並未開源');
-    app.get('#htmlAnswerOne').addEventListener('click', jQueryGuestRight);
-}
-
-function jQueryGuestRight(){
-    app.skillTree.jQueryLayout();
-    app.typing('20.2%', '42%', 'jQuery 含錢字符號', 'jQuery 是相當方便的 JavaScript 函式庫，它幫你把程式封裝好，只要加上經典的 $ 字號作為前綴，就能使用眾多功能。', event);
-}
-
-app.skillTree.jQueryLayout = function(){
-    app.get('#jQueryB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#jQueryB').style.color = 'white';
-}
-
-// DOM
+// rwd
 app.get('#rwdB').addEventListener('click', function(){
     if(app.get('#rwdB').style.cursor){
-        app.skillTree.domPass();
-    }else{
+        app.qa('如何在不同螢幕寬度下改變樣式？','透過 media 操作','使用事件物件', '變數控制');
+        app.get('#htmlAnswerOne').addEventListener('click', function(){
+            app.skillTree.winGame('#rwdB', '#jsTwo', '#rwdOne', '#rwdOne', '#githubB', '#githubB');
+            app.typing('31.7%', '48.5%', '透過 media 操作', 'RWD 很神奇吧，它讓你在手機、平板上，都能方便觀看網頁，而不用放大縮小視窗，是讓使用者體驗升級的良方。', event);
+        });
     }
 });
 
-app.skillTree.domPass = function(){
-    app.qa('如何在不同螢幕寬度下改變樣式？','透過 media 操作','使用事件物件', '變數控制');
-    app.get('#htmlAnswerOne').addEventListener('click', function(){
-        app.skillTree.domLayout();
-        app.typing('31.7%', '48.5%', '透過 media 操作', 'RWD 很神奇吧，它讓你在手機、平板上，都能方便觀看網頁，而不用放大縮小視窗，是讓使用者體驗升級的良方。', event);
-    });
-}
-
-app.skillTree.domLayout = function(){
-    app.get('#rwdB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#rwdB').style.color = 'white';
-    app.get('#rwdOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    app.get('#githubB').style.cursor = 'pointer';
-    app.get('#githubB').style.color = 'rgb(26, 216, 211)';
-    app.get('#githubB').style.border = '1px solid rgb(26, 216, 211)';
-}
-
-//ajax
+//github
 app.get('#githubB').addEventListener('click', function(){
     if(app.get('#githubB').style.cursor){
         app.qa('GitHub 不能做什麼？','測試程式正確性','程式碼倉庫', '共同軟體開發');
         app.get('#htmlAnswerOne').addEventListener('click', function(){
-            app.skillTree.ajaxLayout();
+            app.skillTree.winGame('#githubB', '#jsTwo', '#githubOne', '#githubTwo', '#scssB', '#webpackB');
             app.typing('42.6%', '48.5%', '測試程式正確性', '在學習程式語言之前，很難想像有 GitHub 的存在吧，竟然有個倉庫專門在管理程式語言，還能讓人複製、共同編輯，並記錄每一次的 commit ，是一款優秀的協作工具。', event);
         });
-    }else{
     }
 });
 
-app.skillTree.ajaxLayout = function(){
-    app.get('#githubB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#githubB').style.color = 'white';
-    app.get('#githubOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    app.get('#githubTwo').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    app.get('#scssB').style.cursor = 'pointer';
-    app.get('#scssB').style.color = 'rgb(26, 216, 211)';
-    app.get('#scssB').style.border = '1px solid rgb(26, 216, 211)';
-    app.get('#webpackB').style.cursor = 'pointer';
-    app.get('#webpackB').style.color = 'rgb(26, 216, 211)';
-    app.get('#webpackB').style.border = '1px solid rgb(26, 216, 211)';
-}
-
-// ES6
+// SCSS
 app.get('#scssB').addEventListener('click', function(){
     if(app.get('#scssB').style.cursor){
         app.qa('何者不屬於 CSS 預處理器？','Gulp','SCSS', 'PostCSS');
         app.get('#htmlAnswerOne').addEventListener('click', function(){
-            app.skillTree.es6Layout();
+            app.skillTree.winGame('#scssB', '#scssOne', '#githubOne', '#githubTwo', '#bootstrapB', '#bootstrapB');
             app.typing('42.6%', '40.9%', 'Gulp', 'css 屬於程式設計入門款，而預處理器能以更有效率的方式，撰寫階層樣式，如果你擁有 JavaScript 的基本概念，學起來會特別快唷。', event);
         });
-    }else{
     }
 });
 
-app.skillTree.es6Layout = function(){
-    app.get('#scssB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#scssB').style.color = 'white';
-    app.get('#scssOne').style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
-    app.get('#bootstrapB').style.cursor = 'pointer';
-    app.get('#bootstrapB').style.color = 'rgb(26, 216, 211)';
-    app.get('#bootstrapB').style.border = '1px solid rgb(26, 216, 211)';
-}
-
-// json
+// webpack
 app.get('#webpackB').addEventListener('click', function(){
     if(app.get('#webpackB').style.cursor){
         app.qa('使用 Webpack 需要安裝？','Node.js','Babel', 'styled-components');
         app.get('#htmlAnswerOne').addEventListener('click', function(){
-            app.skillTree.jsonLayout();
+            app.skillTree.winGame('#webpackB', '#webpackOne', '#githubOne', '#githubTwo', '#reactB', '#reactB');
             app.typing('42.6%', '55.9%', 'Node.js', '你已經越來越厲害，掌握了近期火紅的打包工具，Webpack 和 React 是絕配，是幫助瀏覽器進行「翻譯」的良方。', event);
         });
-    }else{
     }
 });
 
-app.skillTree.jsonLayout = function(){
-    app.get('#webpackB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#webpackB').style.color = 'white';
-    app.get('#webpackOne').style.background = 'url("../Front-Enter/images/minus-symbol.svg") 0% 0% / cover no-repeat ';
-    app.get('#reactB').style.cursor = 'pointer';
-    app.get('#reactB').style.color = 'rgb(26, 216, 211)';
-    app.get('#reactB').style.border = '1px solid rgb(26, 216, 211)';
-}
-
-// SPA
+// bootstrap
 app.get('#bootstrapB').addEventListener('click', function(){
     if(app.get('#bootstrapB').style.cursor){
         app.qa('Bootstrap 是一種？','樣式擴充元件','打包工具', '套件管理工具');
         app.get('#htmlAnswerOne').addEventListener('click', function(){
-            app.skillTree.spaLayout();
+            app.get('#bootstrapB').style.backgroundColor = 'rgb(26, 216, 211)';
+            app.get('#bootstrapB').style.color = 'white';
             app.typing('53.1%', '39.4%', '樣式擴充元件', '看來你學蠻快的，Bootstrap 能做到的，css 也能做到，如果有時間，不仿試試手刻 Bootstrap 的特效，精進樣式調校的能力。', event);
         });
-    }else{
     }
 });
 
-app.skillTree.spaLayout = function(){
-    app.get('#bootstrapB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#bootstrapB').style.color = 'white';
-}
-
-// APIs
+// react
 app.get('#reactB').addEventListener('click', function(){
     if(app.get('#reactB').style.cursor){
         app.qa('React 有何特性？','建置單頁式網站','不存在異步問題', '不需要 Babel 編譯');
         app.get('#htmlAnswerOne').addEventListener('click', function(){
-            app.skillTree.apisLayout();
+            app.skillTree.winGame('#reactB', '#jsTwo', '#reactOne', '#reactOne', '#tddB', '#tddB');
             app.typing('53.1%', '57.3%', '建置單頁式網站', '你太強了，React 是不容易掌握的框架，能讓使用者的體驗更好，你所使用的 facebook 就是運用這套框架呢。', event);
         });
-    }else{
     }
 });
-
-app.skillTree.apisLayout = function(){
-    app.get('#reactB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#reactB').style.color = 'white';
-    app.get('#reactOne').style.background = 'url("../Front-Enter/images/diagonal-line.svg") 0% 0% / cover no-repeat ';
-    app.get('#tddB').style.cursor = 'pointer';
-    app.get('#tddB').style.color = 'rgb(26, 216, 211)';
-    app.get('#tddB').style.border = '1px solid rgb(26, 216, 211)';
-}
 
 // TDD
 app.get('#tddB').addEventListener('click', function(){
     if(app.get('#tddB').style.cursor){
         app.qa('為什麼要做單元測試？','確保程式邏輯正確','讓 scrum 運作順利', '資料安全性');
         app.get('#htmlAnswerOne').addEventListener('click', function(){
-            app.skillTree.tddLayout();
+            app.get('#tddB').style.backgroundColor = 'rgb(26, 216, 211)';
+            app.get('#tddB').style.color = 'white';
             app.typing('63.8%', '49%', '確保程式邏輯正確', '終於抵達最後一關了，單元測試是為了確保函式的正確性，而進行的作業。雖然單元測試是最後一關，但工程的世界無止盡，身為一位 geek 就是要不斷學習精進唷。', event);
         });
-    }else{
     }
 });
-
-app.skillTree.tddLayout = function(){
-    app.get('#tddB').style.backgroundColor = 'rgb(26, 216, 211)';
-    app.get('#tddB').style.color = 'white';
-}
 
 // mouse over
 app.skillTree.showBox = function(word, divBox, topNum, Lnum, Rnum, innerWord){
