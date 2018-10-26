@@ -168,18 +168,11 @@ app.get('#createPostPost').addEventListener('click', function(){
 })
 
 // manage Post
-app.get('#managePost').addEventListener('click', createPostLayout);
-function createPostLayout(){
+app.get('#managePost').addEventListener('click', function(){
     app.get('#displayResult').style.display = 'none';
     app.get('#rightCollection').style.display = 'none';
     app.get('#createRightDiv').style.display = 'flex';
     app.get('#forDeletePost').style.display = 'flex';
-    // create post
-        createUpPost();
-}
-
-// create post
-function createUpPost(){
     let getAllDeleteData = database.ref('article');
     getAllDeleteData.orderByChild('skill').on('child_added', function(snapshot) {
         let myAllData = snapshot.val();
@@ -188,7 +181,7 @@ function createUpPost(){
         editImg(myAllData);
         deleteImg(myAllData);
     });
-}
+});
 
 function editImg(myAllData){
     let newElement = document.createElement('div');
@@ -214,26 +207,25 @@ function deleteImg(myAllData){
                 setTimeout(function(){window.location.reload()} , 1000)
                 });
             });  
-        } else {
-        }
+        } 
     }
 }
 
 // click edit post
 app.get('#createPostEdit').addEventListener('click', function(){
-    const xx = document.querySelectorAll('div.imgDelete');
-    for(let i=0; i<xx.length; i++){
-        xx[i].style.display='block';
+    const imgDeleteIt = document.querySelectorAll('div.imgDelete');
+    for(let i=0; i<imgDeleteIt.length; i++){
+        imgDeleteIt[i].style.display='block';
     }
-    const yy = document.querySelectorAll('div.imgEdit');
-    for(let i=0; i<yy.length; i++){
-        yy[i].style.display='block';
+    const imgEditIt = document.querySelectorAll('div.imgEdit');
+    for(let i=0; i<imgEditIt.length; i++){
+        imgEditIt[i].style.display='block';
     }
-    const zz = document.querySelectorAll('div.big-post-div');
-    for(let i=0; i<zz.length; i++){
-        zz[i].style.color='rgb(26, 216, 211)';
-        zz[i].style.backgroundColor='white';
-        zz[i].style.border='1px solid rgb(26, 216, 211)';
+    const imgPostIt = document.querySelectorAll('div.big-post-div');
+    for(let i=0; i<imgPostIt.length; i++){
+        imgPostIt[i].style.color='rgb(26, 216, 211)';
+        imgPostIt[i].style.backgroundColor='white';
+        imgPostIt[i].style.border='1px solid rgb(26, 216, 211)';
     }
 });
 
@@ -274,11 +266,7 @@ function inCollectionImg(getLocal, i){
 }
 
 function inCollectionWord(getLocal, i){
-    let newElement = document.createElement('div');
-    newElement.id = 'inCollectionWord' + i;
-    newElement.className = 'in-collection-word';
-    newElement.textContent = getLocal[i].name;
-    document.getElementById('inCollectionDiv' + i).appendChild(newElement);
+    app.createElement('div', 'in-collection-word', 'inCollectionWord' + i, 'inCollectionDiv' + i, getLocal[i].name, '');
 }
 
 function inCollectionDelete(i){

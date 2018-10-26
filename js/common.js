@@ -189,7 +189,7 @@ function createTestGo(){
         app.testGo.testGoWhiteDiv();
         app.createElement('p', 'test-one-header', 'testOneHeader', 'testGoWhiteDiv', '測驗說明', '');
         app.testGo.createFirstPreface('點選「開始測驗」後，系統將根據你的回答，找出最適合你的學習環境，並顯示有多少百分比的合適度。');
-        app.testGo.testOneButton('開始測驗');
+        app.createElement('p', 'test-one-button', 'testOneButton', 'testGoWhiteDiv', '開始測驗', app.testGo.testTwoStart);
         countClick++;
     }else{
         let child=document.getElementById('testGoBackDiv');
@@ -251,10 +251,6 @@ app.testGo.createFirstPreface = function(oneList){
 }
 
 // first test GO button
-app.testGo.testOneButton = function(oneButton){
-    app.createElement('p', 'test-one-button', 'testOneButton', 'testGoWhiteDiv', oneButton, app.testGo.testTwoStart);
-}
-
 app.testGo.testTwoQuestionCount = function(questionCount){
     app.createElement('p', 'test-two-question-count', 'testTwoQuestionCount', 'testGoWhiteDiv', questionCount, '');
 }
@@ -345,13 +341,9 @@ app.testGo.testEndStart = function(event){
     app.createElement('div', 'end-pie-chart', 'endPieChart', 'testGoWhiteDiv', '', '');
     app.createElement('div', 'white-in-pie-chart', 'whiteInPieChart', 'testGoWhiteDiv', '', '');
     app.testGo.resultA();
-    app.testGo.forEndResult('六角學院');
+    app.createElement('p', 'for-end-result', 'forEndResult', 'resultA', '', '');
     getAllSelect.push(event.target.textContent);
     app.testGo.getAllSelectLogic();
-}
-
-app.testGo.testEndSelect = function(endSelect){
-    app.createElement('p', 'test-two-select', 'testEndSelect', 'testGoWhiteDiv', endSelect, '');
 }
 
 app.testGo.resultA = function(){
@@ -360,10 +352,6 @@ app.testGo.resultA = function(){
     newElement.className = 'result-a';
     newElement.href = 'content.html';
     document.getElementById('testGoWhiteDiv').appendChild(newElement);
-}
-
-app.testGo.forEndResult = function(){
-    app.createElement('p', 'for-end-result', 'forEndResult', 'resultA', '', '');
 }
 
 // game logic
