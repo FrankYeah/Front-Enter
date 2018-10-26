@@ -443,7 +443,7 @@ div.final-pass{
 /* 小通關字 */
 
 div.full-type{
-    z-index: 2;
+    z-index: 1;
     position: fixed;
     display: none;
     flex-direction: row;
