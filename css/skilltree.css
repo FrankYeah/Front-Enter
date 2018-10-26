@@ -97,20 +97,15 @@ main>div.three-width{
 }
 
 div.show-div-left{
-    /* display: block; */
     position: absolute;
-    /* width: 200px;
-    height: auto; */
     background-color: rgb(230,230,230);
     transition: all 0.2s linear;
     color: rgb(128, 128, 128);
     text-align: center;
     border-radius: 5px;
-    /* padding: 15px 10px 0px 10px; */
 }
 
 div.show-div-right{
-    /* display: block; */
     position: absolute;
     width: 200px;
     height: auto;
@@ -119,7 +114,6 @@ div.show-div-right{
     color: rgb(128, 128, 128);
     text-align: center;
     border-radius: 5px;
-    /* padding: 15px 10px 0px 10px; */
 }
 
 /* 按鈕樣式 */
@@ -461,7 +455,6 @@ div.type-word{
     height: auto;
     color: white;
     font-size: 24px;
-    /* border: 2px solid rgba(26, 216, 211, 0.7); */
     padding: 15px;
     margin-top: 20px;
     text-align: left;

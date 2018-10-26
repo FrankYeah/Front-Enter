@@ -18,7 +18,7 @@ headerP3.addEventListener('click', function(){
             app.createElement('div', 'register-login-div', 'registerLoginDiv', 'loginDivWhite', '', '');
             app.createElement('p', 'register-button-p', 'registerButtonP', 'registerLoginDiv', '註冊', app.log.createAccount);
             app.createElement('p', 'login-button-p', 'loginButtonP', 'registerLoginDiv', '登入', app.log.loginHere);
-            app.log.gmailLoginButton();
+            app.createElement('p', 'gmail-login-button', 'gmailLoginButton', 'loginDivWhite', 'Log In With Gmail', app.log.letGmailLogin);
         }
 }
 );
@@ -59,16 +59,6 @@ app.log.loginInputCode = function(){
     newElement.placeholder = '******';
     newElement.type = 'password';
     document.getElementById('loginInputDiv').appendChild(newElement);
-}
-
-app.log.gmailLoginButton = function(){
-    app.createElement('p', 'gmail-login-button', 'gmailLoginButton', 'loginDivWhite', 'Log In With Gmail', app.log.letGmailLogin);
-    // let newElement = document.createElement('p');
-    // newElement.id = 'gmailLoginButton'
-    // newElement.className = 'gmail-login-button';
-    // newElement.textContent = 'Log In With Gmail';
-    // document.getElementById('loginDivWhite').appendChild(newElement);
-    // newElement.onclick = app.log.letGmailLogin;
 }
 
 // create account

@@ -6,13 +6,11 @@ section{
     background-repeat: no-repeat;
     background-size: cover;
     height: 380px;
-    /* width: 100%; */
     background-position-x: center;
     background-position-y: center;
     margin-top: 105px;
     cursor: text;
     opacity: 1;
-    /* animation : opacityOut 1s ease 0s 1 alternate both; */
   }
 
 section>a>div{
@@ -123,16 +121,6 @@ mark.mark-tag>form>select:focus{
 mark.mark-tag>form>select>option{
     cursor: pointer;
 }
-
-/* mark.mark-tag>div:hover{
-    cursor: pointer;
-    opacity: 0.8;
-    background-color: rgb(26, 216, 211);
-    color: white;
-    padding: 5px;
-    border: 1px solid rgb(26, 216, 211);
-    border-radius: 5px;
-} */
 
 main{
     display: flex;flex-direction: row;flex-wrap: wrap;justify-content:center; 
@@ -285,12 +273,4 @@ div.read-more-div{
         padding: 10px 15px;
     }
 }
-
-/* @media ( max-width: 660px ){
-    section>a>div>span.keyvisualSpan{
-        font-size: 20px;
-        padding: 5px;
-        padding-left: 23px;
-    }
-} */
 

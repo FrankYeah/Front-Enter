@@ -134,12 +134,10 @@ main>div.main-content>div.box-table{
 main>div.main-content>div.box-table>div.box-table-one{
     width: 400px;
     height: 40px;
-    /* background-color: rgba(87, 87, 87, 0.8); */
     margin: 20px auto auto auto ;
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: space-around; */
     border-bottom: 1px solid rgba(197, 197, 197, 0.8);
     padding-bottom: 12px;
 }
