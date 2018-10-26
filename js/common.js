@@ -91,9 +91,7 @@ app.search.createSearchDiv = function(){
     newElement.id = 'fullSearchDiv';
     newElement.className = 'fullSearchDiv';
     document.body.appendChild(newElement);
-    newElement.onclick = function(){
-        startSearch();
-    }
+    newElement.onclick = startSearch;
 }
 
 app.search.createSearchWhiteDiv = function(){
@@ -254,12 +252,7 @@ app.testGo.createFirstPreface = function(oneList){
 
 // first test GO button
 app.testGo.testOneButton = function(oneButton){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-one-button';
-    newElement.id = 'testOneButton';
-    newElement.textContent = oneButton;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = app.testGo.testTwoStart;
+    app.createElement('p', 'test-one-button', 'testOneButton', 'testGoWhiteDiv', oneButton, app.testGo.testTwoStart);
 }
 
 app.testGo.testTwoQuestionCount = function(questionCount){
@@ -267,12 +260,7 @@ app.testGo.testTwoQuestionCount = function(questionCount){
 }
 
 app.testGo.testTwoSelect = function(twoSelect){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-two-select';
-    newElement.id = 'testTwoSelect';
-    newElement.textContent = twoSelect;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = app.testGo.testThreeStart;
+    app.createElement('p', 'test-two-select', 'testTwoSelect', 'testGoWhiteDiv', twoSelect, app.testGo.testThreeStart);
 }
 
 app.testGo.testTwoStart = function(){
@@ -301,12 +289,7 @@ app.testGo.testThreeStart = function(event){
 }
 
 app.testGo.testThreeSelect = function(threeSelect){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-two-select';
-    newElement.id = 'testThreeSelect';
-    newElement.textContent = threeSelect;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = app.testGo.testFourStart;
+    app.createElement('p', 'test-two-select', 'testThreeSelect', 'testGoWhiteDiv', threeSelect, app.testGo.testFourStart);
 }
 
 app.testGo.testFourStart = function(event){
@@ -323,12 +306,7 @@ app.testGo.testFourStart = function(event){
 }
 
 app.testGo.testFourSelect = function(fourSelect){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-two-select';
-    newElement.id = 'testFourSelect';
-    newElement.textContent = fourSelect;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = app.testGo.testFiveStart;
+    app.createElement('p', 'test-two-select', 'testFourSelect', 'testGoWhiteDiv', fourSelect, app.testGo.testFiveStart);
 }
 
 app.testGo.testFiveStart = function(event){
@@ -343,12 +321,7 @@ app.testGo.testFiveStart = function(event){
 }
 
 app.testGo.testFiveSelect = function(fiveSelect){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-two-select';
-    newElement.id = 'testFiveSelect';
-    newElement.textContent = fiveSelect;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = app.testGo.testSixStart;
+    app.createElement('p', 'test-two-select', 'testFiveSelect', 'testGoWhiteDiv', fiveSelect, app.testGo.testSixStart);
 }
 
 app.testGo.testSixStart = function(event){
@@ -362,20 +335,15 @@ app.testGo.testSixStart = function(event){
 }
 
 app.testGo.testSixSelect = function(sixSelect){
-    let newElement = document.createElement('p');
-    newElement.className = 'test-two-select';
-    newElement.id = 'testSixSelect';
-    newElement.textContent = sixSelect;
-    document.getElementById('testGoWhiteDiv').appendChild(newElement);
-    newElement.onclick = app.testGo.testEndStart;
+    app.createElement('p', 'test-two-select', 'testSixSelect', 'testGoWhiteDiv', sixSelect, app.testGo.testEndStart);
 }
 
 // display result & pie chart making
 app.testGo.testEndStart = function(event){
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     app.testGo.testOneList('你有多適合下列學校呢？');
-    app.testGo.endPieChart();
-    app.testGo.whiteInPieChart();
+    app.createElement('div', 'end-pie-chart', 'endPieChart', 'testGoWhiteDiv', '', '');
+    app.createElement('div', 'white-in-pie-chart', 'whiteInPieChart', 'testGoWhiteDiv', '', '');
     app.testGo.resultA();
     app.testGo.forEndResult('六角學院');
     getAllSelect.push(event.target.textContent);
@@ -384,14 +352,6 @@ app.testGo.testEndStart = function(event){
 
 app.testGo.testEndSelect = function(endSelect){
     app.createElement('p', 'test-two-select', 'testEndSelect', 'testGoWhiteDiv', endSelect, '');
-}
-
-app.testGo.endPieChart = function(){
-    app.createElement('div', 'end-pie-chart', 'endPieChart', 'testGoWhiteDiv', '', '');
-}
-
-app.testGo.whiteInPieChart = function(){
-    app.createElement('div', 'white-in-pie-chart', 'whiteInPieChart', 'testGoWhiteDiv', '', '');
 }
 
 app.testGo.resultA = function(){

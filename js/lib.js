@@ -12,6 +12,14 @@ let app = {
 app.get = function (selector) {
 	return document.querySelector(selector);
 };
+app.createElement = function(dom, className, id, append, text, func){
+    let newElement = document.createElement(dom);
+    newElement.className = className;
+    newElement.id = id;
+    newElement.textContent = text;
+    document.getElementById(append).appendChild(newElement);
+    newElement.onclick = func;
+}
 app.loading = function(){
 	app.get('#loadingAnimation').style.height = '0px';
     app.get('#loadingAnimation').style.opacity = '0.9';
@@ -23,14 +31,4 @@ app.loading = function(){
     setTimeout(function(){
         app.get('#loadingAnimation').style.display = 'none';
     }, 600)
-}
-app.createElement = function(dom, className, id, append, text, func){
-    let newElement = document.createElement(dom);
-    newElement.className = className;
-    newElement.id = id;
-    newElement.textContent = text;
-    document.getElementById(append).appendChild(newElement);
-    newElement.onclick = function(){
-        func;
-    }
 }

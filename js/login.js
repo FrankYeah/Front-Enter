@@ -10,14 +10,14 @@ headerP3.addEventListener('click', function(){
         }else{
             app.log.loginFullDiv();
             app.log.loginDivWhite();
-            app.log.loginDivLogo();
-            app.log.loginInputDiv();
+            app.createElement('div', 'login-div-logo', '', 'loginDivWhite', '', '');
+            app.createElement('div', 'login-input-div', 'loginInputDiv', 'loginDivWhite', '', '');
             app.log.loginInputMail();
             app.log.loginInputCode();
-            app.log.loginForgetCode();
-            app.log.registerLoginDiv();
-            app.log.registerButtonP();
-            app.log.loginButtonP();
+            app.createElement('p', 'login-forget-code', '', 'loginDivWhite', '忘記密碼？', app.log.judgeForgetCode);
+            app.createElement('div', 'register-login-div', 'registerLoginDiv', 'loginDivWhite', '', '');
+            app.createElement('p', 'register-button-p', 'registerButtonP', 'registerLoginDiv', '註冊', app.log.createAccount);
+            app.createElement('p', 'login-button-p', 'loginButtonP', 'registerLoginDiv', '登入', app.log.loginHere);
             app.log.gmailLoginButton();
         }
 }
@@ -44,19 +44,6 @@ app.log.loginDivWhite = function(){
     }
 }
 
-app.log.loginDivLogo = function(){
-    let newElement = document.createElement('div');
-    newElement.className = 'login-div-logo';
-    document.getElementById('loginDivWhite').appendChild(newElement);
-}
-
-app.log.loginInputDiv = function(){
-    let newElement = document.createElement('div');
-    newElement.id = 'loginInputDiv';
-    newElement.className = 'login-input-div';
-    document.getElementById('loginDivWhite').appendChild(newElement);
-}
-
 app.log.loginInputMail = function(){
     let newElement = document.createElement('input');
     newElement.id = 'loginInputMail';
@@ -74,46 +61,14 @@ app.log.loginInputCode = function(){
     document.getElementById('loginInputDiv').appendChild(newElement);
 }
 
-app.log.loginForgetCode = function(){
-    let newElement = document.createElement('p');
-    newElement.className = 'login-forget-code';
-    newElement.textContent = '忘記密碼？'
-    document.getElementById('loginDivWhite').appendChild(newElement);
-    newElement.onclick = app.log.judgeForgetCode;
-}
-
-app.log.registerLoginDiv = function(){
-    let newElement = document.createElement('div');
-    newElement.id = 'registerLoginDiv'
-    newElement.className = 'register-login-div';
-    document.getElementById('loginDivWhite').appendChild(newElement);
-}
-
-app.log.registerButtonP = function(){
-    let newElement = document.createElement('p');
-    newElement.id = 'registerButtonP'
-    newElement.className = 'register-button-p';
-    newElement.textContent = '註冊';
-    document.getElementById('registerLoginDiv').appendChild(newElement);
-    newElement.onclick = app.log.createAccount;
-}
-
-app.log.loginButtonP = function(){
-    let newElement = document.createElement('p');
-    newElement.id = 'loginButtonP'
-    newElement.className = 'login-button-p';
-    newElement.textContent = '登入';
-    document.getElementById('registerLoginDiv').appendChild(newElement);
-    newElement.onclick = app.log.loginHere;
-}
-
 app.log.gmailLoginButton = function(){
-    let newElement = document.createElement('p');
-    newElement.id = 'gmailLoginButton'
-    newElement.className = 'gmail-login-button';
-    newElement.textContent = 'Log In With Gmail';
-    document.getElementById('loginDivWhite').appendChild(newElement);
-    newElement.onclick = app.log.letGmailLogin;
+    app.createElement('p', 'gmail-login-button', 'gmailLoginButton', 'loginDivWhite', 'Log In With Gmail', app.log.letGmailLogin);
+    // let newElement = document.createElement('p');
+    // newElement.id = 'gmailLoginButton'
+    // newElement.className = 'gmail-login-button';
+    // newElement.textContent = 'Log In With Gmail';
+    // document.getElementById('loginDivWhite').appendChild(newElement);
+    // newElement.onclick = app.log.letGmailLogin;
 }
 
 // create account
@@ -125,7 +80,7 @@ app.log.createAccount = function(){
         let errorCode = error.code;
         let errorMsg = error.message;
         alertBigBox.style.display = 'flex';
-        alertWord.innerHTML = '電子郵件已被註冊';
+        alertWord.innerHTML = '電子郵件已註冊，或尚未確實填寫。';
       });      
 }
 

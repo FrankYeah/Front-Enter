@@ -321,9 +321,9 @@ setTimeout(function(){
 
  // Number of online users is the number of objects in the presence list.
 app.get('#userIcon').addEventListener('mouseover', function(){
-listRef.on('value', function(snap) {
-    app.get('#userIcon').innerHTML = snap.numChildren() + ' 人也在玩';
-}); 
+    listRef.on('value', function(snap) {
+        app.get('#userIcon').innerHTML = snap.numChildren() + ' 人也在玩';
+    }); 
 });
 app.get('#userIcon').addEventListener('mouseleave', function(){
     app.get('#userIcon').innerHTML = '';
@@ -331,7 +331,6 @@ app.get('#userIcon').addEventListener('mouseleave', function(){
 // display how many person on site
 let listRef = database.ref('counter');
 let userRef = listRef.push();
-// Add ourselves to presence list when online.
 let presenceRef = database.ref('.info/connected');
 presenceRef.on('value', function(snap) {
   if (snap.val()) {
