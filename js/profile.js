@@ -290,6 +290,6 @@ app.get('#alertButton').addEventListener('click', ()=>{
 });
 
 // close loading
-setTimeout( function (){
+setTimeout(() => {
     app.loading();
 },3500)

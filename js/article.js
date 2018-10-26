@@ -3,18 +3,18 @@ let storePhoto = [];
 let icount=1;  
 let keyvisualImg;
 let keyvisualImg_len;
-app.keyvisual = function(keyBlock, keyNone1, keyNone2){
+app.keyvisual = (keyBlock, keyNone1, keyNone2) => {
     app.get(keyBlock).style.display  =  'block';
     app.get(keyNone1).style.display  =  'none';
     app.get(keyNone2).style.display  =  'none';
     app.get(keyBlock).style.animation = 'opacityOut 5s ease 0s 1 alternate both';
     app.get(keyBlock).style.backgroundPositionX = 'center';
 }
-database.ref('article').orderByChild('skill').on('child_added', function(snapshot) {
+database.ref('article').orderByChild('skill').on('child_added', (snapshot) => {
     storePhoto.push(snapshot.val().rectangleUrl);
 });
 setInterval('app.article.changeKevisual()',5000);
-app.article.changeKevisual = function(){
+app.article.changeKevisual = () => {
     keyvisualImg = [storePhoto[0],storePhoto[1],storePhoto[2]];
     keyvisualImg_len = keyvisualImg.length; 
     app.get('#keyvisual0').style.background = "url('" + keyvisualImg[0] + "') 50% / cover no-repeat";    
@@ -41,7 +41,7 @@ let data;
 let articleId = (new URL(document.location)).searchParams.get('id');  // get url id
 
 if(articleId == null){
-    getAllData.orderByChild('skill').on('child_added', function(snapshot) {
+    getAllData.orderByChild('skill').on('child_added', (snapshot) => {
         data = snapshot.val(); 
         createLayout(data);
     });
@@ -49,7 +49,7 @@ if(articleId == null){
         || articleId == '彭' || articleId == 'p'
         ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('name').equalTo('彭彭的課程教學').on('child_added', function(snapshot) {
+    getAllData.orderByChild('name').equalTo('彭彭的課程教學').on('child_added', (snapshot) => {
         data = snapshot.val();  createLayout(data);
     });  
 }else if(articleId == 'a' || articleId == 'app' || articleId == 'appworks' 
@@ -57,55 +57,55 @@ if(articleId == null){
         || articleId == 'AppWorks School' || articleId == 'AppWorks'
 ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('name').equalTo('AppWorks School').on('child_added', function(snapshot) {
+    getAllData.orderByChild('name').equalTo('AppWorks School').on('child_added', (snapshot) => {
         data = snapshot.val();   createLayout(data);
     });  
 }else if(articleId == '台北' || articleId == '台' || articleId == '北' 
     ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('city').equalTo('台北').on('child_added', function(snapshot) {
+    getAllData.orderByChild('city').equalTo('台北').on('child_added', (snapshot) => {
     data = snapshot.val();   createLayout(data);
     });  
 }else if(articleId == '各地' || articleId == '各' || articleId == '地' 
     ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('city').equalTo('各地').on('child_added', function(snapshot) {
+    getAllData.orderByChild('city').equalTo('各地').on('child_added', (snapshot)=> {
     data = snapshot.val();   createLayout(data);
     });  
 }else if(articleId == '一' || articleId == '一對一' 
     ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('classType').equalTo('一對一').on('child_added', function(snapshot) {
+    getAllData.orderByChild('classType').equalTo('一對一').on('child_added', (snapshot) => {
     data = snapshot.val();   createLayout(data);
     });  
 }else if(articleId == '大' || articleId == '大班' || articleId == '大班制' 
     ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('classType').equalTo('大班制').on('child_added', function(snapshot) {
+    getAllData.orderByChild('classType').equalTo('大班制').on('child_added', (snapshot) => {
     data = snapshot.val();   createLayout(data);
     });  
 }else if(articleId == '小' || articleId == '小班' || articleId == '小班制' 
     ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('classType').equalTo('小班制').on('child_added', function(snapshot) {
+    getAllData.orderByChild('classType').equalTo('小班制').on('child_added', (snapshot) => {
     data = snapshot.val();   createLayout(data);
     });  
 }else if(articleId == '放養' || articleId == '放' || articleId == '放養制'  || articleId == '養' 
     ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', function(snapshot) {
+    getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', (snapshot) => {
     data = snapshot.val();   createLayout(data);
     });  
 }else if(articleId == '手' || articleId == '手把手' || articleId == '手把手教'  || articleId == '手把手教制' 
     ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('teachWay').equalTo('手把手教制').on('child_added', function(snapshot) {
+    getAllData.orderByChild('teachWay').equalTo('手把手教制').on('child_added', (snapshot) => {
     data = snapshot.val();   createLayout(data);
     });  
 }else if(articleId == '前' || articleId == '端' || articleId == '前端' 
     ){
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
+    getAllData.orderByChild('skill').equalTo('前端').on('child_added', (snapshot) => {
     data = snapshot.val();   createLayout(data);
     });  
 }else{
@@ -113,14 +113,14 @@ if(articleId == null){
     newElement.textContent = 'no result';
     newElement.style.color = 'rgb(26, 216, 211)';
     app.get('#mainId').appendChild(newElement);
-    getAllData.orderByChild('skill').on('child_added', function(snapshot) {
+    getAllData.orderByChild('skill').on('child_added', (snapshot) => {
         data = snapshot.val();
         app.get('#mainId').innerHTML = '';
     });
 }
 
 // get firebase json to deal with search
-function createLayout(data){
+ createLayout = (data) =>{
     app.createElement('article', '', 'article' + x, 'mainId', '', '');
     if(userLogin){
         app.article.collectionSchool(data);
@@ -145,7 +145,7 @@ function createLayout(data){
 if(window.localStorage.getItem(`collection`)){
     let displayMyCollection;
     displayMyCollection = JSON.parse(window.localStorage.getItem(`collection`));
-    getAllData.orderByChild('skill').on('child_added', function(snapshot) {
+    getAllData.orderByChild('skill').on('child_added', (snapshot) => {
         for(let i=0 ; i<displayMyCollection.length ; i++){
             if(displayMyCollection[i].name == snapshot.val().name){
                 document.getElementById('collectionSchool' + snapshot.val().creatTime).style.background = 'url(../Front-Enter/images/star-background.svg)';
@@ -161,14 +161,14 @@ let collection = [{
     name: ''
   }]
 
-app.article.collectionSchool = function(data){
+app.article.collectionSchool = (data) => {
     let newElement = document.createElement('div');
     newElement.id = 'collectionSchool' + data.creatTime;
     newElement.className = 'collection-school';
     document.getElementById('article' + x).appendChild(newElement);
-    newElement.onclick = function(){
+    newElement.onclick = () => {
         // after collect，get name & url from createtime
-        getAllData.orderByChild('creatTime').equalTo(Number(newElement.id.replace(/[^0-9]+/g, ''))).on('child_added', function(snapshot) {
+        getAllData.orderByChild('creatTime').equalTo(Number(newElement.id.replace(/[^0-9]+/g, ''))).on('child_added', (snapshot) => {
             // if localstorage empty
             if(!window.localStorage.getItem(`collection`)){
                 newElement.style.background = 'url(../Front-Enter/images/star-background.svg)';
@@ -204,47 +204,47 @@ app.article.collectionSchool = function(data){
     }
 }
 
-app.article.pLocationBorn = function(data){
+app.article.pLocationBorn = (data) => {
     let newElement = document.createElement('p');
     newElement.className = 'article-location';
     newElement.textContent = data.city;
     document.getElementById('aLocation' + x).appendChild(newElement);
-    newElement.onclick = function(e){
+    newElement.onclick = (e) => {
         app.article.clearContent(newElement.textContent);
     }
 }
 
 // clear layout
-app.article.clearContent = function(city){
+app.article.clearContent = (city) => {
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('city').equalTo(city).on('child_added', function(snapshot) {
+    getAllData.orderByChild('city').equalTo(city).on('child_added', (snapshot) => {
         data = snapshot.val();
         createLayout(data);
     });    
 }
 
-app.article.contentABorn = function(data){
+app.article.contentABorn = (data) => {
     let newElement = document.createElement('a');
     newElement.id = 'contentA' + x; 
     newElement.setAttribute('href', '/Front-Enter/content.html?id=' + data.creatTime);
     document.getElementById('article' + x).appendChild(newElement);
 }
 
-app.article.imgBorn = function(data){
+app.article.imgBorn = (data) => {
     let newElement = document.createElement('img');
     newElement.className = 'article-img';
     newElement.src = data.squareUrl;
     document.getElementById('imgDiv' + x).appendChild(newElement);
 }
 
-app.article.pPrefaceBorn = function(data){
+app.article.pPrefaceBorn = (data) => {
     let newElement = document.createElement('p');
     newElement.innerHTML = data.preface;
     document.getElementById('contentA' + x).appendChild(newElement);
 }
 
 // all tag
-app.tag = function(all, smallClass, letGo, oneByOne){
+app.tag = (all, smallClass, letGo, oneByOne) => {
     app.get('#getAllArticle').style.color = all;
     app.get('#smallClass').style.color = smallClass;
     app.get('#letItGo').style.color = letGo;
@@ -252,33 +252,33 @@ app.tag = function(all, smallClass, letGo, oneByOne){
     app.get('#mainId').innerHTML = '';
 }
 
-app.get('#getAllArticle').onclick = function(){
+app.get('#getAllArticle').onclick = () => {
     app.tag('rgb(26, 216, 211)', 'rgb(128, 128, 128)','rgb(128, 128, 128)', 'rgb(128, 128, 128)');
-    getAllData.orderByChild('skill').on('child_added', function(snapshot) {
+    getAllData.orderByChild('skill').on('child_added', (snapshot) => {
         data = snapshot.val();
         createLayout(data);
         });
 }
 
-app.get('#smallClass').onclick = function(){
+app.get('#smallClass').onclick = () => {
     app.tag('rgb(128, 128, 128)', 'rgb(26, 216, 211)','rgb(128, 128, 128)', 'rgb(128, 128, 128)');
-    getAllData.orderByChild('classType').equalTo('小班制').on('child_added', function(snapshot) {
+    getAllData.orderByChild('classType').equalTo('小班制').on('child_added', (snapshot) => {
         data = snapshot.val();
         createLayout(data);
     });   
 }
 
-app.get('#letItGo').onclick = function(){
+app.get('#letItGo').onclick = () => {
     app.tag('rgb(128, 128, 128)', 'rgb(128, 128, 128)', 'rgb(26, 216, 211)','rgb(128, 128, 128)');
-    getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', function(snapshot) {
+    getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', (snapshot) => {
         data = snapshot.val();
         createLayout(data);
     });   
 }
 
-app.get('#oneByOne').onclick = function(){
+app.get('#oneByOne').onclick = () => {
     app.tag('rgb(128, 128, 128)', 'rgb(128, 128, 128)','rgb(128, 128, 128)', 'rgb(26, 216, 211)');
-    getAllData.orderByChild('classType').equalTo('一對一').on('child_added', function(snapshot) {
+    getAllData.orderByChild('classType').equalTo('一對一').on('child_added', (snapshot) => {
         data = snapshot.val();
         createLayout(data);
     });   
@@ -291,6 +291,6 @@ app.get('#alertButton').addEventListener('click', ()=>{
 });
 
 // close loading
-setTimeout(function(){
+setTimeout(() => {
     app.loading();
 }, 1000);

@@ -1,11 +1,11 @@
 //when scrolling, change header
-app.get('#headerP3').addEventListener('mouseover', function(){
+app.get('#headerP3').addEventListener('mouseover', () => {
     app.get('#headerP3').style.color='rgb(26, 216, 211)';
 });
-app.get('#headerP3').addEventListener('mouseout', function(){
+app.get('#headerP3').addEventListener('mouseout', () => {
     app.get('#headerP3').style.color='rgb(128, 128, 128)';
 })
-window.addEventListener('scroll',function(){
+window.addEventListener('scroll',() => {
     if(document.documentElement.scrollTop > 0){
         app.get('#header').style.animation = 'headerBackgroundOut 5s ease 0s 1 alternate forwards';
         if(userLogin && userLogin.emailVerified == true){
@@ -32,23 +32,23 @@ window.addEventListener('scroll',function(){
 );
 
 // back to top
-window.onload = function() {
+window.onload = () => {
     // detect log in and change word
     if(userLogin && userLogin.emailVerified == true){
         app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
         app.get('#headerP3').style.cursor = 'pointer';
-        app.get('#headerP3').addEventListener('mouseenter',function(){
+        app.get('#headerP3').addEventListener('mouseenter',() => {
             app.get('#headerP3').style.color = 'rgb(26, 216, 211)';
         });
-        app.get('#headerP3').addEventListener('mouseleave',function changeColorAgain(){
+        app.get('#headerP3').addEventListener('mouseleave', changeColorAgain = () => {
             app.get('#headerP3').style.color = 'rgb(128, 128, 128)';
         })
     }
     let timer = null;
     let isTop = true;
-    app.get('#tops').onclick = function(){
+    app.get('#tops').onclick = () => {
         // set timeout
-        timer = setInterval(function(){
+        timer = setInterval(() => {
             // get scroll height
             let osTop = document.documentElement.scrollTop || document.body.scrollTop ;  // deal IE、Chrome
             // lower speed 
@@ -86,7 +86,7 @@ function startSearch(){
     }
 }
 
-app.search.createSearchDiv = function(){
+app.search.createSearchDiv = () => {
     let newElement = document.createElement('div');
     newElement.id = 'fullSearchDiv';
     newElement.className = 'fullSearchDiv';
@@ -94,14 +94,14 @@ app.search.createSearchDiv = function(){
     newElement.onclick = startSearch;
 }
 
-app.search.createSearchWhiteDiv = function(){
+app.search.createSearchWhiteDiv = () => {
     let newElement = document.createElement('div');
     newElement.id = 'fullSearchWhiteDiv';
     newElement.className = 'fullSearchWhiteDiv';
     document.body.appendChild(newElement);
 }
 
-app.search.createWhiteDivLeftBox = function(){
+app.search.createWhiteDivLeftBox = () => {
     let newElement = document.createElement('form');
     newElement.id = 'whiteDivLeftBox';
     newElement.className = 'whiteDivLeftBox';
@@ -109,13 +109,13 @@ app.search.createWhiteDivLeftBox = function(){
     document.getElementById('whiteDivLeft').appendChild(newElement);
 }
 
-app.search.createLeftInput = function(){
+app.search.createLeftInput = () => {
     let newElement = document.createElement('input');
     newElement.className = 'leftInput speech';
     newElement.id = 'leftInput';
     newElement.type = 'text';
     document.getElementById('whiteDivLeftBox').appendChild(newElement);
-    newElement.onkeypress = function(event){
+    newElement.onkeypress = (event) => {
         if(event.keyCode == 13){
             event.preventDefault();
             window.location = 'article.html?id='+document.getElementById('leftInput').value ; 
@@ -123,7 +123,7 @@ app.search.createLeftInput = function(){
     }
 }
 
-app.search.createVoiceButton = function(){
+app.search.createVoiceButton = () => {
     let newElement = document.createElement('div');
     newElement.className = 'voiceButton start';
     document.getElementById('whiteDivLeftBox').appendChild(newElement);
@@ -166,7 +166,7 @@ app.search.createVoiceButton = function(){
     }
 }
 
-app.search.createLeftButton = function(){
+app.search.createLeftButton = () => {
     let newElement = document.createElement('div');
     newElement.className = 'leftButton';
     document.getElementById('whiteDivLeftBox').appendChild(newElement);
@@ -212,54 +212,54 @@ app.testGo.testGoBackDiv =function(){
     newElement.onclick = createTestGo;
 }
 
-app.testGo.createBlueGreen = function(){
+app.testGo.createBlueGreen = () => {
     let newElement = document.createElement('div');
     newElement.className = 'blue-green';
     newElement.id = 'blueGreen';
     document.getElementById('testGoBackDiv').appendChild(newElement);
-    newElement.onclick = function(event){
+    newElement.onclick = (event) => {
         event.stopPropagation();
     }
 }
 
-app.testGo.createPhotoWithGray = function(){
+app.testGo.createPhotoWithGray = () => {
     let newElement = document.createElement('div');
     newElement.className = 'photo-with-gray';
     newElement.id = 'photoWithGray';
     document.getElementById('testGoBackDiv').appendChild(newElement);
-    newElement.onclick = function(event){
+    newElement.onclick = (event) => {
         event.stopPropagation();
     }
 }
 
-app.testGo.testGoWhiteDiv = function(){
+app.testGo.testGoWhiteDiv = () => {
     let newElement = document.createElement('div');
     newElement.className = 'test-go-white-div';
     newElement.id = 'testGoWhiteDiv';
     document.getElementById('testGoBackDiv').appendChild(newElement);
-    newElement.onclick = function(event){
+    newElement.onclick = (event) => {
         event.stopPropagation();
     }
 }
 
-app.testGo.testOneList = function(oneList){
+app.testGo.testOneList = (oneList) => {
     app.createElement('p', 'test-one-list', 'testOneList', 'testGoWhiteDiv', oneList, '');
 }
 
-app.testGo.createFirstPreface = function(oneList){
+app.testGo.createFirstPreface = (oneList) => {
     app.createElement('p', 'first-preface', 'firstPreface', 'testGoWhiteDiv', oneList, '');
 }
 
 // first test GO button
-app.testGo.testTwoQuestionCount = function(questionCount){
+app.testGo.testTwoQuestionCount = (questionCount) => {
     app.createElement('p', 'test-two-question-count', 'testTwoQuestionCount', 'testGoWhiteDiv', questionCount, '');
 }
 
-app.testGo.testTwoSelect = function(twoSelect){
+app.testGo.testTwoSelect = (twoSelect) => {
     app.createElement('p', 'test-two-select', 'testTwoSelect', 'testGoWhiteDiv', twoSelect, app.testGo.testThreeStart);
 }
 
-app.testGo.testTwoStart = function(){
+app.testGo.testTwoStart = () => {
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     app.testGo.testOneList('選擇在哪座城市學習？');
     app.testGo.testTwoQuestionCount('1/5');
@@ -272,7 +272,7 @@ app.testGo.testTwoStart = function(){
 
 // display question
 let getAllSelect = [];
-app.testGo.testThreeStart = function(event){
+app.testGo.testThreeStart = (event) => {
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     app.testGo.testOneList('每月能撥出多少費用學習？');
     app.testGo.testTwoQuestionCount('2/5');
@@ -284,11 +284,11 @@ app.testGo.testThreeStart = function(event){
     getAllSelect.push(event.target.textContent);
 }
 
-app.testGo.testThreeSelect = function(threeSelect){
+app.testGo.testThreeSelect = (threeSelect) => {
     app.createElement('p', 'test-two-select', 'testThreeSelect', 'testGoWhiteDiv', threeSelect, app.testGo.testFourStart);
 }
 
-app.testGo.testFourStart = function(event){
+app.testGo.testFourStart = (event) => {
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     let oneButton = '每周能撥出多少時間學習？'
     app.testGo.testOneList('每周能撥出多少時間學習？');
@@ -301,11 +301,11 @@ app.testGo.testFourStart = function(event){
     getAllSelect.push(event.target.textContent);
 }
 
-app.testGo.testFourSelect = function(fourSelect){
+app.testGo.testFourSelect = (fourSelect) => {
     app.createElement('p', 'test-two-select', 'testFourSelect', 'testGoWhiteDiv', fourSelect, app.testGo.testFiveStart);
 }
 
-app.testGo.testFiveStart = function(event){
+app.testGo.testFiveStart = (event) => {
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     app.testGo.testOneList('對班制的需求是？');
     app.testGo.testTwoQuestionCount('4/5');
@@ -316,11 +316,11 @@ app.testGo.testFiveStart = function(event){
     getAllSelect.push(event.target.textContent);
 }
 
-app.testGo.testFiveSelect = function(fiveSelect){
+app.testGo.testFiveSelect = (fiveSelect) => {
     app.createElement('p', 'test-two-select', 'testFiveSelect', 'testGoWhiteDiv', fiveSelect, app.testGo.testSixStart);
 }
 
-app.testGo.testSixStart = function(event){
+app.testGo.testSixStart = (event) => {
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     app.testGo.testOneList('喜歡什麼樣的教學方式？');
     app.testGo.testTwoQuestionCount('5/5');
@@ -330,12 +330,12 @@ app.testGo.testSixStart = function(event){
     getAllSelect.push(event.target.textContent);
 }
 
-app.testGo.testSixSelect = function(sixSelect){
+app.testGo.testSixSelect = (sixSelect) => {
     app.createElement('p', 'test-two-select', 'testSixSelect', 'testGoWhiteDiv', sixSelect, app.testGo.testEndStart);
 }
 
 // display result & pie chart making
-app.testGo.testEndStart = function(event){
+app.testGo.testEndStart = (event) => {
     document.getElementById('testGoWhiteDiv').innerHTML = '';
     app.testGo.testOneList('你有多適合下列學校呢？');
     app.createElement('div', 'end-pie-chart', 'endPieChart', 'testGoWhiteDiv', '', '');
@@ -346,7 +346,7 @@ app.testGo.testEndStart = function(event){
     app.testGo.getAllSelectLogic();
 }
 
-app.testGo.resultA = function(){
+app.testGo.resultA = () => {
     let newElement = document.createElement('a');
     newElement.id = 'resultA';
     newElement.className = 'result-a';

@@ -3,10 +3,10 @@ let squareUrl = '';
 let rectangleUrl = '';
 let getFile = '';
 let getRectangleFile = '';
-app.get('#mainUploadPic').addEventListener('change', function(){
+app.get('#mainUploadPic').addEventListener('change', () => {
     getFile = this.files[0]
 },false);
-app.get('#RectanglePic').addEventListener('change', function(){
+app.get('#RectanglePic').addEventListener('change', () => {
     getRectangleFile = this.files[0]
 },false);
 
@@ -19,7 +19,7 @@ function clickButton(){
     let uploadTaskRec = storageRef.child('images/'+getRectangleFile.name).put(getRectangleFile);
 
 // square photo
-    uploadTask.on('state_changed', function(snapshot){
+    uploadTask.on('state_changed', (snapshot) => {
         // observe status：progress, pause, and resume
         // get upload status and display by number
         let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
@@ -45,8 +45,8 @@ function clickButton(){
     });
 
 // rectangle img
-    function callRetangle(){
-        uploadTaskRec.on('state_changed', function(snapshot){
+     callRetangle = () => {
+        uploadTaskRec.on('state_changed', (snapshot) => {
             // observe status：progress, pause, and resume
             // get upload status and display by num
 
@@ -123,7 +123,7 @@ function writePost(newPostKey, name, city, skill, technology, fee, totalDay, wee
 }
 
 // log out
-app.get('#logoutTest').onclick = function (){
+app.get('#logoutTest').onclick = () => {
     firebase.auth().signOut().then(function() {
         window.location.reload();
     }, function(error) {
@@ -151,6 +151,6 @@ app.get('#alertButton').addEventListener('click', ()=>{
 });
 
 // close loading
-setTimeout(function(){
+setTimeout(() => {
     app.loading();
 }, 1000)

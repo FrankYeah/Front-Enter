@@ -1,4 +1,4 @@
-app.get('#aboutSend').addEventListener('click' ,function(){
+app.get('#aboutSend').addEventListener('click' ,() => {
     if(app.get('#aboutName').value && app.get('#aboutMail').value && app.get('#aboutTitle').value && app.get('#aboutContent').value){
         let newPostKey = firebase.database().ref().child('feedback').push().key;
         firebase.database().ref('feedback/'+newPostKey).set({
@@ -28,6 +28,6 @@ app.get('#alertButton').addEventListener('click', ()=>{
 });
 
 // close loading
-setTimeout(function(){
+setTimeout(() => {
     app.loading();
 }, 1000)

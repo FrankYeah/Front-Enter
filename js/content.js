@@ -24,49 +24,49 @@ function createLayout(data){
     app.get('#rightPhone').innerHTML = data.phone;
 }
 
-app.get('#imageLeftOne').addEventListener('click', function(){
+app.get('#imageLeftOne').addEventListener('click', () => {
     rotateRotate = 0;
     // let oneUrl = '../images/2.jpg';
     let oneUrl = '../Front-Enter/images/2.jpg';
     rotateImg(oneUrl);
 })
 
-app.get('#imageLeftTwo').addEventListener('click', function(){
+app.get('#imageLeftTwo').addEventListener('click', () => {
     rotateRotate = 1;
     // let twoUrl = '../images/13.jpg';
     let twoUrl = '../Front-Enter/images/13.jpg';
     rotateImg(twoUrl);
 })
 
-app.get('#imageLeftThree').addEventListener('click', function(){
+app.get('#imageLeftThree').addEventListener('click', () => {
     rotateRotate = 2; 
     // let threeUrl = '../images/15.jpg';
     let threeUrl = '../Front-Enter/images/15.jpg';
     rotateImg(threeUrl);
 })
 
-app.get('#imageLeftFour').addEventListener('click', function(){
+app.get('#imageLeftFour').addEventListener('click', () => {
     rotateRotate = 3; 
     // let fourUrl = '../images/7.jpg';
     let fourUrl = '../Front-Enter/images/7.jpg';
     rotateImg(fourUrl);
 })
 
-app.get('#imageLeftFive').addEventListener('click', function(){
+app.get('#imageLeftFive').addEventListener('click', () => {
     rotateRotate = 4; 
     // let fiveUrl = '../images/AppWorksShool-rectangle.jpg';
     let fiveUrl = '../Front-Enter/images/AppWorksShool-rectangle.jpg';
     rotateImg(fiveUrl);
 })
 
-function rotateImg(url){
+ rotateImg = (url) => {
     app.rotate.rotateBackFull();
     app.rotate.rotateLeftArrow();
     app.rotate.rotateCenterImg(url)
     app.rotate.rotateRightArrow();
 }
 
-app.rotate.rotateBackFull = function(){
+app.rotate.rotateBackFull = () => {
     let newElement = document.createElement('div');
     newElement.className = 'rotate-back-full';
     newElement.id = 'rotateBackFull';
@@ -74,7 +74,7 @@ app.rotate.rotateBackFull = function(){
     newElement.onclick = deleteRotateFull;
 }
 
-app.rotate.rotateCenterImg = function(url){
+app.rotate.rotateCenterImg = (url) => {
     let newElement = document.createElement('div');
     newElement.className = 'rotate-center-img';
     newElement.id = 'rotateCenterImg';
@@ -83,35 +83,35 @@ app.rotate.rotateCenterImg = function(url){
     newElement.style.backgroundSize  =  'cover';
     newElement.style.backgroundPositionX = 'center';
     document.getElementById('rotateBackFull').appendChild(newElement);
-    newElement.onclick = function(event){
+    newElement.onclick = (event) => {
         event.stopPropagation();
     }
 }
 
-app.rotate.rotateRightArrow = function(){
+app.rotate.rotateRightArrow = () => {
     let newElement = document.createElement('div');
     newElement.className = 'rotate-right-arrow';
     newElement.id = 'rotateRightArrow';
     document.getElementById('rotateBackFull').appendChild(newElement);
-    newElement.onclick = function(event){
+    newElement.onclick = (event) => {
         event.stopPropagation();
-        startRight();
+        app.rotate.startRight();
     }
 }
 
-app.rotate.rotateLeftArrow = function(){
+app.rotate.rotateLeftArrow = () => {
     let newElement = document.createElement('div');
     newElement.className = 'rotate-left-arrow';
     newElement.id = 'rotateLeftArrow';
     document.getElementById('rotateBackFull').appendChild(newElement);
-    newElement.onclick = function(event){
+    newElement.onclick = (event) => {
         event.stopPropagation();
-        startLeft();
+        app.rotate.startLeft();
     }
 }
 
 let rotateRotate = 0 ;
-function startLeft(){
+app.rotate.startLeft = () => {
     if(rotateRotate==0){
         rotateRotate = 4;
     }else if(rotateRotate==4){
@@ -133,7 +133,7 @@ function startLeft(){
     app.get('#rotateCenterImg').style.backgroundPositionX = 'center';
 }
 
-function startRight(){
+app.rotate.startRight = () => {
     if(rotateRotate==0){
         rotateRotate = 1;
     }else if(rotateRotate==1){
@@ -155,7 +155,7 @@ function startRight(){
     
 }
 
-function deleteRotateFull(){
+ deleteRotateFull = () => {
     let anotherChild=document.getElementById('rotateBackFull');
     document.body.removeChild(anotherChild);
 }
@@ -167,6 +167,6 @@ app.get('#alertButton').addEventListener('click', ()=>{
 });
 
 // close loading
-setTimeout(function(){
+setTimeout(() => {
     app.loading();
 }, 1500)
