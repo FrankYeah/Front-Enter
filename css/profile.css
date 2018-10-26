@@ -91,7 +91,7 @@ main>div>div.create-right-div{
     width: 600px;
     position: relative;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -100,7 +100,7 @@ main>div>div.create-right-div>div.post-edit-delete{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     border-top:1px solid rgba(197, 197, 197, 0.8); 
     padding-top: 30px;
@@ -131,7 +131,7 @@ main>div>div.right-collection{
     width: 600px;
     position: relative;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -143,7 +143,7 @@ main>div>div.create-right-div>div.for-delete-post{
     width: 600px;
     position: relative;
     align-items: left;
-    justify-content: space-evenly;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -304,7 +304,7 @@ main>div>div.display-result>div.confirm-cancel>div{
 div.in-collection-div{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-content: center;
     width: 180px;
     height: 240px;

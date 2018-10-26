@@ -241,7 +241,7 @@ function createCollectionLayout(){
         let getLocal;
         getLocal = JSON.parse(window.localStorage.getItem(`collection`));
         if(getLocal == ''){
-            app.get('#rightCollection').textContent = '無收藏';
+            app.get('#rightCollection').textContent = '可以前往探索頁面進行收藏唷。';
         }else{
             for(let i = 0; i<getLocal.length ; i++){
                 app.createElement('div', 'in-collection-div', 'inCollectionDiv' + i, 'rightCollection', '', '');
