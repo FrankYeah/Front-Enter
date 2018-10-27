@@ -37,87 +37,35 @@ app.article.changeKevisual = () => {
 // get firebase json to deal with search
 let x = 0;
 let getAllData = database.ref('article');
-let data;
+let allData;
 let articleId = (new URL(document.location)).searchParams.get('id');  // get url id
-
-if(articleId == null){
-    getAllData.orderByChild('skill').on('child_added', (snapshot) => {
-        data = snapshot.val(); 
-        createLayout(data);
-    });
-}else if(articleId == '彭彭' || articleId == 'pengpeng' || articleId == 'peng'
-        || articleId == '彭' || articleId == 'p'
-        ){
+let isBuild = 'false';
+app.search.judgeId = (keyWord, allKey) => {
     app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('name').equalTo('彭彭的課程教學').on('child_added', (snapshot) => {
+    isBuild = 'true';
+    getAllData.orderByChild(keyWord).equalTo(allKey).on('child_added', (snapshot) => {
+        let data;
         data = snapshot.val();  createLayout(data);
     });  
-}else if(articleId == 'a' || articleId == 'app' || articleId == 'appworks' 
-        || articleId == 'A' || articleId == 'App' || articleId == 'APP' 
-        || articleId == 'AppWorks School' || articleId == 'AppWorks'
-){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('name').equalTo('AppWorks School').on('child_added', (snapshot) => {
-        data = snapshot.val();   createLayout(data);
-    });  
-}else if(articleId == '台北' || articleId == '台' || articleId == '北' 
-    ){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('city').equalTo('台北').on('child_added', (snapshot) => {
-    data = snapshot.val();   createLayout(data);
-    });  
-}else if(articleId == '各地' || articleId == '各' || articleId == '地' 
-    ){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('city').equalTo('各地').on('child_added', (snapshot)=> {
-    data = snapshot.val();   createLayout(data);
-    });  
-}else if(articleId == '一' || articleId == '一對一' 
-    ){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('classType').equalTo('一對一').on('child_added', (snapshot) => {
-    data = snapshot.val();   createLayout(data);
-    });  
-}else if(articleId == '大' || articleId == '大班' || articleId == '大班制' 
-    ){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('classType').equalTo('大班制').on('child_added', (snapshot) => {
-    data = snapshot.val();   createLayout(data);
-    });  
-}else if(articleId == '小' || articleId == '小班' || articleId == '小班制' 
-    ){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('classType').equalTo('小班制').on('child_added', (snapshot) => {
-    data = snapshot.val();   createLayout(data);
-    });  
-}else if(articleId == '放養' || articleId == '放' || articleId == '放養制'  || articleId == '養' 
-    ){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('teachWay').equalTo('放養制').on('child_added', (snapshot) => {
-    data = snapshot.val();   createLayout(data);
-    });  
-}else if(articleId == '手' || articleId == '手把手' || articleId == '手把手教'  || articleId == '手把手教制' 
-    ){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('teachWay').equalTo('手把手教制').on('child_added', (snapshot) => {
-    data = snapshot.val();   createLayout(data);
-    });  
-}else if(articleId == '前' || articleId == '端' || articleId == '前端' 
-    ){
-    app.get('#mainId').innerHTML = '';
-    getAllData.orderByChild('skill').equalTo('前端').on('child_added', (snapshot) => {
-    data = snapshot.val();   createLayout(data);
-    });  
-}else{
-    let newElement = document.createElement('div');
-    newElement.textContent = 'no result';
-    newElement.style.color = 'rgb(26, 216, 211)';
-    app.get('#mainId').appendChild(newElement);
-    getAllData.orderByChild('skill').on('child_added', (snapshot) => {
-        data = snapshot.val();
-        app.get('#mainId').innerHTML = '';
-    });
+    return
 }
+
+getAllData.orderByChild('skill').on('child_added', (snapshot) => {
+    allData = snapshot.val(); 
+    if(isBuild === 'false'){
+        if(allData.name.match(articleId) != null){
+            app.search.judgeId('name', allData.name);
+        }else if(allData.city.match(articleId) != null){
+            app.search.judgeId('city', allData.city);
+        }else if(allData.teachWay.match(articleId) != null){
+            app.search.judgeId('teachWay', allData.teachWay);
+        }else if(allData.classType.match(articleId) != null){
+            app.search.judgeId('classType', allData.classType);
+        }else if(allData.skill.match(articleId) != null){
+            app.search.judgeId('skill', allData.skill);
+        }  
+    }
+});
 
 // get firebase json to deal with search
  createLayout = (data) =>{
