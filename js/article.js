@@ -63,7 +63,9 @@ getAllData.orderByChild('skill').on('child_added', (snapshot) => {
             app.search.judgeId('classType', allData.classType);
         }else if(allData.skill.match(articleId) != null){
             app.search.judgeId('skill', allData.skill);
-        }  
+        }else if(articleId == null){
+              createLayout(snapshot.val());
+        }
     }
 });
 
