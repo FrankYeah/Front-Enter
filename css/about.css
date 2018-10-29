@@ -130,15 +130,6 @@ main>div>div.company-data>div.data-map{
     }
 }
 
-/* @media ( max-width: 660px ){
-    section>div.keyvisualSpan{
-        font-size: 20px;
-        padding: 5px;
-        padding-left: 23px;
-    }
-} */
-
-
 /* 透明度動畫 */
 
 @keyframes inputUp {

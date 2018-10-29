@@ -3,7 +3,7 @@ let storePhoto = [];
 let icount=1;  
 let keyvisualImg;
 let keyvisualImg_len;
-app.keyvisual = (keyBlock, keyNone1, keyNone2) => {
+app.rotateKeyvisual = (keyBlock, keyNone1, keyNone2) => {
     app.get(keyBlock).style.display  =  'block';
     app.get(keyNone1).style.display  =  'none';
     app.get(keyNone2).style.display  =  'none';
@@ -24,11 +24,11 @@ app.article.changeKevisual = () => {
     app.get('#keyvisual2').style.background = "url('" + keyvisualImg[2] + "') 50% / cover no-repeat";    
     app.get('#keyvisual2').style.backgroundPositionY = 'center';
     if(icount == 0){
-        app.keyvisual('#keyvisual0', '#keyvisual1', '#keyvisual2');
+        app.rotateKeyvisual('#keyvisual0', '#keyvisual1', '#keyvisual2');
     }else if(icount == 1){
-        app.keyvisual('#keyvisual1', '#keyvisual0', '#keyvisual2');
+        app.rotateKeyvisual('#keyvisual1', '#keyvisual0', '#keyvisual2');
     }else if(icount == 2){
-        app.keyvisual('#keyvisual2', '#keyvisual0', '#keyvisual1');
+        app.rotateKeyvisual('#keyvisual2', '#keyvisual0', '#keyvisual1');
     }
     icount++;
     if(icount>=keyvisualImg_len) { icount=0;}
@@ -64,7 +64,7 @@ getAllData.orderByChild('skill').on('child_added', (snapshot) => {
         }else if(allData.skill.match(articleId) != null){
             app.search.judgeId('skill', allData.skill);
         }else if(articleId == null){
-              createLayout(snapshot.val());
+            createLayout(snapshot.val());
         }
     }
 });
@@ -78,12 +78,12 @@ getAllData.orderByChild('skill').on('child_added', (snapshot) => {
     app.createElement('div', '', 'locationDiv' + x, 'article' + x , '', '');
     app.createElement('div', 'location-img-born', 'locationImgBorn' + x, 'locationDiv' + x , '', '');
     app.createElement('a', '', 'aLocation' + x, 'locationDiv' + x , '', '');
-    app.article.pLocationBorn(data);
-    app.article.contentABorn(data);
+    app.article.createPLocation(data);
+    app.article.createContentA(data);
     app.createElement('div', 'article-div', 'imgDiv' + x, 'contentA' + x , '', '');
-    app.article.imgBorn(data);
+    app.article.createArticleImg(data);
     app.createElement('p', 'article-head', '', 'contentA' + x , data.name, '');
-    app.article.pPrefaceBorn(data);
+    app.article.createArticlePreface(data);
     app.createElement('div', 'read-more-out', 'readMoreOut' + x, 'contentA' + x , '', '');
     app.createElement('div', 'read-more-word', 'readMoreWord', 'readMoreOut' + x , 'read more', '');
     app.createElement('div', 'read-more-div', 'readMoreDiv', 'readMoreOut' + x , '', '');
@@ -154,7 +154,7 @@ app.article.collectionSchool = (data) => {
     }
 }
 
-app.article.pLocationBorn = (data) => {
+app.article.createPLocation = (data) => {
     let newElement = document.createElement('p');
     newElement.className = 'article-location';
     newElement.textContent = data.city;
@@ -173,21 +173,21 @@ app.article.clearContent = (city) => {
     });    
 }
 
-app.article.contentABorn = (data) => {
+app.article.createContentA = (data) => {
     let newElement = document.createElement('a');
     newElement.id = 'contentA' + x; 
     newElement.setAttribute('href', '/Front-Enter/content.html?id=' + data.creatTime);
     document.getElementById('article' + x).appendChild(newElement);
 }
 
-app.article.imgBorn = (data) => {
+app.article.createArticleImg = (data) => {
     let newElement = document.createElement('img');
     newElement.className = 'article-img';
     newElement.src = data.squareUrl;
     document.getElementById('imgDiv' + x).appendChild(newElement);
 }
 
-app.article.pPrefaceBorn = (data) => {
+app.article.createArticlePreface = (data) => {
     let newElement = document.createElement('p');
     newElement.innerHTML = data.preface;
     document.getElementById('contentA' + x).appendChild(newElement);

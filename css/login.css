@@ -78,12 +78,10 @@ div.login-div-white>p.login-forget-code{
 
 div.login-div-white>div.register-login-div{
     margin: 0 auto;
-    /* height: 8%; */
     width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    /* margin-top: -20px; */
 }
 
 div.login-div-white>div.register-login-div>p.register-button-p{
@@ -112,11 +110,9 @@ div.login-div-white>div.register-login-div>p.login-button-p{
 
 div.login-div-white>div.Login-stop-line{
     margin: 0 auto;
-    /* height: 8%; */
     width: 75%;
     display: flex;
     flex-direction: row;
-    /* margin-top: 30px; */
     align-items: center;
 }
 
@@ -151,7 +147,6 @@ div.login-div-white>p.fb-login-button{
     margin: 0 auto;
     height: 38px;
     width: 250px;
-    /* background-color: #576b95; */
     background-color: rgb(26,216,211);
     color: white;
     text-align: center;
@@ -176,7 +171,6 @@ div.login-div-white>p.fb-login-button{
 section>div.keyvisualSpan{
     font-size: 24px;
     color: white;
-    /* background-color: white; */
     padding: 6px;
     border-radius: 5px;
     letter-spacing: 10px;

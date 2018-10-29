@@ -245,15 +245,15 @@ function createCollectionLayout(){
         }else{
             for(let i = 0; i<getLocal.length ; i++){
                 app.createElement('div', 'in-collection-div', 'inCollectionDiv' + i, 'rightCollection', '', '');
-                inCollectionImg(getLocal,i);
-                inCollectionWord(getLocal,i);
-                inCollectionDelete(i);
+                app.collect.collectionImg(getLocal,i);
+                app.createElement('div', 'in-collection-word', 'inCollectionWord' + i, 'inCollectionDiv' + i, getLocal[i].name, '');
+                app.collect.collectionDelete(i);
             }
         }
     })()
 }
 
-function inCollectionImg(getLocal, i){
+app.collect.collectionImg = (getLocal, i) => {
     let newElement = document.createElement('div');
     newElement.id = 'inCollectionImg' + i;
     newElement.style.background = "url('" + getLocal[i].photo + "')";   
@@ -265,11 +265,7 @@ function inCollectionImg(getLocal, i){
     }
 }
 
-function inCollectionWord(getLocal, i){
-    app.createElement('div', 'in-collection-word', 'inCollectionWord' + i, 'inCollectionDiv' + i, getLocal[i].name, '');
-}
-
-function inCollectionDelete(i){
+app.collect.collectionDelete = (i) => {
     let newElement = document.createElement('div');
     newElement.id = 'inCollectionDelete' + i;
     newElement.className = 'in-collection-delete';

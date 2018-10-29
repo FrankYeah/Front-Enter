@@ -6,7 +6,8 @@ let app = {
 	log:{},
 	rotate:{},
     article:{},
-    skillTree:{}
+    skillTree:{},
+    collect:{}
 };
 // core operations
 app.get = function (selector) {

@@ -103,7 +103,6 @@ main>div.home-my-test>p.home-test-go:hover{
 }
 
 main>div.home-special-article{
-    /* background: url('../images/AppWorksShool-rectangle.jpg') ; */
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/third-img.jpg');
     background-color: rgb(26, 216, 211);
     background-repeat: no-repeat;
@@ -251,7 +250,6 @@ main>div.third-picture:hover{
 }
 
 main>div.partner>div{
-    /* background-color: white; */
     height: 350px;
     display: flex;
     flex-direction: column;
@@ -278,22 +276,6 @@ main>div.partner>div>p{
 }
 
 /* section */
-
-/* section{
-    background: url("../images/key-visual.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 580px;
-    padding:10px;
-    background-position-x: center;
-    background-position-y: center;
-    margin-top: 105px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-position-y: center;
-    line-height: 10px;
-}; */
 
 section>div.keyvisualSpan>p.key-one{
     font-size:38px; font-weight: bold; 
