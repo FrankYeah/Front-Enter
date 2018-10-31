@@ -63,7 +63,7 @@ getAllData.orderByChild('skill').on('child_added', (snapshot) => {
             app.search.judgeId('classType', allData.classType);
         }else if(allData.skill.match(articleId) != null){
             app.search.judgeId('skill', allData.skill);
-        }else if(articleId == null){
+        }else{
             createLayout(snapshot.val());
         }
     }
@@ -100,7 +100,6 @@ if(window.localStorage.getItem(`collection`)){
             if(displayMyCollection[i].name == snapshot.val().name){
                 document.getElementById('collectionSchool' + snapshot.val().creatTime).style.background = 'url(../Front-Enter/images/star-background.svg)';
                 document.getElementById('collectionSchool' + snapshot.val().creatTime).style.backgroundSize = 'cover';
-            }else{
             }
         }    
     })

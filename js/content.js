@@ -1,6 +1,5 @@
 // get firebase json
 
-let x = 0;
 let articleId = (new URL(document.location)).searchParams.get('id');  //get url id
 let getAllData = database.ref('article');
 let data;

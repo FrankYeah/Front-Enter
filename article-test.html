@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128179606-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-128179606-1');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://unpkg.com/mocha@5.2.0/mocha.css" rel="stylesheet" />
+    <link rel="Shortcut Icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/article.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <title>文章列表</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script src='js/firebase.js'></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo"><a href="./index.html"><img id="logo" src="images/FE_logo-4.png" /></a></div>
+		<nav>
+            <div id="headerP2"><a href="./article.html">探索</a></div>
+            <div id="headerP1"><a href="skilltree.html">技能樹</a></div>
+            <div id="headerP3"><a></a></div>
+            <div style="margin-top:3px"><img id="webSearch" src="images/FE_search_green.png" /></div>
+		</nav>
+    </header>   
+
+    <section id="keyvisual0" class="keyvisual0">
+        <a id="keyvisualLink0" href="#" class="keyvisualLink0"><div>
+            <span class="keyvisualSpan">蒐羅前端學校</span><br>
+        </div></a>
+    </section>
+
+    <section id="keyvisual1" class="keyvisual1"> 
+        <a id="keyvisualLink1" href="#" class="keyvisualLink1"><div>
+            <span class="keyvisualSpan">蒐羅前端學校</span><br>
+        </div></a>
+    </section>
+
+    <section id="keyvisual2" class="keyvisual2">
+        <a id="keyvisualLink2" href="#" class="keyvisualLink2"><div>
+            <span class="keyvisualSpan">蒐羅前端學校</span><br>
+        </div></a>
+    </section>
+
+    <div class="tag-box">
+        <div></div>
+        <div></div>
+        <div id="getAllArticle">全部</div>
+        <div id="smallClass">小班制</div>
+        <div id="letItGo">放養制</div>
+        <div id="oneByOne">一對一</div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <aside id="myAside"><img id="testGo" src="images/FE_test_go.png" /></aside>
+    <main id="mainId">
+      
+    </main>
+
+    <!-- 彈跳 alert 框 -->
+    <div id="alertBigBox" class="alert-big-box">
+        <div class="alert-box">
+            <p class="alert-header">Remind</p>
+            <p id="alertWord" class="alert-word">1</p>
+            <div id="alertButton" class="alert-button">OK</div>
+        </div>
+    </div>
+
+    <div class="top">
+        <div id="tops" class="top-icon"></div>
+    </div>
+
+    <div id="loadingDrawing" class="loading-drawing"></div>
+    <div id="loadingAnimation" class="loading-animation">
+        <div id="loadingImg" class="loading-img"></div>
+    </div>
+
+    <footer>
+        <p><u><a href="about.html">聯絡</a></u></p>
+        <p class="m">&nbsp;&nbsp; 0917-218-567</p>
+        <p class="e">&nbsp;&nbsp; aaa24295234@gmail.com</p>
+        <div>
+            <img class="footer-img" src="images/new-facebook-blue.svg" alt="">
+            <img class="footer-img" src="images/FE_line.png" alt="">
+        </div>
+    </footer>
+
+    <div id="mocha"></div>
+
+
+    <script src='js/lib.js'></script>
+    <script src='js/article.js'></script>
+    <script src='js/common.js'></script>
+    <script src='js/login.js'></script>
+
+
+    <script src="https://unpkg.com/chai/chai.js"></script>
+    <script src="https://unpkg.com/mocha@5.2.0/mocha.js"></script>
+    <script src="node_modules/assert-plus/assert.js"></script>
+    <script src="node_modules/should/should.js"></script>
+    <script>mocha.setup('bdd')</script>
+    <script src="test/article-test.js"></script>
+    <script>
+    //   mocha.checkLeaks();
+      mocha.run();
+    </script>
+</body>
+</html>

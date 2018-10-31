@@ -465,7 +465,6 @@ app.testGo.getAllSelectLogic = function(){
         getFirebaseData.orderByChild('skill').equalTo('前端').on('child_added', function(snapshot) {
         });  
     }
-    
     // get heightest value
     setTimeout(app.testGo.maxValue, 3000); 
 }
@@ -477,15 +476,14 @@ app.testGo.maxValue = function(){
     let modeMap = {};
     let maxEl = clientTotal[0];
     let maxCount = 1;
-    for(let i = 0; i < clientTotal.length; i++)
-    {
+    for(let i = 0; i < clientTotal.length; i++){
         let el = clientTotal[i];
-        if(modeMap[el] == null)
+        if(modeMap[el] == null){
             modeMap[el] = 1;
-        else
+        }else{
             modeMap[el]++;  
-        if(modeMap[el] > maxCount)
-        {
+        }
+        if(modeMap[el] > maxCount){
             maxEl = el;
             maxCount = modeMap[el];
         }

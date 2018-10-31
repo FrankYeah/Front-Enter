@@ -21,16 +21,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 // alert 
 
-function successOut(){
-    app.get('#alertBigBox').style.display = 'flex';
-    app.get('#alertWord').innerHTML = '成功送出，我們會盡快回覆您！';
-}
-
-function pleaseWriteRight(){
-    app.get('#alertBigBox').style.display = 'flex';
-    app.get('#alertWord').innerHTML = '請確實輸入資料';
-}
-
 app.get('#alertBigBox').style.display = 'none';
 app.get('#alertButton').addEventListener('click', ()=>{
     app.get('#alertBigBox').style.display = 'none';
