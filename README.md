@@ -3,8 +3,8 @@
 https://frankyeah.github.io/Front-Enter/index.html
 
 ## Description:
-Front-Enter provides comprehensive information for novice, except for data search, user can classify article by hot tag.
-user can choose suitable article by testing, Front-End skill tree also provided. 
+Front-Enter provides comprehensive information for user, user can classify article by hot tag.
+and choose suitable article from testing, Front-End skill tree also be provided. 
 
 - Developed only by HTML, CSS, plain JavaScript.
 - Create member login from Firebase Authentication, including access authority.
