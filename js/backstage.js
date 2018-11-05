@@ -3,10 +3,10 @@ let squareUrl = '';
 let rectangleUrl = '';
 let getFile = '';
 let getRectangleFile = '';
-app.get('#mainUploadPic').addEventListener('change', () => {
+app.get('#mainUploadPic').addEventListener('change', function(){
     getFile = this.files[0]
 },false);
-app.get('#RectanglePic').addEventListener('change', () => {
+app.get('#RectanglePic').addEventListener('change', function(){
     getRectangleFile = this.files[0]
 },false);
 

@@ -33,6 +33,10 @@ describe('mocha tests two', function () {
         expect(app.get('#idOne').textContent).to.equal('how are you');
         expect(app.get('#idOne').parentNode.id).to.equal('mainId');
     });
+    after(function() {
+        let child=document.getElementById('idOne');
+        document.getElementById('mainId').removeChild(child);
+    });
 })
 
 //  database exist (article.js)
@@ -69,27 +73,3 @@ describe('mocha tests five', function(done){
         done();
     });
 });
-
-
-
-
- 
-
-// const should = require('should');
-// var assert = require('assert');
-// var jsdom = require('mocha-jsdom');
-// var expect = require('chai').expect;
-
-// it('1 + 2 = 3', () => {
-//   expect(lib(1, 2)).to.equal(3);
-// });
-
-// it('should be equal', function() {
-//   assert('foo' === 'foo', 'foo is not bar');
-// });
-
-// it('should return the average of array', done => {
-//   var avg = average([1, 2, 3, 4])
-//   avg.should.equal(2.5)
-//   done()
-// })
