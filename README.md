@@ -14,4 +14,4 @@ and choose suitable article from testing, Front-End skill tree also be provided.
 - Record member’s collection in LocalStorage. 
 - Use Mocha as test framework.
 
-https://imgur.com/mpFiruP
+
