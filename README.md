@@ -6,13 +6,14 @@ https://frankyeah.github.io/Front-Enter/index.html
 Front-Enter provides comprehensive information for user, user can classify article by hot tag.
 and choose suitable article from testing, Front-End skill tree also be provided. 
 
-- Developed only by HTML, CSS, plain JavaScript.
-- Create member login from Firebase Authentication, including access authority.
-- Establish Post Management System for CRUD.
-- Create article from Firebase Database.
-- Complete search and hot tag classification. 
-- Record member’s collection in LocalStorage. 
-- Use Mocha as test framework.
+- Developed by HTML, CSS, plain JavaScript.
+- Created member login from Firebase Authentication, including access authority.   
+- Established Post Management System CRUD.
+- Connected to Firebase Database showing article dynamically.
+- Implemented search and hot tag classification by filter. 
+- Recorded member’s collection with LocalStorage. 
+- Tested functions for data loading and element creation by Mocha.
+
 
 ## demo
 
