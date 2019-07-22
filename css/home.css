@@ -4,8 +4,7 @@ section{
     background: url("../images/key-visual.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 580px; */
-    height: 100vh;
+    height: 580px;
     padding:10px;
     background-position-x: center;
     background-position-y: center;
